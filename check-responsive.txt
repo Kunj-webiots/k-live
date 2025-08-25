@@ -1,0 +1,22 @@
+shop pages
+cart page
+checkout page
+product pages
+
+
+contact us
+coming soon
+compare 
+search
+wishlist
+user dashboard
+
+
+
+
+
+
+dark color
+content color : #bbb;
+title-color: #fff;
+white; 34,34,34

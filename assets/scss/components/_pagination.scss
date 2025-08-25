@@ -1,0 +1,74 @@
+/**=====================
+     Pagination scss
+==========================**/
+.custom-pagination {
+    margin-top: calc(22px + (35 - 22) * ((100vw - 320px) / (1920 - 320)));
+    border-radius: 5px;
+
+    .pagination {
+        flex-wrap: wrap;
+        gap: calc(6px + (13 - 6) * ((100vw - 320px) / (1920 - 320)));
+
+        .page-item {
+            border-radius: 5px;
+            overflow: hidden;
+
+            &:not(:first-child) {
+                .page-link {
+                    margin: 0;
+                }
+            }
+
+            &.active {
+                .page-link {
+                    background-color: rgba(var(--primary-color), 1);
+                    border-color: rgba(var(--primary-color), 1);
+                    color: rgba(var(--white), 1);
+                    --Color: rgba(var(--white), 1);
+                }
+
+                &:hover {
+                    .page-link {
+                        background-color: rgba(var(--primary-color), 1);
+                        border-color: rgba(var(--primary-color), 1);
+                        color: rgba(var(--white), 1);
+                        --Color: rgba(var(--white), 1);
+                    }
+                }
+            }
+
+            &.disabled {
+                .page-link {
+                    opacity: 0.5;
+                    user-select: none;
+                }
+            }
+
+            .page-link {
+                color: rgba(var(--content-color), 1);
+                border: 1px solid transparent;
+                border-radius: calc(3px + (5 - 3) * ((100vw - 320px) / (1920 - 320)));
+                line-height: 1;
+                z-index: 0;
+                @include pseudowh($width: calc(34px + (40 - 34) * ((100vw - 320px) / (1920 - 320))), $height: calc(34px + (40 - 34) * ((100vw - 320px) / (1920 - 320))));
+                @include flex_common;
+                padding: 0;
+                background-color: rgba(var(--white), 1);
+                font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+                --size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+
+                &:hover {
+                    border: 1px solid rgba(var(--primary-color), 1);
+                    background-color: rgba(var(--white), 1);
+                    color: rgba(var(--primary-color), 1);
+                }
+
+                &:focus {
+                    color: rgba(var(--primary-color), 1);
+                    background-color: rgba(var(--white), 1);
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+}

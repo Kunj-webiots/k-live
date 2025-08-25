@@ -1,0 +1,21 @@
+/**=====================
+     Rating CSS
+==========================**/
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+
+    li {
+        line-height: 1; 
+
+        i {
+            font-size: 14px;
+            color: rgba(var(--content-color), 0.3);
+
+            &.fill {
+                color: rgba(var(--rating), 1);
+            }
+        }
+    }
+}

@@ -1,0 +1,84 @@
+/**=====================
+     Typography CSS
+==========================**/
+body {
+    font-family: $br-hendrix;
+    position: relative;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(var(--title-color), 1);
+    margin: 0;
+    background-color: rgba(var(--white), 1);
+    transition: all 0.25s ease-in-out;
+    padding: 0 !important;
+}
+
+ol,
+ul {
+    margin-bottom: 0;
+    padding-inline: 0;
+}
+
+li {
+    display: inline-block;
+}
+
+a {
+    color: rgba(var(--primary-color), 1);
+    text-decoration: none;
+    // display: block;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+.form-control,
+.form-select {
+    &:focus {
+        border-color: rgba(var(--border-color), 1);
+        box-shadow: none;
+    }
+}
+
+h1 {
+    font-size: calc(36px + (56 - 36) * ((100vw - 320px) / (1920 - 320)));
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+h2 {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+h3 {
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+h4 {
+    font-size: calc(18px + (20 - 18) * ((100vw - 320px) / (1920 - 320)));
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+h5 {
+    font-weight: 500;
+    font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+    margin-bottom: 0;
+}
+
+h6 {
+    font-size: calc(13px + (14 - 13) * ((100vw - 320px) / (1920 - 320)));
+    margin-bottom: 0;
+    font-weight: 500;
+}
+
+p {
+    font-size: calc(13px + (14 - 13) * ((100vw - 320px) / (1920 - 320)));
+    font-weight: 400;
+    line-height: 1.5;
+}

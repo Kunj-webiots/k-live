@@ -1,0 +1,223 @@
+/**=====================
+     Slider CSS
+==========================**/
+.vertical-slider {
+    .swiper-slide {
+        height: 100% !important;
+    }
+}
+
+.product-box-slider {
+    margin-bottom: -70px;
+
+    @include max(767px) {
+        margin-bottom: 0;
+    }
+
+    .swiper-wrapper {
+        .swiper-slide {
+            padding-bottom: 70px;
+
+            @include max(767px) {
+                padding-bottom: 0;
+            }
+        }
+    }
+}
+
+.slider-pagination {
+    .swiper-pagination {
+        position: relative;
+        inset: unset;
+        margin-top: calc(10px + (38 - 10) * ((100vw - 320px) / (1920 - 320)));
+        height: auto;
+
+        .swiper-pagination-bullet {
+            @include pseudowh($width: 10px, $height: 4px);
+            background-color: #F2F3F8;
+            transition: all 0.5s ease;
+            border-radius: 100px;
+            opacity: 1;
+
+            &-active {
+                width: 27px;
+                background-color: rgba(var(--primary-color), 1);
+            }
+        }
+    }
+}
+
+.slider-pagination-lg {
+    .swiper-pagination {
+        position: relative;
+        inset: unset;
+        margin-top: 10px;
+        height: auto;
+
+        .swiper-pagination-bullet {
+            @include pseudowh($width: 14px, $height: 5px);
+            background: unset;
+            background-color: rgba(var(--primary-color), 0.5);
+            transition: all 0.5s ease;
+            border-radius: 100px;
+            margin: 0;
+            margin-inline: 5px;
+
+            &:first-child {
+                margin-left: unset;
+            }
+
+            &:last-child {
+                margin-right: unset;
+            }
+
+            &-active {
+                @include pseudowh($width: 35px, $height: 5px);
+                background-color: rgba(var(--primary-color), 1);
+            }
+        }
+    }
+}
+
+.product-consider-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    .thumbnail-image-box {
+        order: -1;
+    }
+
+    @media(max-width: 375px) {
+        display: block;
+    }
+
+    .thumbnail-image-box {
+        width: 59px;
+
+        @media(max-width: 375px) {
+            width: auto;
+            margin-top: 15px;
+        }
+
+        .swiper-wrapper {
+            @media(max-width: 375px) {
+                justify-content: center;
+            }
+        }
+
+        .swiper-slide {
+            height: 100% !important;
+
+            @media(max-width: 375px) {
+                width: max-content !important;
+            }
+
+            &:last-child {
+                margin-bottom: unset !important;
+            }
+
+            &.swiper-slide-thumb-active {
+                .product-thumbnail-box {
+                    border: 2px solid rgb(40, 116, 240);
+                }
+            }
+
+            .product-thumbnail-box {
+                @include pseudowh($width: 59px, $height: 59px);
+                background-color: rgba(var(--white), 1);
+                border: 1px solid rgba(var(--content-color), 0.5);
+                border-radius: 10px;
+                cursor: pointer;
+
+                @media(max-width: 375px) {
+                    @include pseudowh($width: calc(50px + (59 - 50) * ((100vw - 320px) / (375 - 320))), $height: calc(50px + (59 - 50) * ((100vw - 320px) / (375 - 320))));
+                }
+            }
+        }
+    }
+
+    .real-image-box {
+        width: calc(100% - 59px);
+
+        @media(max-width: 375px) {
+            width: calc(100% - calc(50px + (59 - 50) * ((100vw - 320px) / (375 - 320))));
+        }
+
+        .swiper-slide {
+            .product-thumbnail-box {
+                height: 278px;
+
+                @media(max-width: 375px) {
+                    height: calc(215px + (278 - 215) * ((100vw - 320px) / (375 - 320)));
+                }
+
+                img {
+                    @extend %img-cover;
+                }
+            }
+        }
+    }
+}
+
+.arrow-slider {
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        @include center(vertical);
+        @include pseudowh($width: calc(30px + (36 - 30) * ((100vw - 320px) / (1920 - 320))), $height: calc(30px + (36 - 30) * ((100vw - 320px) / (1920 - 320))));
+        background-color: rgba(var(--light-gray), 1);
+        border-radius: 8px;
+        font-size: calc(18px + (21 - 18) * ((100vw - 320px) / (1920 - 320)));
+        color: rgba(var(--title-color), 1);
+
+        &:after {
+            content: none;
+        }
+    }
+}
+
+.collection-box {
+    .collection-image {
+        @include pseudowh($width: 100%, $height: 125px);
+
+        img {
+            @extend %img-cover;
+        }
+    }
+
+    h6 {
+        color: rgba(var(--content-color), 1);
+        margin-top: 10px;
+    }
+}
+
+.product-six-slider {
+    .swiper-wrapper {
+        .swiper-slide {
+            .row {
+                >div {
+                    +div {
+                        margin-top: calc(14px + (20 - 14) * ((100vw - 320px) / (1920 - 320)));
+                    }
+                }
+            }
+        }
+    }
+}
+
+.product-option-box {
+    margin-bottom: -45px;
+
+    @include max(767px) {
+        margin: 0;
+    }
+
+    .swiper-slide {
+        padding-bottom: 45px;
+
+        @include max(767px) {
+            padding: 0;
+        }
+    }
+}

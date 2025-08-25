@@ -1,0 +1,42 @@
+Cart page
+checkout page
+
+
+offer page - image vali banava ni 6e
+
+
+
+
+
+
+
+================================
+Remember Add on all pages
+================================
+login offcanvas
+checked index-3 page
+
+
+
+================================
+Add Pages List
+================================
+
+https://woodisa-demo.myshopify.com/policies/privacy-policy
+
+Privacy policy
+Refund policy
+Shipping policy
+Terms of service
+Policy for Buyers
+Policy for Sellers
+
+
+
+
+
+
+/* ================================
+    Pending design
+================================ */
+portfolio all pages
