@@ -1187,3 +1187,32 @@ product_details_array.forEach((item) => {
 // //     updateRecentProduct(products[currentIndex]);
 // //   }, initialDelay);
 // // });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+window.addEventListener("orientationchange", function () {
+  if (window.orientation !== 0) {
+    document.body.style.transform = "rotate(0deg)";
+  }
+});
