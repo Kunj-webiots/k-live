@@ -5,7 +5,7 @@
     background-color: rgba(var(--white), 1);
 
     .breadcrumb-contain {
-        padding: 20px 0;
+        padding: calc(14px + (20 - 14) * ((100vw - 320px) / (1920 - 320))) 0;
         text-align: center;
         color: rgba(var(--black), 1);
         display: flex;

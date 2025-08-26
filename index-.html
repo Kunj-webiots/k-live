@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Price Range Slider</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background: #f5f5f5;
+    }
+
+    .slider-container {
+      max-width: 400px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0px 4px 10px rgba(82, 77, 141, 0.1);
+    }
+
+    .price-values {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      font-weight: bold;
+      color: #524d8d;
+    }
+
+    .range-slider {
+      position: relative;
+      height: 5px;
+      background: #ddd;
+      border-radius: 5px;
+    }
+
+    .range-slider input {
+      position: absolute;
+      width: 100%;
+      height: 5px;
+      top: -6px;
+      background: none;
+      pointer-events: none;
+      -webkit-appearance: none;
+    }
+
+    .range-slider input::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      pointer-events: all;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #524d8d;
+      cursor: pointer;
+    }
+
+    .range-fill {
+      position: absolute;
+      height: 5px;
+      background: #524d8d;
+      border-radius: 5px;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="slider-container">
+    <div class="price-values">
+      <span id="min-price">₹1000</span>
+      <span id="max-price">₹9000</span>
+    </div>
+
+    <div class="range-slider">
+      <div class="range-fill"></div>
+      <input type="range" id="minRange" min="0" max="10000" value="1000" step="100">
+      <input type="range" id="maxRange" min="0" max="10000" value="9000" step="100">
+    </div>
+  </div>
+
+  <script>
+    const minRange = document.getElementById("minRange");
+    const maxRange = document.getElementById("maxRange");
+    const minPrice = document.getElementById("min-price");
+    const maxPrice = document.getElementById("max-price");
+    const rangeFill = document.querySelector(".range-fill");
+
+    function updateRange() {
+      let minVal = parseInt(minRange.value);
+      let maxVal = parseInt(maxRange.value);
+
+      if (minVal > maxVal - 500) {
+        minRange.value = maxVal - 500;
+        minVal = maxVal - 500;
+      }
+
+      if (maxVal < minVal + 500) {
+        maxRange.value = minVal + 500;
+        maxVal = minVal + 500;
+      }
+
+      minPrice.textContent = `₹${minVal}`;
+      maxPrice.textContent = `₹${maxVal}`;
+
+      let percent1 = (minVal / minRange.max) * 100;
+      let percent2 = (maxVal / maxRange.max) * 100;
+      rangeFill.style.left = percent1 + "%";
+      rangeFill.style.right = (100 - percent2) + "%";
+    }
+
+    minRange.addEventListener("input", updateRange);
+    maxRange.addEventListener("input", updateRange);
+
+    updateRange();
+  </script>
+
+</body>
+
+</html>

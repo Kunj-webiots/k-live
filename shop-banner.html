@@ -4,8 +4,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, orientation=portrait">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Kartify">
     <meta name="keywords" content="Kartify">
     <meta name="author" content="Kartify">
@@ -910,9 +909,9 @@
                 <div class="col-custom-3">
                     <div class="left-box">
                         <div class="shop-left-sidebar">
-                            <div class="back-button">
-                                <h4><i class="ri-arrow-left-line"></i> Back</h4>
-                            </div>
+                            <button class="back-button btn">
+                                <i class="ri-arrow-left-line"></i> Back
+                            </button>
 
                             <div class="accordion custom-accordion-2">
                                 <div class="accordion-item">
@@ -1054,7 +1053,23 @@
                                     </h2>
                                     <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse show">
                                         <div class="accordion-body">
-                                            <div class="wrapper">
+                                            <div class="price-range-slider">
+                                                <div class="slider-container">
+                                                    <div class="range-slider">
+                                                        <div class="range-fill"></div>
+                                                        <input type="range" id="minRange" min="0" max="10000"
+                                                            value="1000" step="100">
+                                                        <input type="range" id="maxRange" min="0" max="10000"
+                                                            value="9000" step="100">
+                                                    </div>
+                                                    <div class="price-values">
+                                                        <span id="min-price">1000</span>
+                                                        <span class="dass">-</span>
+                                                        <span id="max-price">9000</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- <div class="wrapper">
                                                 <div class="slider">
                                                     <div class="progress"></div>
                                                 </div>
@@ -1073,7 +1088,7 @@
                                                         <input type="number" class="input-max" value="7500">
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </div>
                                 </div>
@@ -1395,22 +1410,45 @@
 
                             <div class="grid-option d-none d-md-block">
                                 <ul>
-                                    <li class="grid-btn">
-                                        <a href="#!">
-                                            <img src="./assets/svg/grid-4.svg" alt="">
-                                        </a>
+                                    <li class="three-grid">
+                                        <button class="btn">
+                                            <svg>
+                                                <use xlink:href="./assets/svg/grid-option.svg#gridThree"></use>
+                                            </svg>
+                                        </button>
                                     </li>
-                                    <li class=" five-grid d-xxl-inline-block d-none active">
-                                        <a href="#!">
+                                    <li class="grid-btn">
+                                        <button class="btn">
+                                            <svg>
+                                                <use xlink:href="./assets/svg/grid-option.svg#gridFour"></use>
+                                            </svg>
+                                        </button>
+                                        <!-- <a href="#!">
+                                            <img src="./assets/svg/grid-4.svg" alt="">
+                                        </a> -->
+                                    </li>
+                                    <li class="d-xxl-inline-block d-none active">
+                                        <button class="btn five-grid">
+                                            <svg class="d-lg-inline-block d-none">
+                                                <use xlink:href="./assets/svg/grid-option.svg#gridFive"></use>
+                                            </svg>
+                                            <svg class="d-lg-none">
+                                                <use xlink:href="assets/svg/grid-option.svg#grid"></use>
+                                            </svg>
+                                        </button>
+                                        <!-- <a href="#!">
                                             <img src="./assets/svg/grid-5.svg" class="d-lg-inline-block d-none" alt="">
                                             <img src="./assets/svg/grid.svg" class="img-fluid d-lg-none d-inline-block"
                                                 alt="">
-                                        </a>
+                                        </a> -->
                                     </li>
                                     <li class="list-btn">
-                                        <a href="#!">
-                                            <img src="./assets/svg/list.svg" alt="">
-                                        </a>
+                                        <button class="btn">
+                                            <svg>
+                                                <use xlink:href="assets/svg/grid-option.svg#list"></use>
+                                            </svg>
+                                            <!-- <img src="./assets/svg/list.svg" alt=""> -->
+                                        </button>
                                     </li>
                                 </ul>
                             </div>
@@ -1488,7 +1526,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="product-box-4 bg-white">
+                                <div class="product-box-4 pro-bg-white">
                                     <div class="product-image">
                                         <a href="product-color.html">
                                             <img src="./assets/images/product/96.png" class="img-fluid" alt="">
@@ -1593,7 +1631,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="product-box-4 bg-white">
+                                <div class="product-box-4 pro-bg-white">
                                     <div class="product-image">
                                         <a href="product-color.html">
                                             <img src="./assets/images/product/97.png" class="img-fluid" alt="">
@@ -1698,7 +1736,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="product-box-4 bg-white">
+                                <div class="product-box-4 pro-bg-white">
                                     <div class="product-image">
                                         <a href="product-color.html">
                                             <img src="./assets/images/product/98.png" class="img-fluid" alt="">
@@ -1803,7 +1841,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="product-box-4 bg-white">
+                                <div class="product-box-4 pro-bg-white">
                                     <div class="product-image">
                                         <a href="product-color.html">
                                             <img src="./assets/images/product/99.png" class="img-fluid" alt="">
@@ -1908,7 +1946,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="product-box-4 bg-white">
+                                <div class="product-box-4 pro-bg-white">
                                     <div class="product-image">
                                         <a href="product-color.html">
                                             <img src="./assets/images/product/100.png" class="img-fluid" alt="">
@@ -2013,7 +2051,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="product-box-4 bg-white">
+                                <div class="product-box-4 pro-bg-white">
                                     <div class="product-image">
                                         <a href="product-color.html">
                                             <img src="./assets/images/product/101.png" class="img-fluid" alt="">
@@ -2118,7 +2156,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="product-box-4 bg-white">
+                                <div class="product-box-4 pro-bg-white">
                                     <div class="product-image">
                                         <a href="product-color.html">
                                             <img src="./assets/images/product/102.png" class="img-fluid" alt="">
@@ -2223,7 +2261,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="product-box-4 bg-white">
+                                <div class="product-box-4 pro-bg-white">
                                     <div class="product-image">
                                         <a href="product-color.html">
                                             <img src="./assets/images/product/103.png" class="img-fluid" alt="">
@@ -2328,7 +2366,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="product-box-4 bg-white">
+                                <div class="product-box-4 pro-bg-white">
                                     <div class="product-image">
                                         <a href="product-color.html">
                                             <img src="./assets/images/product/104.png" class="img-fluid" alt="">
@@ -2433,7 +2471,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="product-box-4 bg-white">
+                                <div class="product-box-4 pro-bg-white">
                                     <div class="product-image">
                                         <a href="product-color.html">
                                             <img src="./assets/images/product/105.png" class="img-fluid" alt="">
@@ -2538,7 +2576,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="product-box-4 bg-white">
+                                <div class="product-box-4 pro-bg-white">
                                     <div class="product-image">
                                         <a href="product-color.html">
                                             <img src="./assets/images/product/96.png" class="img-fluid" alt="">
@@ -2643,7 +2681,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="product-box-4 bg-white">
+                                <div class="product-box-4 pro-bg-white">
                                     <div class="product-image">
                                         <a href="product-color.html">
                                             <img src="./assets/images/product/97.png" class="img-fluid" alt="">
@@ -2748,7 +2786,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="product-box-4 bg-white">
+                                <div class="product-box-4 pro-bg-white">
                                     <div class="product-image">
                                         <a href="product-color.html">
                                             <img src="./assets/images/product/106.png" class="img-fluid" alt="">
@@ -2853,7 +2891,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="product-box-4 bg-white">
+                                <div class="product-box-4 pro-bg-white">
                                     <div class="product-image">
                                         <a href="product-color.html">
                                             <img src="./assets/images/product/107.png" class="img-fluid" alt="">
@@ -3436,7 +3474,7 @@
 
                 <div class="total-price-box">
                     <p class="free">Almost there, add $32.50 more to get <b>FREE SHIPPING!</b></p>
-                    <div class="progress" role="progressbar">
+                    <div class="progress">
                         <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 75%">
                             <i class="iconsax" icon-name="truck"></i>
                         </div>
@@ -3767,13 +3805,13 @@
     <!-- alert box end -->
 
     <!-- Bootstrap Js -->
-    <script src="./assets/js/bootstrap.bundle.js"></script>
-    <script src="./assets/js/bootstrap-validation.js"></script>
+    <script src="./assets/js/bootstrap/bootstrap.bundle.js"></script>
+    <script src="./assets/js/bootstrap/bootstrap-validation.js"></script>
 
     <!-- Swiper Js -->
     <script src="./assets/js/swiper.js"></script>
     <script src="./assets/js/custom-swiper.js"></script>
-    <script src="./assets/js/custom-swiper-2.js"></script>
+    <!-- <script src="./assets/js/custom-swiper-2.js"></script> -->
 
     <!-- Iconsax js -->
     <script src="./assets/js/iconsax.js"></script>

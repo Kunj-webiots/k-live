@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All UI Effects Demo</title>
+    <style>
+        /* Reset & base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            font-family: "Segoe UI", sans-serif;
+            overflow-x: hidden;
+            transition: background 0.6s, color 0.6s;
+        }
+
+        /* Themes */
+        body.light {
+            background: #f1f1f1;
+            color: #222;
+        }
+
+        body.dark {
+            background: #121212;
+            color: #eee;
+        }
+
+        /* PAGE LOAD ANIMATION */
+        body.loading main {
+            opacity: 0;
+            transform: scale(1.05);
+            filter: blur(15px);
+            transition: all 0.8s ease;
+        }
+
+        body.loaded main {
+            opacity: 1;
+            transform: scale(1);
+            filter: blur(0);
+        }
+
+        /* THEME TOGGLE BUTTON */
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 18px;
+            border: none;
+            background: #ffffff;
+            color: #222;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            cursor: pointer;
+            font-weight: bold;
+            z-index: 1000;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        body.dark .theme-toggle {
+            background: #222;
+            color: #f1f1f1;
+        }
+
+        /* BUTTON GLOW + RIPPLE */
+        .btn {
+            position: relative;
+            overflow: hidden;
+            padding: 14px 28px;
+            margin: 20px auto;
+            display: inline-block;
+            font-size: 18px;
+            color: #fff;
+            background: #6200ea;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(98, 0, 234, 0.5);
+            transition: box-shadow 0.3s;
+        }
+
+        .btn:active {
+            box-shadow: 0 0 25px rgba(98, 0, 234, 1);
+        }
+
+        .btn::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            transform: scale(0);
+            background: rgba(255, 255, 255, 0.5);
+            animation: ripple 0.6s linear;
+        }
+
+        .btn:active::after {
+            width: 200px;
+            height: 200px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        @keyframes ripple {
+            to {
+                transform: translate(-50%, -50%) scale(3);
+                opacity: 0;
+            }
+        }
+
+        /* SCROLL REVEAL SECTIONS */
+        section {
+            min-height: 100vh;
+            padding: 60px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(80px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        section:nth-child(even) {
+            background: rgba(0, 0, 0, 0.05);
+        }
+
+        body.dark section:nth-child(even) {
+            background: rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+
+<body class="loading light">
+    <button class="theme-toggle" id="themeToggle">Toggle Theme</button>
+
+    <main>
+        <section>
+            <div>
+                👋 <strong>Welcome to UI Magic!</strong><br />
+                All effects in one page.
+                <br /><br />
+                <button class="btn">Click Me</button>
+            </div>
+        </section>
+
+        <section>
+            <div>🔄 Smooth Scroll Reveal In Action</div>
+        </section>
+
+        <section>
+            <div>🌙 Try Dark/Light Mode Above ☝️</div>
+        </section>
+
+        <section>
+            <div>⚡ Ripple and Glow Buttons Included</div>
+        </section>
+    </main>
+
+    <script>
+        // Page load animation
+        window.addEventListener("load", () => {
+            document.body.classList.remove("loading");
+            document.body.classList.add("loaded");
+        });
+
+        // Dark/light theme toggle
+        const themeToggle = document.getElementById("themeToggle");
+        themeToggle.addEventListener("click", () => {
+            document.body.classList.toggle("dark");
+            document.body.classList.toggle("light");
+        });
+
+        // Scroll reveal
+        const sections = document.querySelectorAll("section");
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        sections.forEach(section => observer.observe(section));
+    </script>
+</body>
+
+</html>

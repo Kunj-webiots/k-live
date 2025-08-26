@@ -297,6 +297,10 @@
         background-color: rgba(var(--white), 1);
         box-shadow: var(--shadow-2);
 
+        @include max(460px) {
+            z-index: unset;
+        }
+
         .product-image {
             a {
                 transform: scale(1.05);
@@ -314,7 +318,10 @@
                 bottom: -45px;
                 opacity: 1;
                 visibility: visible;
-                box-shadow: var(--shadow-2);
+                // box-shadow: var(--shadow-2);
+                box-shadow: 0px 4px 10px rgba(82, 77, 141, 0.1),
+                    0px 8px 20px rgba(82, 77, 141, 0.06),
+                    0px 12px 30px rgba(82, 77, 141, 0.04);
                 background-color: rgba(var(--white), 1);
 
                 @include max(767px) {
@@ -443,7 +450,7 @@
             left: 0;
             background-color: rgba(var(--light-gray), 1);
             width: 100%;
-            padding: 0 12px 20px;
+            padding: 6px 12px 12px;
             transition: 0.5s;
             opacity: 0;
             gap: calc(7px + (15 - 7) * ((100vw - 320px) / (1920 - 320)));
@@ -1862,19 +1869,19 @@
     }
 
     .select-option-box {
+        @include pseudowh($width: calc(100% - 15px), $height: calc(100% - 15px));
+        @include flex_common;
         position: absolute;
         top: 50%;
         left: 50%;
-        @include pseudowh($width: calc(100% - 15px), $height: calc(100% - 15px));
+        transform: translate(-50%, -50%) scale(0);
         padding: 10px;
         text-align: center;
-        @include flex_common;
-        transform: translate(-50%, -50%) scale(0);
         transition: 0.5s;
         opacity: 0;
         visibility: hidden;
         background-color: rgba(var(--white), 1);
-        z-index: 2;
+        z-index: 1;
 
         &.show {
             transform: translate(-50%, -50%) scale(1);
@@ -1980,7 +1987,7 @@
             position: absolute;
             top: 0;
             right: 0;
-            padding: 7px;
+            padding: 0;
             font-size: 20px;
             line-height: 1;
         }

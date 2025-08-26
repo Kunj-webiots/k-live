@@ -13,7 +13,7 @@
 
 .border-top-space {
     border-top: 1px solid rgba(var(--content-color), 0.1);
-    padding-top: 16px;
+    padding-top: calc(10px + (16 - 10) * ((100vw - 320px) / (1920 - 320)));
 }
 
 .product-spacing {
@@ -24,7 +24,12 @@
     margin-bottom: calc(6px + (14 - 6) * ((100vw - 320px) / (1920 - 320)));
 
     h4 {
+        font-size: calc(16px + (20 - 16) * ((100vw - 320px) / (1920 - 320)));
         font-weight: 500;
+
+        @include max(767.98px) {
+            text-align: center;
+        }
     }
 }
 
@@ -123,9 +128,10 @@
 
         .product-original-box {
             .slider-image {
-                padding: 20px;
+                display: block;
+                padding: calc(18px + (20 - 18) * ((100vw - 320px) / (1920 - 320)));
                 background-color: rgba(var(--base-gray), 1);
-                height: calc(370px + (620 - 370) * ((100vw - 320px) / (1920 - 320)));
+                height: calc(287px + (620 - 287) * ((100vw - 320px) / (1920 - 320)));
                 border-radius: 6px;
 
                 img {
@@ -137,12 +143,12 @@
                 .slider-image {
                     padding: 0;
                     height: 100%;
-                }    
+                }
             }
 
             &-sm {
                 .slider-image {
-                    height: calc(150px + (330 - 150) * ((100vw - 320px) / (1920 - 320)));
+                    height: calc(138px + (330 - 138) * ((100vw - 320px) / (1920 - 320)));
                 }
             }
         }
@@ -162,7 +168,7 @@
             .sidebar-image {
                 padding: 9px;
                 background-color: rgba(var(--base-gray), 1);
-                height: 140px;
+                height: calc(88px + (140 - 88) * ((100vw - 320px) / (1920 - 320)));
                 border-radius: 6px;
 
                 img {
@@ -235,18 +241,46 @@
         gap: 3px 0;
         text-align: left;
 
-        @include max(400px) {
-            grid-template-columns: 1fr;
+        @include max(767.98px) {
+            gap: 0;
         }
+
+        // @include max(400px) {
+        //     grid-template-columns: 1fr;
+        // }
 
         li {
             color: rgba(var(--content-color), 1);
             font-weight: 400;
             font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
 
+            @include max(767.98px) {
+                text-align: center;
+                border-top: 1px solid rgba(var(--border-color), 1);
+                padding-block: calc(6px + (10 - 6) * ((100vw - 320px) / (768 - 320)));
+
+                &:nth-child(2),
+                &:first-child {
+                    padding-top: 0;
+                    border-top: unset;
+                }
+
+                &:nth-last-child(-n+2) {
+                    padding-bottom: 0;
+                }
+
+                &:nth-child(even) {
+                    border-left: 1px solid rgba(var(--border-color), 1);
+                }
+            }
+
             span {
                 color: rgba(var(--title-color), 1);
                 font-weight: 500;
+
+                @include max(767.98px) {
+                    display: block;
+                }
             }
         }
     }
@@ -271,6 +305,8 @@
 
             @include max(767px) {
                 display: block;
+                text-align: center;
+
             }
 
             &::marker {
@@ -286,7 +322,7 @@
         list-style: disc;
         padding-left: 22px;
 
-        @include max(767px) {
+        @include max(767.98px) {
             padding-left: unset;
         }
 
@@ -294,11 +330,12 @@
             display: list-item;
             color: rgba(var(--content-color), 1);
             font-weight: 400;
-            font-size: 16px;
+            font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
             width: 100%;
 
-            @include max(767px) {
+            @include max(767.98px) {
                 display: block;
+                text-align: center;
             }
 
             &::marker {
@@ -308,7 +345,7 @@
             span {
                 color: rgba(var(--title-color), 1);
                 font-weight: 500;
-                margin-left: 5px;
+                margin-left: calc(3px + (5 - 3) * ((100vw - 320px) / (1920 - 320)));
             }
         }
     }
@@ -343,6 +380,10 @@
             h5 {
                 color: rgba(var(--title-color), 1);
                 // font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+
+                @include max(767.98px) {
+                    text-align: center;
+                }
             }
 
             .progress {
@@ -359,11 +400,11 @@
 
         .size-delivery-info {
             border-top: 1px solid rgba(var(--content-color), 0.1);
-            padding-top: 16px;
-            margin-top: 16px;
+            padding-top: calc(10px + (16 - 10) * ((100vw - 320px) / (1920 - 320)));
+            margin-top: calc(10px + (16 - 10) * ((100vw - 320px) / (1920 - 320)));
             display: flex;
             align-items: center;
-            gap: calc(12px + .00375*(100vw - 320px));
+            gap: calc(6px + (18 - 6) * ((100vw - 320px) / (1920 - 320)));
             flex-wrap: wrap;
 
             @include max(767px) {
@@ -375,10 +416,10 @@
                     padding: 0;
                     display: flex;
                     align-items: center;
-                    gap: 10px;
+                    gap: calc(5px + (10 - 5) * ((100vw - 320px) / (1920 - 320)));
                     color: rgba(var(--title-color), 1);
                     font-weight: 400;
-                    font-size: 16px;
+                    font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
 
                     i {
                         margin-top: -2px;
@@ -397,22 +438,27 @@
                 li {
                     font-size: calc(15px + (20 - 15) * ((100vw - 320px) / (1920 - 320)));
                     color: rgba(var(--content-color), 1);
-                    display: flex;
-                    gap: 5px;
-                    align-items: center;
+                    // display: flex;
+                    // gap: 5px;
+                    // align-items: center;
                     width: 100%;
 
                     @include max(767px) {
-                        justify-content: center;
+                        // justify-content: center;
+                        text-align: center;
                     }
 
                     i {
-                        font-size: 20px;
+                        font-size: calc(18px + (20 - 18) * ((100vw - 320px) / (1920 - 320)));
                         line-height: 1;
                     }
 
                     span {
-                        font-size: 16px;
+                        font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+
+                        @include max(767.98px) {
+                            text-align: center;
+                        }
                     }
                 }
             }
@@ -425,6 +471,10 @@
                 gap: 3px 15px;
                 margin-bottom: calc(8px + (16 - 8) * ((100vw - 320px) / (1920 - 320)));
                 flex-wrap: wrap;
+
+                @include max(767.98px) {
+                    justify-content: center;
+                }
 
                 li {
                     display: flex;
@@ -449,21 +499,27 @@
             display: inline-block;
             margin-bottom: calc(6px + (8 - 6) * ((100vw - 320px) / (1920 - 320)));
             font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+
+            @include max(767.98px) {
+                text-align: center;
+                display: block;
+            }
         }
 
         .rating-review-sold-box {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: calc(6px + (10 - 6) * ((100vw - 320px) / (1920 - 320)));
+            flex-wrap: wrap;
 
             @include max(767px) {
                 justify-content: center;
             }
 
-            @include max(575px) {
-                display: grid;
-                gap: 6px;
-            }
+            // @include max(575px) {
+            //     display: grid;
+            //     gap: 6px;
+            // }
 
             li {
                 @include max(575px) {
@@ -473,7 +529,7 @@
                 h5 {
                     display: flex;
                     align-items: center;
-                    font-size: 16px;
+                    font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
                     font-weight: 400;
                     line-height: 1;
                     gap: 3px;
@@ -502,6 +558,10 @@
             font-weight: 700;
             margin-bottom: 7px;
             font-size: calc(22px + (36 - 22) * ((100vw - 320px) / (1920 - 320)));
+
+            @include max(767.98px) {
+                text-align: center;
+            }
         }
 
         .price-rating {
@@ -561,6 +621,10 @@
                 margin: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320))) 0 0;
                 font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
 
+                @include max(767.98px) {
+                    text-align: center;
+                }
+
                 @include max(575.98px) {
                     line-height: 1.5;
                 }
@@ -603,6 +667,8 @@
                     padding: 0;
 
                     &:has(.form-check-label.disabled) {
+                        cursor: not-allowed;
+
                         .form-check-input {
                             pointer-events: none;
                         }
@@ -632,7 +698,7 @@
                         position: relative;
                         min-height: unset;
                         margin: 0;
-                        padding: 10px 16px 8px;
+                        padding: calc(6px + (10 - 6) * ((100vw - 320px) / (1920 - 320))) calc(12px + (16 - 12) * ((100vw - 320px) / (1920 - 320))) calc(4px + (8 - 4) * ((100vw - 320px) / (1920 - 320)));
                         border: 1px solid rgba(var(--border-color), 1);
                         border-radius: 3px;
                         display: block;
@@ -646,13 +712,13 @@
                 &.radio-package {
                     .form-check {
                         display: flex;
-                        gap: 7px;
+                        gap: calc(5px + (7 - 5) * ((100vw - 320px) / (1920 - 320)));
                         align-items: center;
 
                         .form-check-input {
                             position: relative;
                             inset: unset;
-                            @include pseudowh($width: 18px, $height: 18px);
+                            @include pseudowh($width: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320))), $height: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320))));
                             opacity: 1;
                             border: 1px solid rgba(var(--content-color), 0.1);
                             transition: all 0.15s ease-in-out;
@@ -662,7 +728,7 @@
                                 top: 50%;
                                 left: 50%;
                                 transform: translate(-50%, -50%) scale(0);
-                                @include pseudowh($width: calc(100% - 4px), $height: calc(100% - 4px));
+                                @include pseudowh($width: calc(100% - calc(3px + (4 - 3) * ((100vw - 320px) / (1920 - 320)))), $height: calc(100% - calc(3px + (4 - 3) * ((100vw - 320px) / (1920 - 320)))));
                                 background-color: rgba(var(--primary-color), 1);
                                 border-radius: 100%;
                                 transition: all 0.15s ease-in-out;
@@ -686,7 +752,8 @@
                         .form-check-label {
                             padding: 0;
                             line-height: 1;
-                            font-size: 15px;
+                            transform: translateY(1px);
+                            font-size: calc(14px + (15 - 14) * ((100vw - 320px) / (1920 - 320)));
                             border: unset;
                         }
                     }
@@ -714,7 +781,7 @@
                         }
 
                         .form-check-label {
-                            @include pseudowh($width: 42px, $height: 42px);
+                            @include pseudowh($width: calc(38px + (42 - 38) * ((100vw - 320px) / (1920 - 320))), $height: calc(38px + (42 - 38) * ((100vw - 320px) / (1920 - 320))));
                             @include flex_common;
                             line-height: 1;
                             border: 1px solid rgba(var(--content-color), 0.1);
@@ -762,8 +829,8 @@
                             border: 1px solid rgba(var(--content-color), 0.1);
                             font-size: 15px;
                             position: relative;
-                            padding: 3px;
-                            @include pseudowh($width: 75px, $height: 75px);
+                            padding: calc(2px + (3 - 2) * ((100vw - 320px) / (1920 - 320)));
+                            @include pseudowh($width: calc(54px + (75 - 54) * ((100vw - 320px) / (1920 - 320))), $height: calc(54px + (75 - 54) * ((100vw - 320px) / (1920 - 320))));
                             @include flex_common;
 
                             span {
@@ -811,9 +878,9 @@
                         .form-check-label {
                             line-height: 1;
                             border: 1px solid rgba(var(--content-color), 0.1);
-                            font-size: 15px;
-                            padding: 3px;
-                            @include pseudowh($width: 42px, $height: 42px);
+                            font-size: calc(14px + (15 - 14) * ((100vw - 320px) / (1920 - 320)));
+                            padding: calc(2px + (3 - 2) * ((100vw - 320px) / (1920 - 320)));
+                            @include pseudowh($width: calc(38px + (42 - 38) * ((100vw - 320px) / (1920 - 320))), $height: calc(38px + (42 - 38) * ((100vw - 320px) / (1920 - 320))));
                             border-radius: 100%;
                             @include flex_common;
 
@@ -822,6 +889,7 @@
                                 @include pseudowh;
                                 border-radius: 100%;
                                 @include flex_common;
+                                padding-top: 1px;
                             }
                         }
                     }
@@ -830,12 +898,12 @@
                 &.form-select-package {
                     .form-select {
                         background-color: rgba(var(--base-gray), 1);
-                        border-radius: 0;
+                        border-radius: calc(4px + (6 - 4) * ((100vw - 320px) / (1920 - 320)));
                         border: 1px solid rgba(var(--content-color), 0.1);
                         color: rgba(var(--content-color), 1);
-                        font-size: 16px;
+                        font-size: calc(15px + (16 - 15) * ((100vw - 320px) / (1920 - 320)));
                         font-weight: 500;
-                        padding: 12px 36px 9px 15px;
+                        padding: calc(9px + (12 - 9) * ((100vw - 320px) / (1920 - 320))) 36px calc(6px + (9 - 6) * ((100vw - 320px) / (1920 - 320))) calc(11px + (15 - 11) * ((100vw - 320px) / (1920 - 320)));
                     }
                 }
             }
@@ -942,7 +1010,7 @@
                         .form-check-input {
                             position: relative;
                             inset: unset;
-                            @include pseudowh($width: 18px, $height: 18px);
+                            @include pseudowh($width: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320))), $height: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320))));
                             opacity: 1;
                             margin-top: -3px;
                             border: 1px solid rgba(var(--content-color), 0.1);
@@ -1303,7 +1371,7 @@
         .social-option {
             ul {
                 align-items: center;
-                @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 20px);
+                @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(8px + (20 - 8) * ((100vw - 320px) / (1920 - 320))));
 
                 @include max(767px) {
                     justify-content: center;
@@ -1404,17 +1472,17 @@
         }
 
         .side-product-detail {
-            padding: 26px;
-            border-radius: 8px;
+            padding: calc(18px + (26 - 18) * ((100vw - 990px) / (1920 - 990)));
+            border-radius: calc(6px + (8 - 6) * ((100vw - 990px) / (1920 - 990)));
             background-color: rgba(var(--white), 1);
 
             .side-title {
-                margin-bottom: 16px;
-                padding-bottom: 11px;
+                margin-bottom: calc(12px + (16 - 12) * ((100vw - 990px) / (1920 - 990)));
+                padding-bottom: calc(6px + (11 - 6) * ((100vw - 990px) / (1920 - 990)));
                 border-bottom: 1px solid rgba(var(--content-color), 0.1);
 
                 h4 {
-                    font-size: 24px;
+                    font-size: calc(20px + (24 - 20) * ((100vw - 990px) / (1920 - 990)));
                     font-weight: 600;
                 }
             }
@@ -1425,9 +1493,9 @@
                 gap: 15px;
 
                 .product-image {
-                    @include pseudowh($width: 90px, $height: 90px);
+                    @include pseudowh($width: calc(78px + (90 - 78) * ((100vw - 990px) / (1920 - 990))), $height: calc(78px + (90 - 78) * ((100vw - 990px) / (1920 - 990))));
                     background-color: rgba(var(--base-gray), 1);
-                    padding: 10px;
+                    padding: calc(8px + (10 - 8) * ((100vw - 990px) / (1920 - 990)));
                     border-radius: 4px;
 
                     img {
@@ -1448,7 +1516,7 @@
             }
 
             .qty-stock-box {
-                margin-top: 18px;
+                margin-top: calc(12px + (18 - 12) * ((100vw - 320px) / (1920 - 320)));
                 @include flex_common ($dis: flex, $align: center, $justify: space-between);
 
                 .qty-box {
@@ -1460,9 +1528,9 @@
 
                     .qty-btn {
                         @include flex_common;
-                        @include pseudowh($width: 35px, $height: 35px);
+                        @include pseudowh($width: calc(30px + (35 - 30) * ((100vw - 991px) / (1920 - 991))), $height: calc(30px + (35 - 30) * ((100vw - 991px) / (1920 - 991))));
                         padding: 0;
-                        border-radius: 4px;
+                        border-radius: calc(2px + (4 - 2) * ((100vw - 991px) / (1920 - 991)));
                         background-color: rgba(var(--white), 1);
                         color: rgba(var(--content-color), 1);
 
@@ -1473,14 +1541,14 @@
                     }
 
                     .qty-input {
-                        width: 60px;
+                        width: calc(45px + (60 - 45) * ((100vw - 991px) / (1920 - 991)));
                         line-height: 1;
                         padding: 0;
                         border: none;
                         text-align: center;
                         outline: unset;
                         background-color: transparent;
-                        font-size: 20px;
+                        font-size: calc(16px + (20 - 16) * ((100vw - 991px) / (1920 - 991)));
 
                         &[type="number"] {
                             appearance: textfield;
@@ -1495,7 +1563,7 @@
 
                 .stock-box {
                     h5 {
-                        font-size: 18px;
+                        font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320)));
                         color: rgba(var(--content-color), 0.8);
                         text-transform: capitalize;
                         font-weight: 400;
@@ -1509,30 +1577,30 @@
             }
 
             .total-price-box {
-                margin-top: 22px;
+                margin-top: calc(14px + (22 - 14) * ((100vw - 990px) / (1920 - 990)));
+                padding-top: calc(14px + (22 - 14) * ((100vw - 990px) / (1920 - 990)));
                 border-top: 1px solid rgba(var(--content-color), 0.1);
-                padding-top: 21px;
 
                 h4 {
                     @include flex_common ($dis: flex, $align: center, $justify: space-between);
                     font-weight: 600;
-                    font-size: 25px;
+                    font-size: calc(20px + (25 - 20) * ((100vw - 990px) / (1920 - 990)));
 
                     span {
                         color: rgba(var(--content-color), 1);
-                        font-size: 16px;
+                        font-size: calc(15px + (16 - 15) * ((100vw - 990px) / (1920 - 990)));
                         font-weight: 500;
                     }
                 }
             }
 
             .button-group {
-                margin-top: 27px;
+                margin-top: calc(16px + (27 - 16) * ((100vw - 990px) / (1920 - 990)));
                 display: grid;
-                gap: 12px;
-                margin-bottom: 22px;
+                gap: calc(10px + (12 - 10) * ((100vw - 990px) / (1920 - 990)));
+                margin-bottom: calc(14px + (22 - 14) * ((100vw - 990px) / (1920 - 990)));
+                padding-bottom: calc(14px + (22 - 14) * ((100vw - 990px) / (1920 - 990)));
                 border-bottom: 1px solid rgba(var(--content-color), 0.1);
-                padding-bottom: 21px;
 
                 button {
                     border-radius: 6px;
@@ -1561,7 +1629,7 @@
                     display: flex;
                     align-items: center;
                     gap: 7px;
-                    font-size: 18px;
+                    font-size: calc(16px + (18 - 16) * ((100vw - 990px) / (1920 - 990)));
 
                     a {
                         color: rgba(var(--content-color), 1);
@@ -1572,7 +1640,7 @@
 
                     i {
                         line-height: 1;
-                        font-size: 20px;
+                        font-size: calc(18px + (20 - 18) * ((100vw - 990px) / (1920 - 990)));
                         font-weight: normal;
                     }
                 }
@@ -1787,7 +1855,7 @@
         display: flex;
         align-items: center;
 
-        @include max(575px) {
+        @include max(630.98px) {
             display: none;
         }
 
@@ -1815,7 +1883,7 @@
             }
 
             h5 {
-                font-size: 16px;
+                font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
                 font-weight: 500;
                 text-transform: capitalize;
             }
@@ -1842,12 +1910,20 @@
         align-items: center;
         margin: 0 calc(9px + (25 - 9) * ((100vw - 576px) / (1920 - 576))) 0 auto;
 
+        @include max(991.98px) {
+            margin-inline: auto;
+        }
+
+        @include max(630.98px) {
+            margin-left: unset;
+        }
+
         @include max(575px) {
             display: none;
         }
 
         .product-qty {
-            height: 51px;
+            height: calc(42px + (51 - 42) * ((100vw - 320px) / (1920 - 320)));
 
             .qty-container {
                 max-width: calc(145px + (160 - 145) * ((100vw - 576px) / (1920 - 576)));
@@ -1860,13 +1936,13 @@
 
                 button {
                     @include flex_common;
-                    @include pseudowh($width: 35px, $height: 100%);
+                    @include pseudowh($width: calc(30px + (35 - 30) * ((100vw - 320px) / (1920 - 320))), $height: 100%);
                     border: unset;
                     background-color: rgba(var(--white), 1);
                     padding: 0;
-                    border-radius: 5px !important;
+                    border-radius: calc(3px + (5 - 3) * ((100vw - 320px) / (1920 - 320))) !important;
                     color: rgba(var(--title-color), 1);
-                    font-size: 17px;
+                    font-size: calc(15px + (17 - 15) * ((100vw - 320px) / (1920 - 320)));
                     // height: 100%;
 
                     i {
@@ -1875,7 +1951,7 @@
                 }
 
                 .form-control {
-                    width: calc(100% - 35px - 35px);
+                    width: calc(100% - calc(30px + (35 - 30) * ((100vw - 320px) / (1920 - 320))) - calc(30px + (35 - 30) * ((100vw - 320px) / (1920 - 320))));
                     padding: 0;
                     text-align: center;
                     border: unset;
@@ -1893,16 +1969,18 @@
 
         .form-group {
             margin-inline: 10px;
-            height: 51px;
+            height: calc(42px + (51 - 42) * ((100vw - 320px) / (1920 - 320)));
             border-radius: 0;
 
             .form-control {
                 background-color: rgba(var(--base-gray), 1);
-                padding: 7px 19px 4px;
+                padding: 7px calc(12px + (19 - 12) * ((100vw - 320px) / (1920 - 320))) 4px;
                 height: 100%;
-                padding-right: 39px;
+                padding-right: calc(26px + (39 - 26) * ((100vw - 320px) / (1920 - 320)));
                 border-radius: 4px;
+                background-position: right calc(8px + (12 - 8) * ((100vw - 320px) / (1920 - 320))) center;
                 border: 1px solid rgba(var(--content-color), 0.1);
+                font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
             }
         }
     }
@@ -1913,17 +1991,18 @@
         }
 
         a {
-            padding: 10px calc(12px + (18 - 12) * ((100vw - 576px) / (1920 - 576)));
+            padding: 10px calc(12px + (18 - 12) * ((100vw - 320px) / (1920 - 320)));
+            font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320)));
             border-radius: 4px;
 
-            @include max(575px) {
-                padding: 12px 18px;
+            @include max(575.98px) {
+                padding-block: calc(8px + (10 - 8) * ((100vw - 320px) / (576 - 320)));
                 width: 100%;
-                @include flex_common;
+                //     @include flex_common;
             }
 
             +a {
-                @include max(575px) {
+                @include max(575.98px) {
                     margin-left: 8px;
                 }
             }
@@ -1950,11 +2029,19 @@
         bottom: 0;
         visibility: visible;
         opacity: 1;
+
+        @include max(575.98px) {
+            bottom: 68px;
+        }
     }
 
     .tap-top-button {
         &.show {
             bottom: 95px;
+
+            @include max(767px) {
+                bottom: calc(140px + (146 - 140) * ((100vw - 320px) / (768 - 320)));
+            }
         }
     }
 
@@ -1989,18 +2076,23 @@
     .frequently-box {
         display: flex;
         align-items: center;
-        gap: 25px;
+        gap: calc(18px + (25 - 18) * ((100vw - 320px) / (1920 - 320)));
         background-color: rgba(var(--white), 1);
-        padding: 20px 26px;
-        border-radius: 6px;
+        padding: calc(15px + (20 - 15) * ((100vw - 320px) / (1920 - 320))) calc(15px + (26 - 15) * ((100vw - 320px) / (1920 - 320)));
+        border-radius: calc(4px + (6 - 4) * ((100vw - 320px) / (1920 - 320)));
+
+        @include max(1000.98px) {
+            display: grid;
+        }
 
         .frequently-image {
             display: flex;
             align-items: center;
             gap: 9px;
+            overflow: auto;
 
             i {
-                font-size: 18px;
+                font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (1920 - 320)));
             }
 
             >li {
@@ -2008,6 +2100,18 @@
                 align-items: center;
                 gap: 9px;
                 position: relative;
+
+                .product-box-4 {
+                    width: calc(176px + (250 - 176) * ((100vw - 320px) / (1920 - 320)));
+
+                    .product-image {
+                        aspect-ratio: unset;
+
+                        img {
+                            aspect-ratio: 13/10;
+                        }
+                    }
+                }
 
                 .image-box {
                     padding: 22px;
@@ -2023,7 +2127,7 @@
 
         .frequently-detail {
             display: grid;
-            gap: 8px;
+            gap: calc(5px + (8 - 5) * ((100vw - 320px) / (1920 - 320)));
 
             .form-check {
                 min-height: unset;
@@ -2031,7 +2135,7 @@
                 margin: 0;
                 display: flex;
                 align-items: center;
-                gap: 13px;
+                gap: calc(10px + (13 - 10) * ((100vw - 320px) / (1920 - 320)));
 
                 .form-check-input {
                     @include pseudowh($width: 20px, $height: 20px);
@@ -2054,7 +2158,7 @@
                     &::before {
                         @include pos;
                         @include center(both);
-                        @include pseudowh($width: 20px, $height: 20px);
+                        @include pseudowh;
                         background-color: rgba(var(--white), 1);
                         border: 1px solid rgba(var(--border-color), 1);
                         transition: all 0.15s ease-in-out;
@@ -2074,10 +2178,11 @@
                 }
 
                 .form-check-label {
-                    font-size: 18px;
+                    font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (1920 - 320)));
                     font-weight: 400;
                     color: rgba(var(--content-color), 1);
                     transition: all 0.15s ease-in-out;
+                    line-height: 1.4;
 
                     span {
                         color: rgba(var(--title-color), 1);
@@ -2089,7 +2194,7 @@
 
             button {
                 width: fit-content;
-                padding: calc(7px + (10 - 7) * ((100vw - 320px) / (1920 - 320))) calc(18px + (23 - 18) * ((100vw - 320px) / (1920 - 320))) calc(3px + (6 - 3) * ((100vw - 320px) / (1920 - 320)));
+                padding: calc(8px + (10 - 8) * ((100vw - 320px) / (1920 - 320))) calc(18px + (23 - 18) * ((100vw - 320px) / (1920 - 320))) calc(4px + (6 - 4) * ((100vw - 320px) / (1920 - 320)));
                 border-radius: 5px;
             }
 
@@ -2100,12 +2205,12 @@
                     display: flex;
                     align-items: center;
                     gap: 4px;
-                    font-size: 20px;
+                    font-size: calc(16px + (20 - 16) * ((100vw - 320px) / (1920 - 320)));
                 }
 
                 h3 {
-                    margin-top: 5px;
-                    font-size: 22px;
+                    margin-top: calc(3px + (5 - 3) * ((100vw - 320px) / (1920 - 320)));
+                    font-size: calc(18px + (22 - 18) * ((100vw - 320px) / (1920 - 320)));
                     font-weight: 500;
                     color: rgba(var(--primary-color), 1);
                 }
@@ -2120,7 +2225,11 @@
     border-radius: 8px;
 
     .border-left-cls {
-        border-left: 1px dashed #eee;
+        border-left: 1px dashed rgba(var(--border-color), 1);
+
+        @include max(1399.98px) {
+            border: none;
+        }
     }
 }
 
@@ -2212,3 +2321,10 @@
         }
     }
 }
+
+
+// .product-section .about-item-list li:nth-last-child(-n+2) {
+//     @include max(767.98px) {
+//         background-color: red;
+//     }
+// }

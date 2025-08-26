@@ -64,3 +64,17 @@
 
 // // Since we are using dynamic mode, we need to programmatically open lightGallery
 // inlineGallery.openGallery();
+
+
+
+lightGallery(document.getElementById('lightgallery'), {
+    selector: 'a',
+    // thumbnail: true, // optional
+    // mode: 'lg-none', // ✅ koi transition/animation nai
+    // speed: 0, // ✅ 0ms = instant
+    // hideBarsDelay: 0, // ✅ toolbar fade pan band
+    // slideDelay: 0, // ✅ slides change instantly
+    closable: true,
+    zoomFromOrigin: false,
+    plugins: [lgZoom, lgThumbnail],
+});

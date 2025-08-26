@@ -24,12 +24,12 @@
                border: none;
 
                .btn-close {
-                    @include pseudowh($width: 30px, $height: 30px);
+                    @include pseudowh($width: calc(26px + (30 - 26) * ((100vw - 320px) / (1920 - 320))), $height: calc(26px + (30 - 26) * ((100vw - 320px) / (1920 - 320))));
                     margin: 0;
                     padding: 0;
                     background: none;
                     line-height: 1;
-                    font-size: 22px;
+                    // font-size: 22px;
                     border-radius: 0;
                     color: rgba(var(--white), 1);
                     opacity: 1;
@@ -44,16 +44,20 @@
                     // }
 
                     i {
-                         font-size: 22px;
+                         font-size: calc(18px + (22 - 18) * ((100vw - 320px) / (1920 - 320)));
                     }
                }
 
                h3 {
-                    font-size: 24px;
+                    font-size: calc(20px + (24 - 20) * ((100vw - 320px) / (1920 - 320)));
                     font-weight: 500;
                     line-height: 1;
-                    margin-top: 3px;
+                    margin-top: calc(1px + (3 - 1) * ((100vw - 320px) / (1920 - 320)));
                }
+          }
+
+          .modal-body {
+               padding: calc(12px + (16 - 12) * ((100vw - 320px) / (1920 - 320)));
           }
 
           .modal-footer {
@@ -132,19 +136,19 @@
           .items-box {
                display: flex;
                align-items: center;
-               gap: 14px;
+               gap: calc(10px + (14 - 10) * ((100vw - 320px) / (1920 - 320)));
                background-color: rgba(var(--base-gray), 1);
-               padding: 11px;
-               border-radius: 5px;
+               padding: calc(8px + (11 - 8) * ((100vw - 320px) / (1920 - 320)));
+               border-radius: calc(4px + (5 - 4) * ((100vw - 320px) / (1920 - 320)));
                border: 1px solid rgba(var(--border-color), 1);
 
                .items-img {
-                    @include pseudowh($width: 110px, $height: 110px);
+                    @include pseudowh($width: calc(82px + (110 - 82) * ((100vw - 320px) / (1920 - 320))), $height: calc(82px + (110 - 82) * ((100vw - 320px) / (1920 - 320))));
                     // width: 110px;
                     // height: 110px;
                     background-color: rgba(var(--white), 1);
-                    padding: 10px;
-                    border-radius: 7px;
+                    padding: calc(8px + (10 - 8) * ((100vw - 320px) / (1920 - 320)));
+                    border-radius: calc(4px + (7 - 4) * ((100vw - 320px) / (1920 - 320)));
 
                     img {
                          @extend %img-contain;
@@ -152,15 +156,15 @@
                }
 
                .items-details {
-                    width: calc(100% - 110px - 14px);
+                    width: calc(100% - calc(82px + (110 - 82) * ((100vw - 320px) / (1920 - 320))) - calc(10px + (14 - 10) * ((100vw - 320px) / (1920 - 320))));
 
                     h4 {
-                         font-size: 18px;
+                         font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320)));
                     }
 
                     h5 {
                          color: rgba(var(--content-color), 1);
-                         margin-top: 6px;
+                         margin-top: calc(4px + (6 - 4) * ((100vw - 320px) / (1920 - 320)));
                     }
                }
           }
@@ -171,7 +175,7 @@
 
           .modal-footer {
                .btn {
-                    border-radius: 6px;
+                    border-radius: calc(4px + (6 - 4) * ((100vw - 320px) / (1920 - 320)));
                     border: 1px solid rgba(var(--primary-color), 1);
 
                     &.apply-btn {
@@ -847,30 +851,30 @@
      .delivery-contain {
           .delivery-box {
                +.delivery-box {
-                    margin-top: 24px;
+                    margin-top: calc(10px + (24 - 10) * ((100vw - 320px) / (1920 - 320)));
                }
 
                p {
-                    font-size: 16px;
+                    font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
                     color: rgba(var(--content-color), 0.8);
                     line-height: 1.5;
                }
 
                h4 {
-                    margin-bottom: 10px;
+                    margin-bottom: calc(4px + (10 - 4) * ((100vw - 320px) / (1920 - 320)));
                }
 
                ul {
-                    padding-left: 22px;
+                    padding-left: calc(18px + (22 - 18) * ((100vw - 320px) / (1920 - 320)));
 
                     li {
                          display: list-item;
-                         font-size: 16px;
+                         font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
                          color: rgba(var(--content-color), 0.8);
                          line-height: 1.5;
 
                          +li {
-                              margin-top: 4px;
+                              margin-top: calc(2px + (4 - 2) * ((100vw - 320px) / (1920 - 320)));
                          }
                     }
                }
@@ -882,9 +886,9 @@
      .product-share-container {
           .nav-tabs {
                background-color: transparent;
-               background-color: transparent;
+               // background-color: transparent;
                border: none;
-               gap: 10px;
+               gap: calc(6px + (10 - 6) * ((100vw - 320px) / (1920 - 320)));
 
                .nav-item {
                     .nav-link {
@@ -893,7 +897,7 @@
                          border: 1px solid rgba(var(--border-color), 1);
                          border-radius: 4px;
                          padding: 0;
-                         @include pseudowh($width: 48px, $height: 42px);
+                         @include pseudowh($width: calc(41px + (48 - 41) * ((100vw - 320px) / (1920 - 320))), $height: calc(38px + (42 - 38) * ((100vw - 320px) / (1920 - 320))));
                          // width: 48px;
                          // height: 42px;
                          color: rgba(var(--content-color), 1);
@@ -909,25 +913,25 @@
                          }
 
                          i {
-                              font-size: 20px;
+                              font-size: calc(18px + (20 - 18) * ((100vw - 320px) / (1920 - 320)));
                          }
                     }
                }
           }
 
           .tab-content {
-               margin-top: 18px;
+               margin-top: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320)));
 
                .input-group {
-                    gap: 12px;
+                    gap: calc(8px + (12 - 8) * ((100vw - 320px) / (1920 - 320)));
 
                     >* {
-                         border-radius: 5px !important;
+                         border-radius: calc(3px + (5 - 3) * ((100vw - 320px) / (1920 - 320))) !important;
                     }
 
                     .btn {
-                         font-size: 15px;
-                         padding-inline: 18px;
+                         font-size: calc(14px + (15 - 14) * ((100vw - 320px) / (1920 - 320)));
+                         padding-inline: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320)));
                     }
                }
           }

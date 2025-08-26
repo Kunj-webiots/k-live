@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>RTL Language Switch Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            transition: all 0.3s ease;
+            padding: 20px;
+        }
+
+        html[dir="rtl"] body {
+            text-align: right;
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 id="title">Welcome to My Website</h1>
+    <p id="desc">This is a sample paragraph in English.</p>
+
+    <button onclick="setArabic()">Arabic</button>
+    <button onclick="setEnglish()">English</button>
+
+    <script>
+        function setArabic() {
+            document.documentElement.setAttribute("dir", "rtl");
+            document.documentElement.setAttribute("lang", "ar");
+            document.getElementById("title").textContent = "مرحبًا بك في موقعي";
+            document.getElementById("desc").textContent = "هذه فقرة تجريبية باللغة العربية.";
+        }
+
+        function setEnglish() {
+            document.documentElement.setAttribute("dir", "ltr");
+            document.documentElement.setAttribute("lang", "en");
+            document.getElementById("title").textContent = "Welcome to My Website";
+            document.getElementById("desc").textContent = "This is a sample paragraph in English.";
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,6 +1,12 @@
 /**=====================
      Slider CSS
 ==========================**/
+.swiper,
+.swiper-wrapper {
+    z-index: unset;
+
+}
+
 .vertical-slider {
     .swiper-slide {
         height: 100% !important;
@@ -49,19 +55,20 @@
 
 .slider-pagination-lg {
     .swiper-pagination {
+        z-index: unset;
         position: relative;
         inset: unset;
         margin-top: 10px;
         height: auto;
 
         .swiper-pagination-bullet {
-            @include pseudowh($width: 14px, $height: 5px);
+            @include pseudowh($width: calc(10px + (14 - 10) * ((100vw - 320px) / (1920 - 320))), $height: calc(4px + (5 - 4) * ((100vw - 320px) / (1920 - 320))));
             background: unset;
             background-color: rgba(var(--primary-color), 0.5);
             transition: all 0.5s ease;
             border-radius: 100px;
             margin: 0;
-            margin-inline: 5px;
+            margin-inline: calc(4px + (5 - 4) * ((100vw - 320px) / (1920 - 320)));
 
             &:first-child {
                 margin-left: unset;
@@ -72,7 +79,8 @@
             }
 
             &-active {
-                @include pseudowh($width: 35px, $height: 5px);
+                width: calc(25px + (35 - 25) * ((100vw - 320px) / (1920 - 320)));
+                // @include pseudowh($width: 35px, $height: 5px);
                 background-color: rgba(var(--primary-color), 1);
             }
         }
