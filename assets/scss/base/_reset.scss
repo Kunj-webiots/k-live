@@ -830,51 +830,7 @@ theme-blue-dark;
         &.complete {
             transform: translateY(100%);
         }
-
-        // &.char {
-        //     display: inline-block;
-        // }
     }
-
-    // .loading-text
-
-    // .loading-text
-
-    // .loading-text 
-
-    // .content {
-    //     padding: var(--margin);
-    //     position: fixed;
-    //     top: 0;
-    //     left: 0;
-    //     width: 100%;
-    //     height: 100vh;
-    //     display: flex;
-    //     flex-direction: column;
-    //     justify-content: center;
-    //     align-items: center;
-    //     color: var(--color-foreground);
-    //     background: var(--color-background);
-    //     visibility: hidden;
-    //     z-index: 1;
-    // }
-
-    // .content h1 {
-    //     font-size: 3rem;
-    //     margin-bottom: 1rem;
-    //     overflow: hidden;
-    // }
-
-    // .content p {
-    //     font-size: 1.2rem;
-    //     overflow: hidden;
-    // }
-
-    // .content .char {
-    //     display: inline-block;
-    //     transform: translateY(100%);
-    //     opacity: 0;
-    // }
 
     .preloader-item {
         opacity: 1;

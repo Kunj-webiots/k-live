@@ -2,7 +2,7 @@
     2.7 Lazy Load css Start
 ==========================**/
 img {
-    filter: blur(20px);
+    filter: blur(10px);
 
     &.loaded {
         filter: blur(0);

@@ -493,39 +493,39 @@ product_details_array.forEach((item) => {
 
 // /* Disable specific keys */
 // document.onkeydown = function (e) {
-//   /* F12 */
-//   if (e.keyCode == 123) {
-//     return false;
-//   }
-//   /* Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C */
-//   if (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74 || e.keyCode == 67)) {
-//     return false;
-//   }
-//   /* Ctrl+U (View Source) */
-//   if (e.ctrlKey && e.keyCode == 85) {
-//     return false;
-//   }
+//     /* F12 */
+//     if (e.keyCode == 123) {
+//         return false;
+//     }
+//     /* Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C */
+//     if (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74 || e.keyCode == 67)) {
+//         return false;
+//     }
+//     /* Ctrl+U (View Source) */
+//     if (e.ctrlKey && e.keyCode == 85) {
+//         return false;
+//     }
 // };
 
 // /* Detect if DevTools open */
 // (function () {
-//   let devtoolsOpen = false;
-//   const element = new Image();
-//   Object.defineProperty(element, "id", {
-//     get: function () {
-//       devtoolsOpen = true;
-//       alert("Developer Tools are disabled 🚫");
-//       window.location.href = "about:blank";
-//     }
-//   });
-//   setInterval(function () {
-//     devtoolsOpen = false;
-//     console.log(element);
-//     if (devtoolsOpen) {
-//       /* extra safety */
-//       window.location.href = "about:blank";
-//     }
-//   }, 1000);
+//     let devtoolsOpen = false;
+//     const element = new Image();
+//     Object.defineProperty(element, "id", {
+//         get: function () {
+//             devtoolsOpen = true;
+//             alert("Developer Tools are disabled 🚫");
+//             window.location.href = "about:blank";
+//         }
+//     });
+//     setInterval(function () {
+//         devtoolsOpen = false;
+//         console.log(element);
+//         if (devtoolsOpen) {
+//             /* extra safety */
+//             window.location.href = "about:blank";
+//         }
+//     }, 1000);
 // })();
 
 /*=====================
@@ -612,7 +612,6 @@ window.onload = function () {
 
         if (remaining <= 0) {
             clearInterval(timer);
-            // alert(`⏰ ${randomMinutes} minutes complete!`); // removed
         }
     }, 1000);
 

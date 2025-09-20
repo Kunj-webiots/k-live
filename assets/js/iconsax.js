@@ -1,8 +1,8 @@
 /*====================
    Iconsax Js
 =======================*/
-// not perfect, but it works
-// for details please visit: https://glenthemes.github.io/iconsax
+/* not perfect, but it works */
+/* for details please visit: https://glenthemes.github.io/iconsax */
 document.addEventListener("DOMContentLoaded", () => {
     init_iconsax();
 });
@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function init_iconsax() {
     document.querySelectorAll(".iconsax").forEach((iconsax) => {
         var TuT = iconsax.getAttribute("data-icon-name").toLowerCase().trim();
-        // console.log("icon", TuT);
+        /* console.log("icon", TuT); */
 
         fetch("https://glenthemes.github.io/iconsax/icons/" + TuT + ".svg")
             .then((n_n) => {
