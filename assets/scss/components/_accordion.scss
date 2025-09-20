@@ -1,3 +1,9 @@
+@use "../utils/mixin/common";
+
+/**=====================
+    2.1 Accordion CSS
+==========================**/
+
 .custom-accordion {
     display: grid;
     gap: 13px;
@@ -20,9 +26,9 @@
 
                 &::after {
                     content: "\ea4e";
-                    @include font;
+                    @include common.font;
                     background: unset;
-                    @include pseudowh($width: auto, $height: unset);
+                    @include common.pseudowh($width: auto, $height: unset);
                     color: rgba(var(--title-color), 0.8);
                 }
             }
@@ -30,9 +36,6 @@
 
         .accordion-body {
             padding: 0 24px 20px;
-            // padding-top: 0;
-            // padding-inline: 24px;
-            // padding-bottom: 20px;
         }
     }
 }
@@ -136,13 +139,22 @@
         position: relative;
         overflow: hidden;
 
+        body.dark & {
+            background-color: rgba(19, 25, 33, .45);
+        }
+
         &:has(.accordion-header .form-check .form-check-input:checked) {
             &::before {
-                @include pos;
-                @include pseudowh($width: 3px, $height: 100%);
+                @include common.pos;
+                @include common.pseudowh($width: 3px, $height: 100%);
                 top: 0;
                 left: 0;
                 border-left: 3px solid rgba(var(--primary-color), 1);
+
+                [dir="rtl"] & {
+                    left: unset;
+                    right: 0;
+                }
             }
 
             .accordion-header {
@@ -185,58 +197,12 @@
                     position: absolute;
                     top: 0;
                     left: 0;
-                    @include pseudowh;
+                    @include common.pseudowh;
                     opacity: 0;
                     visibility: hidden;
                     float: unset;
                     margin: 0;
                 }
-
-                // .form-check-input {
-                //     float: unset;
-                //     margin: 0;
-                //     border: none;
-                //     position: relative;
-                //     background-image: none;
-                //     background-color: transparent;
-                //     box-shadow: none;
-                //     filter: none;
-                //     margin-top: -4px;
-                //     @include pseudowh($width: 18px, $height: 18px);
-
-                //     &::before {
-                //         @include pos;
-                //         @include center(both);
-                //         @include pseudowh($width: 18px, $height: 18px);
-                //         border-radius: 100%;
-                //         border: 1px solid rgba(var(--border-color), 1);
-                //     }
-
-                //     &::after {
-                //         @include pos;
-                //         top: 50%;
-                //         left: 50%;
-                //         transform: translate(-50%, -50%) scale(0);
-                //         @include pseudowh($width: 11px, $height: 11px);
-                //         border-radius: 100%;
-                //         background-color: rgba(var(--primary-color), 1);
-                //         transition: all 0.2s ease-in-out;
-                //     }
-
-                //     &:checked {
-                //         &::before {
-                //             border-color: rgba(var(--primary-color), 1);
-                //         }
-
-                //         &::after {
-                //             transform: translate(-50%, -50%) scale(1);
-                //         }
-
-                //         ~.form-check-label {
-                //             color: rgba(var(--title-color), 1);
-                //         }
-                //     }
-                // }
 
                 .form-check-label {
                     display: flex;
@@ -259,22 +225,22 @@
                         box-shadow: none;
                         filter: none;
                         margin-top: calc(-1.5px + (-4 - -1.5) * ((100vw - 320px) / (1920 - 320)));
-                        @include pseudowh($width: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320))), $height: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320))));
+                        @include common.pseudowh($width: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320))), $height: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320))));
 
                         &::before {
-                            @include pos;
-                            @include center(both);
-                            @include pseudowh($width: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320))), $height: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320))));
+                            @include common.pos;
+                            @include common.center(both);
+                            @include common.pseudowh($width: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320))), $height: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320))));
                             border-radius: 100%;
                             border: 1px solid rgba(var(--border-color), 1);
                         }
 
                         &::after {
-                            @include pos;
+                            @include common.pos;
                             top: 50%;
                             left: 50%;
                             transform: translate(-50%, -50%) scale(0);
-                            @include pseudowh($width: calc(10px + (11 - 10) * ((100vw - 320px) / (1920 - 320))), $height: calc(10px + (11 - 10) * ((100vw - 320px) / (1920 - 320))));
+                            @include common.pseudowh($width: calc(10px + (11 - 10) * ((100vw - 320px) / (1920 - 320))), $height: calc(10px + (11 - 10) * ((100vw - 320px) / (1920 - 320))));
                             border-radius: 100%;
                             background-color: rgba(var(--primary-color), 1);
                             transition: all 0.2s ease-in-out;
@@ -305,7 +271,6 @@
 
         .accordion-body {
             padding: 0 calc(14px + (24 - 14) * ((100vw - 320px) / (1920 - 320))) calc(14px + (24 - 14) * ((100vw - 320px) / (1920 - 320)));
-            // padding-top: 0;
 
             p {
                 color: rgba(var(--content-color), 0.9);

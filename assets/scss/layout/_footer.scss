@@ -1,5 +1,7 @@
+@use "../utils/mixin/common";
+
 /**=====================
-     Footer CSS
+    3.4 Footer CSS
 ==========================**/
 .footer-section {
     background-color: rgba(var(--white), 1);
@@ -12,13 +14,9 @@
         .footer-title-2 {
             margin-bottom: calc(8px + (18 - 8) * ((100vw - 320px) / (1920 - 320)));
 
-            @include max(575px) {
+            @include common.max(575px) {
                 cursor: pointer;
                 margin: 0;
-
-                // &.active {
-                //     margin-bottom: calc(8px + (18 - 8) * ((100vw - 320px) / (1920 - 320)));
-                // }
             }
 
             h4 {
@@ -30,12 +28,11 @@
         .footer-title-2 {
             ~.footer-content-list {
                 margin-top: calc(10px + (17 - 10) * ((100vw - 320px) / (1920 - 320)));
-                // margin-bottom: calc(10px + 7*(100vw - 320px)/1600);
             }
         }
 
         .footer-content-list {
-            @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(8px + (10 - 8) * ((100vw - 320px) / (1920 - 320))));
+            @include common.flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(8px + (10 - 8) * ((100vw - 320px) / (1920 - 320))));
             margin-bottom: calc(10px + (17 - 10) * ((100vw - 320px) / (1920 - 320)));
 
             li {
@@ -51,7 +48,7 @@
 
                         svg {
                             fill: rgba(var(--primary-color), 1);
-                            @include pseudowh($width: calc(24px + (29 - 24) * ((100vw - 320px) / (1920 - 320))), $height: calc(21px + (29 - 21) * ((100vw - 320px) / (1920 - 320))));
+                            @include common.pseudowh($width: calc(24px + (29 - 24) * ((100vw - 320px) / (1920 - 320))), $height: calc(21px + (29 - 21) * ((100vw - 320px) / (1920 - 320))));
 
                             &.svg-theme-color {
                                 fill: rgba(var(--primary-color3), 1);
@@ -67,7 +64,11 @@
 
                         &.theme-color4 {
                             svg {
-                                fill: rgba(var(--primary-color4), 1);
+                                fill: rgba(var(--primary-color), 1);
+                            }
+
+                            h4 {
+                                color: rgba(var(--primary-color), 1);
                             }
                         }
                     }
@@ -85,7 +86,11 @@
                         place-items: center;
 
                         svg {
-                            @include pseudowh($width: 21px, $height: 21px);
+                            @include common.pseudowh($width: 21px, $height: 21px);
+
+                            body.dark & {
+                                fill: #fff
+                            }
 
                             &.content-color {
                                 fill: rgba(var(--content-color), 1);
@@ -101,10 +106,8 @@
         }
 
         .social-icon-box {
-            display: flex;
+            @include common.flex_wrap($dis: flex, $wrap: wrap, $gap: calc(6px + (10 - 6) * ((100vw - 320px) / (1920 - 320))));
             align-items: center;
-            gap: calc(6px + (10 - 6) * ((100vw - 320px) / (1920 - 320)));
-            flex-wrap: wrap;
 
             .social-icon-list {
                 li {
@@ -114,12 +117,24 @@
                         margin-left: 6px;
                         padding-left: 6px;
 
+                        [dir="rtl"] & {
+                            margin-left: unset;
+                            padding-left: unset;
+                            margin-right: 6px;
+                            padding-right: 6px;
+                        }
+
                         &::before {
-                            @include pos;
-                            @include center(vertical);
+                            @include common.pos;
+                            @include common.center(vertical);
                             left: -2px;
-                            @include pseudowh($width: 1px, $height: 14px);
+                            @include common.pseudowh($width: 1px, $height: 14px);
                             background-color: rgba(var(--content-color), 0.2);
+
+                            [dir="rtl"] & {
+                                left: unset;
+                                right: -2px;
+                            }
                         }
                     }
 
@@ -133,29 +148,15 @@
         }
 
         .footer-list {
-            @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(4px + (9 - 4) * ((100vw - 320px) / (1920 - 320))));
+            @include common.flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(4px + (9 - 4) * ((100vw - 320px) / (1920 - 320))));
 
-            @include max(575px) {
-                // margin: 0;
+            @include common.max(575px) {
                 margin-top: calc(8px + (18 - 8) * ((100vw - 320px) / (1920 - 320)));
-
-                // &.active {
-                //     margin-bottom: calc(8px + (18 - 8) * ((100vw - 320px) / (1920 - 320)));
-                // }
             }
 
             li {
                 width: 100%;
                 display: block;
-
-                // &:hover {
-                //     a {
-                //         &::before {
-                //             width: 100%;
-                //             background-color: rgba(var(--title-color), 0.8);
-                //         }
-                //     }
-                // }
 
                 a {
                     font-weight: 400;
@@ -165,26 +166,35 @@
                     display: inline-block;
                     transition: 0.3s ease-in-out;
 
-                    @include max(575.98px) {
+                    @include common.max(575.98px) {
                         margin-left: 5px;
                         display: flex;
                         align-items: center;
-                        gap: 10px;
+                        gap: calc(6px + (10 - 6) * ((100vw - 320px) / (576 - 320)));
+
+                        [dir="rtl"] & {
+                            margin-left: unset;
+                            margin-right: 5px;
+                        }
                     }
 
                     &::before {
-                        @include pos;
+                        @include common.pos;
                         bottom: 0;
                         left: 0;
-                        @include pseudowh($width: 0, $height: 2px);
+                        @include common.pseudowh($width: 0, $height: 2px);
                         background-color: rgba(var(--content-color), 0.3);
                         transition: 0.3s ease-in-out;
 
-                        @include max(575.98px) {
+                        [dir="rtl"] & {
+                            left: unset;
+                            right: 0;
+                        }
+
+                        @include common.max(575.98px) {
                             position: relative;
                             inset: unset;
-                            width: 5px;
-                            height: 5px;
+                            @include common.pseudowh($width: calc(4px + (5 - 4) * ((100vw - 320px) / (576 - 320))), $height: calc(4px + (5 - 4) * ((100vw - 320px) / (576 - 320))));
                             display: block;
                             border-radius: 100%;
                             background-color: rgba(var(--title-color), 0.7);
@@ -198,7 +208,7 @@
                             width: 100%;
                             background-color: rgba(var(--title-color), 0.8);
 
-                            @include max(575.98px) {
+                            @include common.max(575.98px) {
                                 background-color: rgba(var(--title-color), 0.7);
                                 width: 5px;
                             }
@@ -213,31 +223,13 @@
                     position: relative;
                     display: inline-block;
                     transition: 0.3s ease-in-out;
-
-                    // &::before {
-                    //     @include pos;
-                    //     bottom: 0;
-                    //     left: 0;
-                    //     @include pseudowh($width: 0, $height: 2px);
-                    //     background-color: rgba(var(--content-color), 1);
-                    //     transition: 0.3s ease-in-out;
-                    // }
-
-                    // &:hover {
-                    //     color: rgba(var(--title-color), 1);
-
-                    //     &::before {
-                    //         width: 100%;
-                    //         background-color: rgba(var(--title-color), 0.8);
-                    //     }
-                    // }
                 }
             }
         }
 
         .app-store-link {
             margin-top: calc(11px + (18 - 11) * ((100vw - 320px) / (1920 - 320)));
-            @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(6px + (11 - 6) * ((100vw - 320px) / (1920 - 320))));
+            @include common.flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(6px + (11 - 6) * ((100vw - 320px) / (1920 - 320))));
             align-items: center;
 
             li {
@@ -257,12 +249,12 @@
             .footer-content-list {
                 li {
                     .content-box {
-                        color: rgba(var(--white), 1);
+                        color: #fff;
 
                         .footer-content-icon {
                             svg {
                                 &.content-color {
-                                    fill: rgba(var(--white), 1);
+                                    fill: #fff;
                                 }
                             }
                         }
@@ -273,14 +265,14 @@
             .social-icon-box {
                 h5 {
                     &.text-theme-content {
-                        color: rgba(var(--white), 1) !important;
+                        color: #fff !important;
                     }
                 }
 
                 .social-icon-list {
                     li {
                         a {
-                            color: rgba(var(--white), 1);
+                            color: #fff;
                         }
                     }
                 }
@@ -289,19 +281,19 @@
             .footer-list {
                 li {
                     a {
-                        color: rgba(var(--white), 0.6);
+                        color: rgba(255, 255, 255, 0.6);
 
                         &:hover {
-                            color: rgba(var(--white), 1);
+                            color: rgba(255, 255, 255, 1);
 
                             &::before {
-                                background-color: rgba(var(--white), 0.8);
+                                background-color: rgba(255, 255, 255, 0.8);
                             }
                         }
                     }
 
                     p {
-                        color: rgba(var(--white), 0.6);
+                        color: rgba(255, 255, 255, 0.6);
                     }
                 }
             }
@@ -310,15 +302,15 @@
 
     .sub-footer {
         padding-block: 14px 13px;
-        @include flex_common ($dis: flex, $align: center, $justify: space-between);
+        @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
         flex-wrap: wrap;
         gap: 15px;
 
-        @include max(767px) {
+        @include common.max(767px) {
             justify-content: center;
         }
 
-        @include max(575px) {
+        @include common.max(575px) {
             padding-bottom: calc(79px + (86 - 79) * ((100vw - 320px) / (575 - 320)));
         }
 
@@ -352,7 +344,7 @@
         }
 
         .footer-content-list {
-            @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(8px + (10 - 8) * ((100vw - 320px) / (1920 - 320))));
+            @include common.flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(8px + (10 - 8) * ((100vw - 320px) / (1920 - 320))));
             margin-bottom: calc(10px + (17 - 10) * ((100vw - 320px) / (1920 - 320)));
 
             li {
@@ -368,7 +360,7 @@
 
                         svg {
                             fill: rgba(var(--primary-color3), 1);
-                            @include pseudowh($width: calc(24px + (29 - 24) * ((100vw - 320px) / (1920 - 320))), $height: calc(21px + (29 - 21) * ((100vw - 320px) / (1920 - 320))));
+                            @include common.pseudowh($width: calc(24px + (29 - 24) * ((100vw - 320px) / (1920 - 320))), $height: calc(21px + (29 - 21) * ((100vw - 320px) / (1920 - 320))));
                         }
 
                         h4 {
@@ -399,8 +391,12 @@
                         place-items: center;
 
                         svg {
-                            @include pseudowh($width: 21px, $height: 21px);
+                            @include common.pseudowh($width: 21px, $height: 21px);
                             fill: rgba(var(--white), 0.5);
+
+                            body.dark & {
+                                fill: rgba(255, 255, 255, 0.5);
+                            }
                         }
                     }
 
@@ -418,6 +414,10 @@
 
             h5 {
                 color: rgba(var(--white), 0.5);
+
+                body.dark & {
+                    color: rgba(255, 255, 255, 0.5);
+                }
             }
 
             .social-icon-list {
@@ -427,6 +427,10 @@
                     &:hover {
                         a {
                             color: rgba(var(--white), 0.9);
+
+                            body.dark & {
+                                color: rgba(255, 255, 255, 0.9);
+                            }
                         }
                     }
 
@@ -434,12 +438,28 @@
                         margin-left: 6px;
                         padding-left: 6px;
 
+                        [dir="rtl"] & {
+                            margin-left: unset;
+                            margin-right: 6px;
+                            padding-left: unset;
+                            padding-right: 6px;
+                        }
+
                         &::before {
-                            @include pos;
-                            @include center(vertical);
+                            @include common.pos;
+                            @include common.center(vertical);
                             left: -2px;
-                            @include pseudowh($width: 1px, $height: 14px);
+                            @include common.pseudowh($width: 1px, $height: 14px);
                             background-color: rgba(var(--white), 0.2);
+
+                            [dir="rtl"] & {
+                                left: unset;
+                                right: -2px;
+                            }
+
+                            body.dark & {
+                                background-color: rgba(255, 255, 255, 0.2);
+                            }
                         }
                     }
 
@@ -448,13 +468,17 @@
                         font-size: calc(15px + (17 - 15) * ((100vw - 320px) / (1920 - 320)));
                         line-height: 1;
                         transition: 0.3s ease-in-out;
+
+                        body.dark & {
+                            color: rgba(255, 255, 255, 0.5);
+                        }
                     }
                 }
             }
         }
 
         .footer-list {
-            @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(4px + (9 - 4) * ((100vw - 320px) / (1920 - 320))));
+            @include common.flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(4px + (9 - 4) * ((100vw - 320px) / (1920 - 320))));
 
             li {
                 width: 100%;
@@ -464,9 +488,17 @@
                     a {
                         color: rgba(var(--white), 0.9);
 
+                        body.dark & {
+                            color: rgba(255, 255, 255, 0.9);
+                        }
+
                         &::after {
                             width: 100%;
                             background-color: rgba(var(--white), 0.9);
+
+                            body.dark & {
+                                background-color: rgba(255, 255, 255, 0.9);
+                            }
                         }
                     }
                 }
@@ -479,13 +511,26 @@
                     position: relative;
                     transition: .3s ease-in-out;
 
+                    body.dark & {
+                        color: rgba(255, 255, 255, 0.5);
+                    }
+
                     &::after {
-                        @include pos;
+                        @include common.pos;
                         bottom: 0;
                         left: 0;
-                        @include pseudowh($width: 0, $height: 1px);
+                        @include common.pseudowh($width: 0, $height: 1px);
                         background-color: rgba(var(--white), 0.5);
                         transition: .3s ease-in-out;
+
+                        [dir="rtl"] & {
+                            left: unset;
+                            right: 0;
+                        }
+
+                        body.dark & {
+                            background-color: rgba(255, 255, 255, 0.5);
+                        }
                     }
                 }
 
@@ -497,21 +542,16 @@
                     position: relative;
                     transition: .3s ease-in-out;
 
-                    // &::after {
-                    //     @include pos;
-                    //     bottom: 0;
-                    //     left: 0;
-                    //     @include pseudowh($width: 0, $height: 1px);
-                    //     background-color: rgba(var(--white), 0.5);
-                    //     transition: .3s ease-in-out;
-                    // }
+                    body.dark & {
+                        color: rgba(255, 255, 255, 0.5);
+                    }
                 }
             }
         }
 
         .app-store-link {
             margin-top: calc(11px + (18 - 11) * ((100vw - 320px) / (1920 - 320)));
-            @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(6px + (11 - 6) * ((100vw - 320px) / (1920 - 320))));
+            @include common.flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(6px + (11 - 6) * ((100vw - 320px) / (1920 - 320))));
             align-items: center;
 
             li {
@@ -524,11 +564,11 @@
 
     .sub-footer {
         padding-block: 14px 13px;
-        @include flex_common ($dis: flex, $align: center, $justify: space-between);
+        @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
         flex-wrap: wrap;
         gap: calc(7px + (15 - 7) * ((100vw - 320px) / (1920 - 320)));
 
-        @include max(767px) {
+        @include common.max(767px) {
             justify-content: center;
         }
 
@@ -539,9 +579,7 @@
         }
 
         .sub-footer-logo {
-            @include pseudowh($width: calc(110px + (180 - 110) * ((100vw - 320px) / (1920 - 320))), $height: auto);
-            // width: calc(110px + (180 - 110) * ((100vw - 320px) / (1920 - 320)));
-            // height: auto;
+            @include common.pseudowh($width: calc(110px + (180 - 110) * ((100vw - 320px) / (1920 - 320))), $height: auto);
 
             img {
                 @extend %img-contain;

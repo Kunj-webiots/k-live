@@ -1,5 +1,7 @@
+@use "../utils/mixin/common";
+
 /**=====================
-   Ratio CSS Start
+   2.14 Ratio CSS Start
 ==========================**/
 @use "sass:math";
 
@@ -259,7 +261,7 @@
         padding-top: 148%;
         display: block;
 
-        @include max(1199px) {
+        @include common.max(1199px) {
             padding-top: 88%;
         }
     }
@@ -282,5 +284,5 @@
 }
 
 .ratio-8x5 {
-    @include ratio(math.div(8, 5), cover, left);
+    @include common.ratio(math.div(8, 5), cover, left);
 }

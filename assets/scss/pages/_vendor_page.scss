@@ -1,5 +1,7 @@
+@use "../utils/mixin/common";
+
 /**=====================
-     Vendor Page SCSS
+    4.7 Vendor Page CSS
 ==========================**/
 .seller-box {
     background-color: rgba(var(--white), 1);
@@ -7,10 +9,13 @@
     border-radius: 10px;
     transition: all 0.3s ease-in-out;
     position: relative;
-    // box-shadow: 6px 4px 8px 3px rgba(var(--title-color), 0.02);
 
     &:hover {
         box-shadow: 6px 4px 8px 3px rgba(var(--title-color), 0.05);
+
+        body.dark & {
+            box-shadow: 6px 4px 8px 3px #7777770d;
+        }
     }
 
     .ribbon {
@@ -28,6 +33,22 @@
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, var(--r) calc(100% - .25em), 0 50%, var(--r) .25em);
         background: radial-gradient(.2em 50% at right, rgba(var(--title-color), 0), rgba(var(--title-color), 0)) border-box, rgba(var(--primary-color), 1) padding-box;
         width: fit-content;
+
+        [dir="rtl"] & {
+            clip-path: polygon(var(--r) calc(100% - .25em), 0 50%, var(--r) .25em, 0 0, 100% 0, 100% 100%, 0 100%);
+            right: unset;
+            left: 0;
+            padding-inline: .5em calc(var(--r) + .25em);
+            transform: scaleX(-1);
+
+            span {
+                transform: scaleX(-1);
+            }
+        }
+
+        span {
+            display: block;
+        }
 
         &.rating {
             background: radial-gradient(.2em 50% at right, rgba(var(--title-color), 0), rgba(var(--title-color), 0)) border-box, rgba(var(--primary-color2), 1) padding-box;
@@ -49,20 +70,16 @@
     .seller-head {
         display: flex;
         gap: calc(10px + (14 - 10) * ((100vw - 320px) / (1920 - 320)));
-        // padding: 18px;
-        // border-bottom: 1px solid rgba(var(--border-color), 1);
 
-        @include max(400.98px) {
+        @include common.max(400.98px) {
             display: grid;
         }
 
         .seller-img {
-            @include flex_common;
-            @include pseudowh($width: calc(94px + (110 - 94) * ((100vw - 320px) / (1920 - 320))), $height: calc(54px + (60 - 54) * ((100vw - 320px) / (1920 - 320))));
+            @include common.flex_common;
+            @include common.pseudowh($width: calc(94px + (110 - 94) * ((100vw - 320px) / (1920 - 320))), $height: calc(54px + (60 - 54) * ((100vw - 320px) / (1920 - 320))));
             background-color: rgba(var(--content-color), 0.05);
             padding: calc(12px + (14 - 12) * ((100vw - 320px) / (1920 - 320)));
-            // width: 110px;
-            // height: 60px;
             border-radius: calc(6px + (8 - 6) * ((100vw - 320px) / (1920 - 320)));
 
             img {
@@ -73,7 +90,7 @@
         .seller-name {
             width: calc(100% - calc(94px + (110 - 94) * ((100vw - 320px) / (1920 - 320))) - calc(10px + (14 - 10) * ((100vw - 320px) / (1920 - 320))));
 
-            @include max(400.98px) {
+            @include common.max(400.98px) {
                 width: 100%;
             }
 
@@ -143,92 +160,16 @@
                 span {
                     font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
                     line-height: 1.5;
-                    // margin-top: 5px;
-                    @include line($line: 2);
+                    @include common.line($line: 2);
                     font-weight: 400;
                     color: rgba(var(--content-color), 1);
                 }
             }
         }
-
-        // .product-list {
-        //     display: flex;
-        //     align-items: center;
-        //     margin-top: 11px;
-        //     padding-top: 11px;
-        //     border-top: 1px dashed rgba(var(--border-color), 1);
-
-        //     li {
-        //         width: 40px;
-        //         height: 40px;
-        //         // width: 150px;
-        //         // height: 150px;
-        //         background-color: #efeff1;
-        //         border-radius: 100%;
-        //         padding: 8px;
-        //         border: 1px solid rgba(var(--title-color), 0.19);
-        //         outline: 2px solid rgba(var(--white), 1);
-        //         @include flex_common;
-
-        //         &:nth-child(2) {
-        //             background-color: rgb(253 176 176);
-        //             border-color: rgb(252 104 104);
-        //         }
-
-        //         &:nth-child(3) {
-        //             border-color: rgb(85 94 107);
-        //             background-color: rgb(166 171 177);
-        //         }
-
-        //         &:nth-child(4) {
-        //             border-color: rgb(114 173 115);
-        //             background-color: rgb(181 212 181);
-        //         }
-
-        //         &:nth-child(5) {
-        //             border-color: rgb(132 136 152);
-        //             background-color: rgb(191 192 201);
-        //         }
-
-        //         // &:nth-child(2) {
-        //         //     background-color: rgb(253 136 136);
-        //         // }
-
-        //         // &:nth-child(3) {
-        //         //     background-color: rgb(121 128 138);
-        //         // }
-
-        //         // &:nth-child(4) {
-        //         //     background-color: rgb(144 190 145);
-        //         // }
-
-        //         // &:nth-child(5) {
-        //         //     background-color: rgb(113 117 122);
-        //         // }
-
-        //         +li {
-        //             margin-left: -15px;
-        //         }
-
-        //         &.number {
-        //             border-color: transparent;
-        //             background-color: rgba(var(--primary-color), 1);
-        //             color: #fff;
-        //             line-height: 1;
-        //         }
-
-        //         img {
-        //             @extend %img-contain;
-        //             // width: 100%;
-        //             // height: 100%;
-        //             // object-fit: contain;
-        //         }
-        //     }
-        // }
     }
 
     .seller-bottom {
-        @include flex_common($dis: flex, $align: center, $justify: space-between);
+        @include common.flex_common($dis: flex, $align: center, $justify: space-between);
         gap: calc(10px + (14 - 10) * ((100vw - 320px) / (1920 - 320)));
         flex-wrap: wrap;
 
@@ -248,7 +189,6 @@
             z-index: unset;
             align-items: center;
 
-            // gap: ;
             li {
                 position: relative;
                 margin-right: calc(6px + (10 - 6) * ((100vw - 320px) / (1920 - 320)));
@@ -256,6 +196,13 @@
                 padding-block: calc(3px + (5 - 3) * ((100vw - 320px) / (1920 - 320)));
                 color: rgba(var(--content-color), 1);
                 font-weight: 400;
+
+                [dir="rtl"] & {
+                    margin-left: calc(6px + (10 - 6) * ((100vw - 320px) / (1920 - 320)));
+                    margin-right: unset;
+                    padding-left: calc(6px + (10 - 6) * ((100vw - 320px) / (1920 - 320)));
+                    padding-right: unset;
+                }
 
                 &:first-child {
                     &:last-child {
@@ -265,21 +212,17 @@
                     }
                 }
 
-                // &:has(:not(:last-child)) {
-                // &:first-child:not(:last-child) {
-                //     min-width: 150px;
-                // }
-
-                // }
-
                 &::before {
-                    @include pos;
-                    @include pseudowh($width: 1px, $height: 100%);
+                    @include common.pos;
+                    @include common.pseudowh($width: 1px, $height: 100%);
                     right: 0;
                     top: 0;
-                    // width: 1px;
-                    // height: 100%;
                     border-right: 1px solid rgba(var(--border-color), 1);
+
+                    [dir="rtl"] & {
+                        right: unset;
+                        left: 0;
+                    }
                 }
 
                 &:last-child {
@@ -291,19 +234,15 @@
                     }
                 }
 
-                // +li {
-                //     margin-left: 10px;
-                //     padding-left: 10px;
-                //     // border-left: 1px solid rgba(var(--border-color), 1);
-                // }
-
                 .progress {
-                    @include pseudowh($width: 115px, $height: calc(3px + (5 - 3) * ((100vw - 320px) / (1920 - 320))));
-                    // height: 5px;
+                    @include common.pseudowh($width: 115px, $height: calc(3px + (5 - 3) * ((100vw - 320px) / (1920 - 320))));
                     background-color: rgba(var(--content-color), 0.05);
                     margin-top: 2px;
-                    // width: 115px;
                     border-radius: 100px;
+
+                    body.dark & {
+                        background-color: rgba(var(--border-color), 1);
+                    }
 
                     .progress-bar {
                         background-color: rgba(var(--primary-color), 1);
@@ -315,7 +254,7 @@
 
         .right-box {
             .btn {
-                @include flex_common;
+                @include common.flex_common;
                 padding: calc(8px + (10 - 8) * ((100vw - 320px) / (1920 - 320))) calc(10px + (12 - 10) * ((100vw - 320px) / (1920 - 320))) calc(7px + (9 - 7) * ((100vw - 320px) / (1920 - 320)));
                 line-height: 1;
                 font-size: calc(14px + (15 - 14) * ((100vw - 320px) / (1920 - 320)));
@@ -325,7 +264,6 @@
                 border: 1px solid rgba(var(--primary-color), 1);
 
                 &:hover {
-                    // border-color: rgba(var(--primary-color), 1);
                     color: #fff;
                     background-color: rgba(var(--primary-color), 1);
                 }
@@ -377,36 +315,15 @@
                 position: absolute;
                 top: calc(12px + (18 - 12) * ((100vw - 320px) / (1920 - 320)));
                 right: calc(12px + (18 - 12) * ((100vw - 320px) / (1920 - 320)));
+
+                [dir="rtl"] & {
+                    left: calc(12px + (18 - 12) * ((100vw - 320px) / (1920 - 320)));
+                    right: unset;
+                }
             }
 
             .seller-name {
                 position: relative;
-
-                // .rating {
-                //     position: absolute;
-                //     top: 0;
-                //     right: 0;
-
-                //     i {
-                //         color: rgba(var(--rating), 1);
-                //         font-size: 16px;
-                //         line-height: 1;
-                //     }
-                // }
-
-                // h5 {
-                //     display: inline-block;
-                //     background-color: rgba(var(--primary-color), 0.1);
-                //     padding: calc(8px + (10 - 8) * ((100vw - 320px) / (1920 - 320))) calc(10px + (15 - 10) * ((100vw - 320px) / (1920 - 320))) calc(6px + (8 - 6) * ((100vw - 320px) / (1920 - 320)));
-                //     line-height: 1;
-                //     text-transform: capitalize;
-                //     font-size: calc(14px + (15 - 14) * ((100vw - 320px) / (1920 - 320)));
-                //     border-radius: 4px;
-                //     color: rgba(var(--primary-color), 1);
-                //     position: absolute;
-                //     top: 0;
-                //     right: 0;
-                // }
 
                 >span {
                     display: block;
@@ -434,36 +351,33 @@
         border: 1px solid rgba(var(--border-color), 1);
         border-radius: calc(6px + (8 - 6) * ((100vw - 320px) / (1920 - 320)));
 
-        @include max(1199.98px) {
+        @include common.max(1199.98px) {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
         }
 
-        @include max(575.98px) {
+        @include common.max(575.98px) {
             flex-direction: column;
             display: flex;
         }
 
         .profile-image {
-            @include flex_common;
+            @include common.flex_common;
             text-align: center;
             width: 20%;
 
-            @include max(1199.98px) {
+            @include common.max(1199.98px) {
                 order: 1;
                 width: 100%;
             }
 
             .band-image {
-                @include pseudowh($width: calc(96px + (120 - 96) * ((100vw - 320px) / (1920 - 320))), $height: calc(56px + (70 - 56) * ((100vw - 320px) / (1920 - 320))));
-                // display: block;
+                @include common.pseudowh($width: calc(96px + (120 - 96) * ((100vw - 320px) / (1920 - 320))), $height: calc(56px + (70 - 56) * ((100vw - 320px) / (1920 - 320))));
                 background-color: rgba(var(--content-color), 0.05);
                 margin: 0 auto calc(12px + (16 - 12) * ((100vw - 320px) / (1920 - 320)));
                 padding: calc(12px + (14 - 12) * ((100vw - 320px) / (1920 - 320)));
                 border-radius: 6px;
-                // width: 120px;
-                // height: 70px;
-                @include flex_common;
+                @include common.flex_common;
 
                 img {
                     @extend %img-contain;
@@ -510,7 +424,16 @@
             display: flex;
             align-items: center;
 
-            @include max(1199.98px) {
+            [dir="rtl"] & {
+                border-right: 1px solid rgba(var(--border-color), 1);
+                border-left: unset;
+                padding-right: calc(12px + (20 - 12) * ((100vw - 320px) / (1920 - 320)));
+                padding-left: unset;
+                margin-right: calc(12px + (20 - 12) * ((100vw - 320px) / (1920 - 320)));
+                margin-left: unset;
+            }
+
+            @include common.max(1199.98px) {
                 order: 3;
                 grid-area: 2 / 1 / 3 / 3;
                 width: 100%;
@@ -521,6 +444,12 @@
                 padding-left: 0;
                 margin-left: 0;
                 display: block;
+
+                [dir="rtl"] & {
+                    border-right: unset;
+                    padding-right: unset;
+                    margin-right: unset;
+                }
             }
 
             h6 {
@@ -544,27 +473,28 @@
         }
 
         .vendor-contact {
-            @include flex_common;
+            @include common.flex_common;
             border-left: 1px solid rgba(var(--border-color), 1);
             padding-left: calc(12px + (20 - 12) * ((100vw - 320px) / (1920 - 320)));
             margin-left: calc(12px + (20 - 12) * ((100vw - 320px) / (1920 - 320)));
             width: 20%;
             text-align: center;
 
-            @include max(1199.98px) {
-                order: 2;
-                // grid-area: 2 / 1 / 3 / 3;
-                width: 100%;
-                // border-top: 1px solid rgba(var(--border-color), 1);
-                // padding-top: 20px;
-                // margin-top: 20px;
-                // border-left: 0;
-                // padding-left: 0;
-                // margin-left: 0;
-                // display: block;
+            [dir="rtl"] & {
+                border-right: 1px solid rgba(var(--border-color), 1);
+                border-left: unset;
+                padding-right: calc(12px + (20 - 12) * ((100vw - 320px) / (1920 - 320)));
+                padding-left: unset;
+                margin-right: calc(12px + (20 - 12) * ((100vw - 320px) / (1920 - 320)));
+                margin-left: unset;
             }
 
-            @include max(575.98px) {
+            @include common.max(1199.98px) {
+                order: 2;
+                width: 100%;
+            }
+
+            @include common.max(575.98px) {
                 border-top: 1px solid rgba(var(--border-color), 1);
                 padding-top: calc(12px + (20 - 12) * ((100vw - 320px) / (1920 - 320)));
                 margin-top: calc(12px + (20 - 12) * ((100vw - 320px) / (1920 - 320)));
@@ -612,7 +542,7 @@
                 gap: calc(5px + (7 - 5) * ((100vw - 320px) / (1920 - 320)));
 
                 li {
-                    @include flex_common;
+                    @include common.flex_common;
                     gap: 7px;
 
                     i {
@@ -623,7 +553,6 @@
 
                     a {
                         text-transform: none;
-                        // text-transform: capitalize;
                     }
 
                     h5,
@@ -650,25 +579,11 @@
 
 .seller-details-section-2 {
     .seller-main-box {
-        // background-color: rgba(var(--white), 1);
-        // position: relative;
-        // padding: 20px;
-        // height: auto;
-        // border-radius: 11px;
-
         .seller-top-box {
-            // display: flex;
             padding: calc(12px + (40 - 12) * ((100vw - 320px) / (1920 - 320))) calc(12px + (30 - 12) * ((100vw - 320px) / (1920 - 320)));
             background-color: rgba(var(--white), 1);
             overflow: hidden;
-            // border: 1px solid rgba(var(--border-color), 1);
             border-radius: calc(10px + (15 - 10) * ((100vw - 320px) / (1920 - 320)));
-            // @include flex_common ($dis: flex !important, $align: center, $justify: flex-end);
-
-            // .bg-image {
-            //     object-fit: cover;
-            //     aspect-ratio: 17 / 5;
-            // }
 
             .seller-main-box {
                 background-color: rgba(var(--white), 1);
@@ -678,11 +593,11 @@
                 margin-left: auto;
                 box-shadow: 6px 4px 8px 3px rgba(var(--title-color), 0.02);
 
-                @include max(1399px) {
+                @include common.max(1399px) {
                     width: 58%;
                 }
 
-                @include max(1080px) {
+                @include common.max(1080px) {
                     width: 100%;
                 }
 
@@ -693,18 +608,13 @@
                     padding-bottom: calc(8px + (13 - 8) * ((100vw - 320px) / (1920 - 320)));
                     border-bottom: 1px dashed rgba(var(--border-color), 1);
                     gap: calc(8px + (16 - 8) * ((100vw - 320px) / (1920 - 320)));
-                    // text-align: center;
-                    // width: 20%;
 
                     .band-image {
-                        @include flex_common;
-                        // display: block;
+                        @include common.flex_common;
                         background-color: rgba(var(--content-color), 0.05);
                         padding: calc(10px + (14 - 10) * ((100vw - 320px) / (1920 - 320)));
                         border-radius: 6px;
-                        @include pseudowh($width: calc(98px + (120 - 98) * ((100vw - 320px) / (1920 - 320))), $height: calc(54px + (70 - 54) * ((100vw - 320px) / (1920 - 320))));
-                        // width: 120px;
-                        // height: 70px;
+                        @include common.pseudowh($width: calc(98px + (120 - 98) * ((100vw - 320px) / (1920 - 320))), $height: calc(54px + (70 - 54) * ((100vw - 320px) / (1920 - 320))));
 
                         img {
                             @extend %img-contain;
@@ -721,7 +631,6 @@
                     }
 
                     .rating {
-                        // justify-content: center;
                         margin-top: 2px;
 
                         ul {
@@ -739,6 +648,11 @@
                             line-height: 1;
                             padding-top: 3px;
                             margin-left: 5px;
+
+                            [dir="rtl"] & {
+                                margin-left: 5px;
+                                margin-right: 5px;
+                            }
                         }
                     }
 
@@ -753,7 +667,6 @@
                 h2 {
                     font-size: calc(22px + (26 - 22) * ((100vw - 320px) / (1920 - 320)));
                     font-weight: 500;
-                    // line-height: 1.1;
                 }
 
                 p {
@@ -766,8 +679,6 @@
 
         .brand-related-product {
             margin-top: 20px;
-            // padding-top: 1.5rem;
-            // border-top: 1px solid #ddd;
 
             .related-box {
                 background-color: rgba(var(--white), 1);
@@ -795,8 +706,7 @@
 
                     i {
                         position: absolute;
-                        top: 50%;
-                        transform: translateY(-50%);
+                        @include common.center(vertical);
                         left: 0;
                         font-size: calc(16px + (17 - 16) * ((100vw - 320px) / (1920 - 320)));
                         padding-inline: calc(10px + (14 - 10) * ((100vw - 320px) / (1920 - 320)));
@@ -812,7 +722,7 @@
                     padding-top: calc(10px + (14 - 10) * ((100vw - 320px) / (1920 - 320)));
                     border-top: 1px solid rgba(var(--border-color), 1);
 
-                    @include max(480px) {
+                    @include common.max(480px) {
                         display: grid;
                         gap: 3px;
                     }
@@ -823,14 +733,15 @@
                         white-space: nowrap;
                         margin-top: 7px;
 
-                        @include max(480px) {
+                        @include common.max(480px) {
                             margin-top: 0;
                         }
                     }
 
                     ul {
-                        display: flex;
                         align-items: center;
+                        @include common.flex_wrap($dis: flex, $wrap: wrap, $gap: calc(4px + (8 - 4) * ((100vw - 320px) / (1920 - 320))));
+                        display: flex;
                         flex-wrap: wrap;
                         gap: calc(4px + (8 - 4) * ((100vw - 320px) / (1920 - 320)));
 
@@ -843,11 +754,8 @@
                                 left: 0;
                                 margin: 0;
                                 cursor: pointer;
-                                @include pseudowh;
-                                // width: 100%;
+                                @include common.pseudowh;
                                 opacity: 0;
-                                // height: 100%;
-                                // background-color: red;
 
                                 &:hover {
                                     ~.form-check-label {
@@ -875,6 +783,10 @@
                                 border: 1px solid rgba(var(--border-color), 1);
                                 border-radius: 100px;
                                 transition: all 0.2s ease-in-out;
+
+                                body.dark & {
+                                    background-color: #1a232e;
+                                }
                             }
                         }
                     }
@@ -888,9 +800,18 @@
                     border-radius: 100px;
                     margin-top: calc(12px + (18 - 12) * ((100vw - 320px) / (1920 - 320)));
 
+                    body.dark & {
+                        background-color: #1a232e;
+                        border-color: #1a232e;
+                    }
+
                     &:hover {
                         color: rgba(var(--theme-blue), 1);
                         background-color: transparent;
+
+                        body.dark & {
+                            color: #fff;
+                        }
                     }
                 }
             }
@@ -902,11 +823,239 @@
 
                 .product-box-4 {
                     .product-image {
-                        // aspect-ratio: 17 / 10;
                         background-color: rgba(var(--white), 1);
                     }
                 }
             }
+        }
+    }
+}
+
+.boost-marketing-section {
+    .marketing-contain {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        h2 {
+            font-size: calc(24px + (45 - 24) * ((100vw - 320px) / (1920 - 320)));
+            font-weight: 600;
+            width: 80%;
+            line-height: 1.1;
+
+            @include common.max(991.98px) {
+                width: 100%;
+            }
+        }
+
+        p {
+            margin-top: 3px;
+            font-size: calc(15px + (19 - 15) * ((100vw - 320px) / (1920 - 320)));
+            color: rgba(var(--content-color), 1);
+        }
+
+        .btn-group {
+            border-radius: 0;
+            display: block;
+            margin-top: 28px;
+
+            .btn {
+                padding: calc(10px + (13 - 10) * ((100vw - 320px) / (1920 - 320))) calc(25px + (47 - 25) * ((100vw - 320px) / (1920 - 320))) calc(7px + (10 - 7) * ((100vw - 320px) / (1920 - 320)));
+                border-radius: 5px;
+                font-size: calc(15px + (19 - 15) * ((100vw - 320px) / (1920 - 320)));
+            }
+        }
+    }
+
+    .marketing-image {
+        border-radius: 18px;
+        overflow: hidden;
+    }
+}
+
+.sell-theme-section {
+    background-color: rgba(var(--theme-blue), 1);
+    padding-block: calc(34px + (90 - 34) * ((100vw - 320px) / (1920 - 320)));
+
+    .seller-title {
+        text-align: center;
+        margin-bottom: calc(22px + (39 - 22) * ((100vw - 320px) / (1920 - 320)));
+
+        h3 {
+            color: rgba(var(--white), 1);
+            font-size: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320)));
+            font-weight: 600;
+            margin-top: calc(-3px + (-5 - -3) * ((100vw - 320px) / (1920 - 320)));
+
+            body.dark & {
+                color: #fff;
+            }
+        }
+
+        p {
+            color: rgba(var(--white), 0.7);
+            width: 61%;
+            margin: 6px auto 0;
+            font-size: calc(15px + (17 - 15) * ((100vw - 320px) / (1920 - 320)));
+
+            body.dark & {
+                color: rgba(255, 255, 255, 0.7);
+            }
+
+            @include common.max(1244px) {
+                width: 95%;
+            }
+
+            @include common.max(800px) {
+                width: 100%;
+            }
+        }
+    }
+
+    .sell-box {
+        color: rgba(var(--white), 1);
+
+        body.dark & {
+            color: #fff;
+        }
+
+        @include common.max(767.98px) {
+            text-align: center;
+        }
+
+        svg {
+            @include common.pseudowh($width: calc(50px + (61 - 50) * ((100vw - 320px) / (1920 - 320))), $height: calc(50px + (61 - 50) * ((100vw - 320px) / (1920 - 320))));
+            fill: rgba(var(--white), 1);
+
+            body.dark & {
+                fill: #fff;
+            }
+        }
+
+        h4 {
+            margin-top: calc(18px + (31 - 18) * ((100vw - 320px) / (1920 - 320)));
+            font-size: calc(20px + (23 - 20) * ((100vw - 320px) / (1920 - 320)));
+            text-transform: capitalize;
+        }
+
+        p {
+            font-size: calc(15px + (17 - 15) * ((100vw - 320px) / (1920 - 320)));
+            font-weight: 400;
+            margin-top: calc(4px + (8 - 4) * ((100vw - 320px) / (1920 - 320)));
+            color: rgba(var(--white), 0.7);
+
+            body.dark & {
+                color: rgba(255, 255, 255, 0.7);
+            }
+        }
+    }
+}
+
+.sell-theme-section-2 {
+    .seller-main-box {
+        background-color: rgba(var(--white), 1);
+        border-radius: calc(12px + (20 - 12) * ((100vw - 320px) / (1920 - 320)));
+        padding: calc(20px + (75 - 20) * ((100vw - 320px) / (1920 - 320))) calc(15px + (96 - 15) * ((100vw - 320px) / (1920 - 320))) calc(17px + (72 - 17) * ((100vw - 320px) / (1920 - 320)));
+    }
+
+    .seller-title {
+        text-align: center;
+        margin-bottom: calc(20px + (39 - 20) * ((100vw - 320px) / (1920 - 320)));
+
+        h3 {
+            color: rgba(var(--title-color), 1);
+            font-size: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320)));
+            font-weight: 600;
+            margin-top: calc(-3px + (-5 - -3) * ((100vw - 320px) / (1920 - 320)));
+        }
+
+        p {
+            color: rgba(var(--content-color), 0.7);
+            width: 61%;
+            margin: 6px auto 0;
+            font-size: calc(15px + (17 - 15) * ((100vw - 320px) / (1920 - 320)));
+
+            @include common.max(1244px) {
+                width: 95%;
+            }
+
+            @include common.max(800px) {
+                width: 100%;
+            }
+        }
+    }
+
+    .sell-box {
+        color: rgba(var(--title-color), 1);
+        text-align: center;
+        padding-inline: 19px;
+
+        .top-box {
+            position: relative;
+            z-index: 0;
+
+            &::before {
+                @include common.pos;
+                @include common.pseudowh($width: calc(100% + 38px), $height: 1px);
+                bottom: 12px;
+                z-index: -1;
+                left: 0;
+                border-top: 1px solid rgba(var(--border-color), 1);
+            }
+
+            &::after {
+                content: "";
+                @include common.pseudowh($width: 24px, $height: 24px);
+                display: block;
+                border-radius: 100%;
+                background-color: rgba(var(--primary-color), 1);
+                border: 8px solid rgba(var(--white), 1);
+                margin-inline: auto;
+                box-shadow: 0px 0px 9.1px 2px rgba(var(--title-color), 0.07);
+            }
+
+            .contain-text {
+                padding: calc(10px + (16 - 10) * ((100vw - 320px) / (1920 - 320))) calc(36px + (50 - 36) * ((100vw - 320px) / (1920 - 320))) calc(6px + (12 - 6) * ((100vw - 320px) / (1920 - 320)));
+                border-radius: 4px;
+                display: inline-block;
+                box-shadow: 0px 15px 35.9px 2px rgba(var(--title-color), 0.03);
+                position: relative;
+                margin-bottom: calc(14px + (21 - 14) * ((100vw - 320px) / (1920 - 320)));
+                z-index: 0;
+                background-color: rgba(var(--white), 1);
+
+                body.dark & {
+                    box-shadow: 0px 15px 35.9px 2px rgba(var(--border-color), 0.18);
+                }
+
+                h5 {
+                    font-weight: 300;
+                    color: rgba(var(--content-color), 1);
+                }
+
+                h4 {
+                    margin-top: 4px;
+                }
+
+                &::before {
+                    @include common.center(horizontal);
+                    @include common.pseudowh($width: 0, $height: 0);
+                    @include common.pos;
+                    z-index: -1;
+                    bottom: -14px;
+                    border: 0 solid transparent;
+                    border-left-width: calc(14px + (23 - 14) * ((100vw - 320px) / (1920 - 320)));
+                    border-right-width: calc(14px + (23 - 14) * ((100vw - 320px) / (1920 - 320)));
+                    border-top: calc(10px + (15 - 10) * ((100vw - 320px) / (1920 - 320))) solid rgba(var(--white), 1);
+                }
+            }
+        }
+
+        p {
+            font-size: calc(15px + (17 - 15) * ((100vw - 320px) / (1920 - 320)));
+            color: rgba(var(--content-color), 1);
+            margin-top: calc(12px + (25 - 12) * ((100vw - 320px) / (1920 - 320)));
         }
     }
 }

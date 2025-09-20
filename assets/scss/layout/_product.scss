@@ -1,5 +1,7 @@
+@use "../utils/mixin/common";
+
 /**=====================
-     Product CSS
+    3.10 Product CSS
 ==========================**/
 .product-box {
     background-color: rgba(var(--white), 1);
@@ -21,7 +23,7 @@
             visibility: visible;
             background-color: rgba(var(--white), 1);
 
-            @include max(767px) {
+            @include common.max(767px) {
                 box-shadow: none;
             }
         }
@@ -42,7 +44,7 @@
         transition: 0.3s ease-in-out;
         text-align: center;
         display: block;
-        @include pseudowh($width: 100%, $height: 170px);
+        @include common.pseudowh($width: 100%, $height: 170px);
 
         img {
             @extend %img-contain;
@@ -78,6 +80,10 @@
             background-color: #e3e6e6;
             margin-top: 10px;
 
+            body.dark & {
+                background-color: #3b495a;
+            }
+
             .progress-bar {
                 width: 50%;
                 background-color: rgba(var(--primary-color), 1);
@@ -109,7 +115,7 @@
         visibility: hidden;
         transition: .3s ease-in-out;
 
-        @include max(767px) {
+        @include common.max(767px) {
             transform: unset;
             border-color: rgba(var(--content-color), 0.3);
             opacity: 1;
@@ -134,13 +140,14 @@
             width: 100%;
             padding: 8px;
             border: none;
+            color: #fff;
             background-color: rgba(var(--primary-color), 1);
             border-radius: 0;
             margin-bottom: 10px;
         }
 
         .compare-list {
-            @include flex_common;
+            @include common.flex_common;
 
             li {
                 position: relative;
@@ -149,12 +156,24 @@
                     padding-left: 10px;
                     margin-left: 10px;
 
+                    [dir="rtl"] & {
+                        margin-left: unset;
+                        padding-left: unset;
+                        margin-right: 10px;
+                        padding-right: 10px;
+                    }
+
                     &::before {
-                        @include pos;
+                        @include common.pos;
+                        @include common.center(vertical);
+                        @include common.pseudowh($width: 1px, $height: 15px);
                         left: 0;
-                        @include center(vertical);
                         border-left: 1px solid rgba(var(--content-color), 0.2);
-                        @include pseudowh($width: 1px, $height: 15px);
+
+                        [dir="rtl"] & {
+                            left: unset;
+                            right: 0;
+                        }
                     }
                 }
 
@@ -238,11 +257,16 @@
 
             +div {
                 &::before {
-                    @include pos;
-                    @include center(vertical);
+                    @include common.pos;
+                    @include common.center(vertical);
                     left: 0;
                     background: linear-gradient(0deg, rgba(var(--content-color), 0) -3.39%, rgba(var(--content-color), 0.2) 54.49%, rgba(var(--content-color), 0) 114.83%);
-                    @include pseudowh($width: 1px, $height: 80%);
+                    @include common.pseudowh($width: 1px, $height: 80%);
+
+                    [dir="rtl"] & {
+                        left: unset;
+                        right: 0;
+                    }
                 }
             }
 
@@ -262,7 +286,7 @@
                 &::before {
                     content: none;
 
-                    @include max(1400px) {
+                    @include common.max(1400px) {
                         content: "";
                     }
                 }
@@ -270,7 +294,7 @@
 
             &:nth-child(odd) {
                 &::before {
-                    @include max(1400px) {
+                    @include common.max(1400px) {
                         content: none;
                     }
                 }
@@ -288,8 +312,24 @@
     z-index: 0;
     border-radius: 6px;
 
+    body.dark & {
+        background-color: rgba(var(--white), 1);
+    }
+
     &.pro-bg-white {
         background-color: rgba(var(--white), 1);
+
+        &:hover {
+            body.dark & {
+                background-color: rgba(var(--white), 1);
+
+                .product-content {
+                    .option-box {
+                        background-color: rgba(var(--white), 1);
+                    }
+                }
+            }
+        }
     }
 
     &:hover {
@@ -297,7 +337,11 @@
         background-color: rgba(var(--white), 1);
         box-shadow: var(--shadow-2);
 
-        @include max(460px) {
+        body.dark & {
+            background-color: rgba(var(--base-gray), 1);
+        }
+
+        @include common.max(460px) {
             z-index: unset;
         }
 
@@ -318,13 +362,12 @@
                 bottom: -45px;
                 opacity: 1;
                 visibility: visible;
-                // box-shadow: var(--shadow-2);
                 box-shadow: 0px 4px 10px rgba(82, 77, 141, 0.1),
                     0px 8px 20px rgba(82, 77, 141, 0.06),
                     0px 12px 30px rgba(82, 77, 141, 0.04);
                 background-color: rgba(var(--white), 1);
 
-                @include max(767px) {
+                @include common.max(767px) {
                     inset: unset;
                     box-shadow: unset;
                 }
@@ -351,8 +394,8 @@
             padding: 0;
             z-index: 1;
             line-height: 1;
-            @include pseudowh($width: 30px, $height: 30px);
-            @include flex_common;
+            @include common.pseudowh($width: 30px, $height: 30px);
+            @include common.flex_common;
             background-color: rgba(var(--theme-blue), 1);
             color: rgba(var(--white), 1);
             border-radius: 4px;
@@ -362,8 +405,12 @@
         a {
             mix-blend-mode: darken;
             display: block;
-            @include pseudowh;
+            @include common.pseudowh;
             transition: opacity .5s, transform 1.25s cubic-bezier(0, 0, .44, 1.18);
+
+            body.dark & {
+                mix-blend-mode: difference;
+            }
 
             img {
                 @extend %img-contain;
@@ -372,7 +419,7 @@
 
         .quick-view-button-box {
             position: absolute;
-            @include center(both);
+            @include common.center(both);
             width: 100%;
             padding-inline: 19px;
             margin-top: 35px;
@@ -380,7 +427,7 @@
             opacity: 0;
             visibility: hidden;
 
-            @include max(767px) {
+            @include common.max(767px) {
                 top: unset;
                 transform: unset;
                 padding: 0;
@@ -391,20 +438,24 @@
                 visibility: visible;
             }
 
-            @include max(575px) {
+            @include common.max(575px) {
                 left: 0;
             }
 
             .view-btn {
                 background-color: rgba(var(--white), 0.6);
                 backdrop-filter: blur(2px);
-                padding: calc(7px + (10 - 7) * ((100vw - 320px) / (1920 - 320)));
+                padding: calc(7px + (10 - 7) * ((100vw - 320px) / (1920 - 320))) calc(7px + (10 - 7) * ((100vw - 320px) / (1920 - 320))) calc(5px + (8 - 5) * ((100vw - 320px) / (1920 - 320)));
                 line-height: 1;
                 font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
                 width: 100%;
                 color: rgba(var(--primary-color3), 1);
 
-                @include max(767px) {
+                body.dark & {
+                    background-color: rgba(255, 255, 255, 0.6);
+                }
+
+                @include common.max(767px) {
                     display: none;
                 }
             }
@@ -425,18 +476,16 @@
             h5 {
                 text-transform: capitalize;
                 margin-bottom: 4px;
-                @include line;
+                @include common.line;
                 color: rgba(var(--title-color), 1);
                 margin-top: 6px;
             }
         }
 
         .price {
+            @include common.flex_wrap($dis: flex, $wrap: wrap, $gap: 6px);
             margin-top: 9px;
-            display: flex;
             align-items: center;
-            gap: 6px;
-            flex-wrap: wrap;
 
             del {
                 color: rgba(var(--content-color), 0.8);
@@ -444,7 +493,7 @@
         }
 
         .option-box {
-            @include flex_common ($dis: flex, $align: center, $justify: space-between);
+            @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
             position: absolute;
             bottom: -30px;
             left: 0;
@@ -457,7 +506,11 @@
             visibility: hidden;
             border-radius: 0 0 6px 6px;
 
-            @include max(767px) {
+            body.dark & {
+                background-color: rgba(var(--base-gray), 1);
+            }
+
+            @include common.max(767px) {
                 position: relative;
                 inset: unset;
                 padding: 0;
@@ -468,14 +521,14 @@
                 visibility: visible;
             }
 
-            @include max(460px) {
+            @include common.max(460px) {
                 display: none;
             }
 
             .select-btn {
                 width: 100%;
                 font-size: 14px;
-                color: rgba(var(--white), 1);
+                color: #fff;
                 background-color: rgba(var(--primary-color3), 1);
                 padding: 10px;
                 background-color: rgba(var(--theme-blue2), 1);
@@ -524,36 +577,61 @@
         border-top: none;
         border-left: unset;
 
+        [dir="rtl"] & {
+            border-right: unset;
+            border-left: 1px solid rgba(var(--content-color), 0.2);
+        }
+
         &:nth-child(5n-5) {
             border-right: unset;
 
-            @include max(991px) {
+            [dir="rtl"] & {
+                border-left: unset;
                 border-right: 1px solid rgba(var(--content-color), 0.2);
+            }
+
+            @include common.max(991px) {
+                border-right: 1px solid rgba(var(--content-color), 0.2);
+
+                [dir="rtl"] & {
+                    border-right: unset;
+                    border-left: 1px solid rgba(var(--content-color), 0.2);
+                }
             }
         }
 
         &:nth-child(4n-7) {
-            @include max(991px) {
+            @include common.max(991px) {
                 border-left: unset;
             }
 
-            @include max(575px) {
+            @include common.max(575px) {
                 border-right: unset;
             }
         }
 
         &:nth-child(4n-4) {
-            @include max(991px) {
+            @include common.max(991px) {
                 border-right: unset;
+
+                [dir="rtl"] & {
+                    border-left: unset;
+                    border-right: 1px solid rgba(var(--content-color), 0.2);
+                }
             }
 
-            @include max(767px) {
+            @include common.max(767px) {
                 border-right: 1px solid rgba(var(--content-color), 0.2);
+
+                [dir="rtl"] & {
+                    border-right: unset;
+                    border-left: 1px solid rgba(var(--content-color), 0.2);
+                }
             }
         }
 
         &:nth-child(3n-3) {
-            @include max(767px) {
+            @include common.max(767px) {
                 border-right: unset;
             }
         }
@@ -561,7 +639,7 @@
         &:nth-child(n+6) {
             border-bottom: unset;
 
-            @include max(991px) {
+            @include common.max(991px) {
                 border-bottom: 1px solid rgba(var(--content-color), 0.2);
             }
 
@@ -573,49 +651,54 @@
 
         &:nth-child(n+5) {
             .product-box-5 {
-                @include max(991px) {
+                @include common.max(991px) {
                     padding-top: 15px;
                 }
 
-                @include max(767px) {
+                @include common.max(767px) {
                     padding-top: 0;
                 }
             }
         }
 
         &:nth-child(n+4) {
-            @include max(767px) {
+            @include common.max(767px) {
                 padding-top: 15px;
             }
         }
 
         &:nth-child(n+3) {
-            @include max(575px) {
+            @include common.max(575px) {
                 padding-top: 15px;
                 border-right: unset;
             }
         }
 
         &:nth-child(n+9) {
-            @include max(991px) {
+            @include common.max(991px) {
                 border-bottom: unset;
             }
 
-            @include max(767px) {
+            @include common.max(767px) {
                 border-bottom: 1px solid rgba(var(--content-color), 0.2);
             }
         }
 
         &:nth-child(n+10) {
-            @include max(767px) {
+            @include common.max(767px) {
                 border-bottom: unset;
             }
         }
 
         &:nth-child(even) {
-            @include max(575px) {
+            @include common.max(575px) {
                 border-right: unset;
                 border-left: 1px solid rgba(var(--content-color), 0.2);
+
+                [dir="rtl"] & {
+                    border-left: unset;
+                    border-right: 1px solid rgba(var(--content-color), 0.2);
+                }
             }
         }
     }
@@ -625,14 +708,11 @@
     >div {
         +div {
             border-left: 1px solid rgba(var(--content-color), 0.2);
-        }
-    }
-}
 
-.product-l-border-box {
-    >div {
-        +div {
-            border-left: 1px solid rgba(var(--content-color), 0.2);
+            [dir="rtl"] & {
+                border-left: unset;
+                border-right: 1px solid rgba(var(--content-color), 0.2);
+            }
         }
     }
 }
@@ -661,17 +741,13 @@
                     }
                 }
             }
-
-            // >a {
-            //     transform: scale(1.09) rotate(-3deg);
-            // }
         }
     }
 
     .product-image {
-        @include pseudowh($width: 100%, $height: 122px);
+        @include common.pseudowh($width: 100%, $height: 122px);
         margin-block: 15px;
-        @include flex_common;
+        @include common.flex_common;
         position: relative;
 
         a {
@@ -689,26 +765,20 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            @include flex_common;
+            @include common.flex_common;
             gap: 5px;
             transition: all 0.5s ease-in-out;
             opacity: 0;
             visibility: hidden;
 
-            // @include max(767px) {
-            //     opacity: 1;
-            //     transition: all 0.5s ease-in-out;
-            //     visibility: visible;
-            // }
-
             li {
                 a {
                     box-shadow: 0px 2.33333px 4.66667px rgba(68, 128, 103, 0.25);
-                    @include pseudowh($width: calc(28px + (35 - 28) * ((100vw - 320px) / (1920 - 320))), $height: calc(28px + (35 - 28) * ((100vw - 320px) / (1920 - 320))));
+                    @include common.pseudowh($width: calc(28px + (35 - 28) * ((100vw - 320px) / (1920 - 320))), $height: calc(28px + (35 - 28) * ((100vw - 320px) / (1920 - 320))));
                     border-radius: 100%;
                     font-size: calc(15px + (16 - 15) * ((100vw - 320px) / (1920 - 320)));
                     color: rgba(var(--content-color), 1);
-                    @include flex_common;
+                    @include common.flex_common;
                     background-color: rgba(var(--white), 1);
 
                     i {
@@ -723,22 +793,24 @@
         h6 {
             margin-bottom: 4px;
             color: rgba(var(--content-color), 0.8);
-            @include line;
+            @include common.line;
         }
 
         .name {
             text-transform: capitalize;
             color: rgba(var(--primary-color3), 1);
             line-height: 1.4;
-            @include line($line: 2);
+            @include common.line($line: 2);
+
+            body.dark & {
+                color: #fff;
+            }
         }
 
         .price {
+            @include common.flex_wrap($dis: flex, $wrap: wrap, $gap: 6px);
             color: rgba(var(--theme-green), 1);
-            display: flex;
             align-items: center;
-            gap: 6px;
-            flex-wrap: wrap;
 
             del {
                 color: rgba(var(--content-color), 0.8);
@@ -760,7 +832,7 @@
             border-radius: 0 0 5px 5px;
             transition: all 0.15s ease-in-out;
 
-            @include max(767px) {
+            @include common.max(767px) {
                 position: relative;
                 width: 100%;
                 inset: unset;
@@ -772,7 +844,7 @@
 
             .btn {
                 padding: 8px;
-                @include flex_common;
+                @include common.flex_common;
                 gap: 6px;
                 color: rgba(var(--title-color), 1);
                 background-color: rgba(var(--primary-color), 1);
@@ -817,7 +889,7 @@
         background-color: rgba(var(--white), 1);
         border: 1px solid rgba(var(--content-color), 0.3);
         margin-bottom: calc(4px + (8 - 4) * ((100vw - 320px) / (1920 - 320)));
-        @include flex_common;
+        @include common.flex_common;
         padding: calc(13px + (28 - 13) * ((100vw - 320px) / (1920 - 320))) calc(13px + (23 - 13) * ((100vw - 320px) / (1920 - 320)));
         transition: all 0.15s ease-in-out;
 
@@ -831,7 +903,7 @@
         font-weight: 500;
         font-size: calc(14px + (15 - 14) * ((100vw - 320px) / (1920 - 320)));
         text-transform: capitalize;
-        @include line;
+        @include common.line;
         color: rgba(var(--content-color), 1);
         transition: all 0.15s ease-in-out;
     }
@@ -854,7 +926,7 @@
                 background-color: rgba(var(--white), 1);
                 border: 1px solid rgba(var(--content-color), 0.3);
                 margin-bottom: 8px;
-                @include flex_common;
+                @include common.flex_common;
                 padding: 11px;
 
                 img {
@@ -866,7 +938,7 @@
                 font-weight: 500;
                 font-size: 15px;
                 text-transform: capitalize;
-                @include line;
+                @include common.line;
                 color: rgba(var(--content-color), 1);
             }
         }
@@ -904,8 +976,8 @@
     }
 
     .product-image {
-        @include pseudowh($width: calc(82px + (114 - 82) * ((100vw - 320px) / (1920 - 320))), $height: calc(80px + (112 - 80) * ((100vw - 320px) / (1920 - 320))));
-        @include flex_common;
+        @include common.pseudowh($width: calc(82px + (114 - 82) * ((100vw - 320px) / (1920 - 320))), $height: calc(80px + (112 - 80) * ((100vw - 320px) / (1920 - 320))));
+        @include common.flex_common;
 
         img {
             @extend %img-contain;
@@ -923,12 +995,16 @@
                 text-transform: capitalize;
                 font-weight: 500;
                 line-height: 1.3;
-                @include line($line: 3);
+                @include common.line($line: 3);
                 color: rgba(var(--primary-color3), 1);
+
+                body.dark & {
+                    color: #fff;
+                }
             }
 
             h5.name {
-                @include line($line: 2);
+                @include common.line($line: 2);
             }
         }
 
@@ -938,7 +1014,7 @@
             font-weight: 500;
 
             del {
-                color: rgba(var(--content-color), 1);
+                color: rgba(var(--content-color), 0.8);
                 margin-left: 3px;
             }
         }
@@ -982,8 +1058,8 @@
             overflow: hidden;
 
             &::before {
-                @include pos;
-                @include pseudowh($width: 0, $height: 2px);
+                @include common.pos;
+                @include common.pseudowh($width: 0, $height: 2px);
                 bottom: 0;
                 left: 0;
                 background-color: rgba(var(--content-color), 1);
@@ -1045,66 +1121,92 @@
         +.recommendations-product-list-2 {
             border-left: 1px solid rgba(var(--content-color), 0.2);
             padding-left: calc(7px + (26 - 7) * ((100vw - 320px) / (1920 - 320)));
-            // margin-left: calc(7px + (26 - 7) * ((100vw - 320px) / (1920 - 320)));
 
-            @include max(1460px) {
+            [dir="rtl"] & {
+                border-right: 1px solid rgba(var(--content-color), 0.2);
                 border-left: unset;
-                padding-left: unset;
-                // margin-left: unset;
+                padding-right: calc(7px + (26 - 7) * ((100vw - 320px) / (1920 - 320)));
+                padding-left: unset
             }
 
-            @include max(1399.98px) {
+            @include common.max(1460px) {
+                border-left: unset;
+                padding-left: unset;
+            }
+
+            @include common.max(1399.98px) {
                 border-left: 1px solid rgba(var(--content-color), 0.2);
                 padding-left: calc(7px + (26 - 7) * ((100vw - 320px) / (1920 - 320)));
-                // margin-left: calc(7px + (26 - 7) * ((100vw - 320px) / (1920 - 320)));
             }
 
-            @include max(950px) {
+            @include common.max(950px) {
                 border-left: unset;
                 padding-left: unset;
-                // margin-left: unset;
+            }
+
+            @include common.max(585px) {
+                padding: calc(7px + (26 - 7) * ((100vw - 320px) / (585 - 320))) 0 0;
+                border-left: unset;
+
+                [dir="rtl"] & {
+                    padding: calc(7px + (26 - 7) * ((100vw - 320px) / (585 - 320))) 0 0;
+                    border: unset;
+                }
             }
         }
 
         &:last-child {
-            @include max(950px) {
+            @include common.max(950px) {
                 padding: calc(7px + (26 - 7) * ((100vw - 320px) / (950 - 320))) 0 0;
-                // margin: calc(7px + (26 - 7) * ((100vw - 320px) / (950 - 320))) 0 0;
                 border-left: unset;
+
+                [dir="rtl"] & {
+                    padding-right: unset;
+                    border-right: unset;
+                }
             }
 
-            @include max(585px) {
+            @include common.max(585px) {
                 margin-top: calc(14px + (25 - 14) * ((100vw - 320px) / (1920 - 320)));
                 padding: 0;
-                // margin-left: unset;
             }
         }
 
         &:nth-child(2) {
-            @include max(585px) {
+            @include common.max(585px) {
                 padding: calc(7px + (26 - 7) * ((100vw - 320px) / (585 - 320))) 0 0;
-                // margin: calc(7px + (26 - 7) * ((100vw - 320px) / (585 - 320))) 0 0;
                 border-left: unset;
+
+                [dir="rtl"] & {
+                    padding: calc(7px + (26 - 7) * ((100vw - 320px) / (585 - 320))) 0 0;
+                    border: unset;
+                }
             }
         }
 
         &:nth-child(even) {
-            @include max(1460px) {
+            @include common.max(1460px) {
                 border-left: 1px solid rgba(var(--content-color), 0.2);
                 padding-left: calc(7px + (26 - 7) * ((100vw - 320px) / (1920 - 320)));
-                // margin-left: calc(7px + (26 - 7) * ((100vw - 320px) / (1920 - 320)));
+
+                [dir="rtl"] & {
+                    border-right: 1px solid rgba(var(--content-color), 0.2);
+                    border-left: unset;
+                    padding-right: calc(7px + (26 - 7) * ((100vw - 320px) / (1920 - 320)));
+                    padding-left: unset;
+                }
             }
 
-            @include max(585px) {
+            @include common.max(585px) {
                 border: unset;
                 padding: unset;
-                // margin-left: unset;
+
+                [dir="rtl"] & {
+                    padding: unset;
+                    border: unset;
+                }
             }
         }
-
-        // &:nth-child(n+3) {
-        //     border-left: 1px solid rgba(var(--content-color), 0.2);
-        // }
     }
 }
 
@@ -1125,14 +1227,18 @@
             a {
                 .name {
                     color: rgba(var(--primary-color), 1);
+
+                    body.dark & {
+                        color: rgba(var(--primary-color), 1);
+                    }
                 }
             }
         }
     }
 
     .product-image {
-        @include pseudowh($width: calc(63px + (88 - 63) * ((100vw - 1400px) / (1920 - 1400))), $height: calc(63px + (88 - 63) * ((100vw - 1400px) / (1920 - 1400))));
-        @include flex_common;
+        @include common.pseudowh($width: calc(63px + (88 - 63) * ((100vw - 1400px) / (1920 - 1400))), $height: calc(63px + (88 - 63) * ((100vw - 1400px) / (1920 - 1400))));
+        @include common.flex_common;
 
         img {
             @extend %img-contain;
@@ -1146,7 +1252,7 @@
         h6 {
             color: rgba(var(--content-color), 1);
             margin-bottom: 3px;
-            @include line;
+            @include common.line;
         }
 
         a {
@@ -1156,19 +1262,21 @@
                 text-transform: capitalize;
                 font-weight: 500;
                 line-height: 1.3;
-                @include line($line: 2);
+                @include common.line($line: 2);
                 color: rgba(var(--primary-color3), 1);
+
+                body.dark & {
+                    color: #fff;
+                }
             }
         }
 
         .price {
+            @include common.flex_wrap($dis: flex, $wrap: wrap, $gap: 4px);
             margin-top: 5px;
             color: rgba(var(--theme-green), 1);
             font-weight: 500;
-            display: flex;
             align-items: center;
-            gap: 4px;
-            flex-wrap: wrap;
             margin-bottom: 0;
 
             del {
@@ -1204,14 +1312,18 @@
             a {
                 .name {
                     color: rgba(var(--primary-color), 1);
+
+                    body.dark & {
+                        color: rgba(var(--primary-color), 1);
+                    }
                 }
             }
         }
     }
 
     .product-image {
-        @include pseudowh($width: calc(63px + (88 - 63) * ((100vw - 320px) / (1920 - 320))), $height: calc(63px + (88 - 63) * ((100vw - 320px) / (1920 - 320))));
-        @include flex_common;
+        @include common.pseudowh($width: calc(63px + (88 - 63) * ((100vw - 320px) / (1920 - 320))), $height: calc(63px + (88 - 63) * ((100vw - 320px) / (1920 - 320))));
+        @include common.flex_common;
 
         img {
             @extend %img-contain;
@@ -1225,7 +1337,7 @@
         h6 {
             color: rgba(var(--content-color), 1);
             margin-bottom: 3px;
-            @include line;
+            @include common.line;
         }
 
         a {
@@ -1235,19 +1347,21 @@
                 text-transform: capitalize;
                 font-weight: 500;
                 line-height: 1.3;
-                @include line($line: 2);
+                @include common.line($line: 2);
                 color: rgba(var(--primary-color3), 1);
+
+                body.dark & {
+                    color: #fff;
+                }
             }
         }
 
         .price {
+            @include common.flex_wrap($dis: flex, $wrap: wrap, $gap: 4px);
             margin-top: 5px;
             color: rgba(var(--theme-green), 1);
             font-weight: 500;
-            display: flex;
             align-items: center;
-            gap: 4px;
-            flex-wrap: wrap;
             margin-bottom: 0;
 
             del {
@@ -1304,7 +1418,7 @@
                     }
 
                     .thumbnail-image {
-                        @include pseudowh($width: calc(53px + (65 - 53) * ((100vw - 320px) / (1920 - 320))), $height: calc(53px + (65 - 53) * ((100vw - 320px) / (1920 - 320))));
+                        @include common.pseudowh($width: calc(53px + (65 - 53) * ((100vw - 320px) / (1920 - 320))), $height: calc(53px + (65 - 53) * ((100vw - 320px) / (1920 - 320))));
                         padding: 8px 10px;
                         background-color: rgba(var(--light-gray), 1);
                         border: 1px solid transparent;
@@ -1327,7 +1441,7 @@
 
         .swiper-main,
         .swiper-main1 {
-            @include pseudowh($width: 100%, $height: calc(100% - 65%));
+            @include common.pseudowh($width: 100%, $height: calc(100% - 65%));
             text-align: center;
             margin-left: 65px;
 
@@ -1344,7 +1458,7 @@
         .product-timer {
             position: absolute;
             bottom: 0;
-            @include center(horizontal);
+            @include common.center(horizontal);
             z-index: 1;
             display: flex;
             align-items: center;
@@ -1355,16 +1469,20 @@
                 backdrop-filter: blur(1.61716px);
                 position: relative;
                 padding: 8px 10px;
-                @include flex_common;
+                @include common.flex_common;
                 text-align: center;
+
+                body.dark & {
+                    background-color: rgba(19, 25, 33, 0.7);
+                }
 
                 +li {
                     margin-left: 10px;
 
                     &::before {
-                        @include pos;
+                        @include common.pos;
                         left: -7px;
-                        @include center(vertical);
+                        @include common.center(vertical);
                         font-weight: 700;
                         font-size: 15px;
                         color: rgba(var(--content-color), 0.5);
@@ -1403,9 +1521,9 @@
             padding-bottom: calc(7px + (10 - 7) * ((100vw - 320px) / (1920 - 320)));
             margin-bottom: calc(9px + (15 - 9) * ((100vw - 320px) / (1920 - 320)));
             border-bottom: 1px solid rgba(var(--content-color), 0.2);
-            @include flex_common ($dis: flex, $align: center, $justify: space-between);
+            @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
 
-            @include max(480px) {
+            @include common.max(480px) {
                 display: block;
             }
 
@@ -1427,7 +1545,7 @@
                 display: flex;
                 align-items: center;
 
-                @include max(480px) {
+                @include common.max(480px) {
                     margin-top: 3px;
                 }
 
@@ -1436,6 +1554,15 @@
                     margin-left: calc(5px + (10 - 5) * ((100vw - 320px) / (1920 - 320)));
                     border-left: 1px solid rgba(var(--content-color), 0.2);
                     padding-left: calc(5px + (10 - 5) * ((100vw - 320px) / (1920 - 320)));
+
+                    [dir="rtl"] & {
+                        margin-left: unset;
+                        padding-left: unset;
+                        border-left: unset;
+                        margin-right: calc(5px + (10 - 5) * ((100vw - 320px) / (1920 - 320)));
+                        border-right: 1px solid rgba(var(--content-color), 0.2);
+                        padding-right: calc(5px + (10 - 5) * ((100vw - 320px) / (1920 - 320)));
+                    }
 
                     span {
                         color: rgba(var(--theme-green), 1);
@@ -1469,7 +1596,7 @@
 }
 
 .hot-tag-list {
-    @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(7px + (10 - 7) * ((100vw - 320px) / (1920 - 320))));
+    @include common.flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(7px + (10 - 7) * ((100vw - 320px) / (1920 - 320))));
     align-items: center;
 
     li {
@@ -1496,14 +1623,14 @@
     .product-content {
         text-align: center;
         margin-top: calc(11px + (20 - 11) * ((100vw - 320px) / (1920 - 320)));
-        @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(2px + (6 - 2) * ((100vw - 320px) / (1920 - 320))));
+        @include common.flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(2px + (6 - 2) * ((100vw - 320px) / (1920 - 320))));
 
         h5 {
             font-weight: 500;
             line-height: 1.3;
             width: 100%;
             text-transform: capitalize;
-            @include line($line: 2);
+            @include common.line($line: 2);
 
             &.name {
                 color: rgba(var(--title-color), 1);
@@ -1525,7 +1652,7 @@
     }
 
     .hover-box {
-        @include flex_common ($dis: flex, $align: center, $justify: space-between);
+        @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
         position: absolute;
         width: 100%;
         bottom: -50px;
@@ -1535,8 +1662,8 @@
         transition: all 0.5s ease;
 
         a {
-            @include flex_common;
-            @include pseudowh($width: 30px, $height: 30px);
+            @include common.flex_common;
+            @include common.pseudowh($width: 30px, $height: 30px);
             border-radius: 100%;
             background-color: rgba(var(--white), 1);
             color: rgba(var(--content-color), 1);
@@ -1545,8 +1672,8 @@
             z-index: 1;
 
             &::after {
-                @include pos;
-                @include pseudowh;
+                @include common.pos;
+                @include common.pseudowh;
                 left: 0;
                 top: 0;
                 background-color: #FFE500;
@@ -1557,7 +1684,7 @@
             }
 
             i {
-                transition: all 0.5s ease;
+                transition: all 0.2s ease;
             }
 
             &:hover {
@@ -1593,20 +1720,16 @@
     margin: 1px;
 
     &::before {
-        @include pos;
+        @include common.pos;
         border-radius: 5px;
         background: linear-gradient(180deg, #07544F 0%, rgba(7, 84, 79, 0) 100%);
         mask-composite: exclude;
         opacity: 0;
         transition: all 0.5s ease-in-out;
-        @include pseudowh($width: calc(100% + 2px), $height: 100%);
+        @include common.pseudowh($width: calc(100% + 2px), $height: 100%);
         left: -1px;
         top: -1px;
         z-index: -1;
-
-        // @include max(767px) {
-        //     opacity: 1;
-        // }
     }
 
     &:hover {
@@ -1653,7 +1776,7 @@
                 opacity: 1;
                 box-shadow: 7px 5px 10px rgba(54, 97, 79, 0.1);
 
-                @include max(767px) {
+                @include common.max(767px) {
                     inset: unset;
                     box-shadow: unset;
                 }
@@ -1662,9 +1785,9 @@
     }
 
     .product-image {
-        @include pseudowh($width: 100%, $height: calc(105px + (135 - 105) * ((100vw - 320px) / (1920 - 320))));
+        @include common.pseudowh($width: 100%, $height: calc(105px + (135 - 105) * ((100vw - 320px) / (1920 - 320))));
         margin-bottom: 14px;
-        @include flex_common;
+        @include common.flex_common;
         position: relative;
 
         a {
@@ -1682,26 +1805,20 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            @include flex_common;
+            @include common.flex_common;
             gap: 5px;
             transition: all 0.5s ease-in-out;
             opacity: 0;
             visibility: hidden;
 
-            // @include max(767px) {
-            //     opacity: 1;
-            //     transition: all 0.5s ease-in-out;
-            //     visibility: visible;
-            // }
-
             li {
                 a {
                     box-shadow: 0px 2.33333px 4.66667px rgba(68, 128, 103, 0.25);
-                    @include pseudowh($width: calc(28px + (35 - 28) * ((100vw - 320px) / (1920 - 320))), $height: calc(28px + (35 - 28) * ((100vw - 320px) / (1920 - 320))));
+                    @include common.pseudowh($width: calc(28px + (35 - 28) * ((100vw - 320px) / (1920 - 320))), $height: calc(28px + (35 - 28) * ((100vw - 320px) / (1920 - 320))));
                     border-radius: 100%;
                     font-size: calc(15px + (16 - 15) * ((100vw - 320px) / (1920 - 320)));
                     color: rgba(var(--content-color), 1);
-                    @include flex_common;
+                    @include common.flex_common;
                     background-color: rgba(var(--white), 1);
 
                     i {
@@ -1716,11 +1833,11 @@
         h6 {
             margin-bottom: 4px;
             color: rgba(var(--content-color), 0.8);
-            @include line;
+            @include common.line;
         }
 
         .name {
-            @include line($line: 3);
+            @include common.line($line: 3);
             text-transform: capitalize;
             margin-bottom: 6px;
             height: calc(58px + (67 - 58) * ((100vw - 320px) / (1920 - 320)));
@@ -1728,13 +1845,17 @@
             line-height: 1.4;
             transition: color 0.15s ease-in-out;
 
-            @include max(991px) {
+            body.dark & {
+                color: #fff;
+            }
+
+            @include common.max(991px) {
                 height: auto;
-                @include line($line: 2);
+                @include common.line($line: 2);
             }
 
             &.tow-line {
-                @include line($line: 2);
+                @include common.line($line: 2);
                 height: auto;
             }
         }
@@ -1764,18 +1885,8 @@
             border-radius: 0 0 5px 5px;
             transition: all 0.15s ease-in-out;
 
-            // @include max(767px) {
-            //     position: relative;
-            //     width: 100%;
-            //     inset: unset;
-            //     padding: 0;
-            //     margin-top: 14px;
-            //     visibility: visible;
-            //     opacity: 1;
-            // }
-
             .btn {
-                @include flex_common;
+                @include common.flex_common;
                 padding: 8px;
                 gap: 6px;
                 color: rgba(var(--title-color), 1);
@@ -1812,27 +1923,11 @@
         top: 0;
         left: 0;
         @extend %img-cover;
+
+        [dir="rtl"] & {
+            transform: scaleX(-1);
+        }
     }
-
-    // &.bg-img-1 {
-    //     background-image: url(../images/banner/product-banner-1.jpg);
-    // }
-
-    // &.bg-img-2 {
-    //     background-image: url(../images/banner/product-banner-2.jpg);
-    // }
-
-    // &.bg-img-3 {
-    //     background-image: url(../images/banner/product-banner-3.jpg);
-    // }
-
-    // &.bg-img-4 {
-    //     background-image: url(../images/banner/product-banner-4.jpg);
-    // }
-
-    // &.bg-img-5 {
-    //     background-image: url(../images/banner/product-banner-5.jpg);
-    // }
 
     h4 {
         font-size: 20px;
@@ -1840,6 +1935,7 @@
         align-items: center;
         gap: 7px;
         text-transform: capitalize;
+        color: #202326;
 
         a {
             font-size: 14px;
@@ -1853,7 +1949,7 @@
 .white-product-box-list {
     background-color: rgba(var(--white), 1);
     padding: calc(12px + (18 - 12) * ((100vw - 320px) / (1920 - 320))) 8px;
-    @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(10px + (16 - 10) * ((100vw - 320px) / (1920 - 320))));
+    @include common.flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(10px + (16 - 10) * ((100vw - 320px) / (1920 - 320))));
 }
 
 .product-box-4-main {
@@ -1869,8 +1965,8 @@
     }
 
     .select-option-box {
-        @include pseudowh($width: calc(100% - 15px), $height: calc(100% - 15px));
-        @include flex_common;
+        @include common.pseudowh($width: calc(100% - 15px), $height: calc(100% - 15px));
+        @include common.flex_common;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -1881,7 +1977,7 @@
         opacity: 0;
         visibility: hidden;
         background-color: rgba(var(--white), 1);
-        z-index: 1;
+        z-index: 2;
 
         &.show {
             transform: translate(-50%, -50%) scale(1);
@@ -1892,8 +1988,8 @@
         .select-box {
             background-color: rgba(var(--white), 0.8);
             backdrop-filter: blur(2px);
-            @include pseudowh;
-            @include flex_common;
+            @include common.pseudowh;
+            @include common.flex_common;
         }
 
         .color-box {
@@ -1904,7 +2000,7 @@
             }
 
             .color-list {
-                @include flex_common;
+                @include common.flex_common;
                 gap: 8px;
                 margin-top: 5px;
 
@@ -1928,7 +2024,7 @@
                     }
 
                     a {
-                        @include pseudowh($width: 25px, $height: 25px);
+                        @include common.pseudowh($width: 25px, $height: 25px);
                         border-radius: 3px;
 
                     }
@@ -1944,19 +2040,19 @@
             }
 
             .size-list {
-                @include flex_common;
+                @include common.flex_common;
                 gap: 5px;
                 margin-top: 5px;
 
                 li {
                     a {
-                        @include pseudowh($width: 25px, $height: 25px);
+                        @include common.pseudowh($width: 25px, $height: 25px);
                         border-radius: 3px;
                         border: 1px solid rgba(var(--content-color), 1);
                         color: rgba(var(--title-color), 1);
                         font-weight: 400;
                         opacity: 0.6;
-                        @include flex_common;
+                        @include common.flex_common;
 
                         &.active {
                             background-color: rgba(var(--primary-color), 1);
@@ -2009,12 +2105,12 @@
                 cursor: pointer;
 
                 .thumbnail-image-box {
-                    @include pseudowh($width: calc(63px + (75 - 63) * ((100vw - 1200px) / (1920 - 1200))), $height: calc(63px + (75 - 63) * ((100vw - 1200px) / (1920 - 1200))));
+                    @include common.pseudowh($width: calc(63px + (75 - 63) * ((100vw - 1200px) / (1920 - 1200))), $height: calc(63px + (75 - 63) * ((100vw - 1200px) / (1920 - 1200))));
                     background-color: rgba(var(--light-gray), 1);
                     padding: calc(5px + (10 - 5) * ((100vw - 1200px) / (1920 - 1200))) calc(9px + (13 - 9) * ((100vw - 1200px) / (1920 - 1200)));
                     margin-inline: auto;
 
-                    @include max(1199px) {
+                    @include common.max(1199px) {
                         padding: 5px 9px
                     }
 
@@ -2031,14 +2127,14 @@
             height: 100% !important;
 
             .thumbnail-image-box {
-                @include pseudowh($width: 100%, $height: calc(151px + (252 - 151) * ((100vw - 1200px) / (1920 - 1200))));
-                @include flex_common;
+                @include common.pseudowh($width: 100%, $height: calc(151px + (252 - 151) * ((100vw - 1200px) / (1920 - 1200))));
+                @include common.flex_common;
 
                 img {
                     @extend %img-contain;
                 }
 
-                @include max(1199px) {
+                @include common.max(1199px) {
                     height: 151px;
                 }
             }
@@ -2046,7 +2142,7 @@
     }
 
     .product-content-box {
-        @include pseudowh;
+        @include common.pseudowh;
         display: flex;
         align-items: center;
         margin-top: 10px;
@@ -2104,6 +2200,15 @@
                     color: rgba(var(--content-color), 0.8);
                     margin-bottom: 0;
 
+                    [dir="rtl"] & {
+                        padding-right: calc(4px + (8 - 4) * ((100vw - 320px) / (1920 - 320)));
+                        margin-right: calc(4px + (8 - 4) * ((100vw - 320px) / (1920 - 320)));
+                        border-right: 1px solid rgba(var(--content-color), 0.2);
+                        padding-left: unset;
+                        margin-left: unset;
+                        border-left: unset;
+                    }
+
                     span {
                         color: #219DAB;
                     }
@@ -2138,7 +2243,7 @@
                     justify-content: center;
                 }
 
-                @include max(1199px) {
+                @include common.max(1199px) {
                     gap: calc(4px + (6 - 4) * ((100vw - 320px) / (1199 - 320)));
                 }
 
@@ -2155,30 +2260,34 @@
 
                         &::before {
                             z-index: -1;
-                            @include pos;
-                            @include pseudowh;
+                            @include common.pos;
+                            @include common.pseudowh;
                             bottom: -7px;
                             right: -7px;
                             background-color: rgba(var(--white), 1);
                             box-shadow: 0px 11px 20px rgba(49, 90, 152, 0.07);
 
-                            @include max(1199px) {
-                                bottom: calc(0px + (-7 - 0) * ((100vw - 320px) / (1199 - 320)));
-                                right: calc(0px + (-7 - 0) * ((100vw - 320px) / (1199 - 320)));
+                            body.dark & {
+                                background-color: #0F162C;
+                            }
+
+                            @include common.max(1199.98px) {
+                                bottom: calc(0px + (-7 - 0) * ((100vw - 320px) / (1200 - 320)));
+                                right: calc(0px + (-7 - 0) * ((100vw - 320px) / (1200 - 320)));
                             }
                         }
                     }
 
                     >div {
-                        background-color: rgba(var(--white), 1);
+                        background-color: transparent;
                         border: 1px solid rgba(var(--content-color), 0.5);
                         padding: 12px;
                         text-align: center;
                         width: 62px;
 
-                        @include max(1199px) {
-                            width: calc(55px + (62 - 55) * ((100vw - 320px) / (1199 - 320)));
-                            padding: calc(7px + (12 - 7) * ((100vw - 320px) / (1199 - 320)));
+                        @include common.max(1199.98px) {
+                            width: calc(55px + (62 - 55) * ((100vw - 320px) / (1200 - 320)));
+                            padding: calc(7px + (12 - 7) * ((100vw - 320px) / (1200 - 320)));
                         }
 
                         .counter {
@@ -2195,7 +2304,7 @@
 
                         .smalltext {
                             color: rgba(var(--content-color), 1);
-                            @include line;
+                            @include common.line;
                             line-height: 1;
                         }
                     }
@@ -2210,7 +2319,7 @@
                 margin-top: 25px;
             }
 
-            @include max(1199px) {
+            @include common.max(1199px) {
                 margin-top: calc(11px + (25 - 11) * ((100vw - 320px) / (1199 - 320)));
             }
 
@@ -2220,7 +2329,7 @@
                 border-radius: 0;
                 margin-bottom: 15px;
 
-                @include max(1199px) {
+                @include common.max(1199px) {
                     height: calc(7px + (10 - 7) * ((100vw - 320px) / (1199 - 320)));
                     margin-bottom: calc(9px + (15 - 9) * ((100vw - 320px) / (1199 - 320)));
                 }
@@ -2248,7 +2357,7 @@
     .recent-product-box {
         border-radius: 5px;
         overflow: hidden;
-        @include pseudowh($width: 100%, $height: calc(124px + (140 - 124) * ((100vw - 320px) / (1920 - 320))));
+        @include common.pseudowh($width: 100%, $height: calc(124px + (140 - 124) * ((100vw - 320px) / (1920 - 320))));
         position: relative;
         inset: unset;
         opacity: 1;
@@ -2274,7 +2383,7 @@
         text-align: center;
 
         .rating-box {
-            @include flex_common;
+            @include common.flex_common;
             gap: 7px;
             margin-bottom: 7px;
 
@@ -2300,7 +2409,7 @@
         }
 
         h4 {
-            @include flex_common;
+            @include common.flex_common;
             gap: 5px;
             color: rgba(var(--theme-green), 1);
             font-size: calc(18px + (20 - 18) * ((100vw - 1400px) / (1920 - 1400)));
@@ -2313,7 +2422,7 @@
 
         .product-timer {
             margin-top: calc(9px + (21 - 9) * ((100vw - 1400px) / (1920 - 1400)));
-            @include flex_common ($dis: flex, $align: center, $justify: space-between);
+            @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
             gap: 5px;
 
             li {
@@ -2332,15 +2441,6 @@
                     }
                 }
 
-                // +li {
-                //     &::before {
-                //         content: ":";
-                //         text-transform: uppercase;
-                //         font-size: 20px;
-                //         color: rgba(var(--content-color), .8);
-                //     }
-                // }
-
                 .counter-box {
                     padding: 10px 5px;
                     background-color: rgba(var(--primary-color2), 1);
@@ -2350,12 +2450,12 @@
                     .counter {
                         font-size: calc(15px + (18 - 15) * ((100vw - 1400px) / (1920 - 1400)));
                         font-weight: 600;
-                        color: rgba(var(--white), 1);
+                        color: #fff;
                         line-height: 1;
                     }
 
                     .smalltext {
-                        color: rgba(var(--white), 0.8);
+                        color: rgba(255, 255, 255, 0.8);
                         text-transform: uppercase;
                         font-size: 12px;
                         font-weight: 500;
@@ -2370,11 +2470,10 @@
 
 .discover-product-box {
     .product-image {
+        @include common.pseudowh($width: 100%, $height: calc(137px + (177 - 137) * ((100vw - 320px) / (1920 - 320))));
         border-radius: 10px;
         background-color: #F2F3F8;
         padding: calc(19px + (23 - 19) * ((100vw - 320px) / (1920 - 320))) calc(9px + (14 - 9) * ((100vw - 320px) / (1920 - 320)));
-        height: calc(137px + (177 - 137) * ((100vw - 320px) / (1920 - 320)));
-        width: 100%;
 
         img {
             @extend %img-contain;
@@ -2393,7 +2492,7 @@
         margin-inline: auto;
 
         h5 {
-            @include line;
+            @include common.line;
         }
     }
 }
@@ -2409,6 +2508,10 @@
         .product-image-box {
             &::before {
                 background: rgba(var(--theme-blue), 1);
+
+                body.dark & {
+                    background: rgba(28, 163, 209, 1);
+                }
             }
 
             .product-option {
@@ -2427,7 +2530,7 @@
 
     .product-image-box {
         padding: 2px;
-        @include pseudowh($width: 100%, $height: calc(135px + (210 - 135) * ((100vw - 320px) / (1920 - 320))));
+        @include common.pseudowh($width: 100%, $height: calc(135px + (210 - 135) * ((100vw - 320px) / (1920 - 320))));
         position: relative;
         z-index: 0;
         border-radius: 10px;
@@ -2436,13 +2539,17 @@
         background-color: #F0F9FE;
         transition: all 0.15s ease-in-out;
 
+        body.dark & {
+            background-color: #303438;
+        }
+
         &::before {
-            @include pos;
+            @include common.pos;
             transition: all 0.15s ease-in-out;
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%) rotate(26deg);
-            @include pseudowh($width: 150%, $height: 150%);
+            @include common.pseudowh($width: 150%, $height: 150%);
             background: linear-gradient(to right, #F0F9FE 0%, #F0F9FE 0%,
                     #FFA7BF 5%, #FFA7BF 5%,
                     #c4d9ff 10%, #c4d9ff 10%,
@@ -2468,10 +2575,14 @@
 
         .image-box {
             background-color: rgba(var(--white), 1);
-            @include pseudowh;
+            @include common.pseudowh;
             display: block;
             padding: 19px;
             border-radius: 8px;
+
+            body.dark & {
+                background-color: #303438;
+            }
 
             img {
                 @extend %img-contain;
@@ -2481,7 +2592,7 @@
         .product-option {
             position: absolute;
             top: -67px;
-            @include center(horizontal);
+            @include common.center(horizontal);
             transition: all 0.15s ease-in-out;
             opacity: 0;
             visibility: visible;
@@ -2489,30 +2600,45 @@
 
             li {
                 position: relative;
+                width: auto;
+                display: inline-block;
 
                 +li {
                     margin-left: 6px;
+
+                    [dir="rtl"] & {
+                        margin-left: unset;
+                        margin-right: 6px;
+                    }
                 }
 
                 &::before {
-                    @include pos;
-                    @include pseudowh($width: 2px, $height: 100%);
-                    @include center(both);
+                    @include common.pos;
+                    @include common.pseudowh($width: 2px, $height: 100%);
+                    @include common.center(both);
                     background-color: rgba(var(--content-color), 1);
+
+                    body.dark & {
+                        background-color: #5e6278;
+                    }
                 }
 
                 &::after {
-                    @include pos;
-                    @include pseudowh($width: 6px, $height: 6px);
-                    @include center(horizontal);
+                    @include common.pos;
+                    @include common.pseudowh($width: 6px, $height: 6px);
+                    @include common.center(horizontal);
                     background-color: rgba(var(--content-color), 1);
                     border-radius: 100%;
                     top: 0;
+
+                    body.dark & {
+                        background-color: #5e6278;
+                    }
                 }
 
                 a {
-                    @include pseudowh($width: calc(29px + (41 - 29) * ((100vw - 320px) / (1920 - 320))), $height: calc(29px + (41 - 29) * ((100vw - 320px) / (1920 - 320))));
-                    @include flex_common;
+                    @include common.pseudowh($width: calc(29px + (41 - 29) * ((100vw - 320px) / (1920 - 320))), $height: calc(29px + (41 - 29) * ((100vw - 320px) / (1920 - 320))));
+                    @include common.flex_common;
                     background-color: #EEF8FD;
                     border-radius: 100%;
                     font-size: calc(15px + (20 - 15) * ((100vw - 320px) / (1920 - 320)));
@@ -2520,33 +2646,24 @@
                     margin-top: 25px;
                     position: relative;
 
-                    &::before {
-                        @include pos;
-                        @include pseudowh($width: 6px, $height: 6px);
-                        @include center(horizontal);
-                        border-radius: 100%;
-                        background-color: rgba(var(--primary-color4), 1);
-                        top: 1px;
+                    body.dark & {
+                        color: #5e6278;
                     }
 
-                    // &.show {
-                    //     color: rgba(var(--primary-color4), 1);
-                    //     font-weight: 600;
-
-                    //     .ri-heart-3-line {
-                    //         color: rgba(var(--primary-color4), 1);
-
-                    //         &:before {
-                    //             content: "\ee0a";
-                    //         }
-                    //     }
-                    // }
+                    &::before {
+                        @include common.pos;
+                        @include common.pseudowh($width: 6px, $height: 6px);
+                        @include common.center(horizontal);
+                        border-radius: 100%;
+                        background-color: rgba(var(--primary-color), 1);
+                        top: 1px;
+                    }
                 }
             }
         }
 
         .p-shop-btn {
-            @include center(horizontal);
+            @include common.center(horizontal);
             position: absolute;
             bottom: -40px;
             width: max-content;
@@ -2563,15 +2680,6 @@
             opacity: 0;
             visibility: visible;
 
-            // &:hover {
-            //     background-color: rgba(var(--primary-color), 1);
-            //     color: #fff;
-
-            //     i {
-            //         color: #fff;
-            //     }
-            // }
-
             i {
                 font-size: 17px;
                 line-height: 1;
@@ -2585,7 +2693,7 @@
         .name {
             text-transform: capitalize;
             margin-bottom: 4px;
-            @include line;
+            @include common.line;
 
             a {
                 color: rgba(var(--title-color), 1);
@@ -2634,7 +2742,7 @@
             color: rgba(var(--title-color), 1);
 
             h5 {
-                @include line;
+                @include common.line;
             }
         }
     }
@@ -2645,7 +2753,7 @@
         border-radius: 10px;
         background-color: #F2F3F8;
         padding: 23px 14px;
-        @include pseudowh($width: 100%, $height: 177px);
+        @include common.pseudowh($width: 100%, $height: 177px);
 
         img {
             @extend %img-contain;
@@ -2671,7 +2779,6 @@
 
 .wishlistProduct.show {
     color: rgba(var(--primary-color), 1);
-    // font-weight: 600;
 
     i {
         color: rgba(var(--primary-color), 1);

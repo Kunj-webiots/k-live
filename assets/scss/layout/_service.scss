@@ -1,16 +1,22 @@
+@use "../utils/mixin/common";
+
 /**=====================
-     Service CSS
+    3.11 Service CSS
 ==========================**/
 .service-section {
     background-color: rgba(var(--title-color), 1);
     color: rgba(var(--white), 1);
+
+    body.dark & {
+        background-color: #202326;
+    }
 
     .service-list {
         display: grid;
         grid-template-columns: auto auto auto auto;
         gap: calc(18px + (36 - 18) * ((100vw - 320px) / (1920 - 320)));
 
-        @include max(1199px) {
+        @include common.max(1199px) {
             grid-template-columns: auto auto;
         }
 
@@ -29,7 +35,7 @@
             }
 
             &:nth-child(2) {
-                @include max(1199px) {
+                @include common.max(1199px) {
                     border-right: none;
                     padding-right: unset;
                 }
@@ -47,7 +53,7 @@
         gap: calc(5px + (10 - 5) * ((100vw - 320px) / (1920 - 320)));
 
         svg {
-            @include pseudowh($width: 29px, $height: 29px);
+            @include common.pseudowh($width: 29px, $height: 29px);
             fill: transparent;
             stroke: rgba(var(--primary-color), 1);
         }
@@ -65,6 +71,10 @@
         p {
             color: rgba(var(--white), 0.5);
             font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+
+            body.dark & {
+                color: rgba(255, 255, 255, 0.5);
+            }
         }
     }
 }
@@ -74,6 +84,10 @@
     color: rgba(var(--title-color), 1);
     border-radius: 5px;
     padding: calc(14px + (25 - 14) * ((100vw - 320px) / (1920 - 320))) calc(14px + (30 - 14) * ((100vw - 320px) / (1920 - 320)));
+
+    body.dark & {
+        background-color: #032a27;
+    }
 
     .service-list {
         display: grid;
@@ -93,21 +107,43 @@
             border-right: 1px solid rgba(var(--primary-color3), 0.2);
             padding-right: calc(18px + (36 - 18) * ((100vw - 320px) / (1920 - 320)));
 
+            [dir="rtl"] & {
+                border-left: 1px solid rgba(var(--primary-color3), 0.2);
+                border-right: unset;
+                padding-left: calc(18px + (36 - 18) * ((100vw - 320px) / (1920 - 320)));
+                padding-right: unset;
+            }
+
             &:nth-child(even) {
                 @media (max-width: 1770px) {
                     border-right: none;
                     padding-right: unset;
+
+                    [dir="rtl"] & {
+                        border-left: unset;
+                        padding-left: unset;
+                    }
                 }
             }
 
             &:last-child {
                 border-right: none;
                 padding-right: unset;
+
+                [dir="rtl"] & {
+                    border-left: unset;
+                    padding-left: unset;
+                }
             }
 
             @media (max-width: 664px) {
                 border-right: none;
                 padding-right: 0;
+
+                [dir="rtl"] & {
+                    border-left: unset;
+                    padding-left: unset;
+                }
             }
         }
     }
@@ -117,9 +153,13 @@
         gap: calc(7px + (10 - 7) * ((100vw - 320px) / (1920 - 320)));
 
         svg {
-            @include pseudowh($width: calc(28px + (37 - 28) * ((100vw - 320px) / (1920 - 320))), $height: calc(28px + (37 - 28) * ((100vw - 320px) / (1920 - 320))));
+            @include common.pseudowh($width: calc(28px + (37 - 28) * ((100vw - 320px) / (1920 - 320))), $height: calc(28px + (37 - 28) * ((100vw - 320px) / (1920 - 320))));
             fill: rgba(var(--primary-color3), 1);
             stroke: transparent;
+
+            body.dark & {
+                fill: rgba(255, 255, 255, 1);
+            }
         }
 
         >div {
@@ -144,14 +184,23 @@
     color: rgba(var(--title-color), 1);
     padding: calc(8px + (18 - 8) * ((100vw - 320px) / (1920 - 320))) calc(12px + (30 - 12) * ((100vw - 320px) / (1920 - 320)));
 
+    body.dark & {
+        background-color: rgba(var(--white), 1);
+    }
+
     .service-box {
         background: linear-gradient(180deg, rgba(var(--white), 1) 0%, rgba(var(--white), 0) 100%);
         padding: calc(22px + (38 - 22) * ((100vw - 320px) / (1920 - 320))) calc(9px + (13 - 9) * ((100vw - 320px) / (1920 - 320))) calc(9px + (13 - 9) * ((100vw - 320px) / (1920 - 320)));
-        @include flex_common;
+        @include common.flex_common;
         text-align: center;
 
+        body.dark & {
+            background: linear-gradient(180deg, #0f162c 0%, rgba(var(--white), 0) 100%);
+        }
+
         svg {
-            @include pseudowh($width: calc(30px + (42 - 30) * ((100vw - 320px) / (1920 - 320))), $height: calc(30px + (42 - 30) * ((100vw - 320px) / (1920 - 320))));
+            @include common.pseudowh($width: calc(30px + (42 - 30) * ((100vw - 320px) / (1920 - 320))), $height: calc(30px + (42 - 30) * ((100vw - 320px) / (1920 - 320))));
+            fill: rgba(var(--title-color), 1);
         }
 
         .service-content {

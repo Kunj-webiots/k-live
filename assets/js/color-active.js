@@ -1,4 +1,7 @@
-document.querySelectorAll(".color-box-list li a").forEach(function (button) {
+/**=====================
+   Color Active JS
+==========================**/
+document.querySelectorAll(".color-box-list li .btn").forEach(function (button) {
     button.addEventListener("click", function () {
         this.classList.toggle("active");
     });

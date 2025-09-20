@@ -1,5 +1,7 @@
+@use "../utils/mixin/common";
+
 /**=====================
-     Product Page scss
+    4.5 Product Page CSS
 ==========================**/
 .pt-25 {
     padding-top: 25px;
@@ -27,91 +29,9 @@
         font-size: calc(16px + (20 - 16) * ((100vw - 320px) / (1920 - 320)));
         font-weight: 500;
 
-        @include max(767.98px) {
+        @include common.max(767.98px) {
             text-align: center;
         }
-    }
-}
-
-.vendor-box {
-    padding: calc(12px + (33 - 12) * ((100vw - 320px) / (1920 - 320)));
-    background-color: rgba(var(--white), 1);
-
-    .vendor-contain {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        background-color: rgba(var(--white), 1);
-
-        .vendor-image {
-            @include pseudowh($width: 64px, $height: auto);
-
-            img {
-                @extend %img-contain;
-            }
-        }
-    }
-
-    .vendor-list {
-        margin-top: calc(13px + (24 - 13) * ((100vw - 320px) / (1920 - 320)));
-
-        ul {
-            @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(9px + (18 - 9) * ((100vw - 320px) / (1920 - 320))));
-            align-items: center;
-
-            li {
-                display: block;
-
-                .address-contact {
-                    @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 8px);
-                    align-items: center;
-
-                    i {
-                        font-size: 20px;
-                        color: rgba(var(--primary-color), 1);
-                    }
-
-                    h5 {
-                        font-weight: 600;
-                        display: flex;
-                        align-items: center;
-
-                        span {
-                            font-weight: 400;
-                            margin-left: 7px;
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    .vendor-detail {
-        margin: calc(13px + (28 - 13) * ((100vw - 320px) / (1920 - 320))) 0 0;
-        line-height: 1.7;
-        color: rgba(var(--content-color), 1);
-        padding-bottom: calc(10px + (18 - 10) * ((100vw - 320px) / (1920 - 320)));
-        border-bottom: 1px solid rgba(var(--border-color), 1);
-    }
-}
-
-.hot-line-number {
-    padding: calc(12px + (33 - 12) * ((100vw - 320px) / (1920 - 320)));
-    background-color: rgba(var(--white), 1);
-
-    h5 {
-        font-weight: 600;
-        margin-bottom: 4px;
-    }
-
-    h6 {
-        color: rgba(var(--content-color), 1);
-        margin-bottom: 17px;
-    }
-
-    h2 {
-        font-weight: 600;
-        font-size: 24px;
     }
 }
 
@@ -194,10 +114,10 @@
                 position: relative;
 
                 &:after {
-                    @include pos;
+                    @include common.pos;
                     bottom: 0;
                     left: 0;
-                    @include pseudowh($width: 0, $height: 2px);
+                    @include common.pseudowh($width: 0, $height: 2px);
                     background-color: rgba(var(--primary-color), 1);
                     transition: all 0.15s ease-in-out;
                 }
@@ -241,21 +161,21 @@
         gap: 3px 0;
         text-align: left;
 
-        @include max(767.98px) {
+        @include common.max(767.98px) {
             gap: 0;
         }
 
-        // @include max(400px) {
-        //     grid-template-columns: 1fr;
-        // }
-
         li {
+            display: flex;
+            gap: 5px;
             color: rgba(var(--content-color), 1);
             font-weight: 400;
             font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
 
-            @include max(767.98px) {
+            @include common.max(767.98px) {
                 text-align: center;
+                flex-direction: column;
+                justify-content: center;
                 border-top: 1px solid rgba(var(--border-color), 1);
                 padding-block: calc(6px + (10 - 6) * ((100vw - 320px) / (768 - 320)));
 
@@ -271,6 +191,11 @@
 
                 &:nth-child(even) {
                     border-left: 1px solid rgba(var(--border-color), 1);
+
+                    [dir="rtl"] & {
+                        border-left: unset;
+                        border-right: 1px solid rgba(var(--border-color), 1);
+                    }
                 }
             }
 
@@ -278,7 +203,11 @@
                 color: rgba(var(--title-color), 1);
                 font-weight: 500;
 
-                @include max(767.98px) {
+                [dir="rtl"] & {
+                    text-align: right;
+                }
+
+                @include common.max(767.98px) {
                     display: block;
                 }
             }
@@ -286,14 +215,21 @@
     }
 
     .description-list {
-        display: flex;
-        gap: 5px;
-        flex-wrap: wrap;
+        @include common.flex_wrap($dis: flex, $wrap: wrap, $gap: 5px);
         list-style: disc;
         padding-left: 22px;
 
-        @include max(767px) {
+        [dir="rtl"] & {
             padding-left: unset;
+            padding-right: 22px;
+        }
+
+        @include common.max(767px) {
+            padding-left: unset;
+
+            [dir="rtl"] & {
+                padding-right: unset;
+            }
         }
 
         li {
@@ -303,7 +239,7 @@
             font-weight: 400;
             font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
 
-            @include max(767px) {
+            @include common.max(767px) {
                 display: block;
                 text-align: center;
 
@@ -316,14 +252,21 @@
     }
 
     .shipping-info-list {
-        display: flex;
-        gap: 5px;
-        flex-wrap: wrap;
+        @include common.flex_wrap($dis: grid, $wrap: wrap, $gap: 5px);
         list-style: disc;
         padding-left: 22px;
 
-        @include max(767.98px) {
+        [dir="rtl"] & {
             padding-left: unset;
+            padding-right: 22px;
+        }
+
+        @include common.max(767.98px) {
+            padding-left: unset;
+
+            [dir="rtl"] & {
+                padding-right: unset;
+            }
         }
 
         li {
@@ -333,7 +276,7 @@
             font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
             width: 100%;
 
-            @include max(767.98px) {
+            @include common.max(767.98px) {
                 display: block;
                 text-align: center;
             }
@@ -356,7 +299,7 @@
             overflow: hidden;
 
             img {
-                @include pseudowh($width: auto, $height: auto);
+                @include common.pseudowh($width: auto, $height: auto);
                 cursor: pointer;
                 object-fit: contain;
             }
@@ -379,9 +322,8 @@
 
             h5 {
                 color: rgba(var(--title-color), 1);
-                // font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
 
-                @include max(767.98px) {
+                @include common.max(767.98px) {
                     text-align: center;
                 }
             }
@@ -399,15 +341,13 @@
         }
 
         .size-delivery-info {
+            @include common.flex_wrap($dis: flex, $wrap: wrap, $gap: calc(6px + (18 - 6) * ((100vw - 320px) / (1920 - 320))));
             border-top: 1px solid rgba(var(--content-color), 0.1);
             padding-top: calc(10px + (16 - 10) * ((100vw - 320px) / (1920 - 320)));
             margin-top: calc(10px + (16 - 10) * ((100vw - 320px) / (1920 - 320)));
-            display: flex;
             align-items: center;
-            gap: calc(6px + (18 - 6) * ((100vw - 320px) / (1920 - 320)));
-            flex-wrap: wrap;
 
-            @include max(767px) {
+            @include common.max(767px) {
                 justify-content: center;
             }
 
@@ -430,21 +370,15 @@
 
         .delivery-info {
             ul {
-                display: flex;
                 align-items: center;
-                gap: 4px;
-                flex-wrap: wrap;
+                @include common.flex_wrap($dis: flex, $wrap: wrap, $gap: 4px);
 
                 li {
                     font-size: calc(15px + (20 - 15) * ((100vw - 320px) / (1920 - 320)));
                     color: rgba(var(--content-color), 1);
-                    // display: flex;
-                    // gap: 5px;
-                    // align-items: center;
                     width: 100%;
 
-                    @include max(767px) {
-                        // justify-content: center;
+                    @include common.max(767px) {
                         text-align: center;
                     }
 
@@ -456,7 +390,7 @@
                     span {
                         font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
 
-                        @include max(767.98px) {
+                        @include common.max(767.98px) {
                             text-align: center;
                         }
                     }
@@ -466,13 +400,11 @@
 
         .product-count {
             ul {
-                display: inline-flex;
+                @include common.flex_wrap($dis: inline-flex, $wrap: wrap, $gap: 3px 15px);
                 align-items: center;
-                gap: 3px 15px;
                 margin-bottom: calc(8px + (16 - 8) * ((100vw - 320px) / (1920 - 320)));
-                flex-wrap: wrap;
 
-                @include max(767.98px) {
+                @include common.max(767.98px) {
                     justify-content: center;
                 }
 
@@ -500,30 +432,23 @@
             margin-bottom: calc(6px + (8 - 6) * ((100vw - 320px) / (1920 - 320)));
             font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
 
-            @include max(767.98px) {
+            @include common.max(767.98px) {
                 text-align: center;
                 display: block;
             }
         }
 
         .rating-review-sold-box {
-            display: flex;
+            @include common.flex_wrap($dis: flex, $wrap: wrap, $gap: calc(6px + (10 - 6) * ((100vw - 320px) / (1920 - 320))));
             align-items: center;
-            gap: calc(6px + (10 - 6) * ((100vw - 320px) / (1920 - 320)));
-            flex-wrap: wrap;
 
-            @include max(767px) {
+            @include common.max(767px) {
                 justify-content: center;
             }
 
-            // @include max(575px) {
-            //     display: grid;
-            //     gap: 6px;
-            // }
-
             li {
-                @include max(575px) {
-                    @include flex_common;
+                @include common.max(575px) {
+                    @include common.flex_common;
                 }
 
                 h5 {
@@ -543,11 +468,12 @@
                 }
 
                 &:nth-child(even) {
-                    @include pseudowh($width: 5px, $height: 5px);
+                    @include common.pseudowh($width: 5px, $height: 5px);
                     border-radius: 100%;
+                    margin-top: -4px;
                     background-color: rgba(var(--content-color), 0.4);
 
-                    @include max(575px) {
+                    @include common.max(575px) {
                         display: none;
                     }
                 }
@@ -559,20 +485,20 @@
             margin-bottom: 7px;
             font-size: calc(22px + (36 - 22) * ((100vw - 320px) / (1920 - 320)));
 
-            @include max(767.98px) {
+            @include common.max(767.98px) {
                 text-align: center;
             }
         }
 
         .price-rating {
-            @include flex_common ($dis: flex, $align: center, $justify: space-between);
+            @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
 
-            @include max(767px) {
+            @include common.max(767px) {
                 display: block;
             }
 
             .custom-rate {
-                @include max(767px) {
+                @include common.max(767px) {
                     margin-top: 10px;
                     justify-content: center;
                 }
@@ -599,7 +525,7 @@
                     li {
                         i {
                             font-size: 16px;
-                            @include pseudowh($width: 16px, $height: 16px);
+                            @include common.pseudowh($width: 16px, $height: 16px);
                         }
                     }
                 }
@@ -621,11 +547,11 @@
                 margin: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320))) 0 0;
                 font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
 
-                @include max(767.98px) {
+                @include common.max(767.98px) {
                     text-align: center;
                 }
 
-                @include max(575.98px) {
+                @include common.max(575.98px) {
                     line-height: 1.5;
                 }
             }
@@ -633,9 +559,9 @@
 
         .product-package {
             .select-package {
-                @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(5px + (13 - 5) * ((100vw - 320px) / (1920 - 320))));
+                @include common.flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(5px + (13 - 5) * ((100vw - 320px) / (1920 - 320))));
 
-                @include max(767px) {
+                @include common.max(767px) {
                     justify-content: center;
                 }
 
@@ -648,8 +574,8 @@
                     pointer-events: none;
 
                     &::after {
-                        @include pos;
-                        @include pseudowh($width: 100%, $height: 1px);
+                        @include common.pos;
+                        @include common.pseudowh($width: 100%, $height: 1px);
                         top: 50%;
                         transform: translateY(-50%) rotate(45deg);
                         left: 0;
@@ -676,7 +602,7 @@
 
                     .form-check-input {
                         cursor: pointer;
-                        @include pseudowh;
+                        @include common.pseudowh;
                         position: absolute;
                         top: 0;
                         left: 0;
@@ -688,7 +614,7 @@
                             ~.form-check-label {
                                 border: 1px solid rgba(var(--primary-color), 1);
                                 background-color: rgba(var(--primary-color), 1);
-                                color: rgba(var(--white), 1);
+                                color: #fff;
                             }
                         }
                     }
@@ -706,6 +632,10 @@
                         font-size: 14px;
                         transition: all 0.15s ease-in-out;
                         background-color: rgba(var(--white), 1);
+
+                        body.dark & {
+                            background-color: #131921;
+                        }
                     }
                 }
 
@@ -718,17 +648,17 @@
                         .form-check-input {
                             position: relative;
                             inset: unset;
-                            @include pseudowh($width: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320))), $height: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320))));
+                            @include common.pseudowh($width: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320))), $height: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320))));
                             opacity: 1;
                             border: 1px solid rgba(var(--content-color), 0.1);
                             transition: all 0.15s ease-in-out;
 
                             &::before {
-                                @include pos;
+                                @include common.pos;
                                 top: 50%;
                                 left: 50%;
                                 transform: translate(-50%, -50%) scale(0);
-                                @include pseudowh($width: calc(100% - calc(3px + (4 - 3) * ((100vw - 320px) / (1920 - 320)))), $height: calc(100% - calc(3px + (4 - 3) * ((100vw - 320px) / (1920 - 320)))));
+                                @include common.pseudowh($width: calc(100% - calc(3px + (4 - 3) * ((100vw - 320px) / (1920 - 320)))), $height: calc(100% - calc(3px + (4 - 3) * ((100vw - 320px) / (1920 - 320)))));
                                 background-color: rgba(var(--primary-color), 1);
                                 border-radius: 100%;
                                 transition: all 0.15s ease-in-out;
@@ -781,8 +711,8 @@
                         }
 
                         .form-check-label {
-                            @include pseudowh($width: calc(38px + (42 - 38) * ((100vw - 320px) / (1920 - 320))), $height: calc(38px + (42 - 38) * ((100vw - 320px) / (1920 - 320))));
-                            @include flex_common;
+                            @include common.pseudowh($width: calc(38px + (42 - 38) * ((100vw - 320px) / (1920 - 320))), $height: calc(38px + (42 - 38) * ((100vw - 320px) / (1920 - 320))));
+                            @include common.flex_common;
                             line-height: 1;
                             border: 1px solid rgba(var(--content-color), 0.1);
                             font-size: 15px;
@@ -790,8 +720,8 @@
                             padding: 3px;
 
                             span {
-                                @include pseudowh;
-                                @include flex_common;
+                                @include common.pseudowh;
+                                @include common.flex_common;
                                 transition: all 0.15s ease-in-out;
                             }
                         }
@@ -830,14 +760,14 @@
                             font-size: 15px;
                             position: relative;
                             padding: calc(2px + (3 - 2) * ((100vw - 320px) / (1920 - 320)));
-                            @include pseudowh($width: calc(54px + (75 - 54) * ((100vw - 320px) / (1920 - 320))), $height: calc(54px + (75 - 54) * ((100vw - 320px) / (1920 - 320))));
-                            @include flex_common;
+                            @include common.pseudowh($width: calc(54px + (75 - 54) * ((100vw - 320px) / (1920 - 320))), $height: calc(54px + (75 - 54) * ((100vw - 320px) / (1920 - 320))));
+                            @include common.flex_common;
 
                             span {
                                 transition: all 0.15s ease-in-out;
-                                @include pseudowh;
+                                @include common.pseudowh;
                                 overflow: hidden;
-                                @include flex_common;
+                                @include common.flex_common;
 
                                 img {
                                     @extend %img-cover;
@@ -880,15 +810,15 @@
                             border: 1px solid rgba(var(--content-color), 0.1);
                             font-size: calc(14px + (15 - 14) * ((100vw - 320px) / (1920 - 320)));
                             padding: calc(2px + (3 - 2) * ((100vw - 320px) / (1920 - 320)));
-                            @include pseudowh($width: calc(38px + (42 - 38) * ((100vw - 320px) / (1920 - 320))), $height: calc(38px + (42 - 38) * ((100vw - 320px) / (1920 - 320))));
+                            @include common.pseudowh($width: calc(38px + (42 - 38) * ((100vw - 320px) / (1920 - 320))), $height: calc(38px + (42 - 38) * ((100vw - 320px) / (1920 - 320))));
                             border-radius: 100%;
-                            @include flex_common;
+                            @include common.flex_common;
 
                             span {
                                 transition: all 0.15s ease-in-out;
-                                @include pseudowh;
+                                @include common.pseudowh;
                                 border-radius: 100%;
-                                @include flex_common;
+                                @include common.flex_common;
                                 padding-top: 1px;
                             }
                         }
@@ -904,12 +834,17 @@
                         font-size: calc(15px + (16 - 15) * ((100vw - 320px) / (1920 - 320)));
                         font-weight: 500;
                         padding: calc(9px + (12 - 9) * ((100vw - 320px) / (1920 - 320))) 36px calc(6px + (9 - 6) * ((100vw - 320px) / (1920 - 320))) calc(11px + (15 - 11) * ((100vw - 320px) / (1920 - 320)));
+
+                        [dir="rtl"] & {
+                            padding:
+                                calc(9px + (12 - 9) * ((100vw - 320px) / (1920 - 320))) calc(11px + (15 - 11) * ((100vw - 320px) / (1920 - 320))) calc(6px + (9 - 6) * ((100vw - 320px) / (1920 - 320))) 36px;
+                        }
                     }
                 }
             }
 
             .color-product {
-                @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(5px + (13 - 5) * ((100vw - 320px) / (1920 - 320))));
+                @include common.flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(5px + (13 - 5) * ((100vw - 320px) / (1920 - 320))));
 
                 .form-check {
                     position: relative;
@@ -919,7 +854,7 @@
 
                     .form-check-input {
                         cursor: pointer;
-                        @include pseudowh;
+                        @include common.pseudowh;
                         position: absolute;
                         top: 0;
                         left: 0;
@@ -957,6 +892,14 @@
                                     }
                                 }
                             }
+
+                            &:hover {
+                                ~.form-check-label {
+                                    &::after {
+                                        border-color: rgba(var(--primary-color), 0.5);
+                                    }
+                                }
+                            }
                         }
 
                         &:hover {
@@ -978,7 +921,7 @@
                     .form-check-label {
                         cursor: pointer;
                         position: relative;
-                        @include pseudowh($width: calc(36px + (40 - 36) * ((100vw - 320px) / (1920 - 320))), $height: calc(36px + (40 - 36) * ((100vw - 320px) / (1920 - 320))));
+                        @include common.pseudowh($width: calc(36px + (40 - 36) * ((100vw - 320px) / (1920 - 320))), $height: calc(36px + (40 - 36) * ((100vw - 320px) / (1920 - 320))));
                         min-height: unset;
                         margin: 0;
                         padding: 0;
@@ -990,12 +933,16 @@
                         transition: all 0.15s ease-in-out;
 
                         &::after {
-                            @include pos;
-                            @include center(both);
+                            @include common.pos;
+                            @include common.center(both);
+                            @include common.pseudowh($width: calc(100% + calc(7px + (8 - 7) * ((100vw - 320px) / (1920 - 320)))), $height: calc(100% + calc(7px + (8 - 7) * ((100vw - 320px) / (1920 - 320)))));
                             transition: all 0.15s ease-in-out;
                             border-radius: 0;
                             border: 1px solid #efeff1;
-                            @include pseudowh($width: calc(100% + calc(7px + (8 - 7) * ((100vw - 320px) / (1920 - 320)))), $height: calc(100% + calc(7px + (8 - 7) * ((100vw - 320px) / (1920 - 320)))));
+
+                            body.dark & {
+                                border-color: #374658;
+                            }
                         }
                     }
                 }
@@ -1010,7 +957,7 @@
                         .form-check-input {
                             position: relative;
                             inset: unset;
-                            @include pseudowh($width: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320))), $height: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320))));
+                            @include common.pseudowh($width: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320))), $height: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320))));
                             opacity: 1;
                             margin-top: -3px;
                             border: 1px solid rgba(var(--content-color), 0.1);
@@ -1042,7 +989,7 @@
                         }
 
                         .form-check-label {
-                            @include pseudowh($width: unset, $height: unset);
+                            @include common.pseudowh($width: unset, $height: unset);
                             border: unset;
 
                             &::after {
@@ -1102,11 +1049,11 @@
         }
 
         .note-box {
-            @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: calc(7px + (15 - 7) * ((100vw - 320px) / (1920 - 320))));
+            @include common.flex_wrap ($dis: flex, $wrap: nowrap, $gap: calc(7px + (15 - 7) * ((100vw - 320px) / (1920 - 320))));
             align-items: center;
             margin-top: 20px;
 
-            @include max(767px) {
+            @include common.max(767px) {
                 justify-content: center;
             }
 
@@ -1122,7 +1069,7 @@
                 width: auto;
                 margin-top: 0;
 
-                @include max(360px) {
+                @include common.max(360px) {
                     width: 160px;
                 }
 
@@ -1134,8 +1081,8 @@
                     z-index: 0;
 
                     .btn {
-                        @include pseudowh($width: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))), $height: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))));
-                        @include flex_common;
+                        @include common.pseudowh($width: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))), $height: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))));
+                        @include common.flex_common;
                         border: none;
                         padding: 0;
                         background-color: rgba(var(--white), 1);
@@ -1167,9 +1114,9 @@
                         z-index: 0;
 
                         button {
-                            @include pseudowh($width: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))),
+                            @include common.pseudowh($width: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))),
                                 $height: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))));
-                            @include flex_common;
+                            @include common.flex_common;
                             border: none;
                             padding: 0;
                             background-color: rgba(var(--white), 1);
@@ -1212,7 +1159,7 @@
         }
 
         .buy-box {
-            @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 11px);
+            @include common.flex_wrap ($dis: flex, $wrap: wrap, $gap: 11px);
             align-items: center;
             margin-top: 20px;
             border-bottom: 1px solid #ececec;
@@ -1243,18 +1190,18 @@
                 }
             }
 
-            @include max(767px) {
+            @include common.max(767px) {
                 justify-content: center;
             }
 
             a {
-                @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(5px + (8 - 5) * ((100vw - 320px) / (1920 - 320))));
+                @include common.flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(5px + (8 - 5) * ((100vw - 320px) / (1920 - 320))));
                 align-items: center;
                 color: #777;
 
                 i {
                     font-size: 17px;
-                    @include pseudowh($width: 17px, $height: auto);
+                    @include common.pseudowh($width: 17px, $height: auto);
                 }
             }
         }
@@ -1267,10 +1214,10 @@
                 margin-top: 20px;
 
                 .product-info-list {
-                    @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 11px);
+                    @include common.flex_wrap ($dis: flex, $wrap: wrap, $gap: 11px);
                     align-items: flex-start;
 
-                    @include max(480px) {
+                    @include common.max(480px) {
                         column-count: 1;
                         padding: 15px;
                     }
@@ -1282,12 +1229,12 @@
                         position: relative;
                         color: #777;
 
-                        @include max(575px) {
+                        @include common.max(575px) {
                             width: auto;
                             margin-left: 18px;
                         }
 
-                        @include max(480px) {
+                        @include common.max(480px) {
                             margin-left: unset;
                             width: 100%;
                             padding-left: unset;
@@ -1298,9 +1245,9 @@
                         }
 
                         &::after {
-                            @include pos;
-                            @include center(vertical);
-                            @include pseudowh($width: 5px, $height: 5px);
+                            @include common.pos;
+                            @include common.center(vertical);
+                            @include common.pseudowh($width: 5px, $height: 5px);
                             left: 0;
                             background-color: rgba(var(--content-color), 1);
                             border-radius: 100%;
@@ -1351,9 +1298,9 @@
         .payment-option {
             ul {
                 align-items: center;
-                @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(3px + (8 - 3) * ((100vw - 320px) / (1920 - 320))));
+                @include common.flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(3px + (8 - 3) * ((100vw - 320px) / (1920 - 320))));
 
-                @include max(767px) {
+                @include common.max(767px) {
                     justify-content: center;
                 }
 
@@ -1371,9 +1318,9 @@
         .social-option {
             ul {
                 align-items: center;
-                @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(8px + (20 - 8) * ((100vw - 320px) / (1920 - 320))));
+                @include common.flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(8px + (20 - 8) * ((100vw - 320px) / (1920 - 320))));
 
-                @include max(767px) {
+                @include common.max(767px) {
                     justify-content: center;
                 }
 
@@ -1401,7 +1348,7 @@
             padding-bottom: 20px;
 
             ul {
-                @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 20px);
+                @include common.flex_wrap ($dis: flex, $wrap: wrap, $gap: 20px);
 
                 li {
                     display: block;
@@ -1435,14 +1382,12 @@
             margin-top: calc(15px + (40 - 15) * ((100vw - 320px) / (1920 - 320)));
 
             img {
-                @include pseudowh;
-                // width: 100%;
-                // height: 100%;
+                @include common.pseudowh;
             }
         }
 
         .product-offer-box {
-            @include flex_common ($dis: flex, $align: center, $justify: space-between);
+            @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
             padding: 18px 27px;
             background-color: rgba(var(--primary-color2), 1);
             color: rgba(var(--white), 1);
@@ -1493,7 +1438,7 @@
                 gap: 15px;
 
                 .product-image {
-                    @include pseudowh($width: calc(78px + (90 - 78) * ((100vw - 990px) / (1920 - 990))), $height: calc(78px + (90 - 78) * ((100vw - 990px) / (1920 - 990))));
+                    @include common.pseudowh($width: calc(78px + (90 - 78) * ((100vw - 990px) / (1920 - 990))), $height: calc(78px + (90 - 78) * ((100vw - 990px) / (1920 - 990))));
                     background-color: rgba(var(--base-gray), 1);
                     padding: calc(8px + (10 - 8) * ((100vw - 990px) / (1920 - 990)));
                     border-radius: 4px;
@@ -1517,7 +1462,7 @@
 
             .qty-stock-box {
                 margin-top: calc(12px + (18 - 12) * ((100vw - 320px) / (1920 - 320)));
-                @include flex_common ($dis: flex, $align: center, $justify: space-between);
+                @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
 
                 .qty-box {
                     display: flex;
@@ -1527,8 +1472,8 @@
                     background-color: rgba(var(--base-gray), 1);
 
                     .qty-btn {
-                        @include flex_common;
-                        @include pseudowh($width: calc(30px + (35 - 30) * ((100vw - 991px) / (1920 - 991))), $height: calc(30px + (35 - 30) * ((100vw - 991px) / (1920 - 991))));
+                        @include common.flex_common;
+                        @include common.pseudowh($width: calc(30px + (35 - 30) * ((100vw - 991px) / (1920 - 991))), $height: calc(30px + (35 - 30) * ((100vw - 991px) / (1920 - 991))));
                         padding: 0;
                         border-radius: calc(2px + (4 - 2) * ((100vw - 991px) / (1920 - 991)));
                         background-color: rgba(var(--white), 1);
@@ -1536,7 +1481,7 @@
 
                         &:hover {
                             background-color: rgba(var(--primary-color), 1);
-                            color: rgba(var(--white), 1);
+                            color: #fff;
                         }
                     }
 
@@ -1547,8 +1492,10 @@
                         border: none;
                         text-align: center;
                         outline: unset;
+                        padding-top: 3px;
+                        color: rgba(var(--title-color), 1);
                         background-color: transparent;
-                        font-size: calc(16px + (20 - 16) * ((100vw - 991px) / (1920 - 991)));
+                        font-size: calc(16px + (18 - 16) * ((100vw - 991px) / (1920 - 991)));
 
                         &[type="number"] {
                             appearance: textfield;
@@ -1582,7 +1529,7 @@
                 border-top: 1px solid rgba(var(--content-color), 0.1);
 
                 h4 {
-                    @include flex_common ($dis: flex, $align: center, $justify: space-between);
+                    @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
                     font-weight: 600;
                     font-size: calc(20px + (25 - 20) * ((100vw - 990px) / (1920 - 990)));
 
@@ -1604,7 +1551,7 @@
 
                 button {
                     border-radius: 6px;
-                    @include flex_common;
+                    @include common.flex_common;
                     font-weight: 500;
                     gap: 8px;
 
@@ -1618,11 +1565,15 @@
                     &.fw-500 {
                         font-weight: 500;
                     }
+
+                    &.buy-btn {
+                        animation: shake 150ms 2 linear;
+                    }
                 }
             }
 
             .seller-product {
-                @include flex_common ($dis: flex, $align: center, $justify: space-between);
+                @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
                 gap: 13px;
 
                 h5 {
@@ -1659,178 +1610,6 @@
     }
 }
 
-.related-product-2 {
-    .related-product {
-        .product-title-2 {
-            margin-top: 0;
-
-            h4 {
-                font-size: calc(21px + (25 - 21) * ((100vw - 320px) / (1920 - 320)));
-                font-weight: 600;
-                margin-bottom: calc(16px + (21 - 16) * ((100vw - 320px) / (1920 - 320)));
-            }
-        }
-    }
-
-    .related-box {
-        display: flex;
-        align-items: flex-start;
-        flex-wrap: nowrap;
-        gap: 15px;
-
-        @media (max-width: 1577px) {
-            flex-wrap: wrap;
-        }
-
-        .related-image {
-            touch-action: pan-x;
-            overflow: auto;
-            padding-bottom: 13px;
-
-            >ul {
-                display: flex;
-                align-items: flex-start;
-                flex-wrap: nowrap;
-                gap: calc(25px + (35 - 25) * ((100vw - 320px) / (1920 - 320)));
-
-                >li {
-                    width: 225px;
-                    min-width: 225px;
-                    position: relative;
-
-                    +li {
-                        &::before {
-                            @include pos($pos: absolute, $content: "\2b");
-                            @include center(vertical);
-                            left: calc(-18px + (-26 - -18) * ((100vw - 320px) / (1920 - 320)));
-                            font-size: calc(14px + (20 - 14) * ((100vw - 320px) / (1920 - 320)));
-                            @include font;
-                            color: rgba(var(--content-color), 1);
-                        }
-                    }
-
-                    a {
-                        display: block;
-                        overflow: hidden;
-
-                        .image-box {
-                            background-color: rgba(var(--light-gray), 1);
-                            @include pseudowh($width: calc(136px + (170 - 136) * ((100vw - 320px) / (1920 - 320))), $height: calc(136px + (170 - 136) * ((100vw - 320px) / (1920 - 320))));
-                            padding: 10px;
-                            @include flex_common;
-                            position: relative;
-                            border-radius: calc(6px + (9 - 6) * ((100vw - 320px) / (1920 - 320)));
-
-                            .form-check {
-                                position: absolute;
-                                top: 8px;
-                                left: 8px;
-                                padding: 0;
-
-                                .checkbox_animated {
-                                    &::after {
-                                        border: 1px solid #4a5567;
-                                        border-radius: 3px;
-                                    }
-                                }
-                            }
-                        }
-
-                        .related-content {
-                            margin-top: 12px;
-                            padding: 0 calc(4px + (12 - 4) * ((100vw - 320px) / (1920 - 320)));
-
-                            h5 {
-                                font-size: 15px;
-                                line-height: 1.2;
-                                color: rgba(var(--title-color), 1);
-                                -webkit-line-clamp: 1;
-                                -webkit-box-orient: vertical;
-                                display: -webkit-box;
-                                overflow: hidden;
-                            }
-
-                            h6 {
-                                margin-top: 5px;
-                                color: rgba(var(--primary-color), 1);
-
-                                del {
-                                    color: rgba(var(--content-color), 1);
-                                    margin-left: 4px;
-                                    font-size: 13px;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        .buddle-list {
-            gap: 15px;
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-
-            >ul {
-                display: flex;
-                align-items: center;
-                flex-wrap: wrap;
-                gap: 15px;
-
-                >li {
-                    width: 100%;
-                    display: block;
-
-                    .form-check {
-                        display: flex;
-                        padding: 0;
-                        margin-bottom: 0;
-                        align-items: center;
-
-                        .checkbox_animated {
-                            margin-top: -4px;
-                        }
-
-                        .form-check-label {
-                            span {
-                                font-size: calc(15px + (17 - 15) * ((100vw - 320px) / (1920 - 320)));
-                                color: rgba(var(--content-color), 1);
-
-                                span {
-                                    color: rgba(var(--title-color), 1);
-                                    font-weight: 600;
-                                }
-                            }
-                        }
-                    }
-
-                    &.contant {
-                        margin-top: calc(0px + (15 - 0) * ((100vw - 320px) / (1920 - 320)));
-
-                        h5 {
-                            font-size: 17px;
-                            font-weight: 600;
-                            color: rgba(var(--content-color), 1);
-                        }
-
-                        h4 {
-                            margin-top: 8px;
-                            font-weight: 700;
-
-                            del {
-                                font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
-                                margin-left: 5px;
-                                font-weight: 400;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
 .sticky-bottom-cart {
     position: sticky;
     bottom: -50px;
@@ -1844,9 +1623,9 @@
     transition: all 0.15s ease-in-out;
 
     .cart-content {
-        @include flex_common ($dis: flex, $align: center, $justify: space-between);
+        @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
 
-        @include max(575px) {
+        @include common.max(575px) {
             display: block;
         }
     }
@@ -1855,12 +1634,12 @@
         display: flex;
         align-items: center;
 
-        @include max(630.98px) {
+        @include common.max(630.98px) {
             display: none;
         }
 
         img {
-            @include pseudowh($width: 60px, $height: 70px);
+            @include common.pseudowh($width: 60px, $height: 70px);
             object-fit: contain;
         }
 
@@ -1869,11 +1648,16 @@
             color: rgba(var(--title-color), 1);
             margin-top: 0;
 
-            @include max(991px) {
+            [dir="rtl"] & {
+                margin-left: unset;
+                margin-right: 12px;
+            }
+
+            @include common.max(991px) {
                 display: none;
             }
 
-            @include max(480px) {
+            @include common.max(480px) {
                 display: block;
             }
 
@@ -1889,17 +1673,29 @@
             }
 
             h6 {
+                display: flex;
+                align-items: center;
                 font-size: 15px;
                 margin-top: 6px;
 
                 del {
                     margin-left: 7px;
                     color: rgba(var(--content-color), 1);
+
+                    [dir="rtl"] & {
+                        margin-left: unset;
+                        margin-right: 7px;
+                    }
                 }
 
                 span {
                     color: rgba(var(--primary-color), 1);
                     margin-left: 5px;
+
+                    [dir="rtl"] & {
+                        margin-left: unset;
+                        margin-right: 5px;
+                    }
                 }
             }
         }
@@ -1910,15 +1706,20 @@
         align-items: center;
         margin: 0 calc(9px + (25 - 9) * ((100vw - 576px) / (1920 - 576))) 0 auto;
 
-        @include max(991.98px) {
+        @include common.max(991.98px) {
             margin-inline: auto;
         }
 
-        @include max(630.98px) {
+        @include common.max(630.98px) {
             margin-left: unset;
+
+            [dir="rtl"] & {
+                margin-left: auto;
+                margin-right: unset;
+            }
         }
 
-        @include max(575px) {
+        @include common.max(575px) {
             display: none;
         }
 
@@ -1935,15 +1736,14 @@
                 background-color: rgba(var(--base-gray), 1);
 
                 button {
-                    @include flex_common;
-                    @include pseudowh($width: calc(30px + (35 - 30) * ((100vw - 320px) / (1920 - 320))), $height: 100%);
+                    @include common.flex_common;
+                    @include common.pseudowh($width: calc(30px + (35 - 30) * ((100vw - 320px) / (1920 - 320))), $height: 100%);
                     border: unset;
                     background-color: rgba(var(--white), 1);
                     padding: 0;
                     border-radius: calc(3px + (5 - 3) * ((100vw - 320px) / (1920 - 320))) !important;
                     color: rgba(var(--title-color), 1);
                     font-size: calc(15px + (17 - 15) * ((100vw - 320px) / (1920 - 320)));
-                    // height: 100%;
 
                     i {
                         line-height: 1;
@@ -1951,6 +1751,7 @@
                 }
 
                 .form-control {
+                    color: rgba(var(--title-color), 1);
                     width: calc(100% - calc(30px + (35 - 30) * ((100vw - 320px) / (1920 - 320))) - calc(30px + (35 - 30) * ((100vw - 320px) / (1920 - 320))));
                     padding: 0;
                     text-align: center;
@@ -1973,6 +1774,7 @@
             border-radius: 0;
 
             .form-control {
+                color: rgba(var(--title-color), 1);
                 background-color: rgba(var(--base-gray), 1);
                 padding: 7px calc(12px + (19 - 12) * ((100vw - 320px) / (1920 - 320))) 4px;
                 height: 100%;
@@ -1981,28 +1783,33 @@
                 background-position: right calc(8px + (12 - 8) * ((100vw - 320px) / (1920 - 320))) center;
                 border: 1px solid rgba(var(--content-color), 0.1);
                 font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+
+                [dir="rtl"] & {
+                    background-position: left calc(8px + (12 - 8) * ((100vw - 320px) / (1920 - 320))) center;
+                    padding-right: calc(12px + (19 - 12) * ((100vw - 320px) / (1920 - 320)));
+                    padding-left: calc(26px + (39 - 26) * ((100vw - 320px) / (1920 - 320)));
+                }
             }
         }
     }
 
     .add-btn {
-        @include max(575px) {
-            @include flex_common;
+        @include common.max(575px) {
+            @include common.flex_common;
         }
 
         a {
-            padding: 10px calc(12px + (18 - 12) * ((100vw - 320px) / (1920 - 320)));
+            padding: 12px calc(12px + (18 - 12) * ((100vw - 320px) / (1920 - 320))) 8px;
             font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320)));
             border-radius: 4px;
 
-            @include max(575.98px) {
+            @include common.max(575.98px) {
                 padding-block: calc(8px + (10 - 8) * ((100vw - 320px) / (576 - 320)));
                 width: 100%;
-                //     @include flex_common;
             }
 
             +a {
-                @include max(575.98px) {
+                @include common.max(575.98px) {
                     margin-left: 8px;
                 }
             }
@@ -2015,22 +1822,12 @@
 }
 
 .stickyCart {
-    // padding-bottom: 94px;
-
-    // .theme-option-2 {
-    //     bottom: calc(74px + (90 - 74) * ((100vw - 320px) / (1920 - 320)));
-    // }
-
-    // @include max(575px) {
-    //     padding-bottom: 0;
-    // }
-
     .sticky-bottom-cart {
         bottom: 0;
         visibility: visible;
         opacity: 1;
 
-        @include max(575.98px) {
+        @include common.max(575.98px) {
             bottom: 68px;
         }
     }
@@ -2039,29 +1836,11 @@
         &.show {
             bottom: 95px;
 
-            @include max(767px) {
+            @include common.max(767px) {
                 bottom: calc(140px + (146 - 140) * ((100vw - 320px) / (768 - 320)));
             }
         }
     }
-
-    // .recently-purchase {
-    //     &.show {
-    //         bottom: 110px;
-    //     }
-    // }
-
-    // .tap-top {
-    //     bottom: 110px;
-    // }
-
-    // .footer-section {
-    //     margin-bottom: 82px;
-
-    //     @include max(575px) {
-    //         margin: 0;
-    //     }
-    // }
 
     .recent-product-box {
         &.active {
@@ -2081,7 +1860,7 @@
         padding: calc(15px + (20 - 15) * ((100vw - 320px) / (1920 - 320))) calc(15px + (26 - 15) * ((100vw - 320px) / (1920 - 320)));
         border-radius: calc(4px + (6 - 4) * ((100vw - 320px) / (1920 - 320)));
 
-        @include max(1000.98px) {
+        @include common.max(1000.98px) {
             display: grid;
         }
 
@@ -2138,7 +1917,9 @@
                 gap: calc(10px + (13 - 10) * ((100vw - 320px) / (1920 - 320)));
 
                 .form-check-input {
-                    @include pseudowh($width: 20px, $height: 20px);
+                    background-color: transparent;
+                    border: none;
+                    @include common.pseudowh($width: 20px, $height: 20px);
                     float: unset;
                     margin: 0;
                     margin-top: -5px;
@@ -2151,33 +1932,35 @@
 
                         &::before {
                             border-color: rgba(var(--primary-color), 1);
-                            border-radius: 3px;
                         }
                     }
 
                     &::before {
-                        @include pos;
-                        @include center(both);
-                        @include pseudowh;
+                        @include common.pos;
+                        @include common.center(both);
+                        @include common.pseudowh;
                         background-color: rgba(var(--white), 1);
                         border: 1px solid rgba(var(--border-color), 1);
                         transition: all 0.15s ease-in-out;
                     }
 
                     &::after {
-                        @include pos;
-                        top: 2px;
-                        left: 6px;
+                        @include common.pos;
+                        top: 3px;
+                        left: 7px;
                         transform: rotate(40deg) scale(0);
                         border: 2px solid rgba(var(--primary-color), 1);
                         border-top: unset;
                         border-left: unset;
-                        @include pseudowh($width: 6px, $height: 10px);
+                        @include common.pseudowh($width: 6px, $height: 10px);
                         transition: all 0.15s ease-in-out;
                     }
                 }
 
                 .form-check-label {
+                    gap: 6px;
+                    display: flex;
+                    align-items: center;
                     font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (1920 - 320)));
                     font-weight: 400;
                     color: rgba(var(--content-color), 1);
@@ -2227,31 +2010,20 @@
     .border-left-cls {
         border-left: 1px dashed rgba(var(--border-color), 1);
 
-        @include max(1399.98px) {
+        [dir="rtl"] & {
+            border-left: unset;
+            border-right: 1px dashed rgba(var(--border-color), 1);
+        }
+
+        @include common.max(1399.98px) {
             border: none;
+
+            [dir="rtl"] & {
+                border: none;
+            }
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .zoomable {
     position: relative;
@@ -2275,7 +2047,7 @@
 
         &::after {
             content: "\ea60";
-            @include font;
+            @include common.font;
         }
 
         &::before {
@@ -2289,7 +2061,7 @@
 
         &::after {
             content: "\ea6c";
-            @include font;
+            @include common.font;
         }
 
         &::before {
@@ -2299,7 +2071,7 @@
 
     .lg-outer {
         .lg-thumb {
-            @include flex_common;
+            @include common.flex_common;
             padding: 10px 0 13px;
             gap: 15px;
             flex-wrap: nowrap;
@@ -2321,10 +2093,3 @@
         }
     }
 }
-
-
-// .product-section .about-item-list li:nth-last-child(-n+2) {
-//     @include max(767.98px) {
-//         background-color: red;
-//     }
-// }

@@ -1,8 +1,10 @@
+/*=====================
+    Price Change Js
+==========================*/
 document.querySelectorAll('.price-check').forEach(checkbox => {
     checkbox.addEventListener('click', updatePrice);
 });
 
-// Function to update the total price
 function updatePrice() {
     let total = 0;
     document.querySelectorAll('.price-check').forEach(checkbox => {

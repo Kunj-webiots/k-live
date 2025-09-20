@@ -1,9 +1,11 @@
+@use "../utils/mixin/common";
+
 /**=====================
-     Button CSS
+    2.4 Button CSS
 ==========================**/
 .btn {
+    color: rgba(var(--title-color), 1);
     padding: calc(10px + (13 - 10) * ((100vw - 320px) / (1920 - 320))) calc(18px + (23 - 18) * ((100vw - 320px) / (1920 - 320))) calc(7px + (10 - 7) * ((100vw - 320px) / (1920 - 320)));
-    // padding: 10px 23px 10px;
     border: none;
     font-weight: 500;
     font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (1920 - 320)));
@@ -83,12 +85,12 @@
 
     &-bg-theme {
         background-color: rgba(var(--primary-color), 1);
-        color: rgba(var(--white), 1);
-        --Color: rgba(var(--white), 1);
+        color: #fff;
+        --Color: #fff;
 
         &:hover {
-            color: rgba(var(--white), 1);
-            --Color: rgba(var(--white), 1);
+            color: #fff;
+            --Color: #fff;
             background-color: rgba(var(--primary-color), 1);
         }
 
@@ -99,6 +101,28 @@
             outline: 1px solid rgba(var(--primary-color), 1);
             border: none;
             background-color: transparent;
+        }
+    }
+
+    &-load-more {
+        background-color: rgba(var(--primary-color), 1);
+        color: rgba(var(--white), 1);
+        padding-inline: calc(28px + (55 - 28) * ((100vw - 320px) / (1920 - 320)));
+        margin-top: calc(20px + (33 - 20) * ((100vw - 320px) / (1920 - 320)));
+        font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320)));
+        border: 1px solid rgba(var(--primary-color), 1);
+
+        &:hover {
+            background-color: transparent;
+            border-color: rgba(var(--primary-color), 1);
+            color: rgba(var(--primary-color), 1);
+        }
+
+        &:disabled {
+            border-color: rgba(var(--primary-color), 1);
+            background-color: rgba(var(--primary-color), 1);
+            color: rgba(var(--white), 1);
+            cursor: not-allowed;
         }
     }
 }

@@ -1,3 +1,6 @@
+/**=====================
+   Counter JS
+==========================**/
 const eventDate = new Date("2026-10-21T14:00:00-06:00");
 const countdownElement = document.getElementById("countdown");
 const daysElement = document.getElementById("days");

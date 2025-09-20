@@ -1,0 +1,11 @@
+/**=====================
+    2.7 Lazy Load css Start
+==========================**/
+img {
+    filter: blur(20px);
+
+    &.loaded {
+        filter: blur(0);
+        opacity: 1;
+    }
+}

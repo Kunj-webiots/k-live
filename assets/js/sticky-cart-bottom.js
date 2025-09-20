@@ -1,5 +1,5 @@
 /**=====================
-     Sticky Cart Bottom js
+  Sticky Cart Bottom Js
 ==========================**/
 window.addEventListener('scroll', function () {
   var scroll = window.pageYOffset || document.documentElement.scrollTop;

@@ -1,5 +1,7 @@
+@use "../utils/mixin/common";
+
 /**=====================
-     Modal CSS
+    2.9 Modal CSS
 ==========================**/
 .theme-modal {
      &.fade {
@@ -18,30 +20,23 @@
           overflow: unset;
           border: none;
           border-radius: 0;
+          background-color: rgba(var(--white), 1);
 
           .modal-header {
                padding-bottom: 0;
                border: none;
+               justify-content: space-between;
 
                .btn-close {
-                    @include pseudowh($width: calc(26px + (30 - 26) * ((100vw - 320px) / (1920 - 320))), $height: calc(26px + (30 - 26) * ((100vw - 320px) / (1920 - 320))));
+                    @include common.pseudowh($width: calc(26px + (30 - 26) * ((100vw - 320px) / (1920 - 320))), $height: calc(26px + (30 - 26) * ((100vw - 320px) / (1920 - 320))));
                     margin: 0;
                     padding: 0;
                     background: none;
                     line-height: 1;
-                    // font-size: 22px;
                     border-radius: 0;
-                    color: rgba(var(--white), 1);
+                    color: #fff;
                     opacity: 1;
-                    // position: absolute;
-                    // top: 10px;
-                    // right: 10px;
                     background-color: rgba(var(--primary-color), 1);
-
-                    // &::after {
-                    //      content: "\eb99";
-                    //      @include font;
-                    // }
 
                     i {
                          font-size: calc(18px + (22 - 18) * ((100vw - 320px) / (1920 - 320)));
@@ -77,6 +72,112 @@
      }
 }
 
+.newsletter-modal {
+     padding: 0 !important;
+
+     .modal-dialog {
+          max-width: 600px;
+
+          .modal-content {
+               border-radius: 6px;
+               overflow: hidden;
+          }
+     }
+
+     .btn-close {
+          @include common.pseudowh($width: calc(26px + (30 - 26) * ((100vw - 320px) / (1920 - 320))), $height: calc(26px + (30 - 26) * ((100vw - 320px) / (1920 - 320))));
+          margin: 0;
+          padding: 0;
+          background: none;
+          line-height: 1;
+          z-index: 1;
+          border-radius: 0;
+          color: #fff;
+          opacity: 1;
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          background-color: rgba(var(--primary-color), 1);
+
+          i {
+               font-size: calc(18px + (22 - 18) * ((100vw - 320px) / (1920 - 320)));
+          }
+     }
+
+     .modal-content {
+          .modal-body {
+               padding: 0;
+          }
+     }
+
+     .newsletter-box {
+          position: relative;
+          z-index: 0;
+
+          .newsletter-image {
+               position: absolute;
+               top: 0;
+               left: 0;
+               z-index: -1;
+               @extend %img-cover;
+               object-position: bottom;
+          }
+
+          .newsletter-content {
+               padding: calc(50px + (60 - 50) * ((100vw - 320px) / (1920 - 320))) calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320))) calc(106px + (159 - 106) * ((100vw - 320px) / (1920 - 320)));
+
+               h3 {
+                    font-size: calc(22px + (26 - 22) * ((100vw - 320px) / (1920 - 320)));
+
+                    body.dark & {
+                         color: #202326;
+                    }
+               }
+
+               p {
+                    width: 80%;
+                    color: rgba(var(--content-color), 1);
+                    margin-top: 2px;
+                    font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+
+                    body.dark & {
+                         color: #5e6278;
+                    }
+
+                    @include common.max(767px) {
+                         width: 100%;
+                    }
+               }
+
+               .newsletter-form-box {
+                    margin-top: calc(12px + (20 - 12) * ((100vw - 320px) / (1920 - 320)));
+                    gap: calc(8px + (10 - 8) * ((100vw - 320px) / (1920 - 320)));
+                    display: flex;
+
+                    .form-control {
+                         padding: calc(9px + (11 - 9) * ((100vw - 320px) / (1920 - 320))) calc(14px + (19 - 14) * ((100vw - 320px) / (1920 - 320))) calc(7px + (9 - 7) * ((100vw - 320px) / (1920 - 320)));
+                         border-radius: calc(4px + (6 - 4) * ((100vw - 320px) / (1920 - 320)));
+                         font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+
+                         [dir="rtl"] & {
+                              text-align: right;
+                         }
+                    }
+
+                    .newsletter-button {
+                         background-color: rgba(var(--primary-color), 1);
+                         color: #fff;
+                         font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+                         padding-top: calc(8px + (10 - 8) * ((100vw - 320px) / (1920 - 320)));
+                         border-radius: calc(4px + (6 - 4) * ((100vw - 320px) / (1920 - 320)));
+                         margin: 0;
+                         white-space: nowrap;
+                    }
+               }
+          }
+     }
+}
+
 .notify-modal {
      .modal-content {
           .items-box {
@@ -89,9 +190,7 @@
                border: 1px solid rgba(var(--border-color), 1);
 
                .items-img {
-                    @include pseudowh($width: 110px, $height: 110px);
-                    // width: 110px;
-                    // height: 110px;
+                    @include common.pseudowh($width: 110px, $height: 110px);
                     background-color: rgba(var(--white), 1);
                     padding: 10px;
                     border-radius: 7px;
@@ -143,9 +242,7 @@
                border: 1px solid rgba(var(--border-color), 1);
 
                .items-img {
-                    @include pseudowh($width: calc(82px + (110 - 82) * ((100vw - 320px) / (1920 - 320))), $height: calc(82px + (110 - 82) * ((100vw - 320px) / (1920 - 320))));
-                    // width: 110px;
-                    // height: 110px;
+                    @include common.pseudowh($width: calc(82px + (110 - 82) * ((100vw - 320px) / (1920 - 320))), $height: calc(82px + (110 - 82) * ((100vw - 320px) / (1920 - 320))));
                     background-color: rgba(var(--white), 1);
                     padding: calc(8px + (10 - 8) * ((100vw - 320px) / (1920 - 320)));
                     border-radius: calc(4px + (7 - 4) * ((100vw - 320px) / (1920 - 320)));
@@ -234,16 +331,14 @@
           }
 
           .btn-close {
-               @include pseudowh($width: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))), $height: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))));
-               @include flex_common;
+               @include common.pseudowh($width: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))), $height: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))));
+               @include common.flex_common;
                position: absolute;
                margin: 0;
                padding: 0;
                top: calc(6px + (10 - 6) * ((100vw - 320px) / (1920 - 320)));
                right: calc(6px + (10 - 6) * ((100vw - 320px) / (1920 - 320)));
                background: unset;
-               // width: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320)));
-               // height: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320)));
                background-color: rgba(var(--primary-color), 1);
                opacity: 1;
                color: rgba(var(--white), 1);
@@ -257,7 +352,6 @@
 
           .authentication-box {
                padding: 22px 25px;
-               // padding:padding: calc(15px + (26 - 15) * ((100vw - 320px) / (1920 - 320))) calc(18px + (37 - 18) * ((100vw - 320px) / (1920 - 320)));
 
                .auth-title {
                     margin-bottom: 20px;
@@ -266,7 +360,7 @@
                          font-weight: 600;
                          font-size: calc(22px + (27 - 22) * ((100vw - 320px) / (1920 - 320)));
 
-                         @include max(767px) {
+                         @include common.max(767px) {
                               font-weight: 500;
                          }
                     }
@@ -300,9 +394,7 @@
                     }
 
                     .forgot-box {
-                         display: flex;
-                         align-items: center;
-                         justify-content: space-between;
+                         @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
                          gap: 10px 0;
                          flex-wrap: wrap;
 
@@ -317,28 +409,22 @@
                               .form-check-input {
                                    float: unset;
                                    margin: 0;
-                                   @include pseudowh($width: 20px, $height: 20px);
-                                   // width: 20px;
-                                   // height: 20px;
+                                   @include common.pseudowh($width: 20px, $height: 20px);
                                    border: unset;
                                    background: unset;
                                    position: relative;
 
                                    &::before {
-                                        @include pos;
+                                        @include common.pos;
                                         border: 1px solid rgba(var(--content-color), 0.1);
-                                        @include center(both);
-                                        @include pseudowh;
-                                        // width: 100%;
-                                        // height: 100%;
+                                        @include common.center(both);
+                                        @include common.pseudowh;
                                         background-color: rgba(var(--base-gray), 1);
                                    }
 
                                    &::after {
-                                        @include pos;
-                                        @include pseudowh($width: 7px, $height: 12px);
-                                        // width: 7px;
-                                        // height: 12px;
+                                        @include common.pos;
+                                        @include common.pseudowh($width: 7px, $height: 12px);
                                         border: 2px solid rgba(var(--primary-color), 1);
                                         border-top: unset;
                                         border-left: unset;
@@ -371,12 +457,10 @@
                          margin-block: calc(7px + (11 - 7) * ((100vw - 320px) / (1920 - 320)));
 
                          &::before {
-                              @include pos;
-                              @include center(vertical);
-                              @include pseudowh($width: 100%, $height: 1px);
+                              @include common.pos;
+                              @include common.center(vertical);
+                              @include common.pseudowh($width: 100%, $height: 1px);
                               left: 0;
-                              // width: 100%;
-                              // height: 1px;
                               border-top: 1px solid rgba(var(--content-color), 0.1);
                               z-index: -1;
                          }
@@ -394,16 +478,14 @@
                          gap: 12px;
 
                          a {
-                              @include flex_common;
+                              @include common.flex_common;
                               gap: 11px;
                               font-weight: 400;
                               background-color: rgba(var(--base-gray), 1);
                               color: rgba(var(--content-color), 1);
 
                               img {
-                                   @include pseudowh($width: calc(22px + (26 - 22) * ((100vw - 320px) / (1920 - 320))), $height: calc(22px + (26 - 22) * ((100vw - 320px) / (1920 - 320))));
-                                   // width: calc(22px + (26 - 22) * ((100vw - 320px) / (1920 - 320)));
-                                   // height: calc(22px + (26 - 22) * ((100vw - 320px) / (1920 - 320)));
+                                   @include common.pseudowh($width: calc(22px + (26 - 22) * ((100vw - 320px) / (1920 - 320))), $height: calc(22px + (26 - 22) * ((100vw - 320px) / (1920 - 320))));
                               }
 
                               span {
@@ -459,12 +541,10 @@
                               padding-left: 10px;
 
                               &::after {
-                                   @include pos;
-                                   @include center(vertical);
+                                   @include common.pos;
+                                   @include common.center(vertical);
                                    left: 0;
-                                   @include pseudowh($width: 1px, $height: 80%);
-                                   // width: 1px;
-                                   // height: 80%;
+                                   @include common.pseudowh($width: 1px, $height: 80%);
                                    border-left: 1px solid rgba(var(--primary-color), 1);
                               }
                          }
@@ -507,9 +587,7 @@
                background-color: rgba(var(--base-gray), 1);
 
                .product-image {
-                    @include pseudowh($width: 80px, $height: 80px);
-                    // height: 80px;
-                    // width: 80px;
+                    @include common.pseudowh($width: 80px, $height: 80px);
                     overflow: hidden;
                     background-color: rgba(var(--white), 1);
                     padding: 8px;
@@ -550,7 +628,7 @@
      }
 
      .btn-close {
-          @include flex_common;
+          @include common.flex_common;
           position: absolute;
           margin: 0;
           padding: 0;
@@ -558,14 +636,17 @@
           right: calc(6px + (10 - 6) * ((100vw - 320px) / (1920 - 320)));
           background: unset;
           font-size: calc(18px + (22 - 18) * ((100vw - 320px) / (1920 - 320)));
-          @include pseudowh($width: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))), $height: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))));
-          // width: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320)));
-          // height: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320)));
+          @include common.pseudowh($width: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))), $height: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))));
           background-color: rgba(var(--primary-color), 1);
           opacity: 1;
           color: rgba(var(--white), 1);
           border-radius: 0;
           z-index: 1;
+
+          [dir="rtl"] & {
+               right: unset;
+               left: calc(6px + (10 - 6) * ((100vw - 320px) / (1920 - 320)));
+          }
      }
 
      .authentication-box {
@@ -578,7 +659,7 @@
                     font-weight: 600;
                     font-size: calc(22px + (26 - 22) * ((100vw - 320px) / (1920 - 320)));
 
-                    @include max(767px) {
+                    @include common.max(767px) {
                          font-weight: 500;
                     }
                }
@@ -597,12 +678,14 @@
                     font-size: calc(15px + (17 - 15) * ((100vw - 320px) / (1920 - 320)));
                     border-radius: 0;
                     background-color: rgba(var(--base-gray), 1);
+
+                    [dir="rtl"] & {
+                         text-align: right;
+                    }
                }
 
                .forgot-box {
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
+                    @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
                     gap: 10px 0;
                     flex-wrap: wrap;
 
@@ -617,28 +700,22 @@
                          .form-check-input {
                               float: unset;
                               margin: 0;
-                              @include pseudowh($width: 20px, $height: 20px);
-                              // width: 20px;
-                              // height: 20px;
+                              @include common.pseudowh($width: 20px, $height: 20px);
                               border: unset;
                               background: unset;
                               position: relative;
 
                               &::before {
-                                   @include pos;
-                                   @include center(both);
-                                   @include pseudowh;
+                                   @include common.pos;
+                                   @include common.center(both);
+                                   @include common.pseudowh;
                                    border: 1px solid rgba(var(--content-color), 0.1);
-                                   // width: 100%;
-                                   // height: 100%;
                                    background-color: rgba(var(--base-gray), 1);
                               }
 
                               &::after {
-                                   @include pos;
-                                   @include pseudowh($width: 7px, $height: 12px);
-                                   // width: 7px;
-                                   // height: 12px;
+                                   @include common.pos;
+                                   @include common.pseudowh($width: 7px, $height: 12px);
                                    border: 2px solid rgba(var(--primary-color), 1);
                                    border-top: unset;
                                    border-left: unset;
@@ -671,12 +748,10 @@
                     margin-block: calc(7px + (11 - 7) * ((100vw - 320px) / (1920 - 320)));
 
                     &::before {
-                         @include pos;
-                         @include center(vertical);
-                         @include pseudowh($width: 100%, $height: 1px);
+                         @include common.pos;
+                         @include common.center(vertical);
+                         @include common.pseudowh($width: 100%, $height: 1px);
                          left: 0;
-                         // width: 100%;
-                         // height: 1px;
                          border-top: 1px solid rgba(var(--content-color), 0.1);
                          z-index: -1;
                     }
@@ -694,16 +769,14 @@
                     gap: 12px;
 
                     a {
-                         @include flex_common;
+                         @include common.flex_common;
                          gap: 11px;
                          font-weight: 400;
                          background-color: rgba(var(--base-gray), 1);
                          color: rgba(var(--content-color), 1);
 
                          img {
-                              @include pseudowh($width: calc(22px + (26 - 22) * ((100vw - 320px) / (1920 - 320))), $height: calc(22px + (26 - 22) * ((100vw - 320px) / (1920 - 320))));
-                              // width: calc(22px + (26 - 22) * ((100vw - 320px) / (1920 - 320)));
-                              // height: calc(22px + (26 - 22) * ((100vw - 320px) / (1920 - 320)));
+                              @include common.pseudowh($width: calc(22px + (26 - 22) * ((100vw - 320px) / (1920 - 320))), $height: calc(22px + (26 - 22) * ((100vw - 320px) / (1920 - 320))));
                          }
 
                          span {
@@ -758,12 +831,10 @@
                          padding-left: 10px;
 
                          &::after {
-                              @include pos;
-                              @include center(vertical);
+                              @include common.pos;
+                              @include common.center(vertical);
                               left: 0;
-                              @include pseudowh($width: 1px, $height: 80%);
-                              // width: 1px;
-                              // height: 80%;
+                              @include common.pseudowh($width: 1px, $height: 80%);
                               border-left: 1px solid rgba(var(--primary-color), 1);
                          }
                     }
@@ -804,10 +875,8 @@
 
                .delete-content {
                     i {
-                         @include pseudowh($width: calc(42px + (50 - 42) * ((100vw - 320px) / (1920 - 320))), $height: calc(42px + (50 - 42) * ((100vw - 320px) / (1920 - 320))));
-                         @include flex_common;
-                         // width: 50px;
-                         // height: 50px;
+                         @include common.pseudowh($width: calc(42px + (50 - 42) * ((100vw - 320px) / (1920 - 320))), $height: calc(42px + (50 - 42) * ((100vw - 320px) / (1920 - 320))));
+                         @include common.flex_common;
                          margin: 0 auto 20px;
                          border-radius: 5px;
                          font-size: calc(20px + (24 - 20) * ((100vw - 320px) / (1920 - 320)));
@@ -867,6 +936,11 @@
                ul {
                     padding-left: calc(18px + (22 - 18) * ((100vw - 320px) / (1920 - 320)));
 
+                    [dir="rtl"] & {
+                         padding-left: unset;
+                         padding-right: calc(18px + (22 - 18) * ((100vw - 320px) / (1920 - 320)));
+                    }
+
                     li {
                          display: list-item;
                          font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
@@ -886,7 +960,6 @@
      .product-share-container {
           .nav-tabs {
                background-color: transparent;
-               // background-color: transparent;
                border: none;
                gap: calc(6px + (10 - 6) * ((100vw - 320px) / (1920 - 320)));
 
@@ -897,9 +970,7 @@
                          border: 1px solid rgba(var(--border-color), 1);
                          border-radius: 4px;
                          padding: 0;
-                         @include pseudowh($width: calc(41px + (48 - 41) * ((100vw - 320px) / (1920 - 320))), $height: calc(38px + (42 - 38) * ((100vw - 320px) / (1920 - 320))));
-                         // width: 48px;
-                         // height: 42px;
+                         @include common.pseudowh($width: calc(41px + (48 - 41) * ((100vw - 320px) / (1920 - 320))), $height: calc(38px + (42 - 38) * ((100vw - 320px) / (1920 - 320))));
                          color: rgba(var(--content-color), 1);
 
                          &.active {
@@ -940,12 +1011,10 @@
 
 .quick-view-modal {
      .modal-custom-size {
-          // @media (min-width: 992px) {
           max-width: 1100px;
-          // }
 
           .btn-close {
-               @include pseudowh($width: 30px, $height: 30px);
+               @include common.pseudowh($width: 30px, $height: 30px);
                margin: 0;
                padding: 0;
                z-index: 1;
@@ -953,17 +1022,12 @@
                line-height: 1;
                font-size: 22px;
                border-radius: 0;
-               color: rgba(var(--white), 1);
+               color: #fff;
                opacity: 1;
                position: absolute;
                top: 10px;
                right: 10px;
                background-color: rgba(var(--primary-color), 1);
-
-               // &::after {
-               //      content: "\eb99";
-               //      @include font;
-               // }
 
                i {
                     font-size: 22px;
@@ -977,31 +1041,30 @@
 
                .quick-slider-product-box {
                     .view-image {
-                         // height: 430px;
                          height: calc(412px + (552 - 412) * ((100vw - 767px) / (1920 - 767)));
                          padding: calc(24px + (65 - 24) * ((100vw - 767px) / (1920 - 767)));
-                         @include flex_common;
+                         @include common.flex_common;
                          background-color: rgba(230, 231, 233, 0.45);
 
-                         @include max(767.98px) {
+                         body.dark & {
+                              background-color: rgba(var(--base-gray), 0.45);
+                         }
+
+                         @include common.max(767.98px) {
                               height: calc(250px + (412 - 250) * ((100vw - 320px) / (768 - 320)));
                               padding: calc(14px + (24 - 14) * ((100vw - 320px) / (768 - 320)));
                          }
 
                          img {
-                              // aspect-ratio: 1/1;
-                              @include pseudowh;
+                              @include common.pseudowh;
                               object-fit: contain;
                          }
                     }
 
                     .swiper-button-next,
                     .swiper-button-prev {
-                         // inset: unset;
-                         top: 50%;
-                         transform: translateY(-50%);
-                         width: calc(36px + (42 - 36) * ((100vw - 320px) / (1920 - 320)));
-                         height: calc(36px + (42 - 36) * ((100vw - 320px) / (1920 - 320)));
+                         @include common.center(vertical);
+                         @include common.pseudowh($width: calc(36px + (42 - 36) * ((100vw - 320px) / (1920 - 320))), $height: calc(36px + (42 - 36) * ((100vw - 320px) / (1920 - 320))));
                          margin: 0;
                          font-size: calc(20px + (22 - 20) * ((100vw - 320px) / (1920 - 320)));
                          z-index: 1;
@@ -1022,25 +1085,22 @@
                .quick-thumbnail-product-box {
                     margin-top: 15px;
 
-                    // .swiper-slide {
-                    //      @include both-width(575.98px, 767.98px) {
-                    //           height: 100% !important;
-                    //      }
-                    // }
-
                     .image-box {
                          background-color: rgba(230, 231, 233, 0.45);
-                         @include flex_common;
+                         @include common.flex_common;
                          padding: 15px;
                          height: calc(96px + (140 - 96) * ((100vw - 767px) / (1920 - 767)));
 
-                         @include max(767.98px) {
+                         body.dark & {
+                              background-color: rgba(var(--base-gray), 0.45);
+                         }
+
+                         @include common.max(767.98px) {
                               height: calc(86px + (130 - 86) * ((100vw - 320px) / (768 - 320)));
                          }
 
                          img {
-                              // aspect-ratio: 1/1;
-                              @include pseudowh;
+                              @include common.pseudowh;
                               object-fit: contain;
                          }
                     }
@@ -1048,153 +1108,21 @@
           }
 
           .right-box-contain {
-               // position: sticky;
-               // top: 10px;
-               // left: 0;
                background-color: transparent;
 
-               // &.custom-padding {
-               //      padding: 18px;
-               //      border-radius: 6px;
-               // }
-
-               // @include max(767px) {
-               //      text-align: center;
-               // }
-
-               // .about-item-list {
-               //      display: grid;
-               //      grid-template-columns: 1fr 1fr;
-               //      gap: 3px 0;
-
-               //      li {
-               //           color: rgba(var(--content-color), 1);
-               //           font-weight: 400;
-               //           font-size: 16px;
-
-               //           span {
-               //                color: rgba(var(--title-color), 1);
-               //                font-weight: 500;
-               //           }
-               //      }
-               // }
-
                .hurry-up-box {
-                    // margin-top: 20px;
-
-                    // h5 {
-                    //      color: rgba(var(--title-color), 1);
-                    //      font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
-                    // }
-
                     .progress {
-                         // margin-top: 6px;
-                         // height: 10px;
-                         // border-radius: 3px;
-                         background-color: rgba(230, 231, 233, .45);
-
-                         // .progress-bar {
-                         //      background-color: rgba(var(--primary-color), 1);
-                         // }
+                         background-color: rgba(var(--base-gray), 1);
                     }
                }
 
-               // .size-delivery-info {
-               //      border-top: 1px solid rgba(var(--content-color), 0.1);
-               //      padding-top: 16px;
-               //      margin-top: 16px;
-               //      display: flex;
-               //      align-items: center;
-               //      gap: calc(12px + .00375*(100vw - 320px));
-               //      flex-wrap: wrap;
-
-               //      @include max(767px) {
-               //           justify-content: center;
-               //      }
-
-               //      li {
-               //           button {
-               //                padding: 0;
-               //                display: flex;
-               //                align-items: center;
-               //                gap: 10px;
-               //                color: rgba(var(--title-color), 1);
-               //                font-weight: 400;
-               //                font-size: 16px;
-
-               //                i {
-               //                     margin-top: -2px;
-               //                }
-               //           }
-               //      }
-               // }
-
-               // .delivery-info {
-               //      ul {
-               //           display: flex;
-               //           align-items: center;
-               //           gap: 4px;
-               //           flex-wrap: wrap;
-
-               //           li {
-               //                font-size: calc(15px + (20 - 15) * ((100vw - 320px) / (1920 - 320)));
-               //                color: rgba(var(--content-color), 1);
-               //                display: flex;
-               //                gap: 5px;
-               //                align-items: center;
-               //                width: 100%;
-
-               //                @include max(767px) {
-               //                     justify-content: center;
-               //                }
-
-               //                i {
-               //                     font-size: 20px;
-               //                     line-height: 1;
-               //                }
-
-               //                span {
-               //                     font-size: 16px;
-               //                }
-               //           }
-               //      }
-               // }
-
-               // .product-count {
-               //      ul {
-               //           display: inline-flex;
-               //           align-items: center;
-               //           gap: 3px 15px;
-               //           margin-bottom: 16px;
-               //           flex-wrap: wrap;
-
-               //           li {
-               //                display: flex;
-               //                align-items: center;
-               //                gap: 10px;
-
-               //                i {
-               //                     color: rgba(var(--primary-color), 1);
-               //                     font-size: 20px;
-               //                }
-
-               //                h6 {
-               //                     font-size: 15px;
-               //                }
-               //           }
-               //      }
-               // }
-
                .offer-top {
-                    // font-weight: 500;
-                    // color: rgba(var(--primary-color2), 1);
-                    // display: inline-block;
                     margin-bottom: calc(6px + (8 - 6) * ((100vw - 320px) / (1920 - 320)));
                     font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
                }
 
                .rating-review-sold-box {
-                    @include max(575px) {
+                    @include common.max(575px) {
                          display: flex;
                          gap: 12px;
                     }
@@ -1204,66 +1132,18 @@
                               font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
                          }
                     }
-
-                    //      display: flex;
-                    //      align-items: center;
-                    //      gap: 10px;
-
-                    //      @include max(767px) {
-                    //           justify-content: center;
-                    //      }
-
-                    //      @include max(575px) {
-                    //           display: grid;
-                    //           gap: 6px;
-                    //      }
-
-                    //      li {
-                    //           @include max(575px) {
-                    //                @include flex_common;
-                    //           }
-
-                    //           h5 {
-                    //                display: flex;
-                    //                align-items: center;
-                    //                font-size: 16px;
-                    //                font-weight: 400;
-                    //                line-height: 1;
-                    //                gap: 3px;
-                    //                color: rgba(var(--content-color), 1);
-
-                    //                i {
-                    //                     font-size: 15px;
-                    //                     margin-top: -4px;
-                    //                     color: rgba(var(--rating), 1);
-                    //                }
-                    //           }
-
-                    //           &:nth-child(even) {
-                    //                @include pseudowh($width: 5px, $height: 5px);
-                    //                border-radius: 100%;
-                    //                background-color: rgba(var(--content-color), 0.4);
-
-                    //                @include max(575px) {
-                    //                     display: none;
-                    //                }
-                    //           }
-                    //      }
                }
 
                .name {
-                    // font-weight: 700;
-                    // margin-bottom: 7px;
                     font-size: calc(22px + (26 - 22) * ((100vw - 320px) / (1920 - 320)));
                }
 
                .qty-stock-box {
                     margin-top: calc(10px + (18 - 10) * ((100vw - 320px) / (1920 - 320)));
                     gap: calc(10px + (14 - 10) * ((100vw - 320px) / (1920 - 320)));
-                    // flex-wrap: wrap;
-                    @include flex_common ($dis: flex, $align: center, $justify: space-between);
+                    @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
 
-                    @include max(400px) {
+                    @include common.max(400px) {
                          flex-wrap: wrap;
                     }
 
@@ -1274,9 +1154,13 @@
                          padding: calc(4px + (6 - 4) * ((100vw - 320px) / (1920 - 320)));
                          background-color: rgba(230, 231, 233, .45);
 
+                         body.dark & {
+                              background-color: #131921
+                         }
+
                          .qty-btn {
-                              @include flex_common;
-                              @include pseudowh($width: calc(30px + (35 - 30) * ((100vw - 320px) / (1920 - 320))), $height: calc(30px + (35 - 30) * ((100vw - 320px) / (1920 - 320))));
+                              @include common.flex_common;
+                              @include common.pseudowh($width: calc(30px + (35 - 30) * ((100vw - 320px) / (1920 - 320))), $height: calc(30px + (35 - 30) * ((100vw - 320px) / (1920 - 320))));
                               padding: 0;
                               border-radius: 4px;
                               background-color: rgba(var(--white), 1);
@@ -1284,7 +1168,7 @@
 
                               &:hover {
                                    background-color: rgba(var(--primary-color), 1);
-                                   color: rgba(var(--white), 1);
+                                   color: #fff;
                               }
                          }
 
@@ -1293,12 +1177,13 @@
                               line-height: 1;
                               padding: 4px 0 0;
                               border: none;
+                              color: rgba(var(--title-color), 1);
                               text-align: center;
                               outline: unset;
                               background-color: transparent;
                               font-size: calc(16px + (20 - 16) * ((100vw - 320px) / (1920 - 320)));
 
-                              @include max(400px) {
+                              @include common.max(400px) {
                                    width: 122px;
                               }
 
@@ -1315,852 +1200,113 @@
 
                     .buy-btn {
                          width: 100%;
-                         background-color: rgb(77, 81, 84);
-                         border-color: rgb(77, 81, 84);
+                         background-color: rgba(var(--title-color), 1);
+                         border-color: rgba(var(--title-color), 1);
                          color: rgba(var(--white), 1);
+                         animation: shake 150ms 2 linear;
                          padding: calc(6px + (10 - 6) * ((100vw - 320px) / (1920 - 320)));
                     }
                }
-
-               // .price-rating {
-               //      @include flex_common ($dis: flex, $align: center, $justify: space-between);
-
-               //      @include max(767px) {
-               //           display: block;
-               //      }
-
-               //      .custom-rate {
-               //           @include max(767px) {
-               //                margin-top: 10px;
-               //                justify-content: center;
-               //           }
-               //      }
-
-               //      .price {
-               //           font-weight: 600;
-               //           font-size: calc(19px + (22 - 19) * ((100vw - 320px) / (1920 - 320)));
-
-               //           del {
-               //                font-weight: 400;
-               //                font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
-               //                margin: 0 calc(0px + (2 - 0) * ((100vw - 320px) / (1920 - 320)));
-               //           }
-
-               //           span {
-               //                font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
-               //                font-weight: 500;
-               //           }
-               //      }
-
-               //      .custom-rate {
-               //           ul {
-               //                li {
-               //                     i {
-               //                          font-size: 16px;
-               //                          @include pseudowh($width: 16px, $height: 16px);
-               //                     }
-               //                }
-               //           }
-
-               //           .review {
-               //                font-size: 13px;
-               //                margin-left: 12px;
-               //           }
-               //      }
-               // }
-
-               // .product-contain {
-               //      border-bottom: 1px solid rgba(var(--content-color), 0.1);
-               //      padding-bottom: 16px;
-
-               //      p {
-               //           color: rgba(var(--content-color), 1);
-               //           line-height: 1.7;
-               //           margin: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320))) 0 0;
-               //           font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
-               //      }
-               // }
-
-               // .product-package {
-               //      .select-package {
-               //           @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(5px + (13 - 5) * ((100vw - 320px) / (1920 - 320))));
-
-               //           @include max(767px) {
-               //                justify-content: center;
-               //           }
-
-               //           .disabled {
-               //                overflow: hidden;
-               //                position: relative;
-               //                user-select: none;
-               //                cursor: default;
-               //                opacity: 0.6;
-               //                pointer-events: none;
-
-               //                &::after {
-               //                     @include pos;
-               //                     @include pseudowh($width: 100%, $height: 1px);
-               //                     top: 50%;
-               //                     transform: translateY(-50%) rotate(45deg);
-               //                     left: 0;
-               //                     background-color: #ff7272;
-               //                     cursor: default;
-               //                     user-select: none;
-               //                     z-index: 1;
-               //                }
-               //           }
-
-               //           .form-check {
-               //                position: relative;
-               //                min-height: unset;
-               //                margin: 0;
-               //                padding: 0;
-
-               //                &:has(.form-check-label.disabled) {
-               //                     .form-check-input {
-               //                          pointer-events: none;
-               //                     }
-               //                }
-
-               //                .form-check-input {
-               //                     cursor: pointer;
-               //                     @include pseudowh;
-               //                     position: absolute;
-               //                     top: 0;
-               //                     left: 0;
-               //                     margin: 0;
-               //                     opacity: 0;
-               //                     float: unset;
-
-               //                     &:checked {
-               //                          ~.form-check-label {
-               //                               border: 1px solid rgba(var(--primary-color), 1);
-               //                               background-color: rgba(var(--primary-color), 1);
-               //                               color: rgba(var(--white), 1);
-               //                          }
-               //                     }
-               //                }
-
-               //                .form-check-label {
-               //                     cursor: pointer;
-               //                     position: relative;
-               //                     min-height: unset;
-               //                     margin: 0;
-               //                     padding: 10px 16px 8px;
-               //                     border: 1px solid rgba(var(--border-color), 1);
-               //                     border-radius: 3px;
-               //                     display: block;
-               //                     color: rgba(var(--content-color), 1);
-               //                     font-size: 14px;
-               //                     transition: all 0.15s ease-in-out;
-               //                     background-color: rgba(var(--white), 1);
-               //                }
-               //           }
-
-               //           &.radio-package {
-               //                .form-check {
-               //                     display: flex;
-               //                     gap: 7px;
-               //                     align-items: center;
-
-               //                     .form-check-input {
-               //                          position: relative;
-               //                          inset: unset;
-               //                          @include pseudowh($width: 18px, $height: 18px);
-               //                          opacity: 1;
-               //                          border: 1px solid rgba(var(--content-color), 0.1);
-               //                          transition: all 0.15s ease-in-out;
-
-               //                          &::before {
-               //                               @include pos;
-               //                               top: 50%;
-               //                               left: 50%;
-               //                               transform: translate(-50%, -50%) scale(0);
-               //                               @include pseudowh($width: calc(100% - 4px), $height: calc(100% - 4px));
-               //                               background-color: rgba(var(--primary-color), 1);
-               //                               border-radius: 100%;
-               //                               transition: all 0.15s ease-in-out;
-               //                          }
-
-               //                          &:checked {
-               //                               border-color: rgba(var(--primary-color), 1);
-
-               //                               &::before {
-               //                                    transform: translate(-50%, -50%) scale(1);
-               //                               }
-
-               //                               ~.form-check-label {
-               //                                    border: unset;
-               //                                    background-color: transparent;
-               //                                    color: rgba(var(--title-color), 1);
-               //                               }
-               //                          }
-               //                     }
-
-               //                     .form-check-label {
-               //                          padding: 0;
-               //                          line-height: 1;
-               //                          font-size: 15px;
-               //                          border: unset;
-               //                     }
-               //                }
-               //           }
-
-               //           &.rectangle-package {
-               //                .form-check {
-               //                     display: flex;
-               //                     gap: 7px;
-               //                     align-items: center;
-
-               //                     .form-check-input {
-               //                          &:checked {
-               //                               ~.form-check-label {
-               //                                    border: 1px solid rgba(var(--primary-color), 1);
-               //                                    background-color: transparent;
-               //                                    color: rgba(var(--title-color), 1);
-
-               //                                    span {
-               //                                         background-color: rgba(var(--primary-color), 1);
-               //                                         color: rgba(var(--white), 1);
-               //                                    }
-               //                               }
-               //                          }
-               //                     }
-
-               //                     .form-check-label {
-               //                          @include pseudowh($width: 42px, $height: 42px);
-               //                          @include flex_common;
-               //                          line-height: 1;
-               //                          border: 1px solid rgba(var(--content-color), 0.1);
-               //                          font-size: 15px;
-               //                          position: relative;
-               //                          padding: 3px;
-
-               //                          span {
-               //                               @include pseudowh;
-               //                               @include flex_common;
-               //                               transition: all 0.15s ease-in-out;
-               //                          }
-               //                     }
-               //                }
-               //           }
-
-               //           &.image-package {
-               //                .form-check {
-               //                     display: flex;
-               //                     gap: 7px;
-               //                     align-items: center;
-
-               //                     .form-check-input {
-               //                          border: 1px solid rgba(var(--content-color), 0.1);
-               //                          transition: all 0.15s ease-in-out;
-
-               //                          &:checked {
-               //                               border-color: rgba(var(--primary-color), 1);
-
-               //                               ~.form-check-label {
-               //                                    border: 1px solid rgba(var(--primary-color), 1);
-               //                                    background-color: transparent;
-               //                                    color: rgba(var(--title-color), 1);
-
-               //                                    span {
-               //                                         background-color: rgba(var(--primary-color), 1);
-               //                                         color: rgba(var(--white), 1);
-               //                                    }
-               //                               }
-               //                          }
-               //                     }
-
-               //                     .form-check-label {
-               //                          line-height: 1;
-               //                          border: 1px solid rgba(var(--content-color), 0.1);
-               //                          font-size: 15px;
-               //                          position: relative;
-               //                          padding: 3px;
-               //                          @include pseudowh($width: 75px, $height: 75px);
-               //                          @include flex_common;
-
-               //                          span {
-               //                               transition: all 0.15s ease-in-out;
-               //                               @include pseudowh;
-               //                               overflow: hidden;
-               //                               @include flex_common;
-
-               //                               img {
-               //                                    @extend %img-cover;
-               //                                    object-position: top;
-               //                               }
-               //                          }
-               //                     }
-               //                }
-               //           }
-
-               //           &.circle-package {
-               //                .form-check {
-               //                     display: flex;
-               //                     gap: 7px;
-               //                     align-items: center;
-
-               //                     .form-check-input {
-               //                          &:checked {
-               //                               border-color: rgba(var(--primary-color), 1);
-
-               //                               &::before {
-               //                                    transform: translate(-50%, -50%) scale(1);
-               //                               }
-
-               //                               ~.form-check-label {
-               //                                    border: 1px solid rgba(var(--primary-color), 1);
-               //                                    background-color: transparent;
-               //                                    color: rgba(var(--title-color), 1);
-
-               //                                    span {
-               //                                         background-color: rgba(var(--primary-color), 1);
-               //                                         color: rgba(var(--white), 1);
-               //                                    }
-               //                               }
-               //                          }
-               //                     }
-
-               //                     .form-check-label {
-               //                          line-height: 1;
-               //                          border: 1px solid rgba(var(--content-color), 0.1);
-               //                          font-size: 15px;
-               //                          padding: 3px;
-               //                          @include pseudowh($width: 42px, $height: 42px);
-               //                          border-radius: 100%;
-               //                          @include flex_common;
-
-               //                          span {
-               //                               transition: all 0.15s ease-in-out;
-               //                               @include pseudowh;
-               //                               border-radius: 100%;
-               //                               @include flex_common;
-               //                          }
-               //                     }
-               //                }
-               //           }
-
-               //           &.form-select-package {
-               //                .form-select {
-               //                     background-color: rgba(var(--base-gray), 1);
-               //                     border-radius: 0;
-               //                     border: 1px solid rgba(var(--content-color), 0.1);
-               //                     color: rgba(var(--content-color), 1);
-               //                     font-size: 16px;
-               //                     font-weight: 500;
-               //                     padding: 12px 36px 9px 15px;
-               //                }
-               //           }
-               //      }
-
-               //      .color-product {
-               //           @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(5px + (13 - 5) * ((100vw - 320px) / (1920 - 320))));
-
-               //           .form-check {
-               //                position: relative;
-               //                min-height: unset;
-               //                margin: 0;
-               //                padding: 0;
-
-               //                .form-check-input {
-               //                     cursor: pointer;
-               //                     @include pseudowh;
-               //                     position: absolute;
-               //                     top: 0;
-               //                     left: 0;
-               //                     margin: 0;
-               //                     border-radius: 4px;
-               //                     opacity: 1;
-               //                     float: unset;
-
-               //                     &:active {
-               //                          filter: unset;
-               //                     }
-
-               //                     &:focus {
-               //                          box-shadow: unset;
-               //                     }
-
-               //                     &:checked {
-               //                          background: unset;
-               //                          border-color: transparent;
-
-               //                          ~.form-check-label {
-               //                               border: 4px solid rgba(var(--white), 1);
-               //                               background-color: transparent;
-
-               //                               &::before {
-               //                                    opacity: 1;
-               //                               }
-
-               //                               &::after {
-               //                                    opacity: 1;
-               //                                    border-color: rgba(var(--primary-color), 1);
-
-               //                                    &:hover {
-               //                                         border-color: rgba(var(--primary-color), 1);
-               //                                    }
-               //                               }
-               //                          }
-               //                     }
-
-               //                     &:hover {
-               //                          background: unset;
-               //                          border-color: transparent;
-
-               //                          ~.form-check-label {
-               //                               border: 4px solid rgba(var(--white), 1);
-               //                               background-color: transparent;
-
-               //                               &::after {
-               //                                    opacity: 1;
-               //                                    border-color: rgba(var(--content-color), 0.5);
-               //                               }
-               //                          }
-               //                     }
-               //                }
-
-               //                .form-check-label {
-               //                     cursor: pointer;
-               //                     position: relative;
-               //                     @include pseudowh($width: 40px, $height: 40px);
-               //                     min-height: unset;
-               //                     margin: 0;
-               //                     padding: 0;
-               //                     border-radius: 0;
-               //                     display: block;
-               //                     color: rgba(var(--content-color), 1);
-               //                     font-size: 14px;
-               //                     border: 4px solid rgba(var(--white), 1);
-               //                     transition: all 0.15s ease-in-out;
-
-               //                     &::after {
-               //                          @include pos;
-               //                          @include center(both);
-               //                          transition: all 0.15s ease-in-out;
-               //                          border-radius: 0;
-               //                          border: 1px solid #efeff1;
-               //                          @include pseudowh($width: calc(100% + 8px), $height: calc(100% + 8px));
-               //                     }
-               //                }
-               //           }
-
-               //           &.radio-package {
-               //                .form-check {
-               //                     position: relative;
-               //                     min-height: unset;
-               //                     margin: 0;
-               //                     padding: 0;
-
-               //                     .form-check-input {
-               //                          position: relative;
-               //                          inset: unset;
-               //                          @include pseudowh($width: 18px, $height: 18px);
-               //                          opacity: 1;
-               //                          margin-top: -3px;
-               //                          border: 1px solid rgba(var(--content-color), 0.1);
-               //                          transition: all 0.15s ease-in-out;
-               //                          border-radius: 100%;
-
-               //                          &:active {
-               //                               filter: unset;
-               //                          }
-
-               //                          &:focus {
-               //                               box-shadow: unset;
-               //                          }
-
-               //                          &:checked {
-               //                               background: unset;
-               //                               border-color: rgba(var(--primary-color), 1);
-               //                          }
-
-               //                          &:hover {
-               //                               background: unset;
-               //                               border-color: rgba(var(--primary-color), 1);
-
-               //                               ~.form-check-label {
-               //                                    border: unset;
-               //                                    background-color: transparent;
-               //                               }
-               //                          }
-               //                     }
-
-               //                     .form-check-label {
-               //                          @include pseudowh($width: unset, $height: unset);
-               //                          border: unset;
-
-               //                          &::after {
-               //                               content: unset;
-               //                          }
-               //                     }
-               //                }
-               //           }
-               //      }
-               // }
-
-               // .timer {
-               //      .product-title {
-               //           h5 {
-               //                font-size: 15px;
-               //                font-weight: 400;
-               //                color: rgba(var(--primary-color2), 1);
-               //           }
-               //      }
-
-               //      .product-timer {
-               //           background-color: rgba(var(--base-gray), 1);
-               //           border-radius: 7px;
-               //           padding: 12px 18px;
-               //           text-align: center;
-               //           display: inline-flex;
-               //           gap: 10px;
-
-               //           li {
-               //                display: flex;
-               //                gap: 10px;
-
-               //                +li {
-               //                     &::before {
-               //                          content: ":";
-               //                          color: rgba(var(--primary-color2), 1);
-               //                          margin-top: 5px;
-               //                          font-size: 19px;
-               //                     }
-               //                }
-
-               //                .counter {
-               //                     font-weight: 600;
-               //                     font-size: calc(19px + (24 - 19) * ((100vw - 320px) / (1920 - 320)));
-               //                     color: rgba(var(--primary-color2), 1);
-               //                     line-height: 1;
-               //                }
-
-               //                .smalltext {
-               //                     font-weight: 400;
-               //                     font-size: 13px;
-               //                     color: rgba(var(--content-color), 1);
-               //                     text-transform: capitalize;
-               //                }
-               //           }
-               //      }
-               // }
-
-               // .note-box {
-               //      @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: calc(7px + (15 - 7) * ((100vw - 320px) / (1920 - 320))));
-               //      align-items: center;
-               //      margin-top: 20px;
-
-               //      @include max(767px) {
-               //           justify-content: center;
-               //      }
-
-               //      .compare-button {
-               //           background-color: #f8f8f8;
-               //      }
-
-               //      .cart-button {
-               //           animation: shake 150ms 2 linear;
-               //      }
-
-               //      .product-qty {
-               //           width: auto;
-               //           margin-top: 0;
-
-               //           @include max(360px) {
-               //                width: 160px;
-               //           }
-
-               //           .input-group {
-               //                background-color: rgba(var(--base-gray), 1);
-               //                border-radius: 7px;
-               //                padding: 4px;
-               //                text-align: center;
-               //                z-index: 0;
-
-               //                .btn {
-               //                     @include pseudowh($width: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))), $height: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))));
-               //                     @include flex_common;
-               //                     border: none;
-               //                     padding: 0;
-               //                     background-color: rgba(var(--white), 1);
-               //                     z-index: 0;
-               //                     border-radius: 4px !important;
-               //                }
-
-               //                .form-control {
-               //                     height: auto;
-               //                     background-color: transparent;
-               //                     border: none;
-               //                     padding: 0;
-               //                     text-align: center;
-               //                     font-size: 14px;
-               //                     color: rgba(var(--content-color), 1);
-               //                }
-               //           }
-
-               //           .qty-box {
-               //                margin-top: 10px;
-               //                width: 100%;
-               //                max-width: 250px;
-
-               //                .input-group {
-               //                     background-color: rgba(var(--light-gray), 1);
-               //                     border-radius: 7px;
-               //                     padding: 4px;
-               //                     text-align: center;
-               //                     z-index: 0;
-
-               //                     button {
-               //                          @include pseudowh($width: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))),
-               //                               $height: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))));
-               //                          @include flex_common;
-               //                          border: none;
-               //                          padding: 0;
-               //                          background-color: rgba(var(--white), 1);
-               //                          z-index: 0;
-               //                          border-radius: 4px !important;
-
-               //                          i {
-               //                               font-size: 13px;
-               //                               color: var(--primary-color);
-               //                               margin-top: 1px;
-               //                          }
-
-               //                          &:focus {
-               //                               box-shadow: none;
-               //                          }
-               //                     }
-
-               //                     input {
-               //                          height: auto;
-               //                          background-color: transparent;
-               //                          border: none;
-               //                          padding: 0;
-               //                          text-align: center;
-               //                          font-size: 14px;
-               //                          color: rgba(var(--content-color), 1);
-               //                     }
-               //                }
-               //           }
-               //      }
-               // }
-
-               // .buy-now-button {
-               //      margin-top: 20px;
-               //      padding-bottom: 16px;
-               //      border-bottom: 1px solid rgba(var(--border-color), 1);
-
-               //      button {
-               //           background-color: #FF7272;
-               //      }
-               // }
-
-               // .buy-box {
-               //      @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 11px);
-               //      align-items: center;
-               //      margin-top: 20px;
-               //      border-bottom: 1px solid #ececec;
-               //      padding-bottom: 16px;
-
-               //      .team-box {
-               //           padding: 0;
-               //           margin: 0;
-               //           display: flex;
-               //           align-items: center;
-
-               //           input {
-               //                margin-top: -7px;
-               //                display: block;
-               //           }
-
-               //           .form-check-label {
-               //                span {
-               //                     display: flex;
-               //                     align-items: center;
-
-               //                     a {
-               //                          text-decoration: underline;
-               //                          margin-left: 3px;
-               //                          color: rgba(var(--title-color), 1);
-               //                     }
-               //                }
-               //           }
-               //      }
-
-               //      @include max(767px) {
-               //           justify-content: center;
-               //      }
-
-               //      a {
-               //           @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(5px + (8 - 5) * ((100vw - 320px) / (1920 - 320))));
-               //           align-items: center;
-               //           color: #777;
-
-               //           i {
-               //                font-size: 17px;
-               //                @include pseudowh($width: 17px, $height: auto);
-               //           }
-               //      }
-               // }
-
-               // .pickup-box {
-               //      padding-bottom: 20px;
-               //      border-bottom: 1px solid rgba(var(--border-color), 1);
-
-               //      .product-info {
-               //           margin-top: 20px;
-
-               //           .product-info-list {
-               //                @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 11px);
-               //                align-items: flex-start;
-
-               //                @include max(480px) {
-               //                     column-count: 1;
-               //                     padding: 15px;
-               //                }
-
-               //                li {
-               //                     padding-left: 13px;
-               //                     width: 100%;
-               //                     font-size: calc(14px + (15 - 14) * ((100vw - 320px) / (1920 - 320)));
-               //                     position: relative;
-               //                     color: #777;
-
-               //                     @include max(575px) {
-               //                          width: auto;
-               //                          margin-left: 18px;
-               //                     }
-
-               //                     @include max(480px) {
-               //                          margin-left: unset;
-               //                          width: 100%;
-               //                          padding-left: unset;
-
-               //                          &::after {
-               //                               content: none !important;
-               //                          }
-               //                     }
-
-               //                     &::after {
-               //                          @include pos;
-               //                          @include center(vertical);
-               //                          @include pseudowh($width: 5px, $height: 5px);
-               //                          left: 0;
-               //                          background-color: rgba(var(--content-color), 1);
-               //                          border-radius: 100%;
-               //                     }
-
-               //                     a {
-               //                          margin-left: 5px;
-               //                          color: rgba(var(--title-color), 1);
-               //                          font-weight: 500;
-               //                          display: inline-block;
-
-               //                          +a {
-               //                               margin-left: 0;
-               //                          }
-               //                     }
-               //                }
-               //           }
-               //      }
-
-               //      .pickup-icon {
-               //           i {
-               //                font-size: 20px;
-               //                color: rgba(var(--primary-color), 1);
-               //           }
-               //      }
-
-               //      .pickup-detail {
-               //           h4 {
-               //                font-weight: 400;
-               //                color: rgba(var(--content-color), 1);
-               //                line-height: 1.7;
-               //                margin: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320))) 0 0;
-               //                font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
-               //           }
-
-               //           h6 {
-               //                margin-top: 4px;
-               //           }
-
-               //           a {
-               //                margin-top: 0;
-               //                color: rgba(var(--primary-color), 1);
-               //                display: inline-block;
-               //           }
-               //      }
-               // }
-
-               // .payment-option {
-               //      ul {
-               //           align-items: center;
-               //           @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(3px + (8 - 3) * ((100vw - 320px) / (1920 - 320))));
-
-               //           @include max(767px) {
-               //                justify-content: center;
-               //           }
-
-               //           li {
-               //                a {
-               //                     i {
-               //                          font-size: 19px;
-               //                          color: rgba(var(--content-color), 1);
-               //                     }
-               //                }
-               //           }
-               //      }
-               // }
-
-               // .social-option {
-               //      ul {
-               //           align-items: center;
-               //           @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 20px);
-
-               //           @include max(767px) {
-               //                justify-content: center;
-               //           }
-
-               //           li {
-               //                transition: all 0.15s ease-in-out;
-
-               //                &:hover {
-               //                     transform: translateY(-6px);
-
-               //                     a {
-               //                          color: rgba(var(--primary-color), 1);
-               //                     }
-               //                }
-
-               //                a {
-               //                     font-size: 19px;
-               //                     color: rgba(var(--content-color), 1);
-               //                     transition: all 0.15s ease-in-out;
-               //                }
-               //           }
-               //      }
-               // }
-
-               // .share-option {
-               //      padding-bottom: 20px;
-
-               //      ul {
-               //           @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 20px);
-
-               //           li {
-               //                display: block;
-
-               //                a {
-               //                     display: block;
-               //                     text-align: center;
-               //                     font-size: 17px;
-               //                     color: rgba(var(--content-color), 1);
-               //                }
-               //           }
-               //      }
-               // }
+          }
+     }
+}
+
+.exit-modal {
+     .modal-custom-size {
+          max-width: 850px;
+     }
+
+     .modal-content {
+
+          .modal-body {
+               padding: 0;
+
+               .exit-box {
+                    .exit-right-box {
+                         img {
+                              aspect-ratio: 23/25;
+                              object-fit: cover;
+
+                              @include common.max(575.98px) {
+                                   @include common.pseudowh($width: 100%, $height: 290px);
+                                   aspect-ratio: unset
+                              }
+                         }
+                    }
+
+                    .exit-left-box {
+                         @include common.flex_common;
+                         padding: calc(15px + (44 - 15) * ((100vw - 320px) / (1920 - 320)));
+                         height: 100%;
+                         flex-direction: column;
+                         position: relative;
+                         inset: unset;
+                         text-align: center;
+
+                         h4 {
+                              font-size: calc(18px + (22 - 18) * ((100vw - 320px) / (1920 - 320)));
+                              letter-spacing: calc(0.1px + (0.3 - 0.1) * ((100vw - 320px) / (1920 - 320)));
+                         }
+
+                         h3 {
+                              letter-spacing: calc(0.1px + (0.3 - 0.1) * ((100vw - 320px) / (1920 - 320)));
+                              font-weight: 600;
+                              margin-top: calc(2px + (5 - 2) * ((100vw - 320px) / (1920 - 320)));
+                              font-size: calc(22px + (28 - 22) * ((100vw - 320px) / (1920 - 320)));
+                         }
+
+                         h2 {
+                              font-size: calc(48px + (64 - 48) * ((100vw - 320px) / (1920 - 320)));
+                              margin-top: calc(24px + (36 - 24) * ((100vw - 320px) / (1920 - 320)));
+                              line-height: 1;
+                              color: rgba(var(--primary-color), 1);
+                         }
+
+                         h5 {
+                              font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320)));
+                              margin-top: 6px;
+                         }
+
+                         .clock-list {
+                              margin-top: calc(24px + (30 - 24) * ((100vw - 320px) / (1920 - 320)));
+                              display: flex;
+                              align-items: center;
+                              gap: calc(4px + (6 - 4) * ((100vw - 320px) / (1920 - 320)));
+
+                              li {
+                                   &.dots {
+                                        font-size: 22px;
+                                        line-height: 1;
+                                        color: rgba(var(--content-color), 1);
+                                   }
+
+                                   .digits {
+                                        display: flex;
+                                        align-items: center;
+                                        gap: 3px;
+
+                                        span {
+                                             font-size: calc(18px + (22 - 18) * ((100vw - 320px) / (1920 - 320)));
+                                             line-height: 1;
+                                             @include common.flex_common;
+                                             padding-top: calc(2px + (3 - 2) * ((100vw - 320px) / (1920 - 320)));
+                                             border-radius: calc(4px + (5 - 4) * ((100vw - 320px) / (1920 - 320)));
+                                             @include common.pseudowh($width: calc(39px + (47 - 39) * ((100vw - 320px) / (1920 - 320))), $height: calc(38px + (44 - 38) * ((100vw - 320px) / (1920 - 320))));
+                                             background-color: rgba(var(--title-color), 1);
+                                             color: rgba(var(--white), 1);
+                                        }
+                                   }
+                              }
+                         }
+
+                         h6 {
+                              font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+                              font-weight: 400;
+                              margin-top: 12px;
+                              color: rgba(var(--content-color), 1);
+                         }
+                    }
+               }
           }
      }
 }

@@ -1,5 +1,5 @@
 /**=====================
-     Variables CSS
+    5.2 Variables CSS
 ==========================**/
 /*common variables*/
 :root {
@@ -14,7 +14,7 @@
     --danger-color: 255, 79, 79; //#ff4f4f
     --gradient-color: linear-gradient(274.63deg, rgba(var(--primary-color2), 1) 13.1%, rgba(var(--primary-color), 1) 174.18%);
 
-    /*  for demo 1  */
+    /* Demo 1 */
     --base-gray: 242, 243, 248; //#f2f3f8
     --primary-color: 255, 153, 0; //#ff9900
     --primary-color2: 251, 57, 57; //#fb3939
@@ -33,6 +33,18 @@
         0px 8.69547px 6.95638px rgba(82, 77, 141, 0.06),
         0px 4.6181px 3.69448px rgba(82, 77, 141, 0.0484671),
         0px 1.9217px 1.53736px rgba(82, 77, 141, 0.0337375);
+
+    .dark {
+        --base-gray: 26, 35, 46; //#131921
+        --light-gray: 26, 35, 46; //#131921
+        --theme-blue: 32, 44, 59; //#202C3B
+        --white: 32, 44, 59; //#202C3B
+        --title-color: 255, 255, 255; //#ffffff 
+        --content-color: 194, 194, 194; //#c2c2c2
+        --black: 255, 255, 255; //#ffffff
+        --border-color: 55, 70, 88; //#374658
+        --bs-heading-color: rgba(var(--title-color), 1); //#ffffff
+    }
 }
 
 /* for demo 2 */
@@ -40,6 +52,13 @@
     --primary-color: 254, 229, 1; //#FEE501
     --primary-color2: 251, 57, 57; //#fb3939
     --primary-color3: 39, 119, 252; //#2777FC
+
+    &.dark {
+        --base-gray: 21, 21, 21;
+        --light-gray: 21, 21, 21;
+        --white: 32, 35, 38;
+        --border-color: 51, 53, 56;
+    }
 }
 
 .demo-3 {
@@ -47,17 +66,36 @@
     --primary-color2: 255, 57, 57; //#FF3939
     --primary-color3: 7, 84, 79; //#07544F
     --base-gray: 218, 238, 235; //#daeeeb
+
+    &.dark {
+        --base-gray: 3, 42, 39;
+        --white: 2, 32, 30;
+        --content-color: 255, 255, 255;
+        --border-color: 21, 53, 55;
+    }
 }
 
 .demo-4 {
     --base-gray: 242, 243, 248; //#f2f3f8
     --primary-color3: 34, 66, 163; //#2242a3
+
+    &.dark {
+        --light-gray: 15, 22, 44;
+        --base-gray: 24, 35, 65;
+        --white: 24, 35, 65;
+        --border-color: 60, 66, 92;
+    }
 }
 
 .demo-5 {
     --primary-color3: 45, 40, 120; //#2D2878
     --primary-color4: 37, 32, 105; //#252069
     --theme-yellow: 255, 186, 10; //#FFBA0A
+
+    &.dark {
+        --base-gray: 28, 26, 59;
+        --white: 36, 33, 75;
+    }
 }
 
 .demo-6 {
@@ -65,6 +103,11 @@
     --primary-color2: 255, 111, 150; //#FF6F96
     --theme-pink: 255, 111, 150; //#FF6F96
     --theme-blue: 28, 163, 209; //#1CA3D1
+
+    &.dark {
+        --border-color: 57, 61, 69;
+        --white: 32, 35, 38;
+    }
 }
 
 .text-yellow-color {

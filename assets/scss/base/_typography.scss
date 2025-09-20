@@ -1,8 +1,10 @@
+@use "../utils/variables";
+
 /**=====================
-     Typography CSS
+    1.2 Typography CSS
 ==========================**/
 body {
-    font-family: $br-hendrix;
+    font-family: variables.$br-hendrix;
     position: relative;
     font-size: 14px;
     font-weight: 500;
@@ -26,7 +28,6 @@ li {
 a {
     color: rgba(var(--primary-color), 1);
     text-decoration: none;
-    // display: block;
 }
 
 p {

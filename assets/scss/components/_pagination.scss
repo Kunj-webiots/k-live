@@ -1,5 +1,7 @@
+@use "../utils/mixin/common";
+
 /**=====================
-     Pagination scss
+    2.12 Pagination scss
 ==========================**/
 .custom-pagination {
     margin-top: calc(22px + (35 - 22) * ((100vw - 320px) / (1920 - 320)));
@@ -19,20 +21,29 @@
                 }
             }
 
+            &:first-child,
+            &:last-child {
+                .page-link {
+                    [dir="rtl"] & {
+                        transform: scaleX(-1);
+                    }
+                }
+            }
+
             &.active {
                 .page-link {
                     background-color: rgba(var(--primary-color), 1);
                     border-color: rgba(var(--primary-color), 1);
-                    color: rgba(var(--white), 1);
-                    --Color: rgba(var(--white), 1);
+                    color: #fff;
+                    --Color: #fff;
                 }
 
                 &:hover {
                     .page-link {
                         background-color: rgba(var(--primary-color), 1);
                         border-color: rgba(var(--primary-color), 1);
-                        color: rgba(var(--white), 1);
-                        --Color: rgba(var(--white), 1);
+                        color: #fff;
+                        --Color: #fff;
                     }
                 }
             }
@@ -50,8 +61,8 @@
                 border-radius: calc(3px + (5 - 3) * ((100vw - 320px) / (1920 - 320)));
                 line-height: 1;
                 z-index: 0;
-                @include pseudowh($width: calc(34px + (40 - 34) * ((100vw - 320px) / (1920 - 320))), $height: calc(34px + (40 - 34) * ((100vw - 320px) / (1920 - 320))));
-                @include flex_common;
+                @include common.pseudowh($width: calc(34px + (40 - 34) * ((100vw - 320px) / (1920 - 320))), $height: calc(34px + (40 - 34) * ((100vw - 320px) / (1920 - 320))));
+                @include common.flex_common;
                 padding: 0;
                 background-color: rgba(var(--white), 1);
                 font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
@@ -67,6 +78,10 @@
                     color: rgba(var(--primary-color), 1);
                     background-color: rgba(var(--white), 1);
                     box-shadow: none;
+                }
+
+                i {
+                    --Color: rgba(var(--title-color), 1);
                 }
             }
         }

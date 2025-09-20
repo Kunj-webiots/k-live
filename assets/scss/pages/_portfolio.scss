@@ -1,20 +1,29 @@
+@use "../utils/mixin/common";
+
+/**=====================
+    4.4 Portfolio CSS
+==========================**/
 .portfolio-section {
     .filters-button-list {
-        @include flex_common;
+        @include common.flex_common;
         gap: calc(10px + (14 - 10) * ((100vw - 320px) / (1920 - 320)));
         margin-bottom: calc(12px + (24 - 12) * ((100vw - 320px) / (1920 - 320)));
         flex-wrap: nowrap;
         overflow: auto;
+
         @media (max-width:575px) {
             justify-content: flex-start;
         }
+
         button {
             color: rgba(var(--content-color), 1);
             border: 1px solid rgba(var(--border-color), 0.7);
             background-color: rgba(var(--white), 0.55);
             font-size: calc(15px + (16 - 15) * ((100vw - 320px) / (1920 - 320)));
             white-space: nowrap;
-            &:hover,&.active {
+
+            &:hover,
+            &.active {
                 color: #ffffff;
                 background-color: rgba(var(--primary-color), 1);
                 border-color: transparent;
@@ -48,6 +57,7 @@
                 width: 100%;
                 background-color: rgba(var(--border-color), 1);
                 padding: calc(10px + (19 - 10) * ((100vw - 320px) / (1920 - 320))) calc(12px + (23 - 12) * ((100vw - 320px) / (1920 - 320)));
+
                 @media (max-width:767px) {
                     bottom: 0;
                     padding: 10px 12px;
@@ -65,11 +75,13 @@
                     font-size: calc(18px + (23 - 18) * ((100vw - 320px) / (1920 - 320)));
                 }
             }
-            .m-p-g__thumbs-img{
+
+            .m-p-g__thumbs-img {
                 transition: all 0.5s ease-in-out;
-                &:hover{
+
+                &:hover {
                     filter: unset;
-                    transform: scale(1.1) ;
+                    transform: scale(1.1);
                 }
             }
         }
@@ -83,14 +95,15 @@
             }
         }
     }
-    
+
     .m-p-g {
         .m-p-g__fullscreen {
             &.active {
                 margin: 0 !important;
 
             }
-            .m-p-g__fullscreen-img{
+
+            .m-p-g__fullscreen-img {
                 border-radius: 8px;
             }
         }
@@ -107,16 +120,14 @@
 
             .m-p-g__controls-arrow {
                 .m-p-g__btn {
-                    width: calc(35px + (50 - 35) * ((100vw - 320px) / (1920 - 320)));
-                    height: calc(35px + (50 - 35) * ((100vw - 320px) / (1920 - 320)));
+                    @include common.pseudowh($width: calc(35px + (50 - 35) * ((100vw - 320px) / (1920 - 320))), $height: calc(35px + (50 - 35) * ((100vw - 320px) / (1920 - 320))));
 
                     @media (max-width:850px) {
                         background: rgba(0, 0, 0, 1);
                     }
 
                     svg {
-                        width: calc(18px + (24 - 18) * ((100vw - 320px) / (1920 - 320)));
-                        height: calc(18px + (24 - 18) * ((100vw - 320px) / (1920 - 320)));
+                        @include common.pseudowh($width: calc(18px + (24 - 18) * ((100vw - 320px) / (1920 - 320))), $height: calc(18px + (24 - 18) * ((100vw - 320px) / (1920 - 320))));
                     }
                 }
             }

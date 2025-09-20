@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function init_iconsax() {
     document.querySelectorAll(".iconsax").forEach((iconsax) => {
-        var TuT = iconsax.getAttribute("icon-name").toLowerCase().trim();
+        var TuT = iconsax.getAttribute("data-icon-name").toLowerCase().trim();
         // console.log("icon", TuT);
 
         fetch("https://glenthemes.github.io/iconsax/icons/" + TuT + ".svg")

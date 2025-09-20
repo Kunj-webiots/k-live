@@ -1,0 +1,52 @@
+/**=====================
+     Variables CSS
+==========================**/
+/*common variables*/
+:root {
+    --white: 255, 255, 255; //#ffffff
+    --black: 0, 0, 0; //#000000
+    --light-blue: 33, 157, 171; //#219DAB
+    --light-gray: 245, 246, 249; //#f5f6f9
+    --border-color: 236, 236, 236; //#ececec
+    --danger-color: 255, 79, 79; //#ff4f4f
+    --gradient-color: linear-gradient(274.63deg, rgba(var(--primary-color2), 1) 13.1%, rgba(var(--primary-color), 1) 174.18%);
+
+    /*  for demo 1  */
+    --base-gray: 242, 243, 248; //#f2f3f8
+    --primary-color: 255, 153, 0; //#ff9900
+    --primary-color2: 251, 57, 57; //#fb3939
+    --theme-green: 70, 147, 71; //#469347 
+    --title-color: 32, 35, 38; //#202326
+    --bs-heading-color: 32, 35, 38; //#202326
+    --content-color: 94, 98, 120; //#5e6278
+    --theme-blue: 32, 44, 60; //#202C3C
+    --theme-blue-dark: 19, 25, 33; //#131921
+    --theme-blue2: 34, 66, 163; //#2242a3
+    --dark-blue: 35, 47, 62; //#232f3e
+
+    /* Box shadow */
+    --shadow-2: 0px 0px 10px rgba(var(--title-color), 0.1),
+        0px 10px 10px rgba(82, 77, 141, 0.04),
+        0px 8.69547px 6.95638px rgba(82, 77, 141, 0.06),
+        0px 4.6181px 3.69448px rgba(82, 77, 141, 0.0484671),
+        0px 1.9217px 1.53736px rgba(82, 77, 141, 0.0337375);
+
+    .dark {
+        --base-gray: 26, 35, 46; //#131921
+        --light-gray: 26, 35, 46; //#131921
+        --theme-blue: 32, 44, 59; //#202C3B
+        --white: 32, 44, 59; //#202C3B
+        --title-color: 255, 255, 255; //#ffffff 
+        --content-color: 194, 194, 194; //#c2c2c2
+        --black: 255, 255, 255; //#ffffff
+        --border-color: 55, 70, 88; //#374658
+        --bs-heading-color: rgba(var(--title-color), 1); //#ffffff
+    }
+}
+
+.theme-bg-color {
+    background-color: rgba(var(--primary-color), 1) !important;
+}
+
+/* Font Family List */
+$br-hendrix: "BR Hendrix";

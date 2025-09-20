@@ -1,8 +1,10 @@
+@use "../utils/mixin/common";
+
 /**=====================
-     Title CSS
+    2.18 Title CSS
 ==========================**/
 .title-flex {
-    @include flex_common ($dis: flex, $align: center, $justify: space-between);
+    @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
     flex-wrap: wrap;
     gap: calc(6px + (15 - 6) * ((100vw - 320px) / (1920 - 320)));
 
@@ -26,7 +28,7 @@
             }
         }
 
-        @include max(767px) {
+        @include common.max(767px) {
             display: block;
         }
     }
@@ -52,7 +54,7 @@
         font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
         color: rgba(var(--content-color), 1);
 
-        @include max(991px) {
+        @include common.max(991px) {
             display: none;
         }
     }
@@ -63,9 +65,14 @@
         color: rgba(var(--content-color), 1);
         display: flex;
         align-items: center;
+        line-height: 1;
 
-        @include max(575px) {
+        @include common.max(575px) {
             display: none;
+        }
+
+        i {
+            margin-top: -6px;
         }
 
         &.light-blue {
@@ -96,7 +103,7 @@
         background-color: rgba(var(--primary-color2), 1);
         border-radius: 3px;
         padding: 12px 10px;
-        color: rgba(var(--white), 1);
+        color: #fff;
         display: flex;
         align-items: center;
         font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
@@ -115,6 +122,11 @@
             margin-left: 4px;
             line-height: 1;
 
+            [dir="rtl"] & {
+                margin-left: unset;
+                margin-right: 4px;
+            }
+
             span {
                 display: flex;
                 align-items: center;
@@ -128,6 +140,11 @@
                         content: ":";
                         margin-right: 4px;
                         margin-top: -1px;
+
+                        [dir="rtl"] & {
+                            margin-right: unset;
+                            margin-left: 4px;
+                        }
                     }
                 }
             }
@@ -156,12 +173,17 @@
             position: relative;
 
             &::before {
-                @include pos;
+                @include common.pos;
                 bottom: -2px;
                 left: 0;
-                @include pseudowh($width: 0, $height: 2px);
+                @include common.pseudowh($width: 0, $height: 2px);
                 background-color: rgba(var(--content-color), 1);
                 transition: 0.5s ease-in-out;
+
+                [dir="rtl"] & {
+                    left: unset;
+                    right: 0;
+                }
             }
 
             &:hover {
@@ -219,9 +241,9 @@
             position: relative;
 
             &::before {
-                @include pos;
-                @include center(horizontal);
-                @include pseudowh($width: 0, $height: 2px);
+                @include common.pos;
+                @include common.center(horizontal);
+                @include common.pseudowh($width: 0, $height: 2px);
                 bottom: -2px;
                 background-color: rgba(var(--content-color), 1);
                 transition: 0.5s ease-in-out;
@@ -267,12 +289,17 @@
             position: relative;
 
             &::before {
-                @include pos;
+                @include common.pos;
                 bottom: -3px;
                 left: 0;
-                @include pseudowh($width: 0, $height: 3px);
+                @include common.pseudowh($width: 0, $height: 3px);
                 background-color: rgba(var(--primary-color), 1);
                 transition: 0.5s ease-in-out;
+
+                [dir="rtl"] & {
+                    left: unset;
+                    right: 0;
+                }
             }
 
             &:hover {
@@ -295,11 +322,15 @@
     align-items: center;
     gap: calc(6px + (15 - 6) * ((100vw - 320px) / (1920 - 320)));
     flex-wrap: wrap;
+
+    [dir="rtl"] & {
+        flex-direction: row-reverse;
+    }
 }
 
 .slider-button {
     position: relative;
-    @include flex_common ($dis: flex, $align: center, $justify: space-between);
+    @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
     flex-wrap: wrap;
 
     .swiper-btn-next,
@@ -308,13 +339,13 @@
         z-index: 0;
         inset: unset;
         border: none;
-        @include pseudowh($width: calc(30px + (36 - 30) * ((100vw - 320px) / (1920 - 320))), $height: calc(30px + (36 - 30) * ((100vw - 320px) / (1920 - 320))));
+        @include common.pseudowh($width: calc(30px + (36 - 30) * ((100vw - 320px) / (1920 - 320))), $height: calc(30px + (36 - 30) * ((100vw - 320px) / (1920 - 320))));
         background-color: rgba(var(--light-gray), 1);
         border-radius: calc(5px + (12 - 5) * ((100vw - 320px) / (1920 - 320)));
         font-size: calc(18px + (23 - 18) * ((100vw - 320px) / (1920 - 320)));
         margin: 0;
         color: rgba(var(--title-color), 1);
-        @include flex_common;
+        @include common.flex_common;
 
         &.swiper-button-disabled {
             opacity: 0.35;
@@ -330,7 +361,7 @@
 
 .slider-button-sm {
     position: relative;
-    @include flex_common ($dis: flex, $align: center, $justify: space-between);
+    @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
     flex-wrap: wrap;
 
     .swiper-btn-next,
@@ -339,13 +370,13 @@
         z-index: 0;
         inset: unset;
         border: none;
-        @include pseudowh($width: 30px, $height: 30px);
+        @include common.pseudowh($width: 30px, $height: 30px);
         background-color: rgba(var(--light-gray), 1);
         border-radius: 8px;
         font-size: 18px;
         margin: 0;
         color: rgba(var(--title-color), 1);
-        @include flex_common;
+        @include common.flex_common;
 
         &.swiper-button-disabled {
             opacity: 0.35;
@@ -363,7 +394,7 @@
     margin-bottom: calc(8px + (20 - 8) * ((100vw - 320px) / (1920 - 320)));
 
     h2 {
-        font-size: calc(24px + (36 - 24) * ((100vw - 320px) / (1920 - 320)));
+        font-size: calc(24px + (30 - 24) * ((100vw - 320px) / (1920 - 320)));
     }
 }
 

@@ -1,5 +1,7 @@
+@use "../utils/mixin/common";
+
 /**=====================
-     form scss
+    2.6 form scss
   ==========================**/
 /* Input auto-fill */
 .input-group {
@@ -78,7 +80,7 @@
 
 
 .was-validated.form-box .form-control:valid {
-    background-image: none; // Removes Bootstrap's default check icon
+    background-image: none;
     border-color: rgba(var(--theme-green), 1);
     position: relative;
 }
@@ -97,7 +99,7 @@
                     &::after {
                         content: "\eb7b";
                         color: rgba(var(--theme-green), 1);
-                        @include font;
+                        @include common.font;
                         font-size: 17px;
                         font-weight: 600;
                     }
@@ -113,7 +115,7 @@
                     &::after {
                         content: "\eb99";
                         color: rgba(var(--danger-color), 1);
-                        @include font;
+                        @include common.font;
                         font-size: 17px;
                         font-weight: 600;
                     }
@@ -219,13 +221,16 @@ form {
         border-radius: 5px;
         border: 1px solid rgba(var(--border-color), 1);
 
+        [dir="rtl"] & {
+            text-align: right;
+        }
+
         &:focus {
             border-color: rgba(var(--title-color), 0.18);
         }
 
         &::placeholder {
             color: rgba(var(--content-color), 0.8);
-            // font-weight: 300;
         }
     }
 
@@ -250,6 +255,22 @@ form {
     }
 }
 
+input[type="date"]::-webkit-calendar-picker-indicator {
+    [dir="rtl"] & {
+        position: absolute;
+    }
+
+    body.dark & {
+        filter: invert(1);
+    }
+}
+
+.form-select {
+    body.dark & {
+        --bs-form-select-bg-img: url(./../../images/select-arrow.svg);
+    }
+}
+
 .theme-checkbox {
     min-height: unset;
     padding: 0;
@@ -259,8 +280,9 @@ form {
     gap: calc(7px + (10 - 7) * ((100vw - 320px) / (1920 - 320)));
 
     .form-check-input {
-        @include pseudowh($width: 18px, $height: 18px);
+        @include common.pseudowh($width: 18px, $height: 18px);
         cursor: pointer;
+        background-color: transparent;
         position: relative;
         border: none;
         box-shadow: none;
@@ -269,8 +291,8 @@ form {
         filter: unset;
 
         &:before {
-            @include pos;
-            @include pseudowh($width: 10px, $height: 5px);
+            @include common.pos;
+            @include common.pseudowh($width: 10px, $height: 5px);
             transition: transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75);
             transform: rotate(-45deg) scale(0, 0);
             left: 4px;
@@ -282,8 +304,8 @@ form {
         }
 
         &:after {
-            @include pos;
-            @include pseudowh($width: 18px, $height: 18px);
+            @include common.pos;
+            @include common.pseudowh($width: 18px, $height: 18px);
             top: 0;
             left: 0;
             border: 1px solid rgba(var(--content-color), 0.2);
@@ -314,13 +336,13 @@ form {
     position: relative;
     margin-right: 16px;
     height: 100%;
-    @include pseudowh($width: 18px, $height: 18px);
+    @include common.pseudowh($width: 18px, $height: 18px);
     border: none;
     box-shadow: none;
 
     &:before {
-        @include pos;
-        @include pseudowh($width: 10px, $height: 5px);
+        @include common.pos;
+        @include common.pseudowh($width: 10px, $height: 5px);
         transition: transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75);
         transform: rotate(-45deg) scale(0, 0);
         left: 4px;
@@ -332,8 +354,8 @@ form {
     }
 
     &:after {
-        @include pos;
-        @include pseudowh($width: 18px, $height: 18px);
+        @include common.pos;
+        @include common.pseudowh;
         top: 0;
         left: 0;
         border: 1px solid rgba(var(--content-color), 0.2);

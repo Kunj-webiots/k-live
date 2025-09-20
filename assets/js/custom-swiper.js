@@ -262,9 +262,6 @@ var categorySlider3 = new Swiper(".category-slider-3", {
         prevEl: ".category-three-prev",
     },
     breakpoints: {
-        // 0: {
-        //     slidesPerView: 1,
-        // },
         0: {
             slidesPerView: 2,
             spaceBetween: 8,
@@ -695,6 +692,7 @@ var brandSlider = new Swiper(".brand-slider", {
     spaceBetween: 15,
     slidesPerView: 6,
     freeMode: true,
+    loop: true,
     autoplay: {
         delay: 3000,
         disableOnInteraction: false,
@@ -767,10 +765,6 @@ var product5Slider = new Swiper(".product-five-slider", {
         prevEl: ".product-five-slider-prev",
     },
     breakpoints: {
-        // 0: {
-        //     slidesPerView: 1,
-        //     spaceBetween: 0,
-        // },
         0: {
             slidesPerView: 2,
             spaceBetween: 14,
@@ -1170,27 +1164,21 @@ var thumbnailProductSlider = new Swiper(".thumbnail-product-slider", {
     breakpoints: {
         0: {
             slidesPerView: 2,
-            // spaceBetween: 15,
         },
         361: {
             slidesPerView: 3,
-            // spaceBetween: 15,
         },
         450: {
             slidesPerView: 4,
-            // spaceBetween: 15,
         },
         992: {
             slidesPerView: 3,
-            // spaceBetween: 15,
         },
         1040: {
             slidesPerView: 4,
-            // spaceBetween: 15,
         },
         1399: {
             slidesPerView: 3,
-            // spaceBetween: 15,
         },
         1470: {
             slidesPerView: 4,
@@ -1202,7 +1190,6 @@ var productOriginalSlider = new Swiper(".product-original-slider", {
     spaceBetween: 0,
     loop: true,
     effect: 'fade',
-    // autoplay: false,
     autoplay: {
         delay: 3000,
         disableOnInteraction: false,
@@ -1212,7 +1199,7 @@ var productOriginalSlider = new Swiper(".product-original-slider", {
     },
 });
 
-// Product Slider
+/* Product Slider */
 var productSlider = new Swiper(".product-slider", {
     spaceBetween: 24,
     slidesPerView: 4,
@@ -1268,10 +1255,6 @@ var userSlider = new Swiper(".user-slider", {
             slidesPerView: 2,
             spaceBetween: 15,
         },
-        // 400: {
-        //     slidesPerView: 2,
-        //     spaceBetween: 15,
-        // },
         575: {
             slidesPerView: 3,
             spaceBetween: 15,
@@ -1296,7 +1279,6 @@ var clientSlider = new Swiper(".client-slider", {
 });
 
 var quickProductSlider = new Swiper(".quick-product-slider", {
-    // slidesPerView: 3,
     spaceBetween: 0,
 });
 
@@ -1308,15 +1290,6 @@ var testimonialSwiper = new Swiper(".testimonial-swiper", {
     direction: "vertical",
     effect: "cards",
     grabCursor: true,
-    // breakpoints: {
-    //     0: {
-    //         effect: "slide",
-    //         slidesPerView: 2,
-    //     },
-    //     992: {
-    //         effect: "cards",
-    //     },
-    // },
 });
 
 /* Quick view Slider */
@@ -1325,10 +1298,6 @@ var swiper = new Swiper(".quick-thumbnail-slider", {
     slidesPerView: 3,
     freeMode: true,
     watchSlidesProgress: true,
-    // autoplay: {
-    //     delay: 3000,
-    //     disableOnInteraction: false,
-    // },
     breakpoints: {
         0: {
             slidesPerView: 2,
@@ -1341,15 +1310,84 @@ var swiper = new Swiper(".quick-thumbnail-slider", {
 var swiper2 = new Swiper(".quick-main-slider", {
     loop: true,
     spaceBetween: 0,
-    // autoplay: {
-    //     delay: 3000,
-    //     disableOnInteraction: false,
-    // },
     navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
     },
     thumbs: {
         swiper: swiper,
+    },
+});
+
+var testimonialSwiper = new Swiper(".testimonial-swiper", {
+    navigation: {
+        prevEl: ".slidePrev-btn",
+        nextEl: ".slideNext-btn",
+    },
+    direction: "vertical",
+    effect: "cards",
+    grabCursor: true,
+});
+
+var sellSlider = new Swiper(".sell-slider", {
+    slidesPerView: 4,
+    loop: true,
+    spaceBetween: 0,
+    breakpoints: {
+        0: {
+            slidesPerView: 1,
+        },
+        700: {
+            slidesPerView: 2,
+        },
+        1150: {
+            slidesPerView: 3,
+        },
+        1530: {
+            slidesPerView: 4,
+        },
+    },
+});
+
+var recentBlogSlider = new Swiper(".recent-blog-slider", {
+    slidesPerView: 4,
+    spaceBetween: 20,
+    breakpoints: {
+        0: {
+            slidesPerView: 1,
+            spaceBetween: 15,
+        },
+        690: {
+            spaceBetween: 15,
+            slidesPerView: 2,
+        },
+        1140: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+        },
+        1550: {
+            slidesPerView: 4,
+            spaceBetween: 20,
+        },
+    },
+});
+
+var menuProductSlider = new Swiper(".menu-product-slider", {
+    slidesPerView: 2,
+    spaceBetween: 10,
+    speed: 1200,
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+    },
+});
+
+var menuProductSlider2 = new Swiper(".menu-product-slider2", {
+    slidesPerView: 4,
+    spaceBetween: 12,
+    speed: 1200,
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
     },
 });

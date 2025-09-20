@@ -1,5 +1,7 @@
+@use "../utils/mixin/common";
+
 /**=====================
-     Nav-tabs scss
+    2.10 Nav-tabs scss
 ==========================**/
 .product-section-box {
     margin-top: calc(12px + (48 - 12) * ((100vw - 320px) / (1920 - 320)));
@@ -27,8 +29,8 @@
                 box-shadow: unset;
 
                 &::after {
-                    @include pos;
-                    @include pseudowh($width: 0, $height: 3px);
+                    @include common.pos;
+                    @include common.pseudowh($width: 0, $height: 3px);
                     bottom: 0;
                     left: 0;
                     background-color: transparent;
@@ -100,7 +102,7 @@
         }
 
         .detail-list {
-            @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 4px);
+            @include common.flex_wrap ($dis: flex, $wrap: wrap, $gap: 4px);
 
             li {
                 display: flex;
@@ -120,7 +122,7 @@
 
     .information-box {
         ul {
-            @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(2px + (7 - 2)*((100vw - 320px) /(1920 - 320))));
+            @include common.flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(2px + (7 - 2)*((100vw - 320px) /(1920 - 320))));
 
             li {
                 color: rgba(var(--content-color), 1);
@@ -137,10 +139,19 @@
         .b-end {
             border-right: 1px solid rgba(var(--border-color), 1);
 
-            @include max(1199.98px) {
+            [dir="rtl"] & {
+                border-right: unset;
+                border-left: 1px solid rgba(var(--border-color), 1);
+            }
+
+            @include common.max(1199.98px) {
                 border-right: unset;
                 border-bottom: 1px solid rgba(var(--border-color), 1);
                 padding-bottom: var(--bs-gutter-y);
+
+                [dir="rtl"] & {
+                    border-left: unset;
+                }
             }
         }
 
@@ -152,9 +163,7 @@
 
         .review-title {
             margin-bottom: calc(10px + (18 - 10) * ((100vw - 320px) / (1920 - 320)));
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
             flex-wrap: wrap;
 
             h4 {
@@ -168,14 +177,14 @@
             margin-top: 17px;
 
             ul {
-                @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(13px + (20 - 13) * ((100vw - 320px) / (1920 - 320))));
+                @include common.flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(13px + (20 - 13) * ((100vw - 320px) / (1920 - 320))));
                 align-items: center;
 
                 li {
                     width: 100%;
 
                     .rating-list {
-                        @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 14px);
+                        @include common.flex_wrap ($dis: flex, $wrap: nowrap, $gap: 14px);
                         align-items: center;
 
                         h5 {
@@ -183,16 +192,12 @@
                             line-height: 1;
                             padding-top: 4px;
                             width: calc(37px + (44 - 37) * ((100vw - 320px) / (1920 - 320)));
-
-                            // i {
-                            //     color: rgba(var(--rating), 1);
-                            // }
                         }
 
                         .progress {
                             width: calc(100% - calc(37px + (44 - 37) * ((100vw - 320px) / (1920 - 320))) - 14px);
-                            // width: 100%;
                             border-radius: 0;
+                            background-color: rgba(var(--base-gray), 1);
 
                             .progress-bar {
                                 background: rgba(var(--primary-color), 1);
@@ -222,8 +227,19 @@
                 width: auto;
                 border: 1px solid rgba(var(--border-color), 1);
                 border-radius: 0;
+                color: rgba(var(--title-color), 1);
                 padding: 6px calc(29px + (36 - 29) * ((100vw - 320px) / (1920 - 320))) 6px 12px;
                 background-position: right calc(8px + (12 - 8) * ((100vw - 320px) / (1920 - 320))) center;
+                background-color: rgba(var(--base-gray), 1);
+
+                [dir="rtl"] & {
+                    background-position: left calc(8px + (12 - 8) * ((100vw - 320px) / (1920 - 320))) center;
+                    padding-inline: 12px calc(29px + (36 - 29) * ((100vw - 320px) / (1920 - 320)));
+                }
+
+                body.dark & {
+                    background-color: rgba(var(--base-gray), 1);
+                }
             }
         }
 
@@ -234,7 +250,6 @@
             }
 
             .form-control {
-                // border-radius: 0;
                 padding: calc(10px + (15 - 10) * ((100vw - 320px) / (1920 - 320))) calc(12px + (15 - 12) * ((100vw - 320px) / (1920 - 320))) calc(7px + (12 - 7) * ((100vw - 320px) / (1920 - 320)));
                 font-weight: 400;
                 font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
@@ -268,6 +283,7 @@
                     background-color: rgba(var(--base-gray), 1);
                     font-weight: 500;
                     font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+                    color: rgba(var(--title-color), 1);
                 }
 
                 th,
@@ -293,7 +309,7 @@
             line-height: 1.7;
             font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
 
-            @include max(575.98px) {
+            @include common.max(575.98px) {
                 line-height: 1.5;
             }
 
@@ -323,7 +339,7 @@
 
 .review-people {
     .review-list {
-        @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 0);
+        @include common.flex_wrap ($dis: flex, $wrap: wrap, $gap: 0);
 
         >li {
             +li {
@@ -335,12 +351,22 @@
                 padding-left: calc(40px + (61 - 40) * ((100vw - 320px) / (1920 - 320)));
                 position: relative;
 
+                [dir="rtl"] & {
+                    padding-right: calc(40px + (61 - 40) * ((100vw - 320px) / (1920 - 320)));
+                    padding-left: unset;
+                }
+
                 &::before {
-                    @include pos;
+                    @include common.pos;
                     top: 0;
                     left: calc(20px + (30 - 20) * ((100vw - 320px) / (1920 - 320)));
                     height: 100%;
                     border-left: 1px solid rgba(var(--content-color), 0.1);
+
+                    [dir="rtl"] & {
+                        left: unset;
+                        right: calc(20px + (30 - 20) * ((100vw - 320px) / (1920 - 320)));
+                    }
                 }
 
                 >li {
@@ -349,15 +375,11 @@
                     background-color: rgba(var(--white), 1);
 
                     &::before {
-                        @include pos;
-                        @include center(vertical);
-                        @include pseudowh($width: calc(100% + calc(20px + (30 - 20) * ((100vw - 320px) / (1920 - 320)))), $height: 1px);
-                        // left: calc(-25px + (-54 - -25) * ((100vw - 320px) / (1920 - 320)));
+                        @include common.pos;
+                        @include common.center(vertical);
+                        @include common.pseudowh($width: calc(100% + calc(20px + (30 - 20) * ((100vw - 320px) / (1920 - 320)))), $height: 1px);
                         right: 0;
-                        // height: 1px;
-                        // width: 100%;
                         border-top: 1px solid rgba(var(--content-color), 0.1);
-                        // border-color: solid;
                         z-index: -1;
                     }
                 }
@@ -375,7 +397,7 @@
                 background-color: rgba(var(--base-gray), 1);
                 border-radius: 6px;
 
-                @include max(480px) {
+                @include common.max(480px) {
                     display: block;
                 }
 
@@ -388,7 +410,7 @@
                 }
 
                 .people-image {
-                    @include pseudowh($width: calc(62px + (70 - 62) * ((100vw - 320px) / (1920 - 320))), $height: calc(62px + (70 - 62) * ((100vw - 320px) / (1920 - 320))));
+                    @include common.pseudowh($width: calc(62px + (70 - 62) * ((100vw - 320px) / (1920 - 320))), $height: calc(62px + (70 - 62) * ((100vw - 320px) / (1920 - 320))));
                     border-radius: 4px;
                     overflow: hidden;
 
@@ -401,6 +423,11 @@
                     padding-left: 15px;
                     width: calc(100% - 70px);
                     position: relative;
+
+                    [dir="rtl"] & {
+                        padding-left: unset;
+                        padding-right: 15px;
+                    }
 
                     .name {
                         display: block;
@@ -424,7 +451,6 @@
 
                                     :hover {
                                         transition: 0.3s;
-                                        // color: rgba(var(--primary-color), 1);
 
                                         &::before {
                                             content: "\f186";
@@ -446,7 +472,7 @@
                         }
                     }
 
-                    @include max(480px) {
+                    @include common.max(480px) {
                         padding: 0;
                         width: 100%;
                         margin-top: calc(12px + (16 - 12) * ((100vw - 320px) / (481 - 320)));
@@ -459,10 +485,19 @@
                         width: auto;
                         display: inline-flex;
 
-                        @include max(480px) {
+                        [dir="rtl"] & {
+                            right: unset;
+                            left: 0;
+                        }
+
+                        @include common.max(480px) {
                             position: relative;
                             inset: unset;
                             margin-top: 7px;
+
+                            [dir="rtl"] & {
+                                inset: unset;
+                            }
                         }
 
                         h6 {
@@ -485,7 +520,7 @@
                         font-size: calc(14px + (15 - 14) * ((100vw - 320px) / (1920 - 320)));
                         color: rgba(var(--title-color), 0.8);
 
-                        @include max(575.98px) {
+                        @include common.max(575.98px) {
                             line-height: 1.5;
                             width: 100%;
                         }
@@ -499,11 +534,11 @@
                         font-weight: 600;
                         transition: all 0.15s ease-in-out;
 
-                        @include max(575px) {
+                        @include common.max(575px) {
                             opacity: 1;
                         }
 
-                        @include max(480px) {
+                        @include common.max(480px) {
                             position: relative;
                             margin-left: 8px;
                         }
@@ -657,7 +692,3 @@
         }
     }
 }
-
-// .social-share-tabs{
-
-// }

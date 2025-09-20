@@ -1,3 +1,6 @@
+/*=====================
+    Quick Timer Js
+==========================*/
 function getTimeRemaining(endtime) {
     var t = Date.parse(endtime) - Date.parse(new Date());
 

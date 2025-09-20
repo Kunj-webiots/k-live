@@ -1,10 +1,20 @@
-/**=====================
-     Slider CSS
-==========================**/
-.swiper,
-.swiper-wrapper {
-    z-index: unset;
+@use "../utils/mixin/common";
 
+/**=====================
+    2.16 Slider CSS
+==========================**/
+.swiper {
+    [dir="rtl"] & {
+        direction: ltr;
+
+        .swiper-wrapper {
+            .swiper-slide {
+                >* {
+                    direction: rtl;
+                }
+            }
+        }
+    }
 }
 
 .vertical-slider {
@@ -16,7 +26,7 @@
 .product-box-slider {
     margin-bottom: -70px;
 
-    @include max(767px) {
+    @include common.max(767px) {
         margin-bottom: 0;
     }
 
@@ -24,7 +34,7 @@
         .swiper-slide {
             padding-bottom: 70px;
 
-            @include max(767px) {
+            @include common.max(767px) {
                 padding-bottom: 0;
             }
         }
@@ -39,15 +49,23 @@
         height: auto;
 
         .swiper-pagination-bullet {
-            @include pseudowh($width: 10px, $height: 4px);
+            @include common.pseudowh($width: 10px, $height: 4px);
             background-color: #F2F3F8;
             transition: all 0.5s ease;
             border-radius: 100px;
             opacity: 1;
 
+            body.dark & {
+                background-color: #474c64;
+            }
+
             &-active {
                 width: 27px;
                 background-color: rgba(var(--primary-color), 1);
+
+                body.dark & {
+                    background-color: rgba(var(--primary-color), 1);
+                }
             }
         }
     }
@@ -62,7 +80,7 @@
         height: auto;
 
         .swiper-pagination-bullet {
-            @include pseudowh($width: calc(10px + (14 - 10) * ((100vw - 320px) / (1920 - 320))), $height: calc(4px + (5 - 4) * ((100vw - 320px) / (1920 - 320))));
+            @include common.pseudowh($width: calc(10px + (14 - 10) * ((100vw - 320px) / (1920 - 320))), $height: calc(4px + (5 - 4) * ((100vw - 320px) / (1920 - 320))));
             background: unset;
             background-color: rgba(var(--primary-color), 0.5);
             transition: all 0.5s ease;
@@ -80,7 +98,6 @@
 
             &-active {
                 width: calc(25px + (35 - 25) * ((100vw - 320px) / (1920 - 320)));
-                // @include pseudowh($width: 35px, $height: 5px);
                 background-color: rgba(var(--primary-color), 1);
             }
         }
@@ -132,14 +149,14 @@
             }
 
             .product-thumbnail-box {
-                @include pseudowh($width: 59px, $height: 59px);
+                @include common.pseudowh($width: 59px, $height: 59px);
                 background-color: rgba(var(--white), 1);
                 border: 1px solid rgba(var(--content-color), 0.5);
                 border-radius: 10px;
                 cursor: pointer;
 
                 @media(max-width: 375px) {
-                    @include pseudowh($width: calc(50px + (59 - 50) * ((100vw - 320px) / (375 - 320))), $height: calc(50px + (59 - 50) * ((100vw - 320px) / (375 - 320))));
+                    @include common.pseudowh($width: calc(50px + (59 - 50) * ((100vw - 320px) / (375 - 320))), $height: calc(50px + (59 - 50) * ((100vw - 320px) / (375 - 320))));
                 }
             }
         }
@@ -172,8 +189,8 @@
 
     .swiper-button-next,
     .swiper-button-prev {
-        @include center(vertical);
-        @include pseudowh($width: calc(30px + (36 - 30) * ((100vw - 320px) / (1920 - 320))), $height: calc(30px + (36 - 30) * ((100vw - 320px) / (1920 - 320))));
+        @include common.center(vertical);
+        @include common.pseudowh($width: calc(30px + (36 - 30) * ((100vw - 320px) / (1920 - 320))), $height: calc(30px + (36 - 30) * ((100vw - 320px) / (1920 - 320))));
         background-color: rgba(var(--light-gray), 1);
         border-radius: 8px;
         font-size: calc(18px + (21 - 18) * ((100vw - 320px) / (1920 - 320)));
@@ -187,7 +204,7 @@
 
 .collection-box {
     .collection-image {
-        @include pseudowh($width: 100%, $height: 125px);
+        @include common.pseudowh($width: 100%, $height: 125px);
 
         img {
             @extend %img-cover;
@@ -217,15 +234,25 @@
 .product-option-box {
     margin-bottom: -45px;
 
-    @include max(767px) {
+    @include common.max(767px) {
         margin: 0;
     }
 
     .swiper-slide {
         padding-bottom: 45px;
 
-        @include max(767px) {
+        @include common.max(767px) {
             padding: 0;
+        }
+    }
+}
+
+.menu-product-slider {
+    margin: -4px -6px -8px;
+
+    .swiper-wrapper {
+        .swiper-slide {
+            padding: 4px 6px 8px;
         }
     }
 }

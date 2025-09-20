@@ -1,18 +1,20 @@
+@use "../utils/mixin/common";
+
 /**=====================
-     Home CSS
+    3.6 Home CSS
 ==========================**/
 .home-section {
     padding-top: calc(8px + (20 - 8) * ((100vw - 320px) / (1920 - 320)));
 
     .custom-home-row {
         .custom-xxl-3 {
-            @include min(1400px) {
+            @include common.min(1400px) {
                 width: 23.55%;
             }
         }
 
         .custom-xxl-9 {
-            @include min(1400px) {
+            @include common.min(1400px) {
                 width: calc(100% - 23.55%);
             }
         }

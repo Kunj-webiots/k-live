@@ -1,8 +1,14 @@
+@use "../utils/mixin/common";
+
 /**=====================
-     breadcrumb scss
+    2.3 breadcrumb scss
 ==========================**/
 .breadcrumb-section {
     background-color: rgba(var(--white), 1);
+
+    body.dark & {
+        background-color: rgba(var(--white), 0.7);
+    }
 
     .breadcrumb-contain {
         padding: calc(14px + (20 - 14) * ((100vw - 320px) / (1920 - 320))) 0;
@@ -11,7 +17,7 @@
         display: flex;
         align-items: center;
 
-        @include max(480px) {
+        @include common.max(480px) {
             display: block;
         }
 
@@ -20,7 +26,7 @@
             font-size: calc(18px + (24 - 18) * ((100vw - 320px) / (1920 - 320)));
             margin-bottom: 0;
 
-            @include max(480px) {
+            @include common.max(480px) {
                 text-align: center;
                 margin-bottom: 8px;
             }
@@ -31,11 +37,11 @@
             width: 70%;
             margin: 0 auto;
 
-            @include max(575px) {
+            @include common.max(575px) {
                 width: 90%;
             }
 
-            @include max(360px) {
+            @include common.max(360px) {
                 width: 100%;
             }
 
@@ -47,7 +53,7 @@
             }
 
             i {
-                @include center(vertical);
+                @include common.center(vertical);
                 position: absolute;
                 right: calc(14px + (20 - 14) * ((100vw - 320px) / (1920 - 320)));
                 color: rgba(var(--content-color), 1);
@@ -58,8 +64,13 @@
         nav {
             margin-left: auto;
 
+            [dir="rtl"] & {
+                margin-left: unset;
+                margin-right: auto;
+            }
+
             .breadcrumb {
-                @include flex_common;
+                @include common.flex_common;
 
                 .breadcrumb-item {
                     font-weight: 500;
@@ -103,11 +114,11 @@
                     padding-left: 20px;
 
                     &::before {
-                        @include pos;
+                        @include common.pos;
                         top: calc(50% - 2px);
                         transform: translateY(-50%);
                         left: 0;
-                        @include pseudowh($width: 4px, $height: 4px);
+                        @include common.pseudowh($width: 4px, $height: 4px);
                         border-radius: 100%;
                         background-color: rgba(var(--content-color), 1);
                     }
@@ -152,19 +163,19 @@
             line-height: 1.7;
             font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
 
-            @include max(1660px) {
+            @include common.max(1660px) {
                 width: 60%;
             }
 
-            @include max(1366px) {
+            @include common.max(1366px) {
                 width: 70%;
             }
 
-            @include max(991px) {
+            @include common.max(991px) {
                 width: 90%;
             }
 
-            @include max(767px) {
+            @include common.max(767px) {
                 width: 100%;
             }
 
@@ -178,19 +189,19 @@
             margin: calc(18px + (35 - 18) * ((100vw - 320px) / (1920 - 320))) auto 0;
             width: 50%;
 
-            @include max(1660px) {
+            @include common.max(1660px) {
                 width: 60%;
             }
 
-            @include max(1366px) {
+            @include common.max(1366px) {
                 width: 70%;
             }
 
-            @include max(991px) {
+            @include common.max(991px) {
                 width: 90%;
             }
 
-            @include max(767px) {
+            @include common.max(767px) {
                 width: 100%;
             }
 
@@ -253,15 +264,15 @@
         width: 50%;
         margin: 0 auto;
 
-        @include max(1366px) {
+        @include common.max(1366px) {
             width: 63%;
         }
 
-        @include max(991px) {
+        @include common.max(991px) {
             width: 85%;
         }
 
-        @include max(767px) {
+        @include common.max(767px) {
             width: 100%;
         }
 
@@ -276,7 +287,7 @@
 
             span {
                 position: absolute;
-                @include center(vertical);
+                @include common.center(vertical);
                 left: 16px;
 
                 i {
@@ -291,9 +302,9 @@
             }
 
             button {
-                @include pseudowh($width: calc(77px + (108 - 77) * ((100vw - 320px) / (1920 - 320))), $height: calc(33px + (42 - 33) * ((100vw - 320px) / (1920 - 320))));
+                @include common.pseudowh($width: calc(77px + (108 - 77) * ((100vw - 320px) / (1920 - 320))), $height: calc(33px + (42 - 33) * ((100vw - 320px) / (1920 - 320))));
                 position: absolute;
-                @include center(vertical);
+                @include common.center(vertical);
                 right: calc(3px + (6 - 3) * ((100vw - 320px) / (1920 - 320)));
                 padding: 0;
                 font-size: calc(14px + (17 - 14) * ((100vw - 320px) / (1920 - 320)));

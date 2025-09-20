@@ -1,5 +1,6 @@
-// import lightGallery from "https://cdn.skypack.dev/lightgallery@2.0.0-beta.4";
-
+/*=====================
+    Zoom Gallery Js
+==========================*/
 import lgZoom from "https://cdn.skypack.dev/lightgallery@2.0.0-beta.4/plugins/zoom";
 
 const $lgContainer = document.getElementById("gallery-container");

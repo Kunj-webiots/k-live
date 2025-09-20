@@ -1,5 +1,7 @@
+@use "../utils/mixin/common";
+
 /**=====================
-     Rating CSS
+    2.13 Rating CSS
 ==========================**/
 .rating {
     display: flex;
@@ -7,14 +9,22 @@
     gap: 2px;
 
     li {
-        line-height: 1; 
+        line-height: 1;
 
         i {
             font-size: 14px;
             color: rgba(var(--content-color), 0.3);
 
+            body.dark & {
+                color: rgba(var(--content-color), 0.8);
+            }
+
             &.fill {
                 color: rgba(var(--rating), 1);
+
+                body.dark & {
+                    color: rgba(var(--rating), 1);
+                }
             }
         }
     }
