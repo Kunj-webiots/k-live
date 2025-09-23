@@ -267,7 +267,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .form-select {
     body.dark & {
-        --bs-form-select-bg-img: url(./../../images/select-arrow.svg);
+        background-image: url(../images/select-arrow.svg);
     }
 }
 

@@ -205,6 +205,18 @@
     }
 }
 
+.ratio_148 {
+    .bg-size {
+        content: "";
+        padding-top: 148%;
+        display: block;
+
+        @include common.max(1199px) {
+            padding-top: 88%;
+        }
+    }
+}
+
 .ratio_150 {
     .bg-size {
         &:before {
@@ -251,18 +263,6 @@
             padding-top: 190%;
             content: "";
             display: block;
-        }
-    }
-}
-
-.ratio_148_1 {
-    .bg-size {
-        content: "";
-        padding-top: 148%;
-        display: block;
-
-        @include common.max(1199px) {
-            padding-top: 88%;
         }
     }
 }

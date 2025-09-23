@@ -580,15 +580,31 @@ document.addEventListener("DOMContentLoaded", function () {
 /*====================
   19. Exit Modal Open js
 =======================*/
+// document.addEventListener("DOMContentLoaded", function () {
+//     const exitModalEl = document.getElementById("exitModal");
+//     const exitModal = new bootstrap.Modal(exitModalEl);
+
+//     document.addEventListener("mouseout", function (e) {
+//         if (e.clientY <= 0) {
+//             exitModal.show();
+//         }
+//     });
+// });
+
 document.addEventListener("DOMContentLoaded", function () {
     const exitModalEl = document.getElementById("exitModal");
     const exitModal = new bootstrap.Modal(exitModalEl);
 
-    document.addEventListener("mouseout", function (e) {
-        if (e.clientY <= 0) {
-            exitModal.show();
-        }
-    });
+    // Check localStorage pehle thi modal show thayu chhe ke nahi
+    if (!localStorage.getItem("exitModalShown")) {
+        document.addEventListener("mouseout", function (e) {
+            if (e.clientY <= 0) {
+                exitModal.show();
+                // Save in localStorage so it won't show again
+                localStorage.setItem("exitModalShown", "true");
+            }
+        });
+    }
 });
 
 /*====================
@@ -694,7 +710,7 @@ function updateColors(progress) {
     if (stage < colorStages.length) {
         document.querySelector(".preloader").style.backgroundColor =
             colorStages[stage].bg;
-        document.querySelector(".progress-bar").style.backgroundColor =
+        document.querySelector(".preloader-progress-bar").style.backgroundColor =
             colorStages[stage].text;
         document
             .querySelectorAll(".loading-text .char, .percentage")
@@ -706,7 +722,7 @@ function updateColors(progress) {
 
 const tl = gsap.timeline();
 
-tl.to(".progress-bar", {
+tl.to(".preloader-progress-bar", {
     width: "100%",
     duration: 5,
     ease: "power1.inOut",
@@ -745,12 +761,6 @@ tl.to(".progress-bar", {
         ease: "power2.inOut",
         delay: 0.8
     })
-    .set(
-        ".content", {
-        visibility: "visible"
-    },
-        "-=1"
-    )
     .set(".preloader", {
         display: "none"
     })
