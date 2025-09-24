@@ -1750,6 +1750,9 @@
         position: relative;
         margin-block: calc(26px + (136 - 26) * ((100vw - 320px) / (1920 - 320))) calc(-68px + (-135 - -68) * ((100vw - 320px) / (1920 - 320)));
         border-radius: calc(14px + (20 - 14) * ((100vw - 320px) / (1920 - 320)));
+        aspect-ratio: 131/50;
+        width: 100%;
+        object-fit: cover;
     }
 }
 

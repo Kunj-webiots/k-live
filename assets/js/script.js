@@ -29,6 +29,7 @@
 19. Exit Modal Open Js
 20. Random Timer On Exit Modal Js
 21. Loader Js
+22. Recent Product Show Js
 */
 
 /*====================
@@ -764,3 +765,137 @@ tl.to(".preloader-progress-bar", {
     .set(".preloader", {
         display: "none"
     })
+
+/*=====================
+    22. Recent Product Show Js
+==========================*/
+const box = document.querySelector('.recent-product-box');
+const closeBtn = document.querySelector('.recent-close');
+const timerElement = document.querySelector('.recent-content .timer');
+
+const products = [
+    {
+        imageSrc: '../assets/images/product/1.png',
+        productName: 'Smart Watch Series X3',
+        productLink: 'product-color.html',
+        price: '239.00',
+        originalPrice: '250.00'
+    },
+    {
+        imageSrc: '../assets/images/product/23.png',
+        productName: 'BlackBerry Keyone BBB100-7 64gb unlocked gSM',
+        productLink: 'product-color.html',
+        price: '1920.00',
+        originalPrice: '2000.00'
+    },
+    {
+        imageSrc: '../assets/images/product/30.png',
+        productName: 'Canon EOS 1500D DSLR Camera Body+ 18-55 mm',
+        productLink: 'product-color.html',
+        price: '199.00',
+        originalPrice: '252.00'
+    },
+    {
+        imageSrc: '../assets/images/product/27.png',
+        productName: 'Motorola Moto X4 32GB Unlocked Smartphone',
+        productLink: 'product-color.html',
+        price: '1220.00',
+        originalPrice: '1269.00'
+    },
+    {
+        imageSrc: '../assets/images/product/34.png',
+        productName: 'Shears Kitchen Spoone 6 Piece Set with Wooden Block',
+        productLink: 'product-color.html',
+        price: '1209.00',
+        originalPrice: '1225.00'
+    },
+    {
+        imageSrc: '../assets/images/product/31.png',
+        productName: 'Pro Healthy Lifestyle Edible Oil 5 litre Jar | Saffola Gold Refined Oil',
+        productLink: 'product-color.html',
+        price: '1920.00',
+        originalPrice: '2000.00'
+    },
+    {
+        imageSrc: '../assets/images/product/35-1.png',
+        productName: 'Herschel Leather duffle bag in brown color',
+        productLink: 'product-color.html',
+        price: '670.00',
+        originalPrice: '900.00'
+    },
+    {
+        imageSrc: '../assets/images/product/26.png',
+        productName: 'EvoFox Game Box 32 GB with Asphalt 8 ',
+        productLink: 'product-color.html',
+        price: '130.00',
+        originalPrice: '153.00'
+    }
+];
+
+let currentIndex = 0;
+
+function getRandomDelay(minSeconds, maxSeconds) {
+    const min = minSeconds * 1000;
+    const max = maxSeconds * 1000;
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function getRandomTimeText() {
+    const minutes = Math.floor(Math.random() * 61); // 0 to 60 minutes
+    if (minutes === 0) return "Just now";
+    if (minutes === 1) return "1 minute ago";
+    if (minutes < 60) return `${minutes} minutes ago`;
+    return "An hour ago";
+}
+
+function updateRecentProduct(product) {
+    if (!box) return;
+
+    // Update content
+    const img = box.querySelector('img');
+    const link = box.querySelector('.recent-content a');
+    const priceTag = box.querySelector('.price');
+
+    if (img) img.src = product.imageSrc;
+    if (link) {
+        link.textContent = product.productName;
+        link.href = product.productLink;
+    }
+    if (priceTag) {
+        priceTag.innerHTML = `$${product.price} <del>$${product.originalPrice}</del>`;
+    }
+
+    // Set random timer text
+    if (timerElement) {
+        timerElement.textContent = getRandomTimeText();
+    }
+
+    // Show box
+    box.classList.add('active');
+
+    // Remove active class after 7–8s
+    const removeDelay = getRandomDelay(7, 8);
+    setTimeout(() => {
+        box.classList.remove('active');
+
+        // Schedule next product after 8–9s
+        const nextDelay = getRandomDelay(8, 9);
+        setTimeout(() => {
+            currentIndex = (currentIndex + 1) % products.length;
+            updateRecentProduct(products[currentIndex]);
+        }, nextDelay);
+    }, removeDelay);
+}
+
+// Close button
+if (closeBtn && box) {
+    closeBtn.addEventListener('click', () => {
+        box.classList.remove('active');
+    });
+}
+
+// Start cycle after random 8–9s
+const initialDelay = getRandomDelay(8, 9);
+setTimeout(() => {
+    updateRecentProduct(products[currentIndex]);
+}, initialDelay);

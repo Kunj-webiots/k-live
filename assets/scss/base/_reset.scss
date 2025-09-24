@@ -573,6 +573,7 @@ theme-blue-dark;
     writing-mode: vertical-lr;
     gap: calc(6px + (10 - 6) * ((100vw - 320px) / (1920 - 320)));
     z-index: 9;
+    display: none;
 
     button {
         font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
