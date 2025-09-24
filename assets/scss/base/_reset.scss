@@ -447,6 +447,7 @@
         img {
             @include common.pseudowh($width: 58px, $height: 55px);
             object-fit: contain;
+            filter: none;
         }
     }
 
