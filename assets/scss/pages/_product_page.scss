@@ -1627,7 +1627,7 @@
     opacity: 0;
     visibility: hidden;
     width: 100%;
-    z-index: 9;
+    z-index: 3;
     background-color: rgba(var(--white), 1);
     padding: calc(11px + (6 - 11) * ((100vw - 320px) / (1920 - 320))) 0;
     box-shadow: 0 0 3px 1px rgba(var(--title-color), 0.06);
@@ -1843,7 +1843,7 @@
         opacity: 1;
 
         @include common.max(575.98px) {
-            bottom: 68px;
+            bottom: 66px;
         }
     }
 
