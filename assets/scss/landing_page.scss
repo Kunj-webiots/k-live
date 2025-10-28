@@ -373,6 +373,10 @@ header {
         padding: 0 !important;
         font-weight: 500;
 
+        &:hover {
+            color: rgba(var(--theme-color), 1);
+        }
+
         @media (max-width: 1199px) {
             color: #222;
 
@@ -936,15 +940,16 @@ header {
             bottom: calc(-39px + (-29 - -39) * ((100vw - 991px) / (1920 - 991)));
             left: calc(-134px + (-227 - -134) * ((100vw - 991px) / (1920 - 991)));
             display: grid;
-            animation: mover 2s infinite alternate;
 
             .sub-img {
+                animation: mover 2s infinite alternate;
                 width: calc(218px + (300 - 218) * ((100vw - 991px) / (1920 - 991)));
                 border-radius: 10px;
                 box-shadow: 0px 5px 10px 0px #2777FC1A;
             }
 
             .text-img {
+                animation: mover 2s infinite alternate;
                 margin-left: calc(17px + (45 - 17) * ((100vw - 991px) / (1920 - 991)));
                 margin-bottom: calc(-9px + (-16 - -9) * ((100vw - 991px) / (1920 - 991)));
                 z-index: 1;
@@ -956,9 +961,12 @@ header {
             position: absolute;
             bottom: 30px;
             right: -129px;
-            animation: mover 2s infinite alternate;
-            animation-delay: 0.6s;
             width: calc(150px + (185 - 150) * ((100vw - 991px) / (1920 - 991)));
+
+            img {
+                animation: mover 2s infinite alternate;
+                animation-delay: 0.6s;
+            }
         }
 
         .sub-img-3 {
@@ -966,11 +974,13 @@ header {
             top: calc(-18px + (222 - -18) * ((100vw - 991px) / (1920 - 991)));
             width: calc(230px + (320 - 230) * ((100vw - 991px) / (1920 - 991)));
             right: calc(-110px + (-200 - -110) * ((100vw - 991px) / (1920 - 991)));
-            animation: mover 2s infinite alternate;
-            border-radius: 10px;
             box-shadow: 0px 5px 10px 0px #2777FC1A;
-            overflow: hidden;
-            animation-delay: 1.2s;
+
+            img {
+                border-radius: 10px;
+                animation-delay: 1.2s;
+                animation: mover 2s infinite alternate;
+            }
         }
     }
 }

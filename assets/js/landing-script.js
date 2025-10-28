@@ -250,9 +250,9 @@ function navHighlighter() {
 }
 
 /*=====================
-   06. AOS js 
+  WOW Js
 ==========================*/
-AOS.init();
+new WOW().init();
 
 
 /*=====================
@@ -268,3 +268,45 @@ $(window).on('load', function () {
 const lenis = new Lenis({
     autoRaf: true,
 });
+
+/*=====================
+   09. Counter Js 
+==========================*/
+if ("IntersectionObserver" in window) {
+    let counterObserver = new IntersectionObserver(function (entries, observer) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                let counter = entry.target;
+
+                let text = counter.innerText.replace(/[^\d]/g, "");
+                let target = parseInt(text, 10);
+
+                if (isNaN(target) || target === 0) {
+                    counterObserver.unobserve(counter);
+                    return;
+                }
+
+                let hasPlus = /\+$/.test(counter.innerText.trim());
+                let step = target / 200;
+                let current = 0;
+
+                let timer = setInterval(function () {
+                    current += step;
+                    counter.innerText = Math.floor(current).toLocaleString() + (hasPlus ? "+" : "");
+
+                    if (Math.floor(current) >= target) {
+                        clearInterval(timer);
+                        counter.innerText = target.toLocaleString() + (hasPlus ? "+" : "");
+                    }
+                }, 10);
+
+                counterObserver.unobserve(counter);
+            }
+        });
+    });
+
+    let counters = document.querySelectorAll(".counter");
+    counters.forEach(function (counter) {
+        counterObserver.observe(counter);
+    });
+}
