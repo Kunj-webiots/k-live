@@ -132,7 +132,7 @@
 
 .checkout-payment-accordion {
     .accordion-item {
-        background-color: transparent;
+        background-color: rgba(var(--base-gray), 1);
         color: rgba(var(--title-color), 1);
         border: 1px solid rgba(var(--border-color), 1);
         border-radius: calc(6px + (9 - 6) * ((100vw - 320px) / (1920 - 320)));
@@ -224,6 +224,8 @@
                         background-color: transparent;
                         box-shadow: none;
                         filter: none;
+                        background-color: rgba(var(--white), 1);
+                        border-radius: 100%;
                         margin-top: calc(-1.5px + (-4 - -1.5) * ((100vw - 320px) / (1920 - 320)));
                         @include common.pseudowh($width: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320))), $height: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320))));
 

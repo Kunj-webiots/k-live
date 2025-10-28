@@ -1154,33 +1154,33 @@ var relatedProducts = new Swiper(".related-products", {
         el: ".swiper-pagination",
         clickable: true,
     },
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+    },
     breakpoints: {
         0: {
             slidesPerView: 2,
             spaceBetween: 15,
-            autoplay: {
-                delay: 3000,
-                disableOnInteraction: false,
-            },
         },
         767: {
             slidesPerView: 3,
             spaceBetween: 15,
-            autoplay: {
-                delay: 3000,
-                disableOnInteraction: false,
-            },
+
         },
         1000: {
             slidesPerView: 4,
             spaceBetween: 15,
+            autoplay: false,
         },
         1370: {
             slidesPerView: 5,
             spaceBetween: 20,
+            autoplay: false,
         },
         1632: {
             slidesPerView: 6,
+            autoplay: false,
         },
     },
 });

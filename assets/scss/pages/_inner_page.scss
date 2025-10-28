@@ -1431,6 +1431,10 @@
                         }
 
                         &:checked {
+                            &::after {
+                                border-color: rgba(var(--primary-color), 1);
+                            }
+
                             ~.form-check-label {
                                 color: rgba(var(--title-color), 1);
                             }
@@ -1483,6 +1487,7 @@
     .contact-main-box {
         .contact-right-box {
             background-color: rgba(var(--white), 1);
+            border-radius: 6px;
             padding: calc(18px + (26 - 18) * ((100vw - 320px) / (1920 - 320)));
 
             h3 {
@@ -1498,6 +1503,14 @@
                 span {
                     font-size: 15px;
                     font-weight: 500;
+                }
+            }
+
+            .theme-form {
+
+                .form-control,
+                .form-select {
+                    background-color: rgba(var(--base-gray), 1);
                 }
             }
         }
@@ -2166,7 +2179,7 @@
     .profile-form {
         margin-top: calc(10px + (25 - 10) * ((100vw - 320px) / (1920 - 320)));
         padding-top: calc(10px + (25 - 10) * ((100vw - 320px) / (1920 - 320)));
-        border-top: 1px solid #eee;
+        border-top: 1px solid rgba(var(--border-color), 1);
 
         .theme-form {
             .form-label {

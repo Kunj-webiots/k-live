@@ -12,7 +12,7 @@
         line-height: 1;
 
         i {
-            font-size: 14px;
+            font-size: calc(13px + (14 - 13) * ((100vw - 320px) / (1920 - 320)));
             color: rgba(var(--content-color), 0.3);
 
             body.dark & {

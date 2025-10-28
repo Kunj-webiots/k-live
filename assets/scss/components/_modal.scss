@@ -636,7 +636,6 @@
           top: calc(6px + (10 - 6) * ((100vw - 320px) / (1920 - 320)));
           right: calc(6px + (10 - 6) * ((100vw - 320px) / (1920 - 320)));
           background: unset;
-          font-size: calc(18px + (22 - 18) * ((100vw - 320px) / (1920 - 320)));
           @include common.pseudowh($width: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))), $height: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))));
           background-color: rgba(var(--primary-color), 1);
           opacity: 1;
@@ -647,6 +646,10 @@
           [dir="rtl"] & {
                right: unset;
                left: calc(6px + (10 - 6) * ((100vw - 320px) / (1920 - 320)));
+          }
+
+          i {
+               font-size: calc(18px + (22 - 18) * ((100vw - 320px) / (1920 - 320)));
           }
      }
 
