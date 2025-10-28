@@ -1332,6 +1332,10 @@ header {
     border-radius: 50%;
     pointer-events: none;
     z-index: 999;
+
+    @media (max-width: 575.98px) {
+        display: none;
+    }
 }
 
 #cursor-border {
@@ -1351,6 +1355,10 @@ header {
         height 0.15s ease-out,
         background-color 0.15s ease-out;
     z-index: 999;
+
+    @media (max-width: 575.98px) {
+        display: none;
+    }
 }
 
 /*=====================
