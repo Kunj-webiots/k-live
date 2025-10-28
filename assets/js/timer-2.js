@@ -3,14 +3,11 @@
 ==========================**/
 function getTimeRemaining(endtime) {
     var t = Date.parse(endtime) - Date.parse(new Date());
-
-    /***** CONVERT THE TIME TO A USEABLE FORMAT *****/
     var seconds = Math.floor((t / 1000) % 60);
     var minutes = Math.floor((t / 1000 / 60) % 60);
     var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
     var days = Math.floor(t / (1000 * 60 * 60 * 24));
 
-    /***** OUTPUT THE CLOCK DATA AS A REUSABLE OBJECT *****/
     return {
         'total': t,
         'days': days,
@@ -20,7 +17,6 @@ function getTimeRemaining(endtime) {
     };
 }
 
-/***** DISPLAY THE CLOCK AND STOP IT WHEN IT REACHES ZERO *****/
 function initializeClock(className, endtime) {
     var clocks = document.querySelectorAll('.' + className);
 
@@ -33,14 +29,25 @@ function initializeClock(className, endtime) {
         function updateClock() {
             var t = getTimeRemaining(endtime);
 
-            daysSpan.innerHTML = t.days;
-            hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
-            minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
-            secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+            if (daysSpan) daysSpan.innerHTML = ('0' + t.days).slice(-2);
+            if (hoursSpan) hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+            if (minutesSpan) minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+            if (secondsSpan) secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
 
             if (t.total <= 0) {
                 clearInterval(timeinterval);
                 clock.classList.add('time-up');
+
+                var randomMonths = Math.floor(Math.random() * 3) + 6;
+                var now = new Date();
+                var newDeadline = new Date(now.setMonth(now.getMonth() + randomMonths));
+
+                console.log(`⏰ New random timer set for ${randomMonths} months later`);
+
+                setTimeout(() => {
+                    clock.classList.remove('time-up');
+                    initializeClock(className, newDeadline);
+                }, 1000);
             }
         }
 
@@ -49,6 +56,8 @@ function initializeClock(className, endtime) {
     });
 }
 
-/***** SET A VALID END DATE *****/
-var deadline = new Date(Date.parse(new Date()) + 69 * 24 * 60 * 60 * 1000);
+var randomMonths = Math.floor(Math.random() * 3) + 6;
+var deadline = new Date();
+deadline.setMonth(deadline.getMonth() + randomMonths);
+
 initializeClock('clockdiv-2', deadline);

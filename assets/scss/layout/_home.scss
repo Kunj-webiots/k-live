@@ -20,3 +20,30 @@
         }
     }
 }
+
+.baby-home-section {
+    @include common.max(767.98px) {
+        .banner-box {
+            background: none !important;
+
+            img {
+                display: block !important;
+            }
+
+            &::before {
+                content: none;
+            }
+        }
+    }
+
+    .right-banner-1,
+    .right-banner-2 {
+        @include common.max(575.98px) {
+            .banner-box {
+                img {
+                    aspect-ratio: 23/20;
+                }
+            }
+        }
+    }
+}

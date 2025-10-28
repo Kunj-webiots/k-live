@@ -97,11 +97,10 @@ header {
 
                         &:before {
                             margin-left: auto;
-                            content: "\ea4e" !important;
+                            @include common.pos($pos: relative !important, $content: "\ea4e" !important);
                             @include common.font;
                             @include common.pseudowh($width: auto !important, $height: auto !important);
                             transform: unset !important;
-                            position: relative !important;
                             inset: unset !important;
                             background-color: transparent !important;
 
@@ -121,10 +120,10 @@ header {
                     }
 
                     &::before {
+                        right: 0;
                         @include common.pos($pos: absolute, $content: "\ea6e");
                         @include common.font;
                         @include common.center(vertical);
-                        right: 0;
 
                         [dir="rtl"] & {
                             right: unset;
@@ -156,8 +155,8 @@ header {
                 }
 
                 .sub-menu {
-                    @include common.flex_wrap($dis: flex, $wrap: wrap, $gap: 10px);
                     position: absolute;
+                    @include common.flex_wrap($dis: flex, $wrap: wrap, $gap: 10px);
                     top: -17px;
                     left: 123%;
                     min-width: 200px;
@@ -202,8 +201,8 @@ header {
                             text-transform: capitalize;
 
                             @include common.max(1199.98px) {
-                                @include common.flex_common ($dis: flex, $align: center, $justify: flex-end);
                                 flex-direction: row-reverse;
+                                @include common.flex_common ($dis: flex, $align: center, $justify: flex-end);
                                 gap: 8px;
                                 text-transform: capitalize;
                                 color: rgba(var(--content-color), 1);
@@ -230,9 +229,9 @@ header {
                             }
 
                             &::after {
+                                bottom: -1px;
                                 @include common.pos;
                                 @include common.pseudowh($width: 0, $height: 4px);
-                                bottom: -1px;
                                 left: 0;
                                 background-color: rgba(var(--primary-color), 0.5);
                                 border-radius: 100px;
@@ -240,8 +239,8 @@ header {
                                 z-index: -1;
 
                                 @include common.max(1199.98px) {
-                                    @include common.pseudowh($width: 4px, $height: 4px);
                                     background-color: rgba(var(--content-color), 1);
+                                    @include common.pseudowh($width: 4px, $height: 4px);
                                     position: relative;
                                     inset: unset;
                                     display: block;
@@ -274,8 +273,8 @@ header {
         }
 
         .demo-list {
-            @include common.flex_common;
             gap: calc(8px + (18 - 8) * ((100vw - 1198px) / (1920 - 1198)));
+            @include common.flex_common;
             flex-wrap: wrap;
 
             @include common.max(1199.98px) {
@@ -296,8 +295,8 @@ header {
                     border: 1px solid rgba(var(--border-color), 1);
 
                     @include common.max(1199.98px) {
-                        @include common.pseudowh($width: calc(140px + (163 - 140) * ((100vw - 320px) / (1200 - 320))), $height: 100%);
                         object-fit: cover;
+                        @include common.pseudowh($height: calc(140px + (163 - 140) * ((100vw - 320px) / (1200 - 320))), $width: 100%);
                         object-position: top;
                     }
                 }
@@ -362,10 +361,10 @@ header {
                         z-index: 0;
 
                         &::after {
+                            left: 0;
                             @include common.pos;
                             @include common.pseudowh($width: 0, $height: 4px);
                             bottom: 2px;
-                            left: 0;
                             background-color: rgba(var(--white), 1);
                             opacity: 0.3;
                             border-radius: 50px;
@@ -449,7 +448,7 @@ header {
                     background-color: rgba(var(--white), 1);
                     border-radius: 50px;
 
-                    @include common.max(1199px) {
+                    @include common.max(1199.98px) {
                         position: relative;
                         top: 0;
                         left: 0;
@@ -460,15 +459,15 @@ header {
                     }
 
                     &::before {
+                        display: inline-block;
                         @include common.pos;
                         @include common.pseudowh($width: 0, $height: 0);
-                        display: inline-block;
                         top: 100%;
                         left: 10px;
                         border-right: 4px solid transparent;
                         border-top: 4px solid var(--primary-color);
 
-                        @include common.max(1199px) {
+                        @include common.max(1199.98px) {
                             content: none;
                         }
                     }
@@ -517,9 +516,9 @@ header {
     }
 
     .navbar-toggler-icon {
+        font-size: 20px;
         @include common.pseudowh($width: auto, $height: auto);
         @include common.flex_common;
-        font-size: 20px;
         color: rgba(var(--white), 1);
 
         body.dark & {
@@ -674,9 +673,9 @@ header {
                     right: 0;
                 }
 
-                @include common.max(1199px) {
-                    @include common.pseudowh($width: calc(300px + (320 - 300) * ((100vw - 1200px) / (1920 - 1200))), $height: 100vh);
+                @include common.max(1199.98px) {
                     transform: translateX(-101%);
+                    @include common.pseudowh($width: calc(310px + (350 - 310) * ((100vw - 320px) / (1200 - 320))), $height: 100vh);
                     z-index: 9;
 
                     [dir="rtl"] & {
@@ -693,8 +692,8 @@ header {
     }
 
     .offcanvas-header {
-        @include common.flex_common($dis: flex, $align: center, $justify: space-between);
         flex-shrink: 0;
+        @include common.flex_common($dis: flex, $align: center, $justify: space-between);
         padding: 20px 24px;
         z-index: 1;
         padding: calc(16px + (26 - 16) * ((100vw - 320px) / (1920 - 320))) calc(19px + (32 - 19) * ((100vw - 320px) / (1920 - 320))) 16px;
@@ -756,7 +755,7 @@ header {
             margin-right: 3px;
         }
 
-        @include common.max(1199px) {
+        @include common.max(1199.98px) {
             padding: calc(13px + (20 - 13) * ((100vw - 320px) / (1199 - 320))) calc(15px + (24 - 15) * ((100vw - 320px) / (1199 - 320)));
         }
     }
@@ -789,8 +788,8 @@ header {
     }
 
     .offcanvas-footer {
-        @include common.flex_common($dis: flex, $align: center, $justify: space-between);
         flex-shrink: 0;
+        @include common.flex_common($dis: flex, $align: center, $justify: space-between);
         padding: 20px 24px;
     }
 
@@ -805,12 +804,12 @@ header {
             padding-right: 26px;
 
             &::after {
+                border: none;
                 @include common.pos($pos: relative, $content: "\ea4e");
                 @include common.font;
                 @include common.pseudowh($width: unset, $height: unset);
-                border: none;
                 color: rgba(var(--white), 1);
-                margin: -3px 0 0;
+                margin: 0;
                 vertical-align: unset;
                 margin-left: 5px;
                 line-height: 1;
@@ -824,7 +823,7 @@ header {
                     margin-right: 5px;
                 }
 
-                @include common.max(1199px) {
+                @include common.max(1199.98px) {
                     color: rgba(var(--title-color), 1);
                 }
             }
@@ -866,7 +865,7 @@ header {
         .offcanvas {
             -webkit-box-flex: 1;
 
-            @include common.max(1199px) {
+            @include common.max(1199.98px) {
                 z-index: 4;
                 -webkit-box-flex: 2;
             }
@@ -947,6 +946,21 @@ header {
 
                     @include common.max(1199.98px) {
                         justify-content: unset !important;
+                        text-transform: capitalize;
+                        font-size: 14px;
+                        padding: 6px calc(14px + 2*(100vw - 320px) / 880) !important;
+                        position: relative;
+                        line-height: 1.2;
+                        color: rgba(var(--content-color), 1) !important;
+
+                        &::before {
+                            left: 4px;
+                            @include common.center(vertical);
+                            @include common.pos;
+                            @include common.pseudowh($width: 4px, $height: 4px);
+                            border-radius: 100%;
+                            background-color: rgba(var(--content-color), 1);
+                        }
                     }
 
                     &.active {
@@ -957,7 +971,7 @@ header {
                         }
 
                         @include common.max(1199.98px) {
-                            color: rgba(var(--title-color), 1) !important;
+                            color: rgba(var(--content-color), 1) !important;
                         }
                     }
 
@@ -1029,14 +1043,12 @@ header {
         padding-bottom: calc(10px + (15 - 10) * ((100vw - 320px) / (1920 - 320)));
 
         &:after {
-            content: "";
-            position: absolute;
             top: 0;
             left: 0;
             border-radius: 4px;
-            width: 100%;
             z-index: -1;
-            height: 100%;
+            @include common.pos;
+            @include common.pseudowh;
             background-color: rgba(var(--white), 1);
         }
 
@@ -1122,8 +1134,8 @@ header {
 
                     .menu-banner {
                         img {
-                            @include common.pseudowh($width: 100%, $height: 120px);
                             object-fit: cover;
+                            @include common.pseudowh($width: 100%, $height: 120px);
                         }
                     }
                 }
@@ -1176,9 +1188,9 @@ header {
                     }
 
                     &::after {
+                        bottom: -1px;
                         @include common.pos;
                         @include common.pseudowh($width: 0, $height: 4px);
-                        bottom: -1px;
                         left: 0;
                         background-color: rgba(var(--primary-color), 0.5);
                         border-radius: 50px;
@@ -1355,8 +1367,8 @@ header {
                     }
 
                     .nav-link {
-                        @include common.flex_common($dis: flex, $align: center, $justify: space-between);
                         color: rgba(var(--title-color), 1);
+                        @include common.flex_common($dis: flex, $align: center, $justify: space-between);
                         font-weight: 500;
                         padding: 0;
 
@@ -1407,9 +1419,9 @@ header {
                             line-height: 1;
 
                             &::before {
+                                left: 4px;
                                 @include common.pos;
                                 @include common.center(vertical);
-                                left: 4px;
                                 @include common.pseudowh($width: 4px, $height: 4px);
                                 border-radius: 100%;
                                 background-color: rgba(var(--content-color), 1);

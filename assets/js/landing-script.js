@@ -17,40 +17,72 @@
 /*====================
  01. Slider js
 =======================*/
-// $(document).ready(function () {
-//     $('.owl-carousel').owlCarousel({
-//         loop: true,
-//         margin: 24,
-//         nav: false,
-//         center: true,
-//         dots: false,
-//         stagePadding: 200,
-//         responsive: {
-//             0: {
-//                 items: 1,
-//                 stagePadding: 50,
-//                 margin: 15,
-//             },
-//             480: {
-//                 items: 2,
-//                 stagePadding: 10,
-//                 margin: 15,
-//             },
-//             600: {
-//                 items: 2,
-//                 stagePadding: 20,
-//             },
-//             1340: {
-//                 items: 3,
-//                 stagePadding: 100,
-//             },
-//             1320: {
-//                 items: 3
-//             }
-//         }
-//     })
-// });
-
+var serviceSlider = new Swiper(".service-slider", {
+    slidesPerView: 4,
+    loop: true,
+    centeredSlides: true,
+    spaceBetween: 30,
+    autoplay: {
+        enabled: true,
+        delay: 0,
+        pauseOnMouseEnter: false,
+        disableOnInteraction: true,
+    },
+    freeMode: false,
+    speed: 10500,
+    freeModeMomentum: false,
+    breakpoints: {
+        0: {
+            slidesPerView: 1.4,
+            spaceBetween: 15,
+        },
+        665: {
+            slidesPerView: 2.5,
+            spaceBetween: 20,
+        },
+        990: {
+            slidesPerView: 3.5,
+            spaceBetween: 20,
+        },
+        1250: {
+            slidesPerView: 4,
+            spaceBetween: 30,
+        },
+    }
+});
+var pagesSlider = new Swiper(".pages-slider", {
+    slidesPerView: 4.5,
+    loop: true,
+    centeredSlides: true,
+    spaceBetween: 30,
+    autoplay: {
+        enabled: true,
+        delay: 0,
+        pauseOnMouseEnter: false,
+        disableOnInteraction: true,
+    },
+    freeMode: false,
+    speed: 10500,
+    freeModeMomentum: false,
+    breakpoints: {
+        0: {
+            slidesPerView: 1.8,
+            spaceBetween: 15,
+        },
+        665: {
+            slidesPerView: 2.5,
+            spaceBetween: 20,
+        },
+        990: {
+            slidesPerView: 3.5,
+            spaceBetween: 20,
+        },
+        1250: {
+            slidesPerView: 4,
+            spaceBetween: 30,
+        },
+    }
+});
 
 /*====================
  02. Tooltip js
@@ -61,7 +93,6 @@ document.addEventListener('DOMContentLoaded', function () {
         var y = e.clientY;
         var tooltip = document.getElementById("tooltip");
 
-        // Adjust the tooltip position with an offset
         var offsetX = 0;
         var offsetY = -100;
 
@@ -69,11 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
         tooltip.style.top = (y + offsetY) + "px";
         tooltip.style.display = "block";
 
-        // Debugging: Inspect the target element
-        console.dir(e.target);
-
         var tooltipText = e.target.getAttribute("data-tooltip");
-
 
         if (!tooltipText) {
             tooltip.style.opacity = 0;
@@ -183,13 +210,13 @@ document.querySelectorAll("[data-cursor]").forEach((item) => {
     item.addEventListener("mouseover", (e) => {
         if (item.dataset.cursor === "pointer") {
             cursorBorder.style.backgroundColor = "rgba(236, 137,81, .3)";
-            cursorBorder.style.setProperty("--size", "60px");
+            cursorBorder.style.setProperty("--size", "calc(34px + (50 - 34) * ((100vw - 320px) / (1920 - 320)))");
         }
     });
     item.addEventListener("mouseout", (e) => {
         cursorBorder.style.backgroundColor = "unset";
         cursorBorder.style.mixBlendMode = "unset";
-        cursorBorder.style.setProperty("--size", "30px");
+        cursorBorder.style.setProperty("--size", "25px");
     });
 });
 
@@ -203,10 +230,8 @@ window.addEventListener("scroll", navHighlighter);
 
 function navHighlighter() {
 
-    // Get current scroll position
     let scrollY = window.pageYOffset;
 
-    // Now we loop through sections to get height, top and ID values for each
     sections.forEach(current => {
         const sectionHeight = current.offsetHeight;
         const sectionTop = current.offsetTop - 50;
@@ -228,3 +253,18 @@ function navHighlighter() {
    06. AOS js 
 ==========================*/
 AOS.init();
+
+
+/*=====================
+   07. Resize js 
+==========================*/
+$(window).on('load', function () {
+    $(window).trigger('resize');
+});
+
+/*=====================
+   08. Smooth Scrolling Js 
+==========================*/
+const lenis = new Lenis({
+    autoRaf: true,
+});

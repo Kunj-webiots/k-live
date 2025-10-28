@@ -32,8 +32,8 @@ table,
                 }
 
                 .cart-image {
-                    @include common.pseudowh($width: 70px, $height: 70px);
                     object-fit: contain;
+                    @include common.pseudowh($width: 70px, $height: 70px);
                 }
 
                 .name {
@@ -199,8 +199,8 @@ table,
                     gap: calc(12px + (16 - 12) * ((100vw - 320px) / (1920 - 320)));
 
                     .product-image {
-                        @include common.pseudowh($width: calc(80px + (102 - 80) * ((100vw - 320px) / (1920 - 320))), $height: calc(80px + (102 - 80) * ((100vw - 320px) / (1920 - 320))));
                         background-color: rgba(var(--base-gray), 1);
+                        @include common.pseudowh($width: calc(80px + (102 - 80) * ((100vw - 320px) / (1920 - 320))), $height: calc(80px + (102 - 80) * ((100vw - 320px) / (1920 - 320))));
                         padding: calc(9px + (11 - 9) * ((100vw - 320px) / (1920 - 320)));
                         border-radius: calc(5px + (6 - 5) * ((100vw - 320px) / (1920 - 320)));
                         border: 1px solid rgba(var(--border-color), 1);

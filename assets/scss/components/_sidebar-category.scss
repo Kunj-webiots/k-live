@@ -7,19 +7,19 @@
     &.offcanvas {
         background-color: rgba(var(--white), 1);
 
-        @include common.min(1400px) {
+        @include common.min(1399.98px) {
             position: relative;
             visibility: visible;
             z-index: 0;
         }
     }
 
-    @media (max-width: 1400px) {
+    @include common.max(1399.98px) {
         position: fixed;
         left: 0;
         top: 0;
         @include common.pseudowh($width: calc(305px + (320 - 305) * ((100vw - 320px) / (768 - 320))), $height: 100vh);
-        z-index: 9;
+        z-index: 10;
         transition: all 0.15s linear;
         overflow: hidden auto;
         transform: translateX(-320px);
@@ -36,14 +36,15 @@
     }
 
     .category-header {
-        @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
         flex-shrink: 0;
+        @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
         padding: 20px 24px;
         z-index: 1;
         display: none;
         box-shadow: 0 2px 10px -3px rgba(var(--title-color), 0.1);
         background-color: rgba(var(--white), 1);
-        position: relative;
+        position: sticky;
+        top: 0;
         padding: calc(16px + (26 - 16) * ((100vw - 320px) / (1400 - 320))) calc(19px + (32 - 19) * ((100vw - 320px) / (1400 - 320))) 16px;
         background-color: #F2F3F8;
         border-bottom: 1px solid rgba(var(--content-color), 0.2);
@@ -54,7 +55,7 @@
             border-color: rgba(var(--border-color), 1);
         }
 
-        @media (max-width: 1400px) {
+        @include common.max(1399.98px) {
             display: flex;
 
             h5 {
@@ -86,9 +87,10 @@
         padding-top: 20px;
         height: 100%;
 
-        @media (max-width: 1400px) {
+        @include common.max(1399.98px) {
             height: unset;
             border: none;
+            overflow: auto;
         }
 
         &.category-bg-color {
@@ -103,9 +105,9 @@
         }
 
         .top-menu-list {
-            margin-inline: 20px;
-            padding-bottom: 20px;
-            margin-bottom: 20px;
+            margin-inline: calc(15px + (20 - 15) * ((100vw - 320px) / (1920 - 320)));
+            padding-bottom: calc(14px + (20 - 14) * ((100vw - 320px) / (1920 - 320)));
+            margin-bottom: calc(4px + (20 - 4) * ((100vw - 320px) / (1920 - 320)));
             border-bottom: 1px solid rgba(var(--content-color), 0.2);
 
             li {
@@ -113,19 +115,19 @@
                 width: 100%;
 
                 +li {
-                    margin-top: 25px;
+                    margin-top: calc(20px + (25 - 20) * ((100vw - 320px) / (1920 - 320)));
                 }
 
                 .sub-category-box {
                     display: flex;
                     align-items: center;
-                    gap: 11px;
+                    gap: calc(8px + (11 - 8) * ((100vw - 320px) / (1920 - 320)));
                     color: rgba(var(--title-color), 1);
 
                     svg {
-                        @include common.pseudowh($width: 20px, $height: 20px);
-                        color: rgba(var(--content-color), 1);
-                        margin-top: -4px;
+                        fill: rgba(var(--content-color), 1);
+                        @include common.pseudowh($width: calc(18px + (20 - 18) * ((100vw - 320px) / (1920 - 320))), $height: calc(18px + (20 - 18) * ((100vw - 320px) / (1920 - 320))));
+                        margin-top: calc(-1px + (-4 - -1) * ((100vw - 320px) / (1920 - 320)));
                     }
 
                     h5 {
@@ -166,16 +168,46 @@
         }
 
         .sub-menu-list {
+            height: calc(400px + (580 - 400) * ((100vw - 1399px) / (1920 - 1399)));
+            overflow: auto;
+
+            &::-webkit-scrollbar-track {
+                border-radius: 100px;
+                background-color: #f2f3f7;
+
+                body.dark & {
+                    background-color: rgba(255, 255, 255, 0.05);
+                }
+            }
+
+            &::-webkit-scrollbar {
+                width: 3px;
+                background-color: #f2f3f7;
+
+                body.dark & {
+                    background-color: rgba(255, 255, 255, 0.05);
+                }
+            }
+
+            &::-webkit-scrollbar-thumb {
+                border-radius: 100px;
+                background-color: rgba(var(--theme-blue-dark), 0.4);
+            }
+
+            @include common.max(1399.98px) {
+                height: auto;
+            }
+
             li {
                 display: block;
 
                 .sub-category-box {
                     display: flex;
                     align-items: center;
-                    gap: 11px;
+                    gap: calc(8px + (11 - 8) * ((100vw - 320px) / (1920 - 320)));
                     position: relative;
                     color: rgba(var(--title-color), 1);
-                    padding: 13px 20px 13px 17px;
+                    padding: calc(10px + (13 - 10) * ((100vw - 320px) / (1920 - 320))) calc(15px + (20 - 15) * ((100vw - 320px) / (1920 - 320))) calc(7px + (13 - 7) * ((100vw - 320px) / (1920 - 320))) calc(15px + (17 - 15) * ((100vw - 320px) / (1920 - 320)));
                     border-left: 3px solid transparent;
                     transition: 0.3s;
 
@@ -198,9 +230,9 @@
                     }
 
                     &::after {
+                        color: rgba(var(--content-color), 1);
                         @include common.pos($pos: relative, $content: "\ea6e");
                         @include common.font;
-                        color: rgba(var(--content-color), 1);
                         font-size: 18px;
                         margin-left: auto;
                         transition: all .5s ease-in-out;
@@ -218,9 +250,9 @@
                     }
 
                     svg {
-                        @include common.pseudowh($width: 20px, $height: 20px);
                         fill: rgba(var(--content-color), 1);
-                        margin-top: -4px;
+                        @include common.pseudowh($width: calc(18px + (20 - 18) * ((100vw - 320px) / (1920 - 320))), $height: calc(18px + (20 - 18) * ((100vw - 320px) / (1920 - 320))));
+                        margin-top: calc(-1px + (-4 - -1) * ((100vw - 320px) / (1920 - 320)));
                     }
 
                     h5 {
@@ -285,9 +317,9 @@
                 color: rgba(var(--title-color), 1);
 
                 svg {
-                    @include common.pseudowh($width: 20px, $height: 20px);
-                    fill: rgba(var(--title-color), 1);
-                    margin-top: -4px;
+                    fill: rgba(var(--content-color), 1);
+                    @include common.pseudowh($width: calc(18px + (20 - 18) * ((100vw - 320px) / (1920 - 320))), $height: calc(18px + (20 - 18) * ((100vw - 320px) / (1920 - 320))));
+                    margin-top: calc(-1px + (-4 - -1) * ((100vw - 320px) / (1920 - 320)));
                 }
 
                 h5 {
@@ -350,9 +382,9 @@
                 color: rgba(var(--title-color), 1);
 
                 &::after {
+                    color: rgba(var(--content-color), 1);
                     @include common.pos($pos: relative, $content: "\ea6e");
                     @include common.font;
-                    color: rgba(var(--content-color), 1);
                     font-size: 18px;
                     margin-left: auto;
                     transition: all .5s ease-in-out;
@@ -370,9 +402,9 @@
                 }
 
                 svg {
-                    @include common.pseudowh($width: 20px, $height: 20px);
                     fill: rgba(var(--content-color), 1);
-                    margin-top: -4px;
+                    @include common.pseudowh($width: calc(18px + (20 - 18) * ((100vw - 320px) / (1920 - 320))), $height: calc(18px + (20 - 18) * ((100vw - 320px) / (1920 - 320))));
+                    margin-top: calc(-1px + (-4 - -1) * ((100vw - 320px) / (1920 - 320)));
                 }
 
                 h5 {
@@ -380,6 +412,7 @@
                     font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
                     display: flex;
                     align-items: center;
+                    @include common.line;
 
                     span {
                         font-weight: 500;

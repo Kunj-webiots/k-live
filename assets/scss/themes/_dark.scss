@@ -1,3 +1,5 @@
+@use "../utils/mixin/common";
+
 /**=====================
     5.1 Dark CSS
 ==========================**/
@@ -27,16 +29,19 @@ body {
                 }
             }
 
-            .result-box {
+            header {
+                .offcanvas-header {
+                    background-color: #032a27;
+                }
+            }
+
+            .result-box,
+            .footer-section-2 {
                 background-color: #0a2224;
             }
 
             .service-section {
                 background-color: #032A27;
-            }
-
-            .footer-section-2 {
-                background-color: #0a2224;
             }
         }
 
@@ -62,6 +67,19 @@ body {
 
                 .nav-light-header {
                     background-color: rgba(94, 98, 120, 0.102);
+                }
+
+                .offcanvas-header {
+                    background-color: #0f162c;
+                }
+            }
+
+            .offcanvas {
+                &.category-fixed-box {
+                    .category-header {
+                        background-color: #0f162c;
+                        box-shadow: none;
+                    }
                 }
             }
 
@@ -140,11 +158,19 @@ body {
 
                 .navbar-expand-xl {
                     .dropdown-menu {
-                        @media (min-width: 1200px) {
+                        @include common.min(1200px) {
                             box-shadow: -1px 0 10px 0 rgba(22, 30, 52, 0.33), 5px 20px 40px 0 rgba(22, 30, 52, 0.33);
                             background-color: rgb(22, 30, 52);
                         }
                     }
+                }
+            }
+        }
+
+        &.demo-5 {
+            header {
+                .offcanvas-header {
+                    background-color: #1c1a3b;
                 }
             }
         }
@@ -195,15 +221,79 @@ body {
             }
 
             .category-full-box {
+                .category-header {
+                    background-color: #303438;
+                }
+
                 .category-menu-list {
                     &.category-bg-color {
-                        background-color: rgba(48, 52, 56, 1);
+                        background-color: #303438;
+
+                        @include common.max(1399.98px) {
+                            background-color: transparent;
+                        }
+                    }
+
+                    .sub-menu-list {
+                        li {
+                            .sub-category-box {
+                                &:hover {
+                                    background-color: #303438;
+                                }
+                            }
+                        }
                     }
                 }
             }
 
             .footer-section {
                 background-color: rgba(32, 35, 38, 1) !important;
+            }
+
+            header {
+                .offcanvas-header {
+                    background-color: #303438;
+                }
+            }
+
+            .dropdown-box {
+                .review-dropdown {
+                    .dropdown-title {
+                        @include common.max(1399.98px) {
+                            background-color: #303438;
+                        }
+                    }
+                }
+            }
+
+            .product-box-list {
+                .vertical-product-box {
+                    .product-image {
+                        background-color: #303438;
+                    }
+                }
+            }
+
+            .offcanvas {
+                &.cart-offcanvas {
+                    .offcanvas-header {
+                        background-color: #303438;
+                    }
+
+                    .offcanvas-body {
+                        .cart-product-box {
+                            .total-price-box {
+                                background-color: #303438;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .recent-product-box {
+                img {
+                    background-color: #303438;
+                }
             }
         }
 

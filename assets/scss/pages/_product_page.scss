@@ -114,8 +114,8 @@
                 position: relative;
 
                 &:after {
-                    @include common.pos;
                     bottom: 0;
+                    @include common.pos;
                     left: 0;
                     @include common.pseudowh($width: 0, $height: 2px);
                     background-color: rgba(var(--primary-color), 1);
@@ -199,6 +199,10 @@
                 }
             }
 
+            @include common.max(575.98px) {
+                line-height: 1.2;
+            }
+
             span {
                 color: rgba(var(--title-color), 1);
                 font-weight: 500;
@@ -209,14 +213,19 @@
 
                 @include common.max(767.98px) {
                     display: block;
+                    text-align: center;
+
+                    [dir="rtl"] & {
+                        text-align: center;
+                    }
                 }
             }
         }
     }
 
     .description-list {
-        @include common.flex_wrap($dis: flex, $wrap: wrap, $gap: 5px);
         list-style: disc;
+        @include common.flex_wrap($dis: flex, $wrap: wrap, $gap: 5px);
         padding-left: 22px;
 
         [dir="rtl"] & {
@@ -242,7 +251,6 @@
             @include common.max(767px) {
                 display: block;
                 text-align: center;
-
             }
 
             &::marker {
@@ -252,8 +260,8 @@
     }
 
     .shipping-info-list {
-        @include common.flex_wrap($dis: grid, $wrap: wrap, $gap: 5px);
         list-style: disc;
+        @include common.flex_wrap($dis: grid, $wrap: wrap, $gap: 5px);
         padding-left: 22px;
 
         [dir="rtl"] & {
@@ -299,8 +307,8 @@
             overflow: hidden;
 
             img {
-                @include common.pseudowh($width: auto, $height: auto);
                 cursor: pointer;
+                @include common.pseudowh($width: auto, $height: auto);
                 object-fit: contain;
             }
         }
@@ -341,8 +349,8 @@
         }
 
         .size-delivery-info {
-            @include common.flex_wrap($dis: flex, $wrap: wrap, $gap: calc(6px + (18 - 6) * ((100vw - 320px) / (1920 - 320))));
             border-top: 1px solid rgba(var(--content-color), 0.1);
+            @include common.flex_wrap($dis: flex, $wrap: wrap, $gap: calc(6px + (18 - 6) * ((100vw - 320px) / (1920 - 320))));
             padding-top: calc(10px + (16 - 10) * ((100vw - 320px) / (1920 - 320)));
             margin-top: calc(10px + (16 - 10) * ((100vw - 320px) / (1920 - 320)));
             align-items: center;
@@ -400,8 +408,8 @@
 
         .product-count {
             ul {
-                @include common.flex_wrap($dis: inline-flex, $wrap: wrap, $gap: 3px 15px);
                 align-items: center;
+                @include common.flex_wrap($dis: inline-flex, $wrap: wrap, $gap: 3px 15px);
                 margin-bottom: calc(8px + (16 - 8) * ((100vw - 320px) / (1920 - 320)));
 
                 @include common.max(767.98px) {
@@ -416,6 +424,10 @@
                     i {
                         color: rgba(var(--primary-color), 1);
                         font-size: calc(16px + (20 - 16) * ((100vw - 320px) / (1920 - 320)));
+
+                        @include common.max(991.98px) {
+                            line-height: 1;
+                        }
                     }
 
                     h6 {
@@ -439,15 +451,15 @@
         }
 
         .rating-review-sold-box {
-            @include common.flex_wrap($dis: flex, $wrap: wrap, $gap: calc(6px + (10 - 6) * ((100vw - 320px) / (1920 - 320))));
             align-items: center;
+            @include common.flex_wrap($dis: flex, $wrap: wrap, $gap: calc(6px + (10 - 6) * ((100vw - 320px) / (1920 - 320))));
 
             @include common.max(767px) {
                 justify-content: center;
             }
 
             li {
-                @include common.max(575px) {
+                @include common.max(575.98px) {
                     @include common.flex_common;
                 }
 
@@ -468,12 +480,12 @@
                 }
 
                 &:nth-child(even) {
-                    @include common.pseudowh($width: 5px, $height: 5px);
                     border-radius: 100%;
+                    @include common.pseudowh($width: 5px, $height: 5px);
                     margin-top: -4px;
                     background-color: rgba(var(--content-color), 0.4);
 
-                    @include common.max(575px) {
+                    @include common.max(575.98px) {
                         display: none;
                     }
                 }
@@ -574,9 +586,9 @@
                     pointer-events: none;
 
                     &::after {
+                        top: 50%;
                         @include common.pos;
                         @include common.pseudowh($width: 100%, $height: 1px);
-                        top: 50%;
                         transform: translateY(-50%) rotate(45deg);
                         left: 0;
                         background-color: #ff7272;
@@ -602,8 +614,8 @@
 
                     .form-check-input {
                         cursor: pointer;
-                        @include common.pseudowh;
                         position: absolute;
+                        @include common.pseudowh;
                         top: 0;
                         left: 0;
                         margin: 0;
@@ -654,8 +666,8 @@
                             transition: all 0.15s ease-in-out;
 
                             &::before {
-                                @include common.pos;
                                 top: 50%;
+                                @include common.pos;
                                 left: 50%;
                                 transform: translate(-50%, -50%) scale(0);
                                 @include common.pseudowh($width: calc(100% - calc(3px + (4 - 3) * ((100vw - 320px) / (1920 - 320)))), $height: calc(100% - calc(3px + (4 - 3) * ((100vw - 320px) / (1920 - 320)))));
@@ -711,18 +723,18 @@
                         }
 
                         .form-check-label {
+                            line-height: 1;
                             @include common.pseudowh($width: calc(38px + (42 - 38) * ((100vw - 320px) / (1920 - 320))), $height: calc(38px + (42 - 38) * ((100vw - 320px) / (1920 - 320))));
                             @include common.flex_common;
-                            line-height: 1;
                             border: 1px solid rgba(var(--content-color), 0.1);
                             font-size: 15px;
                             position: relative;
                             padding: 3px;
 
                             span {
+                                transition: all 0.15s ease-in-out;
                                 @include common.pseudowh;
                                 @include common.flex_common;
-                                transition: all 0.15s ease-in-out;
                             }
                         }
                     }
@@ -765,8 +777,8 @@
 
                             span {
                                 transition: all 0.15s ease-in-out;
-                                @include common.pseudowh;
                                 overflow: hidden;
+                                @include common.pseudowh;
                                 @include common.flex_common;
 
                                 img {
@@ -810,14 +822,14 @@
                             border: 1px solid rgba(var(--content-color), 0.1);
                             font-size: calc(14px + (15 - 14) * ((100vw - 320px) / (1920 - 320)));
                             padding: calc(2px + (3 - 2) * ((100vw - 320px) / (1920 - 320)));
-                            @include common.pseudowh($width: calc(38px + (42 - 38) * ((100vw - 320px) / (1920 - 320))), $height: calc(38px + (42 - 38) * ((100vw - 320px) / (1920 - 320))));
                             border-radius: 100%;
+                            @include common.pseudowh($width: calc(38px + (42 - 38) * ((100vw - 320px) / (1920 - 320))), $height: calc(38px + (42 - 38) * ((100vw - 320px) / (1920 - 320))));
                             @include common.flex_common;
 
                             span {
                                 transition: all 0.15s ease-in-out;
-                                @include common.pseudowh;
                                 border-radius: 100%;
+                                @include common.pseudowh;
                                 @include common.flex_common;
                                 padding-top: 1px;
                             }
@@ -933,10 +945,10 @@
                         transition: all 0.15s ease-in-out;
 
                         &::after {
+                            transition: all 0.15s ease-in-out;
                             @include common.pos;
                             @include common.center(both);
                             @include common.pseudowh($width: calc(100% + calc(7px + (8 - 7) * ((100vw - 320px) / (1920 - 320)))), $height: calc(100% + calc(7px + (8 - 7) * ((100vw - 320px) / (1920 - 320)))));
-                            transition: all 0.15s ease-in-out;
                             border-radius: 0;
                             border: 1px solid #efeff1;
 
@@ -989,8 +1001,8 @@
                         }
 
                         .form-check-label {
-                            @include common.pseudowh($width: unset, $height: unset);
                             border: unset;
+                            @include common.pseudowh($width: unset, $height: unset);
 
                             &::after {
                                 content: unset;
@@ -1049,8 +1061,8 @@
         }
 
         .note-box {
-            @include common.flex_wrap ($dis: flex, $wrap: nowrap, $gap: calc(7px + (15 - 7) * ((100vw - 320px) / (1920 - 320))));
             align-items: center;
+            @include common.flex_wrap ($dis: flex, $wrap: nowrap, $gap: calc(7px + (15 - 7) * ((100vw - 320px) / (1920 - 320))));
             margin-top: 20px;
 
             @include common.max(767px) {
@@ -1081,9 +1093,9 @@
                     z-index: 0;
 
                     .btn {
+                        border: none;
                         @include common.pseudowh($width: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))), $height: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))));
                         @include common.flex_common;
-                        border: none;
                         padding: 0;
                         background-color: rgba(var(--white), 1);
                         z-index: 0;
@@ -1114,10 +1126,9 @@
                         z-index: 0;
 
                         button {
-                            @include common.pseudowh($width: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))),
-                                $height: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))));
-                            @include common.flex_common;
                             border: none;
+                            @include common.pseudowh($width: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))), $height: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))));
+                            @include common.flex_common;
                             padding: 0;
                             background-color: rgba(var(--white), 1);
                             z-index: 0;
@@ -1159,8 +1170,8 @@
         }
 
         .buy-box {
-            @include common.flex_wrap ($dis: flex, $wrap: wrap, $gap: 11px);
             align-items: center;
+            @include common.flex_wrap ($dis: flex, $wrap: wrap, $gap: 11px);
             margin-top: 20px;
             border-bottom: 1px solid #ececec;
             padding-bottom: 16px;
@@ -1195,8 +1206,8 @@
             }
 
             a {
-                @include common.flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(5px + (8 - 5) * ((100vw - 320px) / (1920 - 320))));
                 align-items: center;
+                @include common.flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(5px + (8 - 5) * ((100vw - 320px) / (1920 - 320))));
                 color: #777;
 
                 i {
@@ -1214,8 +1225,8 @@
                 margin-top: 20px;
 
                 .product-info-list {
-                    @include common.flex_wrap ($dis: flex, $wrap: wrap, $gap: 11px);
                     align-items: flex-start;
+                    @include common.flex_wrap ($dis: flex, $wrap: wrap, $gap: 11px);
 
                     @include common.max(480px) {
                         column-count: 1;
@@ -1229,7 +1240,7 @@
                         position: relative;
                         color: #777;
 
-                        @include common.max(575px) {
+                        @include common.max(575.98px) {
                             width: auto;
                             margin-left: 18px;
                         }
@@ -1245,10 +1256,10 @@
                         }
 
                         &::after {
+                            left: 0;
                             @include common.pos;
                             @include common.center(vertical);
                             @include common.pseudowh($width: 5px, $height: 5px);
-                            left: 0;
                             background-color: rgba(var(--content-color), 1);
                             border-radius: 100%;
                         }
@@ -1387,8 +1398,8 @@
         }
 
         .product-offer-box {
-            @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
             padding: 18px 27px;
+            @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
             background-color: rgba(var(--primary-color2), 1);
             color: rgba(var(--white), 1);
 
@@ -1438,8 +1449,8 @@
                 gap: 15px;
 
                 .product-image {
-                    @include common.pseudowh($width: calc(78px + (90 - 78) * ((100vw - 990px) / (1920 - 990))), $height: calc(78px + (90 - 78) * ((100vw - 990px) / (1920 - 990))));
                     background-color: rgba(var(--base-gray), 1);
+                    @include common.pseudowh($width: calc(78px + (90 - 78) * ((100vw - 990px) / (1920 - 990))), $height: calc(78px + (90 - 78) * ((100vw - 990px) / (1920 - 990))));
                     padding: calc(8px + (10 - 8) * ((100vw - 990px) / (1920 - 990)));
                     border-radius: 4px;
 
@@ -1472,9 +1483,9 @@
                     background-color: rgba(var(--base-gray), 1);
 
                     .qty-btn {
+                        padding: 0;
                         @include common.flex_common;
                         @include common.pseudowh($width: calc(30px + (35 - 30) * ((100vw - 991px) / (1920 - 991))), $height: calc(30px + (35 - 30) * ((100vw - 991px) / (1920 - 991))));
-                        padding: 0;
                         border-radius: calc(2px + (4 - 2) * ((100vw - 991px) / (1920 - 991)));
                         background-color: rgba(var(--white), 1);
                         color: rgba(var(--content-color), 1);
@@ -1529,8 +1540,8 @@
                 border-top: 1px solid rgba(var(--content-color), 0.1);
 
                 h4 {
-                    @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
                     font-weight: 600;
+                    @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
                     font-size: calc(20px + (25 - 20) * ((100vw - 990px) / (1920 - 990)));
 
                     span {
@@ -1573,8 +1584,8 @@
             }
 
             .seller-product {
-                @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
                 gap: 13px;
+                @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
 
                 h5 {
                     display: flex;
@@ -1625,8 +1636,9 @@
     .cart-content {
         @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
 
-        @include common.max(575px) {
-            display: block;
+        @include common.max(575.98px) {
+            flex-direction: column;
+            gap: 15px;
         }
     }
 
@@ -1634,13 +1646,13 @@
         display: flex;
         align-items: center;
 
-        @include common.max(630.98px) {
-            display: none;
+        @include common.max(575.98px) {
+            width: 100%;
         }
 
         img {
-            @include common.pseudowh($width: 60px, $height: 70px);
             object-fit: contain;
+            @include common.pseudowh($width: calc(50px + (60 - 50) * ((100vw - 320px) / (1920 - 320))), $height: calc(62px + (70 - 62) * ((100vw - 320px) / (1920 - 320))));
         }
 
         .content {
@@ -1653,12 +1665,13 @@
                 margin-right: 12px;
             }
 
-            @include common.max(991px) {
+            @include common.max(991.98px) {
                 display: none;
             }
 
-            @include common.max(480px) {
+            @include common.max(767.98px) {
                 display: block;
+                width: calc(100% - calc(50px + (60 - 50) * ((100vw - 320px) / (1920 - 320))) - 12px);
             }
 
             h5,
@@ -1670,6 +1683,7 @@
                 font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
                 font-weight: 500;
                 text-transform: capitalize;
+                @include common.line($line: 2);
             }
 
             h6 {
@@ -1710,16 +1724,16 @@
             margin-inline: auto;
         }
 
-        @include common.max(630.98px) {
-            margin-left: unset;
+        // @include common.max(630.98px) {
+        //     margin-left: unset;
 
-            [dir="rtl"] & {
-                margin-left: auto;
-                margin-right: unset;
-            }
-        }
+        //     [dir="rtl"] & {
+        //         margin-left: auto;
+        //         margin-right: unset;
+        //     }
+        // }
 
-        @include common.max(575px) {
+        @include common.max(767.98px) {
             display: none;
         }
 
@@ -1736,9 +1750,9 @@
                 background-color: rgba(var(--base-gray), 1);
 
                 button {
+                    border: unset;
                     @include common.flex_common;
                     @include common.pseudowh($width: calc(30px + (35 - 30) * ((100vw - 320px) / (1920 - 320))), $height: 100%);
-                    border: unset;
                     background-color: rgba(var(--white), 1);
                     padding: 0;
                     border-radius: calc(3px + (5 - 3) * ((100vw - 320px) / (1920 - 320))) !important;
@@ -1794,7 +1808,8 @@
     }
 
     .add-btn {
-        @include common.max(575px) {
+        @include common.max(575.98px) {
+            width: 100%;
             @include common.flex_common;
         }
 
@@ -1847,6 +1862,14 @@
             bottom: 100px;
             opacity: 1;
             visibility: visible;
+
+            @include common.max(630.98px) {
+                bottom: 80px;
+            }
+
+            @include common.max(575.98px) {
+                bottom: calc(216px + (222 - 216) * ((100vw - 320px) / (576 - 320)));
+            }
         }
     }
 }
@@ -1936,22 +1959,22 @@
                     }
 
                     &::before {
+                        background-color: rgba(var(--white), 1);
                         @include common.pos;
                         @include common.center(both);
                         @include common.pseudowh;
-                        background-color: rgba(var(--white), 1);
                         border: 1px solid rgba(var(--border-color), 1);
                         transition: all 0.15s ease-in-out;
                     }
 
                     &::after {
-                        @include common.pos;
                         top: 3px;
                         left: 7px;
                         transform: rotate(40deg) scale(0);
                         border: 2px solid rgba(var(--primary-color), 1);
                         border-top: unset;
                         border-left: unset;
+                        @include common.pos;
                         @include common.pseudowh($width: 6px, $height: 10px);
                         transition: all 0.15s ease-in-out;
                     }
@@ -2071,8 +2094,8 @@
 
     .lg-outer {
         .lg-thumb {
-            @include common.flex_common;
             padding: 10px 0 13px;
+            @include common.flex_common;
             gap: 15px;
             flex-wrap: nowrap;
             width: 100% !important;

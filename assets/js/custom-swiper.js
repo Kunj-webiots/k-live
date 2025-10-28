@@ -133,39 +133,36 @@ var categorySlider = new Swiper(".category-slider", {
     },
 });
 
-var categoryBox1 = new Swiper(".category-slide-2", {
+var categorySlide2 = new Swiper(".category-slide-2", {
     slidesPerView: 14,
     spaceBetween: 10,
+    freeMode: true,
     breakpoints: {
         0: {
-            slidesPerView: 2,
-            spaceBetween: 8,
+            slidesPerView: 2.6,
         },
-        380: {
-            slidesPerView: 2,
-            spaceBetween: 8,
+        370: {
+            slidesPerView: 3,
         },
-        490: {
-            spaceBetween: 8,
+        480: {
+            slidesPerView: 4,
+        },
+        600: {
             slidesPerView: 5,
         },
-        646: {
-            spaceBetween: 8,
+        750: {
             slidesPerView: 6,
         },
-        812: {
-            slidesPerView: 7,
-        },
-        991: {
+        960: {
             slidesPerView: 8,
         },
-        1388: {
-            slidesPerView: 9,
-        },
-        1288: {
+        1260: {
             slidesPerView: 10,
         },
-        1530: {
+        1490: {
+            slidesPerView: 12,
+        },
+        1650: {
             slidesPerView: 13,
         },
     },
@@ -343,7 +340,7 @@ var recommendationsSlider = new Swiper(".recommendations-slider", {
     },
 });
 
-var slider = new Swiper(".slider-2", {
+var slider2 = new Swiper(".slider-2", {
     slidesPerView: 2,
     spaceBetween: 15,
     pagination: {
@@ -375,6 +372,11 @@ var swiperThumbnail = new Swiper(".swiper-thumbnail", {
     slidesPerView: 3,
     freeMode: true,
     direction: "vertical",
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },
+    speed: 1000,
     watchSlidesProgress: true,
     breakpoints: {
         0: {
@@ -386,9 +388,14 @@ var swiperThumbnail = new Swiper(".swiper-thumbnail", {
     },
 });
 
-var swiper2 = new Swiper(".swiper-main", {
+var swiperMain = new Swiper(".swiper-main", {
     loop: true,
     spaceBetween: 10,
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },
+    speed: 1000,
     navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
@@ -403,8 +410,13 @@ var swiperThumbnail1 = new Swiper(".swiper-thumbnail1", {
     spaceBetween: 10,
     slidesPerView: 3,
     freeMode: true,
+    speed: 1000,
     direction: "vertical",
     watchSlidesProgress: true,
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },
     breakpoints: {
         0: {
             direction: "horizontal",
@@ -415,9 +427,14 @@ var swiperThumbnail1 = new Swiper(".swiper-thumbnail1", {
     },
 });
 
-var swiper3 = new Swiper(".swiper-main1", {
+var swiperMain1 = new Swiper(".swiper-main1", {
     loop: true,
+    speed: 1000,
     spaceBetween: 10,
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },
     navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
@@ -427,9 +444,10 @@ var swiper3 = new Swiper(".swiper-main1", {
     },
 });
 
-var slider1 = new Swiper(".slide-1", {
+var hotDealSlider = new Swiper(".hot-deal-slider", {
     loop: true,
     slidesPerView: 1,
+    effect: "fade",
     breakpoints: {
         0: {
             slidesPerView: 1,
@@ -468,6 +486,7 @@ var bannerSlider = new Swiper(".banner-slider", {
         },
         1356: {
             slidesPerView: 4,
+            spaceBetween: 20,
         },
     },
 })
@@ -941,6 +960,7 @@ var discoverProduct = new Swiper(".discover-product-slider", {
     slidesPerView: 8,
     autoplay: {
         delay: 3000,
+        disableOnInteraction: false,
     },
     navigation: {
         nextEl: ".discover-product-next",
@@ -949,24 +969,31 @@ var discoverProduct = new Swiper(".discover-product-slider", {
     breakpoints: {
         0: {
             slidesPerView: 2,
+            spaceBetween: 15,
         },
         536: {
             slidesPerView: 3,
+            spaceBetween: 15,
         },
         760: {
             slidesPerView: 4,
+            spaceBetween: 15,
         },
         940: {
             slidesPerView: 5,
+            spaceBetween: 20,
         },
         1115: {
             slidesPerView: 6,
+            spaceBetween: 20,
         },
         1360: {
             slidesPerView: 7,
+            spaceBetween: 20,
         },
         1650: {
             slidesPerView: 8,
+            spaceBetween: 20,
         },
     },
 });
@@ -977,24 +1004,31 @@ var arrivalsSlider = new Swiper(".arrivals-slider", {
     breakpoints: {
         0: {
             slidesPerView: 2,
+            spaceBetween: 15,
         },
         536: {
             slidesPerView: 3,
+            spaceBetween: 15,
         },
         760: {
             slidesPerView: 4,
+            spaceBetween: 15,
         },
         940: {
             slidesPerView: 5,
+            spaceBetween: 25,
         },
         1115: {
             slidesPerView: 6,
+            spaceBetween: 25,
         },
         1360: {
             slidesPerView: 7,
+            spaceBetween: 25,
         },
         1650: {
             slidesPerView: 8,
+            spaceBetween: 25,
         },
     },
 });
@@ -1307,6 +1341,7 @@ var swiper = new Swiper(".quick-thumbnail-slider", {
         },
     },
 });
+
 var swiper2 = new Swiper(".quick-main-slider", {
     loop: true,
     spaceBetween: 0,

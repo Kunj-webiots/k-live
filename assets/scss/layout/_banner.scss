@@ -49,7 +49,13 @@
 }
 
 .banner-box-9 {
-    height: calc(68px + (150 - 68) * ((100vw - 320px) / (1920 - 320)));
+    display: block;
+    height: calc(60px + (150 - 60) * ((100vw - 320px) / (1920 - 320)));
+
+    img {
+        object-fit: cover;
+        @include common.pseudowh;
+    }
 }
 
 .banner-row {
@@ -114,8 +120,8 @@
 
             &::before,
             &::after {
-                @include common.pos;
                 top: 50%;
+                @include common.pos;
                 @include common.pseudowh($width: 60px, $height: 2px);
                 border-radius: 100%;
             }
@@ -161,8 +167,8 @@
         }
 
         .banner-timer {
-            @include common.flex_common;
             gap: calc(3px + (9 - 3) * ((100vw - 1200px) / (1920 - 1200)));
+            @include common.flex_common;
 
             li {
                 background-color: #fff;
@@ -185,10 +191,10 @@
                         margin-bottom: 5px;
 
                         &::before {
-                            @include common.pos;
                             bottom: -2px;
-                            @include common.center(horizontal);
                             background-color: rgba(var(--primary-color), 1);
+                            @include common.pos;
+                            @include common.center(horizontal);
                             @include common.pseudowh($width: 80%, $height: 2px);
                         }
                     }
@@ -209,6 +215,7 @@
             @include common.flex_common;
             gap: 10px;
             font-size: 14px;
+            color: #202326;
 
             i {
                 margin-top: -3px;

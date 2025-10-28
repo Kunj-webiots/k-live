@@ -24,9 +24,9 @@ document.addEventListener("DOMContentLoaded", () => {
     /* RTL restore */
     if (localStorage.getItem("rtl") === "true") {
         document.documentElement.setAttribute("dir", "rtl");
-        rtlLink.setAttribute("href", "./assets/css/vendors/bootstrap.rtl.css");
+        rtlLink.setAttribute("href", "../assets/css/vendors/bootstrap.rtl.css");
         rtlBtn.classList.add("active");
-        rtlBtn.textContent = "LTR";
+        rtlBtn.innerHTML = 'LTR <i class="ri-text-direction-r"></i>';
     }
 
     /* Dark mode toggle */
@@ -48,13 +48,13 @@ document.addEventListener("DOMContentLoaded", () => {
     rtlBtn.addEventListener("click", () => {
         if (document.documentElement.getAttribute("dir") === "rtl") {
             document.documentElement.removeAttribute("dir");
-            rtlLink.setAttribute("href", "./assets/css/vendors/bootstrap.css");
+            rtlLink.setAttribute("href", "../assets/css/vendors/bootstrap.css");
             localStorage.setItem("rtl", "false");
             rtlBtn.classList.remove("active");
             rtlBtn.innerHTML = `RTL <i class="ri-text-direction-l"></i>`;
         } else {
             document.documentElement.setAttribute("dir", "rtl");
-            rtlLink.setAttribute("href", "./assets/css/vendors/bootstrap.rtl.css");
+            rtlLink.setAttribute("href", "../assets/css/vendors/bootstrap.rtl.css");
             localStorage.setItem("rtl", "true");
             rtlBtn.classList.add("active");
             rtlBtn.innerHTML = `LTR <i class="ri-text-direction-r"></i>`;

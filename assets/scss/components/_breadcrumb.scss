@@ -37,7 +37,7 @@
             width: 70%;
             margin: 0 auto;
 
-            @include common.max(575px) {
+            @include common.max(575.98px) {
                 width: 90%;
             }
 
@@ -53,8 +53,8 @@
             }
 
             i {
-                @include common.center(vertical);
                 position: absolute;
+                @include common.center(vertical);
                 right: calc(14px + (20 - 14) * ((100vw - 320px) / (1920 - 320)));
                 color: rgba(var(--content-color), 1);
                 font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (1920 - 320)));
@@ -75,9 +75,11 @@
                 .breadcrumb-item {
                     font-weight: 500;
                     font-size: 16px;
+                    line-height: 1;
 
                     i {
                         font-size: 17px;
+                        line-height: 1;
                     }
 
                     &.active {
@@ -114,8 +116,8 @@
                     padding-left: 20px;
 
                     &::before {
-                        @include common.pos;
                         top: calc(50% - 2px);
+                        @include common.pos;
                         transform: translateY(-50%);
                         left: 0;
                         @include common.pseudowh($width: 4px, $height: 4px);
@@ -154,6 +156,7 @@
             font-size: calc(22px + (48 - 22) * ((100vw - 320px) / (1920 - 320)));
             font-weight: 700;
             margin-top: -6px;
+            text-transform: uppercase;
         }
 
         p {

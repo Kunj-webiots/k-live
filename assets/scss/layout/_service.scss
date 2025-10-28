@@ -16,11 +16,11 @@
         grid-template-columns: auto auto auto auto;
         gap: calc(18px + (36 - 18) * ((100vw - 320px) / (1920 - 320)));
 
-        @include common.max(1199px) {
+        @include common.max(1199.98px) {
             grid-template-columns: auto auto;
         }
 
-        @media (max-width: 664px) {
+        @include common.max(664px) {
             grid-template-columns: auto;
         }
 
@@ -35,13 +35,13 @@
             }
 
             &:nth-child(2) {
-                @include common.max(1199px) {
+                @include common.max(1199.98px) {
                     border-right: none;
                     padding-right: unset;
                 }
             }
 
-            @media (max-width: 664px) {
+            @include common.max(664px) {
                 border-right: none;
                 padding-right: 0;
             }
@@ -53,8 +53,8 @@
         gap: calc(5px + (10 - 5) * ((100vw - 320px) / (1920 - 320)));
 
         svg {
-            @include common.pseudowh($width: 29px, $height: 29px);
             fill: transparent;
+            @include common.pseudowh($width: 29px, $height: 29px);
             stroke: rgba(var(--primary-color), 1);
         }
 
@@ -94,11 +94,11 @@
         grid-template-columns: auto auto auto auto;
         gap: calc(14px + (36 - 14) * ((100vw - 320px) / (1920 - 320)));
 
-        @media (max-width: 1770px) {
+        @include common.max(1770px) {
             grid-template-columns: auto auto;
         }
 
-        @media (max-width: 664px) {
+        @include common.max(664px) {
             grid-template-columns: auto;
         }
 
@@ -115,7 +115,7 @@
             }
 
             &:nth-child(even) {
-                @media (max-width: 1770px) {
+                @include common.max(1770px) {
                     border-right: none;
                     padding-right: unset;
 
@@ -136,7 +136,7 @@
                 }
             }
 
-            @media (max-width: 664px) {
+            @include common.max(664px) {
                 border-right: none;
                 padding-right: 0;
 
@@ -199,8 +199,8 @@
         }
 
         svg {
-            @include common.pseudowh($width: calc(30px + (42 - 30) * ((100vw - 320px) / (1920 - 320))), $height: calc(30px + (42 - 30) * ((100vw - 320px) / (1920 - 320))));
             fill: rgba(var(--title-color), 1);
+            @include common.pseudowh($width: calc(30px + (42 - 30) * ((100vw - 320px) / (1920 - 320))), $height: calc(30px + (42 - 30) * ((100vw - 320px) / (1920 - 320))));
         }
 
         .service-content {

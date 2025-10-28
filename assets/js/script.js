@@ -187,18 +187,27 @@ window.addEventListener("resize", updateOnclick);
   07. Open Search Bar Js
 =======================*/
 const div = document.getElementById("searchOffcanvas");
-const div2 = document.getElementById("overlay");
+const searchOverlay = document.getElementById("searchOverlay");
 const addBtn = document.getElementById("searchClick");
 const removeBtn = document.getElementById("close-btn");
+const resultBox = document.getElementById("resultBox");
 
 addBtn.addEventListener("click", () => {
     div.classList.add("show");
-    div2.classList.add("show");
+    searchOverlay.classList.add("show");
+    resultBox.classList.add("show");
 });
 
 removeBtn.addEventListener("click", () => {
+    resultBox.classList.remove("show");
     div.classList.remove("show");
-    div2.classList.remove("show");
+    searchOverlay.classList.remove("show");
+});
+
+searchOverlay.addEventListener("click", () => {
+    resultBox.classList.remove("show");
+    div.classList.remove("show");
+    removeBtn.classList.remove("show");
 });
 
 /*=====================
@@ -490,44 +499,44 @@ product_details_array.forEach((item) => {
 /*=====================
   16. Disable Inspect Js
 ==========================*/
-// document.addEventListener("contextmenu", (e) => e.preventDefault());
+document.addEventListener("contextmenu", (e) => e.preventDefault());
 
-// /* Disable specific keys */
-// document.onkeydown = function (e) {
-//     /* F12 */
-//     if (e.keyCode == 123) {
-//         return false;
-//     }
-//     /* Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C */
-//     if (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74 || e.keyCode == 67)) {
-//         return false;
-//     }
-//     /* Ctrl+U (View Source) */
-//     if (e.ctrlKey && e.keyCode == 85) {
-//         return false;
-//     }
-// };
+/* Disable specific keys */
+document.onkeydown = function (e) {
+    /* F12 */
+    if (e.keyCode == 123) {
+        return false;
+    }
+    /* Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C */
+    if (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74 || e.keyCode == 67)) {
+        return false;
+    }
+    /* Ctrl+U (View Source) */
+    if (e.ctrlKey && e.keyCode == 85) {
+        return false;
+    }
+};
 
-// /* Detect if DevTools open */
-// (function () {
-//     let devtoolsOpen = false;
-//     const element = new Image();
-//     Object.defineProperty(element, "id", {
-//         get: function () {
-//             devtoolsOpen = true;
-//             alert("Developer Tools are disabled 🚫");
-//             window.location.href = "about:blank";
-//         }
-//     });
-//     setInterval(function () {
-//         devtoolsOpen = false;
-//         console.log(element);
-//         if (devtoolsOpen) {
-//             /* extra safety */
-//             window.location.href = "about:blank";
-//         }
-//     }, 1000);
-// })();
+/* Detect if DevTools open */
+(function () {
+    let devtoolsOpen = false;
+    const element = new Image();
+    Object.defineProperty(element, "id", {
+        get: function () {
+            devtoolsOpen = true;
+            alert("Developer Tools are disabled 🚫");
+            window.location.href = "about:blank";
+        }
+    });
+    setInterval(function () {
+        devtoolsOpen = false;
+        console.log(element);
+        if (devtoolsOpen) {
+            /* extra safety */
+            window.location.href = "about:blank";
+        }
+    }, 1000);
+})();
 
 /*=====================
   17. Quantity Js
@@ -581,27 +590,14 @@ document.addEventListener("DOMContentLoaded", function () {
 /*====================
   19. Exit Modal Open js
 =======================*/
-// document.addEventListener("DOMContentLoaded", function () {
-//     const exitModalEl = document.getElementById("exitModal");
-//     const exitModal = new bootstrap.Modal(exitModalEl);
-
-//     document.addEventListener("mouseout", function (e) {
-//         if (e.clientY <= 0) {
-//             exitModal.show();
-//         }
-//     });
-// });
-
 document.addEventListener("DOMContentLoaded", function () {
     const exitModalEl = document.getElementById("exitModal");
     const exitModal = new bootstrap.Modal(exitModalEl);
 
-    // Check localStorage pehle thi modal show thayu chhe ke nahi
     if (!localStorage.getItem("exitModalShown")) {
         document.addEventListener("mouseout", function (e) {
             if (e.clientY <= 0) {
                 exitModal.show();
-                // Save in localStorage so it won't show again
                 localStorage.setItem("exitModalShown", "true");
             }
         });
@@ -841,7 +837,7 @@ function getRandomDelay(minSeconds, maxSeconds) {
 }
 
 function getRandomTimeText() {
-    const minutes = Math.floor(Math.random() * 61); // 0 to 60 minutes
+    const minutes = Math.floor(Math.random() * 61);
     if (minutes === 0) return "Just now";
     if (minutes === 1) return "1 minute ago";
     if (minutes < 60) return `${minutes} minutes ago`;
@@ -851,7 +847,6 @@ function getRandomTimeText() {
 function updateRecentProduct(product) {
     if (!box) return;
 
-    // Update content
     const img = box.querySelector('img');
     const link = box.querySelector('.recent-content a');
     const priceTag = box.querySelector('.price');
@@ -865,20 +860,16 @@ function updateRecentProduct(product) {
         priceTag.innerHTML = `$${product.price} <del>$${product.originalPrice}</del>`;
     }
 
-    // Set random timer text
     if (timerElement) {
         timerElement.textContent = getRandomTimeText();
     }
 
-    // Show box
     box.classList.add('active');
 
-    // Remove active class after 7–8s
     const removeDelay = getRandomDelay(7, 8);
     setTimeout(() => {
         box.classList.remove('active');
 
-        // Schedule next product after 8–9s
         const nextDelay = getRandomDelay(8, 9);
         setTimeout(() => {
             currentIndex = (currentIndex + 1) % products.length;
@@ -887,14 +878,12 @@ function updateRecentProduct(product) {
     }, removeDelay);
 }
 
-// Close button
 if (closeBtn && box) {
     closeBtn.addEventListener('click', () => {
         box.classList.remove('active');
     });
 }
 
-// Start cycle after random 8–9s
 const initialDelay = getRandomDelay(8, 9);
 setTimeout(() => {
     updateRecentProduct(products[currentIndex]);

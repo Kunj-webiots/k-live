@@ -28,7 +28,7 @@
         top: 20px;
 
         .back-button {
-            @media (min-width:1200px) {
+            @include common.min(1200px) {
                 display: none;
             }
         }
@@ -39,10 +39,10 @@
                 background-color: rgba(var(--base-gray), 1);
 
                 &::after {
+                    right: 51px;
                     @include common.pos;
                     @include common.center(vertical);
                     @include common.pseudowh($width: 1px, $height: 60%);
-                    right: 51px;
                     opacity: .3;
                     background-color: rgba(var(--border-color), 1);
 
@@ -51,7 +51,7 @@
                         left: 51px;
                     }
 
-                    @include common.max(1199px) {
+                    @include common.max(1199.98px) {
                         content: none;
                     }
                 }
@@ -77,7 +77,7 @@
                     padding-top: 11px;
                     height: 53px;
 
-                    @include common.max(1199px) {
+                    @include common.max(1199.98px) {
                         height: calc(44px + (53 - 44) * ((100vw - 320px) / (1200 - 320)));
                         background-color: transparent;
                     }
@@ -99,7 +99,7 @@
         }
 
         .left-accordion-box {
-            @media (min-width:1200px) {
+            @include common.min(1200px) {
                 margin-top: 28px;
             }
 
@@ -109,14 +109,14 @@
                 padding: 18px 23px;
                 background-color: rgba(var(--white), 1);
 
-                @include common.max(1199px) {
+                @include common.max(1199.98px) {
                     padding: calc(6px + (18 - 6) * ((100vw - 320px) / (1200 - 320))) calc(15px + (23 - 15) * ((100vw - 320px) / (1200 - 320))) 0;
                 }
 
                 +.accordion-item {
                     margin-top: 30px;
 
-                    @include common.max(1199px) {
+                    @include common.max(1199.98px) {
                         margin-top: calc(16px + (20 - 16) * ((100vw - 320px) / (1200 - 320)));
                         padding-top: calc(16px + (20 - 16) * ((100vw - 320px) / (1200 - 320)));
                         border-top: 1px solid rgba(var(--border-color), 1);
@@ -125,7 +125,7 @@
                 }
 
                 &:last-child {
-                    @include common.max(1199px) {
+                    @include common.max(1199.98px) {
                         margin-bottom: calc(16px + (20 - 16) * ((100vw - 320px) / (1200 - 320)));
                     }
                 }
@@ -177,7 +177,7 @@
                                 display: flex;
                                 align-items: center;
 
-                                @media (min-width:1400px) {
+                                @include common.min(1400px) {
                                     gap: calc(10px + (15 - 10) * ((100vw - 1400px) / (1920 - 1400)));
                                 }
 
@@ -200,32 +200,32 @@
                                 }
 
                                 .recent-image {
-                                    @include common.pseudowh($width: 130px, $height: 85px);
                                     border-radius: 4px;
+                                    @include common.pseudowh($width: 130px, $height: 85px);
                                     overflow: hidden;
 
-                                    @media (min-width:1400px) {
+                                    @include common.min(1400px) {
                                         @include common.pseudowh($width: calc(95px + (130 - 95) * ((100vw - 1400px) / (1920 - 1400))), $height: calc(65px + (85 - 65) * ((100vw - 1400px) / (1920 - 1400))));
                                     }
 
-                                    @media (max-width:1199px) {
+                                    @include common.max(1199.98px) {
                                         @include common.pseudowh($width: calc(95px + (130 - 95) * ((100vw - 320px) / (1920 - 320))), $height: calc(65px + (85 - 65) * ((100vw - 320px) / (1920 - 320))));
                                     }
 
                                     img {
-                                        @include common.pseudowh;
                                         transition: all 0.15s ease-in-out;
+                                        @include common.pseudowh;
                                     }
                                 }
 
                                 .recent-detail {
                                     width: calc(100% - 130px - calc(9px + (15 - 9) * ((100vw - 320px) / (1920 - 320))));
 
-                                    @media (min-width:1400px) {
+                                    @include common.min(1400px) {
                                         width: calc(100% - calc(95px + (130 - 95) * ((100vw - 1400px) / (1920 - 1400))) - calc(10px + (15 - 10) * ((100vw - 1400px) / (1920 - 1400))));
                                     }
 
-                                    @media (max-width:1199px) {
+                                    @include common.max(1199.98px) {
                                         width: calc(100% - calc(95px + (130 - 95) * ((100vw - 320px) / (1920 - 320))) - calc(10px + (15 - 10) * ((100vw - 320px) / (1920 - 320))));
                                     }
 
@@ -237,25 +237,25 @@
                                         }
 
                                         h5 {
-                                            @include common.line($line: 2);
                                             line-height: 1.2;
+                                            @include common.line($line: 2);
                                         }
                                     }
 
                                     p {
-                                        @include common.line($line: 2);
                                         color: rgba(var(--content-color), 1);
+                                        @include common.line($line: 2);
                                         margin-top: 6px;
                                     }
 
                                     h6 {
-                                        @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
                                         margin-top: 8px;
+                                        @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
                                         color: rgba(var(--content-color), 1);
 
                                         .feather {
-                                            @include common.pseudowh($width: 18px, $height: 18px);
                                             stroke-width: 1;
+                                            @include common.pseudowh($width: 18px, $height: 18px);
                                         }
                                     }
                                 }
@@ -387,8 +387,8 @@
                 margin-bottom: 15px;
 
                 img {
-                    @include common.pseudowh($width: 74px, $height: 74px);
                     border-radius: 4px;
+                    @include common.pseudowh($width: 74px, $height: 74px);
                     object-fit: cover;
                 }
             }
@@ -423,9 +423,9 @@
 
                     li {
                         a {
+                            font-size: 17px;
                             @include common.flex_common;
                             @include common.pseudowh($width: 38px, $height: 38px);
-                            font-size: 17px;
                             border-radius: 3px;
                             color: rgba(var(--content-color), 1);
                             transition: all 0.25s ease-in-out;
@@ -454,9 +454,9 @@
             }
         }
 
-        @include common.max(1199px) {
-            @include common.pseudowh($width: calc(300px + (350 - 300) * ((100vw - 320px) / (1199 - 320))), $height: 100%);
+        @include common.max(1199.98px) {
             border-right: unset;
+            @include common.pseudowh($width: calc(300px + (350 - 300) * ((100vw - 320px) / (1199 - 320))), $height: 100%);
             position: fixed;
             top: 0;
             left: calc(-320px + (-370 - -320) * ((100vw - 320px) / (1199 - 320)));
@@ -529,9 +529,9 @@
 
         &.sticky-blog-box {
             .pinned {
+                position: absolute;
                 @include common.flex_common;
                 @include common.pseudowh($width: 33px, $height: 33px);
-                position: absolute;
                 -webkit-font-smoothing: antialiased;
                 color: #fff;
                 top: 8px;
@@ -574,8 +574,8 @@
             }
 
             label {
-                @include common.flex_common;
                 position: absolute;
+                @include common.flex_common;
                 top: 8px;
                 left: 8px;
                 border-radius: 4px;
@@ -638,8 +638,8 @@
                 }
 
                 .blog-image {
-                    @include common.pseudowh($width: 50px, $height: 50px);
                     border-radius: 4px;
+                    @include common.pseudowh($width: 50px, $height: 50px);
                     margin: 0;
                     border: 1px solid rgba(var(--content-color), 0.1);
                     transform: unset;
@@ -658,8 +658,8 @@
             }
 
             a {
-                @include common.flex_common ($dis: flex, $align: flex-start, $justify: flex-start);
                 gap: 8px;
+                @include common.flex_common ($dis: flex, $align: flex-start, $justify: flex-start);
 
                 h3 {
                     font-weight: 500;
@@ -677,11 +677,11 @@
             }
 
             p {
-                @include common.line($line: 3);
                 color: rgba(var(--content-color), 1);
+                @include common.line($line: 3);
                 margin-bottom: 0;
 
-                @media (max-width:1399px) {
+                @include common.max(1399px) {
                     -webkit-line-clamp: 2;
                 }
             }
@@ -703,10 +703,10 @@
 
                 &:hover {
                     background-color: rgba(var(--primary-color), 1);
-                    color: rgba(var(--white), 1);
+                    color: #fff;
 
                     i {
-                        --Color: rgba(var(--white), 1);
+                        --Color: #fff;
                     }
                 }
 
@@ -724,8 +724,8 @@
             }
 
             .product-tag {
-                @include common.flex_wrap($dis: flex, $wrap: wrap, $gap: 6px);
                 margin-top: 14px;
+                @include common.flex_wrap($dis: flex, $wrap: wrap, $gap: 6px);
 
                 span {
                     padding: 5px 10px 2px;
@@ -742,7 +742,7 @@
             gap: calc(15px + (25 - 15) * ((100vw - 320px) / (1920 - 320)));
             border: 1px solid rgba(var(--content-color), 0.1);
 
-            @media (max-width:575.98px) {
+            @include common.max(575.98px) {
                 flex-direction: column;
                 align-items: unset;
             }
@@ -756,14 +756,14 @@
             }
 
             .blog-image {
-                @include common.pseudowh($width: calc(244px + (438 - 244) * ((100vw - 1199px) / (1920 - 1199))), $height: calc(236px + (293 - 236) * ((100vw - 1199px) / (1920 - 1199))));
                 margin: 0;
+                @include common.pseudowh($width: calc(244px + (438 - 244) * ((100vw - 1199px) / (1920 - 1199))), $height: calc(236px + (293 - 236) * ((100vw - 1199px) / (1920 - 1199))));
 
                 @include common.max(1199.98px) {
                     @include common.pseudowh($width: calc(198px + (336 - 198) * ((100vw - 574px) / (1200 - 574))), $height: calc(222px + (236 - 222) * ((100vw - 574px) / (1200 - 574))));
                 }
 
-                @media (max-width:575.98px) {
+                @include common.max(575.98px) {
                     @include common.pseudowh($width: 100%, $height: calc(176px + (222 - 176) * ((100vw - 320px) / (576 - 320))));
                 }
 
@@ -781,7 +781,7 @@
                     width: calc(100% - calc(198px + (336 - 198) * ((100vw - 574px) / (1200 - 574))) - 15px);
                 }
 
-                @media (max-width:575.98px) {
+                @include common.max(575.98px) {
                     width: 100%;
                     padding: 0;
                 }
@@ -834,8 +834,8 @@
                     }
 
                     .blog-image {
-                        @include common.pseudowh($width: 50px, $height: 50px);
                         border-radius: 4px;
+                        @include common.pseudowh($width: 50px, $height: 50px);
                         margin: 0;
                         border: 1px solid rgba(var(--content-color), 0.1);
                         transform: unset;
@@ -855,12 +855,11 @@
                 position: relative;
 
                 &::before {
+                    top: 8px;
+                    @include common.pos($pos: absolute, $content: "\f038");
                     @include common.flex_common;
                     @include common.pseudowh($width: calc(29px + (33 - 29) * ((100vw - 320px) / (1920 - 320))), $height: calc(29px + (33 - 29) * ((100vw - 320px) / (1920 - 320))));
                     @include common.font;
-                    content: "\f038";
-                    position: absolute;
-                    top: 8px;
                     right: 8px;
                     color: #fff;
                     background-color: rgba(var(--primary-color), 1);
@@ -877,7 +876,7 @@
         align-items: center;
         transition: all 0.15s ease-in-out;
 
-        @include common.max(1199px) {
+        @include common.max(1199.98px) {
             display: block;
         }
 
@@ -917,11 +916,11 @@
             width: 38%;
             transition: all 0.15s ease-in-out;
 
-            @media (max-width: 1399px) {
+            @include common.max(1399px) {
                 width: 45%;
             }
 
-            @include common.max(1199px) {
+            @include common.max(1199.98px) {
                 width: 100%;
             }
 
@@ -930,15 +929,15 @@
             }
 
             @include common.max(767px) {
-                @include common.pseudowh($width: 100%, $height: auto);
                 margin-bottom: 8px;
+                @include common.pseudowh($width: 100%, $height: auto);
                 text-align: center;
             }
 
             img {
                 transition: all 0.15s ease-in-out;
 
-                @include common.max(1199px) {
+                @include common.max(1199.98px) {
                     width: 100%;
                 }
 
@@ -956,11 +955,11 @@
             padding: calc(10px + (25 - 10) * ((100vw - 320px) / (1920 - 320)));
             width: 62%;
 
-            @media (max-width: 1399px) {
+            @include common.max(1399px) {
                 width: 55%;
             }
 
-            @include common.max(1199px) {
+            @include common.max(1199.98px) {
                 width: 100%;
             }
 
@@ -1006,10 +1005,10 @@
                     margin-left: 30px;
 
                     &::before {
+                        background-color: rgba(var(--title-color), 1);
                         @include common.pos;
                         @include common.pseudowh($width: 15px, $height: 1px);
                         @include common.center(vertical);
-                        background-color: rgba(var(--title-color), 1);
                         left: -24px;
                     }
                 }
@@ -1026,8 +1025,8 @@
         }
 
         .contain-comment-list {
-            @include common.flex_common;
             justify-content: unset;
+            @include common.flex_common;
             flex-wrap: wrap;
             gap: calc(10px + (23 - 10) * ((100vw - 320px) / (1920 - 320)));
             color: rgba(var(--content-color), 1);
@@ -1079,8 +1078,8 @@
                     cursor: pointer;
 
                     .form-check-input {
-                        @include common.pseudowh($width: auto, $height: auto);
                         cursor: pointer;
+                        @include common.pseudowh($width: auto, $height: auto);
                         position: relative;
                         margin-top: 0;
                         line-height: 1;
@@ -1138,9 +1137,9 @@
             }
 
             .first {
+                font-size: calc(55px + (70 - 55) * ((100vw - 320px) / (1920 - 320)));
                 @include common.pseudowh($width: calc(38px + (50 - 38) * ((100vw - 320px) / (1920 - 320))), $height: calc(38px + (50 - 38) * ((100vw - 320px) / (1920 - 320))));
                 @include common.flex_common;
-                font-size: calc(55px + (70 - 55) * ((100vw - 320px) / (1920 - 320)));
                 color: rgba(var(--content-color), 1);
                 float: left;
                 margin-right: calc(8px + (20 - 8) * ((100vw - 320px) / (1920 - 320)));
@@ -1184,9 +1183,9 @@
             }
 
             &::before {
+                font-size: calc(142px + (200 - 142) * ((100vw - 320px) / (1920 - 320)));
                 @include common.pos($pos: absolute, $content: "\ec52");
                 @include common.font;
-                font-size: calc(142px + (200 - 142) * ((100vw - 320px) / (1920 - 320)));
                 color: rgba(var(--white), 0.06);
                 top: calc(-42px + (-46 - -42) * ((100vw - 320px) / (1920 - 320)));
                 right: calc(-36px + (-32 - -36) * ((100vw - 320px) / (1920 - 320)));
@@ -1264,8 +1263,8 @@
                         position: relative;
 
                         img {
-                            @include common.pseudowh($width: 60px, $height: 60px);
                             object-fit: cover;
+                            @include common.pseudowh($width: 60px, $height: 60px);
                             border-radius: 100%;
                             overflow: hidden;
                         }
@@ -1293,7 +1292,7 @@
                             margin-top: 50px;
                             width: 85%;
 
-                            @include common.max(575px) {
+                            @include common.max(575.98px) {
                                 width: 100%;
                             }
 
@@ -1329,11 +1328,11 @@
                     input {
                         margin-top: -5px;
 
-                        @media (max-width: 659px) {
+                        @include common.max(659px) {
                             margin-top: -21px;
                         }
 
-                        @media (max-width: 341px) {
+                        @include common.max(341px) {
                             margin-top: -44px;
                         }
                     }

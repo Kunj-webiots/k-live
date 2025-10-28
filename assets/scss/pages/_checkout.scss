@@ -3,11 +3,10 @@
 /**=====================
     4.2 Checkout CSS
 ==========================**/
-
 .return-login-section {
     .return-box {
-        @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
         padding: calc(12px + (8 - 12) * ((100vw - 320px) / (1920 - 320))) calc(12px + (8 - 12) * ((100vw - 320px) / (1920 - 320))) calc(12px + (8 - 12) * ((100vw - 320px) / (1920 - 320))) calc(12px + (19 - 12) * ((100vw - 320px) / (1920 - 320)));
+        @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
         background-color: rgba(var(--white), 1);
         overflow: hidden;
         border-radius: 5px;
@@ -21,9 +20,9 @@
         }
 
         &::before {
+            top: 0;
             @include common.pos;
             @include common.pseudowh($width: 2px, $height: 100%);
-            top: 0;
             left: 0;
             background-color: rgba(var(--primary-color), 1);
 
@@ -35,7 +34,8 @@
 
         h5 {
             font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320)));
-            font-weight: 400;
+            font-weight: 500;
+            line-height: 1;
             letter-spacing: 0.3px;
         }
 

@@ -29,9 +29,9 @@
                 box-shadow: unset;
 
                 &::after {
+                    bottom: 0;
                     @include common.pos;
                     @include common.pseudowh($width: 0, $height: 3px);
-                    bottom: 0;
                     left: 0;
                     background-color: transparent;
                     transition: all 0.15s ease-in-out;
@@ -177,15 +177,15 @@
             margin-top: 17px;
 
             ul {
-                @include common.flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(13px + (20 - 13) * ((100vw - 320px) / (1920 - 320))));
                 align-items: center;
+                @include common.flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(13px + (20 - 13) * ((100vw - 320px) / (1920 - 320))));
 
                 li {
                     width: 100%;
 
                     .rating-list {
-                        @include common.flex_wrap ($dis: flex, $wrap: nowrap, $gap: 14px);
                         align-items: center;
+                        @include common.flex_wrap ($dis: flex, $wrap: nowrap, $gap: 14px);
 
                         h5 {
                             white-space: nowrap;
@@ -357,8 +357,8 @@
                 }
 
                 &::before {
-                    @include common.pos;
                     top: 0;
+                    @include common.pos;
                     left: calc(20px + (30 - 20) * ((100vw - 320px) / (1920 - 320)));
                     height: 100%;
                     border-left: 1px solid rgba(var(--content-color), 0.1);
@@ -375,10 +375,10 @@
                     background-color: rgba(var(--white), 1);
 
                     &::before {
+                        right: 0;
                         @include common.pos;
                         @include common.center(vertical);
                         @include common.pseudowh($width: calc(100% + calc(20px + (30 - 20) * ((100vw - 320px) / (1920 - 320)))), $height: 1px);
-                        right: 0;
                         border-top: 1px solid rgba(var(--content-color), 0.1);
                         z-index: -1;
                     }
@@ -410,8 +410,8 @@
                 }
 
                 .people-image {
-                    @include common.pseudowh($width: calc(62px + (70 - 62) * ((100vw - 320px) / (1920 - 320))), $height: calc(62px + (70 - 62) * ((100vw - 320px) / (1920 - 320))));
                     border-radius: 4px;
+                    @include common.pseudowh($width: calc(62px + (70 - 62) * ((100vw - 320px) / (1920 - 320))), $height: calc(62px + (70 - 62) * ((100vw - 320px) / (1920 - 320))));
                     overflow: hidden;
 
                     img {
@@ -534,7 +534,7 @@
                         font-weight: 600;
                         transition: all 0.15s ease-in-out;
 
-                        @include common.max(575px) {
+                        @include common.max(575.98px) {
                             opacity: 1;
                         }
 

@@ -46,7 +46,10 @@
         </div>
         <div class="text-container">
             <div class="loading-text initial">Loading</div>
-            <div class="loading-text complete">Welcome Kartify</div>
+            <div class="loading-text complete">
+                <span>Welcome</span>
+                <span>Kartify</span>
+            </div>
         </div>
         <div class="percentage">0</div>
     </div> -->
@@ -166,7 +169,7 @@
                         <a href="cart.html">Cart</a>
                     </li>
                     <li>
-                        <a href="log-in.html">Log In</a>
+                        <a href="#authenticationModal" data-bs-toggle="modal">Log In</a>
                     </li>
                 </ul>
             </div>
@@ -184,13 +187,13 @@
                     <img src="../assets/images/logo/1.svg" class="img-fluid" alt="">
                 </a>
             </div>
-            <div class="middle-header">
+            <div class="middle-header searchInput" id="searchOffcanvas">
                 <div class="search-overlay" id="searchOverlay"></div>
-                <form class="search-form searchInput" id="searchOffcanvas">
-                    <div class="close-icon">
-                        <i class="ri-close-fill" id="close-btn"></i>
-                    </div>
+                <form class="search-form">
                     <div class="input-group">
+                        <div class="close-icon">
+                            <i class="ri-close-fill" id="close-btn"></i>
+                        </div>
                         <div class="input-group-text">
                             <div class="dropdown">
                                 <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
@@ -235,7 +238,7 @@
                     </div>
                     <div class="result-box" id="resultBox">
                         <div class="search-result-box search-border-box">
-                            <div class="result-title mb-3">
+                            <div class="result-title mb-sm-3 mb-2">
                                 <h4>Popular Product</h4>
                             </div>
                             <ul class="result-list-box">
@@ -266,7 +269,7 @@
                             </ul>
                         </div>
                         <div class="last-search-box search-border-box">
-                            <div class="result-title mb-3">
+                            <div class="result-title mb-sm-3 mb-2">
                                 <h4>Last Search</h4>
                                 <a href="#!" class="text-danger">Remove all</a>
                             </div>
@@ -286,7 +289,7 @@
                             </ul>
                         </div>
                         <div class="last-seen-search-box search-border-box">
-                            <div class="result-title mb-3">
+                            <div class="result-title mb-sm-3 mb-2">
                                 <h4>Recently Viewed</h4>
                             </div>
                             <ul class="search-list-box">
@@ -3613,20 +3616,16 @@
                                                 </div>
                                                 <ul class="menu-list">
                                                     <li>
-                                                        <a href="./invoice/invoice-1.html" class="dropdown-item">Invoice
-                                                            1</a>
+                                                        <a href="./../invoice/invoice-1.html"
+                                                            class="dropdown-item">Invoice 1</a>
                                                     </li>
                                                     <li>
-                                                        <a href="./invoice/invoice-2.html" class="dropdown-item">Invoice
-                                                            2</a>
+                                                        <a href="./../invoice/invoice-2.html"
+                                                            class="dropdown-item">Invoice 2</a>
                                                     </li>
                                                     <li>
-                                                        <a href="./invoice/invoice-3.html" class="dropdown-item">Invoice
-                                                            3</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="./invoice/invoice-4.html" class="dropdown-item">Invoice
-                                                            4</a>
+                                                        <a href="./../invoice/invoice-3.html"
+                                                            class="dropdown-item">Invoice 3</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -3636,28 +3635,24 @@
                                                 </div>
                                                 <ul class="menu-list">
                                                     <li>
-                                                        <a href="./email-templete/1.html" class="dropdown-item">Email
-                                                            templates 1</a>
+                                                        <a href="./../email-templete/black-friday.html"
+                                                            class="dropdown-item">Black friday</a>
                                                     </li>
                                                     <li>
-                                                        <a href="./email-templete/2.html" class="dropdown-item">Email
-                                                            templates 2</a>
+                                                        <a href="./../email-templete/leave-feadback.html"
+                                                            class="dropdown-item">Leave feadback</a>
                                                     </li>
                                                     <li>
-                                                        <a href="./email-templete/3.html" class="dropdown-item">Email
-                                                            templates 3</a>
+                                                        <a href="./../email-templete/order-tracking.html"
+                                                            class="dropdown-item">Order tracking</a>
                                                     </li>
                                                     <li>
-                                                        <a href="./email-templete/4.html" class="dropdown-item">Email
-                                                            templates 4</a>
+                                                        <a href="./../email-templete/reset-password.html"
+                                                            class="dropdown-item">Reset passowrd</a>
                                                     </li>
                                                     <li>
-                                                        <a href="./email-templete/5.html" class="dropdown-item">Email
-                                                            templates 5</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="./email-templete/6.html" class="dropdown-item">Email
-                                                            templates 6</a>
+                                                        <a href="./../email-templete/welcome.html"
+                                                            class="dropdown-item">Welcome</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -3966,7 +3961,7 @@
     </header>
     <!-- Header End -->
 
-    <!-- mobile fix menu start -->
+    <!-- Mobile Menu Start -->
     <div class="mobile-menu d-sm-none">
         <ul>
             <li class="active">
@@ -4005,7 +4000,7 @@
             </li>
         </ul>
     </div>
-    <!-- mobile fix menu end -->
+    <!-- Mobile Menu End -->
 
     <!-- Breadcrumb Section Start -->
     <section class="breadcrumb-section">
@@ -6111,7 +6106,7 @@
                                 <a href="about-us.html">About Us</a>
                             </li>
                             <li>
-                                <a href="blog-list.html">Blogs</a>
+                                <a href="blog-3-grid.html">Blogs</a>
                             </li>
                             <li>
                                 <a href="offer.html">Offer</a>
@@ -6678,6 +6673,32 @@
             </button>
         </div>
         <div class="category-menu-list">
+            <ul class="top-menu-list">
+                <li>
+                    <a href="shop-left-sidebar.html" class="sub-category-box">
+                        <svg>
+                            <use xlink:href="../assets/svg/category.svg#daily"></use>
+                        </svg>
+                        <h5>Daily Deals</h5>
+                    </a>
+                </li>
+                <li>
+                    <a href="shop-left-sidebar.html" class="sub-category-box">
+                        <svg>
+                            <use xlink:href="../assets/svg/category.svg#top"></use>
+                        </svg>
+                        <h5>Top Promotions</h5>
+                    </a>
+                </li>
+                <li>
+                    <a href="shop-left-sidebar.html" class="sub-category-box">
+                        <svg>
+                            <use xlink:href="../assets/svg/category.svg#trending"></use>
+                        </svg>
+                        <h5>Now Trending <span class="theme-bg-color2 text-white">Hot</span></h5>
+                    </a>
+                </li>
+            </ul>
             <ul class="sub-menu-list">
                 <li>
                     <a href="shop-left-sidebar.html" class="sub-category-box">
@@ -6792,8 +6813,8 @@
                                     <span>Sign in with facebook</span>
                                 </a>
                             </div>
-                            <h6 class="sign-up-next">Don't have an account? <span class="next-button">Sign up
-                                    now</span></h6>
+                            <h6 class="sign-up-next">Don't have an account? <button class="next-button btn">Sign up
+                                    now</button></h6>
                         </form>
                     </div>
 
@@ -6833,7 +6854,8 @@
                                     <span>Sign up with facebook</span>
                                 </a>
                             </div>
-                            <h6 class="sign-up-next">I am already member. <span class="next-button2">Sign in</span>
+                            <h6 class="sign-up-next">I am already member. <button class="btn next-button2">Sign
+                                    in</button>
                             </h6>
                         </form>
                     </div>
@@ -7314,7 +7336,7 @@
     </div>
     <!-- Quick View Modal End -->
 
-    <!-- alert box start -->
+    <!-- Alert Box Start -->
     <div id="alertBox" class="alert-box">
         <div class="alert-message" id="alertMessage"></div>
         <div class="alert-progressbar" id="progressBar"></div>
@@ -7324,7 +7346,7 @@
                 cart</button>
         </div>
     </div>
-    <!-- alert box end -->
+    <!-- Alert Box End -->
 
     <!-- Bg Overlay Start -->
     <div id="overlay" class="bg-overlay"></div>

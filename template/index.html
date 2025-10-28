@@ -46,7 +46,10 @@
         </div>
         <div class="text-container">
             <div class="loading-text initial">Loading</div>
-            <div class="loading-text complete">Welcome Kartify</div>
+            <div class="loading-text complete">
+                <span>Welcome</span>
+                <span>Kartify</span>
+            </div>
         </div>
         <div class="percentage">0</div>
     </div> -->
@@ -172,7 +175,7 @@
                         <a href="cart.html">Cart</a>
                     </li>
                     <li>
-                        <a href="log-in.html">Log In</a>
+                        <a href="#authenticationModal" data-bs-toggle="modal">Log In</a>
                     </li>
                 </ul>
             </div>
@@ -190,13 +193,13 @@
                     <img src="../assets/images/logo/1.svg" class="img-fluid" alt="">
                 </a>
             </div>
-            <div class="middle-header">
+            <div class="middle-header searchInput" id="searchOffcanvas">
                 <div class="search-overlay" id="searchOverlay"></div>
-                <form class="search-form searchInput" id="searchOffcanvas">
-                    <div class="close-icon">
-                        <i class="ri-close-fill" id="close-btn"></i>
-                    </div>
+                <form class="search-form">
                     <div class="input-group">
+                        <div class="close-icon">
+                            <i class="ri-close-fill" id="close-btn"></i>
+                        </div>
                         <div class="input-group-text">
                             <div class="dropdown">
                                 <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
@@ -241,7 +244,7 @@
                     </div>
                     <div class="result-box" id="resultBox">
                         <div class="search-result-box search-border-box">
-                            <div class="result-title mb-3">
+                            <div class="result-title mb-sm-3 mb-2">
                                 <h4>Popular Product</h4>
                             </div>
                             <ul class="result-list-box">
@@ -272,7 +275,7 @@
                             </ul>
                         </div>
                         <div class="last-search-box search-border-box">
-                            <div class="result-title mb-3">
+                            <div class="result-title mb-sm-3 mb-2">
                                 <h4>Last Search</h4>
                                 <a href="#!" class="text-danger">Remove all</a>
                             </div>
@@ -292,7 +295,7 @@
                             </ul>
                         </div>
                         <div class="last-seen-search-box search-border-box">
-                            <div class="result-title mb-3">
+                            <div class="result-title mb-sm-3 mb-2">
                                 <h4>Recently Viewed</h4>
                             </div>
                             <ul class="search-list-box">
@@ -2763,20 +2766,16 @@
                                                 </div>
                                                 <ul class="menu-list">
                                                     <li>
-                                                        <a href="./invoice/invoice-1.html" class="dropdown-item">Invoice
-                                                            1</a>
+                                                        <a href="./../invoice/invoice-1.html"
+                                                            class="dropdown-item">Invoice 1</a>
                                                     </li>
                                                     <li>
-                                                        <a href="./invoice/invoice-2.html" class="dropdown-item">Invoice
-                                                            2</a>
+                                                        <a href="./../invoice/invoice-2.html"
+                                                            class="dropdown-item">Invoice 2</a>
                                                     </li>
                                                     <li>
-                                                        <a href="./invoice/invoice-3.html" class="dropdown-item">Invoice
-                                                            3</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="./invoice/invoice-4.html" class="dropdown-item">Invoice
-                                                            4</a>
+                                                        <a href="./../invoice/invoice-3.html"
+                                                            class="dropdown-item">Invoice 3</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -2786,28 +2785,24 @@
                                                 </div>
                                                 <ul class="menu-list">
                                                     <li>
-                                                        <a href="./email-templete/1.html" class="dropdown-item">Email
-                                                            templates 1</a>
+                                                        <a href="./../email-templete/black-friday.html"
+                                                            class="dropdown-item">Black friday</a>
                                                     </li>
                                                     <li>
-                                                        <a href="./email-templete/2.html" class="dropdown-item">Email
-                                                            templates 2</a>
+                                                        <a href="./../email-templete/leave-feadback.html"
+                                                            class="dropdown-item">Leave feadback</a>
                                                     </li>
                                                     <li>
-                                                        <a href="./email-templete/3.html" class="dropdown-item">Email
-                                                            templates 3</a>
+                                                        <a href="./../email-templete/order-tracking.html"
+                                                            class="dropdown-item">Order tracking</a>
                                                     </li>
                                                     <li>
-                                                        <a href="./email-templete/4.html" class="dropdown-item">Email
-                                                            templates 4</a>
+                                                        <a href="./../email-templete/reset-password.html"
+                                                            class="dropdown-item">Reset passowrd</a>
                                                     </li>
                                                     <li>
-                                                        <a href="./email-templete/5.html" class="dropdown-item">Email
-                                                            templates 5</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="./email-templete/6.html" class="dropdown-item">Email
-                                                            templates 6</a>
+                                                        <a href="./../email-templete/welcome.html"
+                                                            class="dropdown-item">Welcome</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -3116,7 +3111,7 @@
     </header>
     <!-- Header End -->
 
-    <!-- mobile fix menu start -->
+    <!-- Mobile Menu Start -->
     <div class="mobile-menu d-sm-none">
         <ul>
             <li class="active">
@@ -3155,7 +3150,7 @@
             </li>
         </ul>
     </div>
-    <!-- mobile fix menu end -->
+    <!-- Mobile Menu End -->
 
     <!-- Home Section Start -->
     <section class="home-section">
@@ -5346,7 +5341,7 @@
                                     </div>
                                 </div>
 
-                                <div class="swiper slide-1">
+                                <div class="swiper hot-deal-slider">
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide">
                                             <div class="hot-deal-product-box">
@@ -5432,7 +5427,7 @@
                                                 </div>
                                                 <div class="product-content">
                                                     <a href="product-color.html">
-                                                        <h3>Herschel Leather duffle bag in brown color</h3>
+                                                        <h3>SonicPulse Pro Studio Headphones - Premium Comfort</h3>
                                                     </a>
                                                     <div class="price-stock">
                                                         <h4 class="price">$670.00 <del>$900.00</del></h4>
@@ -5471,19 +5466,19 @@
                                                         <div class="swiper-wrapper">
                                                             <div class="swiper-slide">
                                                                 <a href="product-color.html" class="main-image-box">
-                                                                    <img src="../assets/images/product/35-1.png"
+                                                                    <img src="../assets/images/product/23.png"
                                                                         class="img-fluid" alt="">
                                                                 </a>
                                                             </div>
                                                             <div class="swiper-slide">
                                                                 <a href="product-color.html" class="main-image-box">
-                                                                    <img src="../assets/images/product/35-2.png"
+                                                                    <img src="../assets/images/product/24.png"
                                                                         class="img-fluid" alt="">
                                                                 </a>
                                                             </div>
                                                             <div class="swiper-slide">
                                                                 <a href="product-color.html" class="main-image-box">
-                                                                    <img src="../assets/images/product/35-3.png"
+                                                                    <img src="../assets/images/product/27.png"
                                                                         class="img-fluid" alt="">
                                                                 </a>
                                                             </div>
@@ -5527,19 +5522,19 @@
                                                         <div class="swiper-wrapper">
                                                             <div class="swiper-slide">
                                                                 <div class="thumbnail-image">
-                                                                    <img src="../assets/images/product/35-1.png"
+                                                                    <img src="../assets/images/product/23.png"
                                                                         class="img-fluid" alt="">
                                                                 </div>
                                                             </div>
                                                             <div class="swiper-slide">
                                                                 <div class="thumbnail-image">
-                                                                    <img src="../assets/images/product/35-2.png"
+                                                                    <img src="../assets/images/product/24.png"
                                                                         class="img-fluid" alt="">
                                                                 </div>
                                                             </div>
                                                             <div class="swiper-slide">
                                                                 <div class="thumbnail-image">
-                                                                    <img src="../assets/images/product/35-3.png"
+                                                                    <img src="../assets/images/product/27.png"
                                                                         class="img-fluid" alt="">
                                                                 </div>
                                                             </div>
@@ -5548,10 +5543,10 @@
                                                 </div>
                                                 <div class="product-content">
                                                     <a href="product-color.html">
-                                                        <h3>Herschel Leather duffle bag in brown color</h3>
+                                                        <h3>BlackBerry Keyone BBB100-7 64gb unlocked gSM</h3>
                                                     </a>
                                                     <div class="price-stock">
-                                                        <h4 class="price">$670.00 <del>$900.00</del></h4>
+                                                        <h4 class="price">$1920.45 <del>$2512.25</del></h4>
                                                         <div class="product-rating">
                                                             <ul class="rating">
                                                                 <li>
@@ -5570,7 +5565,7 @@
                                                                     <i class="ri-star-fill"></i>
                                                                 </li>
                                                             </ul>
-                                                            <h6>Status : <span>In Stock</span></h6>
+                                                            <h6>Status : <span>Few Stock</span></h6>
                                                         </div>
                                                     </div>
                                                     <div class="progress">
@@ -5785,7 +5780,7 @@
             <div class="main-footer">
                 <div class="row g-sm-4 g-3">
                     <div class="col-xl-3 col-md-4 col-sm-7">
-                        <div class="footer-title">
+                        <div class="footer-title-2">
                             <h4>Contact Info</h4>
                         </div>
                         <ul class="footer-content-list">
@@ -5860,7 +5855,7 @@
                                 <a href="about-us.html">About Us</a>
                             </li>
                             <li>
-                                <a href="blog-list.html">Blogs</a>
+                                <a href="blog-3-grid.html">Blogs</a>
                             </li>
                             <li>
                                 <a href="offer.html">Offer</a>
@@ -5927,10 +5922,10 @@
                     </div>
 
                     <div class="col-xl-3 col-lg-4 col-md-5 col-sm-4">
-                        <div class="footer-title">
+                        <div class="footer-title-2">
                             <h4>Get Shopping App</h4>
                         </div>
-                        <ul class="footer-list">
+                        <ul class="footer-list-2">
                             <li>
                                 <p>Quick & Direct ordering</p>
                             </li>
@@ -6460,8 +6455,8 @@
                                     <span>Sign in with facebook</span>
                                 </a>
                             </div>
-                            <h6 class="sign-up-next">Don't have an account? <span class="next-button">Sign up
-                                    now</span></h6>
+                            <h6 class="sign-up-next">Don't have an account? <button class="next-button btn">Sign up
+                                    now</button></h6>
                         </form>
                     </div>
 
@@ -6501,7 +6496,8 @@
                                     <span>Sign up with facebook</span>
                                 </a>
                             </div>
-                            <h6 class="sign-up-next">I am already member. <span class="next-button2">Sign in</span>
+                            <h6 class="sign-up-next">I am already member. <button class="btn next-button2">Sign
+                                    in</button>
                             </h6>
                         </form>
                     </div>
@@ -6590,7 +6586,7 @@
     </div>
     <!-- Tap To Top Button End -->
 
-    <!-- alert box start -->
+    <!-- Alert Box Start -->
     <div id="alertBox" class="alert-box">
         <div class="alert-message" id="alertMessage"></div>
         <div class="alert-progressbar" id="progressBar"></div>
@@ -6600,7 +6596,7 @@
                 cart</button>
         </div>
     </div>
-    <!-- alert box end -->
+    <!-- Alert Box End -->
 
     <!-- Recent Product View Box Start -->
     <div class="recent-product-box">

@@ -211,7 +211,7 @@
         padding-top: 148%;
         display: block;
 
-        @include common.max(1199px) {
+        @include common.max(1199.98px) {
             padding-top: 88%;
         }
     }

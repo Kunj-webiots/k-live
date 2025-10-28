@@ -49,7 +49,7 @@
       }
       return t instanceof ShadowRoot ? t : t.parentNode ? c(t.parentNode) : null
     },
-    h = () => {},
+    h = () => { },
     d = t => {
       t.offsetHeight
     },
@@ -103,9 +103,9 @@
     A = {};
   let E = 1;
   const T = {
-      mouseenter: "mouseover",
-      mouseleave: "mouseout"
-    },
+    mouseenter: "mouseover",
+    mouseleave: "mouseout"
+  },
     C = new Set(["click", "dblclick", "mouseup", "mousedown", "contextmenu", "mousewheel", "DOMMouseScroll", "mouseover", "mouseout", "mousemove", "selectstart", "selectend", "keydown", "keypress", "keyup", "orientationchange", "touchstart", "touchmove", "touchend", "touchcancel", "pointerdown", "pointermove", "pointerup", "pointerleave", "pointercancel", "gesturestart", "gesturechange", "gestureend", "focus", "blur", "change", "reset", "select", "submit", "focusin", "focusout", "load", "unload", "beforeunload", "resize", "move", "DOMContentLoaded", "readystatechange", "error", "abort", "scroll"]);
 
   function O(t, e) {
@@ -140,14 +140,14 @@
     const l = x(t),
       c = l[a] || (l[a] = {}),
       h = k(c, r, o ? i : null);
-    if (h) return void(h.oneOff = h.oneOff && s);
+    if (h) return void (h.oneOff = h.oneOff && s);
     const d = O(r, e.replace(v, "")),
       u = o ? function (t, e, i) {
         return function n(s) {
           const o = t.querySelectorAll(e);
           for (let {
-              target: r
-            } = s; r && r !== this; r = r.parentNode)
+            target: r
+          } = s; r && r !== this; r = r.parentNode)
             for (const a of o)
               if (a === r) return j(s, {
                 delegateTarget: r
@@ -329,14 +329,14 @@
     }
   }
   const B = t => {
-      let e = t.getAttribute("data-bs-target");
-      if (!e || "#" === e) {
-        let i = t.getAttribute("href");
-        if (!i || !i.includes("#") && !i.startsWith(".")) return null;
-        i.includes("#") && !i.startsWith("#") && (i = `#${i.split("#")[1]}`), e = i && "#" !== i ? i.trim() : null
-      }
-      return n(e)
-    },
+    let e = t.getAttribute("data-bs-target");
+    if (!e || "#" === e) {
+      let i = t.getAttribute("href");
+      if (!i || !i.includes("#") && !i.startsWith(".")) return null;
+      i.includes("#") && !i.startsWith("#") && (i = `#${i.split("#")[1]}`), e = i && "#" !== i ? i.trim() : null
+    }
+    return n(e)
+  },
     z = {
       find: (t, e = document.documentElement) => [].concat(...Element.prototype.querySelectorAll.call(e, t)),
       findOne: (t, e = document.documentElement) => Element.prototype.querySelector.call(e, t),
@@ -434,10 +434,10 @@
     K.getOrCreateInstance(e).toggle()
   })), m(K);
   const Q = {
-      endCallback: null,
-      leftCallback: null,
-      rightCallback: null
-    },
+    endCallback: null,
+    leftCallback: null,
+    rightCallback: null
+  },
     X = {
       endCallback: "(function|null)",
       leftCallback: "(function|null)",
@@ -695,13 +695,13 @@
       if (this._isTransitioning || this._isShown()) return;
       let t = [];
       if (this._config.parent && (t = this._getFirstLevelChildren(".collapse.show, .collapse.collapsing").filter((t => t !== this._element)).map((t => ft.getOrCreateInstance(t, {
-          toggle: !1
-        })))), t.length && t[0]._isTransitioning) return;
+        toggle: !1
+      })))), t.length && t[0]._isTransitioning) return;
       if (P.trigger(this._element, "show.bs.collapse").defaultPrevented) return;
       for (const e of t) e.hide();
       const e = this._getDimension();
       this._element.classList.remove(lt), this._element.classList.add(ct), this._element.style[e] = 0, this._addAriaAndCollapsedClass(this._triggerArray, !0), this._isTransitioning = !0;
-      const i = `scroll${e[0].toUpperCase()+e.slice(1)}`;
+      const i = `scroll${e[0].toUpperCase() + e.slice(1)}`;
       this._queueCallback((() => {
         this._isTransitioning = !1, this._element.classList.remove(ct), this._element.classList.add(lt, at), this._element.style[e] = "", P.trigger(this._element, "shown.bs.collapse")
       }), this._element, !0), this._element.style[e] = `${this._element[i]}px`
@@ -1000,10 +1000,10 @@
         c = [_t, gt].indexOf(a) >= 0 ? "height" : "width";
       if (o && r) {
         var h = function (t, e) {
-            return ae("number" != typeof (t = "function" == typeof t ? t(Object.assign({}, e.rects, {
-              placement: e.placement
-            })) : t) ? t : le(t, vt))
-          }(s.padding, i),
+          return ae("number" != typeof (t = "function" == typeof t ? t(Object.assign({}, e.rects, {
+            placement: e.placement
+          })) : t) ? t : le(t, vt))
+        }(s.padding, i),
           d = Gt(o),
           u = "y" === l ? pt : _t,
           f = "y" === l ? mt : gt,
@@ -1075,8 +1075,8 @@
       A === $t(i) && "static" !== Zt(A = ee(i)).position && "absolute" === a && (E = "scrollHeight", T = "scrollWidth"), (s === pt || (s === _t || s === gt) && o === wt) && (y = mt, m -= (d && A === w && w.visualViewport ? w.visualViewport.height : A[E]) - n.height, m *= l ? 1 : -1), s !== _t && (s !== pt && s !== mt || o !== wt) || (v = gt, f -= (d && A === w && w.visualViewport ? w.visualViewport.width : A[T]) - n.width, f *= l ? 1 : -1)
     }
     var C, O = Object.assign({
-        position: a
-      }, c && de),
+      position: a
+    }, c && de),
       x = !0 === h ? function (t, e) {
         var i = t.x,
           n = t.y,
@@ -1138,7 +1138,7 @@
     name: "eventListeners",
     enabled: !0,
     phase: "write",
-    fn: function () {},
+    fn: function () { },
     effect: function (t) {
       var e = t.state,
         i = t.instance,
@@ -1150,8 +1150,8 @@
         l = $t(e.elements.popper),
         c = [].concat(e.scrollParents.reference, e.scrollParents.popper);
       return o && c.forEach((function (t) {
-          t.addEventListener("scroll", i.update, pe)
-        })), a && l.addEventListener("resize", i.update, pe),
+        t.addEventListener("scroll", i.update, pe)
+      })), a && l.addEventListener("resize", i.update, pe),
         function () {
           o && c.forEach((function (t) {
             t.removeEventListener("scroll", i.update, pe)
@@ -1343,12 +1343,12 @@
       y = t.elements[p ? b : u],
       w = function (t, e, i, n) {
         var s = "clippingParents" === e ? function (t) {
-            var e = Te(ie(t)),
-              i = ["absolute", "fixed"].indexOf(Zt(t).position) >= 0 && Bt(t) ? se(t) : t;
-            return Wt(i) ? e.filter((function (t) {
-              return Wt(t) && Jt(t, i) && "body" !== Ht(t)
-            })) : []
-          }(t) : [].concat(e),
+          var e = Te(ie(t)),
+            i = ["absolute", "fixed"].indexOf(Zt(t).position) >= 0 && Bt(t) ? se(t) : t;
+          return Wt(i) ? e.filter((function (t) {
+            return Wt(t) && Jt(t, i) && "body" !== Ht(t)
+          })) : []
+        }(t) : [].concat(e),
           o = [].concat(s, [i]),
           r = o[0],
           a = o.reduce((function (e, i) {
@@ -1424,19 +1424,19 @@
         n = t.name;
       if (!e.modifiersData[n]._skip) {
         for (var s = i.mainAxis, o = void 0 === s || s, r = i.altAxis, a = void 0 === r || r, l = i.fallbackPlacements, c = i.padding, h = i.boundary, d = i.rootBoundary, u = i.altBoundary, f = i.flipVariations, p = void 0 === f || f, m = i.allowedAutoPlacements, g = e.options.placement, _ = qt(g), b = l || (_ !== g && p ? function (t) {
-            if (qt(t) === bt) return [];
-            var e = _e(t);
-            return [ve(t), e, ve(e)]
-          }(g) : [_e(g)]), v = [g].concat(b).reduce((function (t, i) {
-            return t.concat(qt(i) === bt ? Le(e, {
-              placement: i,
-              boundary: h,
-              rootBoundary: d,
-              padding: c,
-              flipVariations: p,
-              allowedAutoPlacements: m
-            }) : i)
-          }), []), y = e.rects.reference, w = e.rects.popper, A = new Map, E = !0, T = v[0], C = 0; C < v.length; C++) {
+          if (qt(t) === bt) return [];
+          var e = _e(t);
+          return [ve(t), e, ve(e)]
+        }(g) : [_e(g)]), v = [g].concat(b).reduce((function (t, i) {
+          return t.concat(qt(i) === bt ? Le(e, {
+            placement: i,
+            boundary: h,
+            rootBoundary: d,
+            padding: c,
+            flipVariations: p,
+            allowedAutoPlacements: m
+          }) : i)
+        }), []), y = e.rects.reference, w = e.rects.popper, A = new Map, E = !0, T = v[0], C = 0; C < v.length; C++) {
           var O = v[C],
             x = qt(O),
             k = he(O) === yt,
@@ -1454,8 +1454,8 @@
           var N = _e(I),
             P = [];
           if (o && P.push(D[x] <= 0), a && P.push(D[I] <= 0, D[N] <= 0), P.every((function (t) {
-              return t
-            }))) {
+            return t
+          }))) {
             T = O, E = !1;
             break
           }
@@ -1463,14 +1463,14 @@
         }
         if (E)
           for (var j = function (t) {
-              var e = v.find((function (e) {
-                var i = A.get(e);
-                if (i) return i.slice(0, t).every((function (t) {
-                  return t
-                }))
-              }));
-              if (e) return T = e, "break"
-            }, M = p ? 3 : 1; M > 0 && "break" !== j(M); M--);
+            var e = v.find((function (e) {
+              var i = A.get(e);
+              if (i) return i.slice(0, t).every((function (t) {
+                return t
+              }))
+            }));
+            if (e) return T = e, "break"
+          }, M = p ? 3 : 1; M > 0 && "break" !== j(M); M--);
         e.placement !== T && (e.modifiersData[n]._skip = !0, e.placement = T, e.reset = !0)
       }
     },
@@ -1498,37 +1498,37 @@
     }))
   }
   const Ne = {
-      name: "hide",
-      enabled: !0,
-      phase: "main",
-      requiresIfExists: ["preventOverflow"],
-      fn: function (t) {
-        var e = t.state,
-          i = t.name,
-          n = e.rects.reference,
-          s = e.rects.popper,
-          o = e.modifiersData.preventOverflow,
-          r = ke(e, {
-            elementContext: "reference"
-          }),
-          a = ke(e, {
-            altBoundary: !0
-          }),
-          l = De(r, n),
-          c = De(a, s, o),
-          h = Ie(l),
-          d = Ie(c);
-        e.modifiersData[i] = {
-          referenceClippingOffsets: l,
-          popperEscapeOffsets: c,
-          isReferenceHidden: h,
-          hasPopperEscaped: d
-        }, e.attributes.popper = Object.assign({}, e.attributes.popper, {
-          "data-popper-reference-hidden": h,
-          "data-popper-escaped": d
-        })
-      }
-    },
+    name: "hide",
+    enabled: !0,
+    phase: "main",
+    requiresIfExists: ["preventOverflow"],
+    fn: function (t) {
+      var e = t.state,
+        i = t.name,
+        n = e.rects.reference,
+        s = e.rects.popper,
+        o = e.modifiersData.preventOverflow,
+        r = ke(e, {
+          elementContext: "reference"
+        }),
+        a = ke(e, {
+          altBoundary: !0
+        }),
+        l = De(r, n),
+        c = De(a, s, o),
+        h = Ie(l),
+        d = Ie(c);
+      e.modifiersData[i] = {
+        referenceClippingOffsets: l,
+        popperEscapeOffsets: c,
+        isReferenceHidden: h,
+        hasPopperEscaped: d
+      }, e.attributes.popper = Object.assign({}, e.attributes.popper, {
+        "data-popper-reference-hidden": h,
+        "data-popper-escaped": d
+      })
+    }
+  },
     Pe = {
       name: "offset",
       enabled: !0,
@@ -1758,17 +1758,17 @@
     return function (t, e, i) {
       void 0 === i && (i = o);
       var s, r, a = {
-          placement: "bottom",
-          orderedModifiers: [],
-          options: Object.assign({}, $e, o),
-          modifiersData: {},
-          elements: {
-            reference: t,
-            popper: e
-          },
-          attributes: {},
-          styles: {}
+        placement: "bottom",
+        orderedModifiers: [],
+        options: Object.assign({}, $e, o),
+        modifiersData: {},
+        elements: {
+          reference: t,
+          popper: e
         },
+        attributes: {},
+        styles: {}
+      },
         l = [],
         c = !1,
         h = {
@@ -1809,7 +1809,7 @@
                   instance: h,
                   options: n
                 });
-                l.push(o || function () {})
+                l.push(o || function () { })
               }
             })), h.update()
           },
@@ -1877,48 +1877,48 @@
       defaultModifiers: [me, je, fe, Rt, Pe, Se, Me, ce, Ne]
     });
   const Ve = Object.freeze(Object.defineProperty({
-      __proto__: null,
-      afterMain: Nt,
-      afterRead: St,
-      afterWrite: Mt,
-      applyStyles: Rt,
-      arrow: ce,
-      auto: bt,
-      basePlacements: vt,
-      beforeMain: Dt,
-      beforeRead: kt,
-      beforeWrite: Pt,
-      bottom: mt,
-      clippingParents: At,
-      computeStyles: fe,
-      createPopper: qe,
-      createPopperBase: ze,
-      createPopperLite: Re,
-      detectOverflow: ke,
-      end: wt,
-      eventListeners: me,
-      flip: Se,
-      hide: Ne,
-      left: _t,
-      main: It,
-      modifierPhases: Ft,
-      offset: Pe,
-      placements: xt,
-      popper: Tt,
-      popperGenerator: Be,
-      popperOffsets: je,
-      preventOverflow: Me,
-      read: Lt,
-      reference: Ct,
-      right: gt,
-      start: yt,
-      top: pt,
-      variationPlacements: Ot,
-      viewport: Et,
-      write: jt
-    }, Symbol.toStringTag, {
-      value: "Module"
-    })),
+    __proto__: null,
+    afterMain: Nt,
+    afterRead: St,
+    afterWrite: Mt,
+    applyStyles: Rt,
+    arrow: ce,
+    auto: bt,
+    basePlacements: vt,
+    beforeMain: Dt,
+    beforeRead: kt,
+    beforeWrite: Pt,
+    bottom: mt,
+    clippingParents: At,
+    computeStyles: fe,
+    createPopper: qe,
+    createPopperBase: ze,
+    createPopperLite: Re,
+    detectOverflow: ke,
+    end: wt,
+    eventListeners: me,
+    flip: Se,
+    hide: Ne,
+    left: _t,
+    main: It,
+    modifierPhases: Ft,
+    offset: Pe,
+    placements: xt,
+    popper: Tt,
+    popperGenerator: Be,
+    popperOffsets: je,
+    preventOverflow: Me,
+    read: Lt,
+    reference: Ct,
+    right: gt,
+    start: yt,
+    top: pt,
+    variationPlacements: Ot,
+    viewport: Et,
+    write: jt
+  }, Symbol.toStringTag, {
+    value: "Module"
+  })),
     Ke = "dropdown",
     Qe = "ArrowUp",
     Xe = "ArrowDown",
@@ -2830,16 +2830,16 @@
           this._initializeOnDelegatedTarget(t).toggle()
         }));
         else if ("manual" !== e) {
-        const t = e === sn ? this.constructor.eventName("mouseenter") : this.constructor.eventName("focusin"),
-          i = e === sn ? this.constructor.eventName("mouseleave") : this.constructor.eventName("focusout");
-        P.on(this._element, t, this._config.selector, (t => {
-          const e = this._initializeOnDelegatedTarget(t);
-          e._activeTrigger["focusin" === t.type ? on : sn] = !0, e._enter()
-        })), P.on(this._element, i, this._config.selector, (t => {
-          const e = this._initializeOnDelegatedTarget(t);
-          e._activeTrigger["focusout" === t.type ? on : sn] = e._element.contains(t.relatedTarget), e._leave()
-        }))
-      }
+          const t = e === sn ? this.constructor.eventName("mouseenter") : this.constructor.eventName("focusin"),
+            i = e === sn ? this.constructor.eventName("mouseleave") : this.constructor.eventName("focusout");
+          P.on(this._element, t, this._config.selector, (t => {
+            const e = this._initializeOnDelegatedTarget(t);
+            e._activeTrigger["focusin" === t.type ? on : sn] = !0, e._enter()
+          })), P.on(this._element, i, this._config.selector, (t => {
+            const e = this._initializeOnDelegatedTarget(t);
+            e._activeTrigger["focusout" === t.type ? on : sn] = e._element.contains(t.relatedTarget), e._leave()
+          }))
+        }
       this._hideModalHandler = () => {
         this._element && this.hide()
       }, P.on(this._element.closest(en), nn, this._hideModalHandler)
@@ -2898,13 +2898,13 @@
   }
   m(cn);
   const hn = {
-      ...cn.Default,
-      content: "",
-      offset: [0, 8],
-      placement: "right",
-      template: '<div class="popover" role="tooltip"><div class="popover-arrow"></div><h3 class="popover-header"></h3><div class="popover-body"></div></div>',
-      trigger: "click"
-    },
+    ...cn.Default,
+    content: "",
+    offset: [0, 8],
+    placement: "right",
+    template: '<div class="popover" role="tooltip"><div class="popover-arrow"></div><h3 class="popover-header"></h3><div class="popover-body"></div></div>',
+    trigger: "click"
+  },
     dn = {
       ...cn.DefaultType,
       content: "(null|string|element|function)"

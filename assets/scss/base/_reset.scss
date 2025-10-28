@@ -80,7 +80,7 @@
     position: relative;
 
     &.light-sm-box {
-        padding: 20px;
+        padding: calc(15px + (20 - 15) * ((100vw - 320px) / (1920 - 320)));
         height: auto;
         border-radius: 5px;
     }
@@ -102,9 +102,9 @@
     position: relative;
 
     &::before {
+        top: 0;
         @include common.pos;
         @include common.pseudowh($width: 100%, $height: 70%);
-        top: 0;
         left: 0;
         background-color: rgba(var(--base-gray), 0.3);
 
@@ -217,6 +217,26 @@
     }
 }
 
+.custom-row8 {
+    .custom-col-xl-3 {
+        @include common.min(1199.98px) {
+            width: 21.2%;
+        }
+    }
+
+    .custom-col-xl-6 {
+        @include common.min(1199.98px) {
+            width: calc(100% - 21.2% - 21.2%);
+        }
+    }
+
+    .custom-col-xl-9 {
+        @include common.min(1199.98px) {
+            width: calc(100% - 21.2%);
+        }
+    }
+}
+
 .base-bg-color {
     background-color: rgba(var(--base-gray), 1) !important;
 }
@@ -244,8 +264,8 @@
     overflow: hidden;
 
     &::after {
-        @include common.pos;
         top: 0;
+        @include common.pos;
         left: -75%;
         z-index: 2;
         display: block;
@@ -270,10 +290,10 @@
 }
 
 .bg-overlay {
+    background-color: #202326;
     @include common.pseudowh($width: 100vw, $height: 100vh);
-    background-color: rgba(var(--title-color), 1);
     position: fixed;
-    z-index: 3;
+    z-index: 20;
     top: 0;
     opacity: 0;
     visibility: hidden;
@@ -384,22 +404,28 @@
 .alert-box {
     display: none;
     position: fixed;
-    top: 20px;
-    right: 20px;
+    top: calc(15px + (20 - 15) * ((100vw - 320px) / (1920 - 320)));
+    right: calc(15px + (20 - 15) * ((100vw - 380px) / (1920 - 380)));
     width: 305px;
     background-color: #f9f9f9;
     box-shadow: 0 0 10px rgba(var(--title-color), 0.32);
     border: 2px solid transparent;
     z-index: 9;
-    border-radius: 10px;
+    border-radius: calc(8px + (10 - 8) * ((100vw - 320px) / (1920 - 320)));
     overflow: hidden;
+
+    @include common.max(380.98px) {
+        width: calc(100% - 30px);
+        right: 0;
+        margin-inline: 15px;
+    }
 
     body.dark & {
         background-color: rgba(var(--base-gray), 1);
     }
 
     .alert-message {
-        padding: 14px 20px;
+        padding: 14px calc(15px + (20 - 15) * ((100vw - 320px) / (1920 - 320)));
     }
 
     .button-group {
@@ -435,7 +461,7 @@
     }
 
     h4 {
-        font-size: 18px;
+        font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320)));
         margin-bottom: 8px;
     }
 
@@ -445,9 +471,13 @@
         gap: 12px;
 
         img {
-            @include common.pseudowh($width: 58px, $height: 55px);
-            object-fit: contain;
+            object-fit: cover;
             filter: none;
+            @include common.pseudowh($width: calc(48px + (58 - 48) * ((100vw - 320px) / (1920 - 320))), $height: calc(48px + (58 - 48) * ((100vw - 320px) / (1920 - 320))));
+        }
+
+        h5 {
+            width: calc(100% - calc(48px + (58 - 48) * ((100vw - 320px) / (1920 - 320))) - 12px);
         }
     }
 
@@ -573,8 +603,7 @@ theme-blue-dark;
     display: flex;
     writing-mode: vertical-lr;
     gap: calc(6px + (10 - 6) * ((100vw - 320px) / (1920 - 320)));
-    z-index: 9;
-    display: none;
+    z-index: 10;
 
     button {
         font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
@@ -692,9 +721,9 @@ theme-blue-dark;
     }
 
     @include common.max(385px) {
-        width: calc(100% - 30px);
+        width: calc(100% - 26px);
         left: 0;
-        margin-inline: 15px;
+        margin-inline: 13px;
     }
 
     &.active {
@@ -703,14 +732,14 @@ theme-blue-dark;
         visibility: visible;
 
         @include common.max(575.98px) {
-            bottom: 85px;
+            bottom: calc(80px + (85 - 80) * ((100vw - 320px) / (576 - 320)));
         }
     }
 
     img {
-        @include common.flex_common;
-        @include common.pseudowh($width: calc(80px + (95 - 80) * ((100vw - 320px) / (1920 - 320))), $height: calc(80px + (95 - 80) * ((100vw - 320px) / (1920 - 320))));
         background-color: rgba(var(--base-gray), 1);
+        @include common.flex_common;
+        @include common.pseudowh($width: calc(76px + (95 - 76) * ((100vw - 320px) / (1920 - 320))), $height: calc(76px + (95 - 76) * ((100vw - 320px) / (1920 - 320))));
         padding: 8px 10px;
         border-radius: calc(4px + (6 - 4) * ((100vw - 320px) / (1920 - 320)));
         object-fit: contain;
@@ -723,19 +752,25 @@ theme-blue-dark;
         top: 6px;
         right: 6px;
 
+        [dir="rtl"] & {
+            right: unset;
+            left: 6px;
+        }
+
         .iconsax {
             transform: rotate(45deg);
+            --Color: rgba(var(--title-color), 1)
         }
     }
 
     .recent-content {
-        width: calc(100% - calc(80px + (95 - 80) * ((100vw - 320px) / (1920 - 320))) - calc(8px + (12 - 8) * ((100vw - 320px) / (1920 - 320))) - calc(16px + (24 - 16) * ((100vw - 320px) / (1920 - 320))));
+        width: calc(100% - calc(76px + (95 - 76) * ((100vw - 320px) / (1920 - 320))) - calc(8px + (12 - 8) * ((100vw - 320px) / (1920 - 320))) - calc(16px + (24 - 16) * ((100vw - 320px) / (1920 - 320))));
 
         a {
-            @include common.line;
             color: rgba(var(--title-color), 1);
+            @include common.line;
             font-weight: 500;
-            font-size: calc(16px + (17 - 16) * ((100vw - 320px) / (1920 - 320)));
+            font-size: calc(15px + (17 - 15) * ((100vw - 320px) / (1920 - 320)));
             margin-bottom: 4px;
             transition: all 0.2s ease-in-out;
         }
@@ -767,18 +802,16 @@ theme-blue-dark;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100vh;
+    @include common.pseudowh($width: 100%, $height: 100vh);
     background: #e6e7e9;
     @include common.flex_common;
     flex-direction: column;
     z-index: 1056;
 
     .progress-container {
-        width: 300px;
-        height: 2px;
         background: rgba(var(--white), 0.1);
-        margin-bottom: 20px;
+        @include common.pseudowh($width: 300px, $height: 2px);
+        margin-bottom: calc(10px + (20 - 10) * ((100vw - 320px) / (1920 - 320)));
         position: relative;
         z-index: 2;
     }
@@ -787,17 +820,16 @@ theme-blue-dark;
         position: absolute;
         left: 0;
         top: 0;
-        height: 100%;
-        width: 0%;
+        @include common.pseudowh($width: 0, $height: 100%);
         background: var(--color-foreground);
     }
 
     .percentage {
-        @include common.center(both);
         position: fixed;
+        @include common.center(both);
         font-family: variables.$br-hendrix;
         font-weight: 700;
-        font-size: 25rem;
+        font-size: calc(185px + (400 - 185) * ((100vw - 320px) / (1920 - 320)));
         line-height: 1;
         color: var(--color-foreground);
         opacity: .1;
@@ -805,32 +837,44 @@ theme-blue-dark;
     }
 
     .text-container {
-        @include common.flex_common;
-        height: 3em;
         position: relative;
+        @include common.pseudowh($width: 19rem, $height: calc(34px + (48 - 34) * ((100vw - 320px) / (1920 - 320))));
+        @include common.flex_common;
         overflow: hidden;
         margin: 0;
-        width: 19rem;
     }
 
     .loading-text {
-        @include common.flex_common;
         font-family: variables.$br-hendrix;
+        @include common.flex_common;
         color: var(--color-foreground);
-        font-size: 1.2rem;
+        font-size: calc(16px + (20 - 16) * ((100vw - 320px) / (1920 - 320)));
         text-transform: uppercase;
         position: absolute;
         width: 100%;
         text-align: center;
-        gap: 4px;
+        gap: 12px;
         font-weight: 500;
+
+        [dir="rtl"] & {
+            direction: ltr;
+        }
 
         &.initial {
             transform: translateY(0);
+            gap: 4px;
         }
 
         &.complete {
             transform: translateY(100%);
+        }
+
+        span {
+            >div {
+                +div {
+                    margin-left: 4px;
+                }
+            }
         }
     }
 

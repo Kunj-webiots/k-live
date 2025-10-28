@@ -28,8 +28,8 @@
                justify-content: space-between;
 
                .btn-close {
-                    @include common.pseudowh($width: calc(26px + (30 - 26) * ((100vw - 320px) / (1920 - 320))), $height: calc(26px + (30 - 26) * ((100vw - 320px) / (1920 - 320))));
                     margin: 0;
+                    @include common.pseudowh($width: calc(26px + (30 - 26) * ((100vw - 320px) / (1920 - 320))), $height: calc(26px + (30 - 26) * ((100vw - 320px) / (1920 - 320))));
                     padding: 0;
                     background: none;
                     line-height: 1;
@@ -85,8 +85,8 @@
      }
 
      .btn-close {
-          @include common.pseudowh($width: calc(26px + (30 - 26) * ((100vw - 320px) / (1920 - 320))), $height: calc(26px + (30 - 26) * ((100vw - 320px) / (1920 - 320))));
           margin: 0;
+          @include common.pseudowh($width: calc(26px + (30 - 26) * ((100vw - 320px) / (1920 - 320))), $height: calc(26px + (30 - 26) * ((100vw - 320px) / (1920 - 320))));
           padding: 0;
           background: none;
           line-height: 1;
@@ -190,8 +190,8 @@
                border: 1px solid rgba(var(--border-color), 1);
 
                .items-img {
-                    @include common.pseudowh($width: 110px, $height: 110px);
                     background-color: rgba(var(--white), 1);
+                    @include common.pseudowh($width: 110px, $height: 110px);
                     padding: 10px;
                     border-radius: 7px;
 
@@ -242,8 +242,8 @@
                border: 1px solid rgba(var(--border-color), 1);
 
                .items-img {
-                    @include common.pseudowh($width: calc(82px + (110 - 82) * ((100vw - 320px) / (1920 - 320))), $height: calc(82px + (110 - 82) * ((100vw - 320px) / (1920 - 320))));
                     background-color: rgba(var(--white), 1);
+                    @include common.pseudowh($width: calc(82px + (110 - 82) * ((100vw - 320px) / (1920 - 320))), $height: calc(82px + (110 - 82) * ((100vw - 320px) / (1920 - 320))));
                     padding: calc(8px + (10 - 8) * ((100vw - 320px) / (1920 - 320)));
                     border-radius: calc(4px + (7 - 4) * ((100vw - 320px) / (1920 - 320)));
 
@@ -331,9 +331,9 @@
           }
 
           .btn-close {
+               position: absolute;
                @include common.pseudowh($width: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))), $height: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))));
                @include common.flex_common;
-               position: absolute;
                margin: 0;
                padding: 0;
                top: calc(6px + (10 - 6) * ((100vw - 320px) / (1920 - 320)));
@@ -394,8 +394,8 @@
                     }
 
                     .forgot-box {
-                         @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
                          gap: 10px 0;
+                         @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
                          flex-wrap: wrap;
 
                          .form-check {
@@ -415,17 +415,17 @@
                                    position: relative;
 
                                    &::before {
-                                        @include common.pos;
                                         border: 1px solid rgba(var(--content-color), 0.1);
+                                        @include common.pos;
                                         @include common.center(both);
                                         @include common.pseudowh;
                                         background-color: rgba(var(--base-gray), 1);
                                    }
 
                                    &::after {
+                                        border: 2px solid rgba(var(--primary-color), 1);
                                         @include common.pos;
                                         @include common.pseudowh($width: 7px, $height: 12px);
-                                        border: 2px solid rgba(var(--primary-color), 1);
                                         border-top: unset;
                                         border-left: unset;
                                         top: 2px;
@@ -457,10 +457,10 @@
                          margin-block: calc(7px + (11 - 7) * ((100vw - 320px) / (1920 - 320)));
 
                          &::before {
+                              left: 0;
                               @include common.pos;
                               @include common.center(vertical);
                               @include common.pseudowh($width: 100%, $height: 1px);
-                              left: 0;
                               border-top: 1px solid rgba(var(--content-color), 0.1);
                               z-index: -1;
                          }
@@ -478,8 +478,8 @@
                          gap: 12px;
 
                          a {
-                              @include common.flex_common;
                               gap: 11px;
+                              @include common.flex_common;
                               font-weight: 400;
                               background-color: rgba(var(--base-gray), 1);
                               color: rgba(var(--content-color), 1);
@@ -541,9 +541,9 @@
                               padding-left: 10px;
 
                               &::after {
+                                   left: 0;
                                    @include common.pos;
                                    @include common.center(vertical);
-                                   left: 0;
                                    @include common.pseudowh($width: 1px, $height: 80%);
                                    border-left: 1px solid rgba(var(--primary-color), 1);
                               }
@@ -587,8 +587,8 @@
                background-color: rgba(var(--base-gray), 1);
 
                .product-image {
-                    @include common.pseudowh($width: 80px, $height: 80px);
                     overflow: hidden;
+                    @include common.pseudowh($width: 80px, $height: 80px);
                     background-color: rgba(var(--white), 1);
                     padding: 8px;
 
@@ -619,6 +619,7 @@
 .authentication-modal {
      .modal-content {
           border: unset;
+          background-color: rgba(var(--white), 1);
           border-radius: 0;
      }
 
@@ -628,8 +629,8 @@
      }
 
      .btn-close {
-          @include common.flex_common;
           position: absolute;
+          @include common.flex_common;
           margin: 0;
           padding: 0;
           top: calc(6px + (10 - 6) * ((100vw - 320px) / (1920 - 320)));
@@ -639,7 +640,7 @@
           @include common.pseudowh($width: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))), $height: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))));
           background-color: rgba(var(--primary-color), 1);
           opacity: 1;
-          color: rgba(var(--white), 1);
+          color: #fff;
           border-radius: 0;
           z-index: 1;
 
@@ -674,19 +675,24 @@
           .auth-form {
                .form-control {
                     padding: 13px;
+                    color: rgba(var(--title-color), 1);
                     border: unset;
                     font-size: calc(15px + (17 - 15) * ((100vw - 320px) / (1920 - 320)));
-                    border-radius: 0;
+                    border-radius: 5px;
                     background-color: rgba(var(--base-gray), 1);
 
                     [dir="rtl"] & {
                          text-align: right;
                     }
+
+                    &::placeholder {
+                         color: rgba(var(--title-color), 0.6);
+                    }
                }
 
                .forgot-box {
-                    @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
                     gap: 10px 0;
+                    @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
                     flex-wrap: wrap;
 
                     .form-check {
@@ -706,17 +712,17 @@
                               position: relative;
 
                               &::before {
+                                   border: 1px solid rgba(var(--content-color), 0.1);
                                    @include common.pos;
                                    @include common.center(both);
                                    @include common.pseudowh;
-                                   border: 1px solid rgba(var(--content-color), 0.1);
                                    background-color: rgba(var(--base-gray), 1);
                               }
 
                               &::after {
+                                   border: 2px solid rgba(var(--primary-color), 1);
                                    @include common.pos;
                                    @include common.pseudowh($width: 7px, $height: 12px);
-                                   border: 2px solid rgba(var(--primary-color), 1);
                                    border-top: unset;
                                    border-left: unset;
                                    top: 2px;
@@ -735,6 +741,7 @@
                          .form-check-label {
                               font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
                               font-weight: 400;
+                              margin-top: 2px;
                               color: rgba(var(--content-color), 1);
                               line-height: 1;
                          }
@@ -748,10 +755,10 @@
                     margin-block: calc(7px + (11 - 7) * ((100vw - 320px) / (1920 - 320)));
 
                     &::before {
+                         left: 0;
                          @include common.pos;
                          @include common.center(vertical);
                          @include common.pseudowh($width: 100%, $height: 1px);
-                         left: 0;
                          border-top: 1px solid rgba(var(--content-color), 0.1);
                          z-index: -1;
                     }
@@ -769,8 +776,8 @@
                     gap: 12px;
 
                     a {
-                         @include common.flex_common;
                          gap: 11px;
+                         @include common.flex_common;
                          font-weight: 400;
                          background-color: rgba(var(--base-gray), 1);
                          color: rgba(var(--content-color), 1);
@@ -792,12 +799,14 @@
                     font-weight: 400;
                     font-size: 15px;
 
-                    .next-button {
+                    .next-button,
+                    .next-button2 {
                          border: unset;
                          background-color: transparent;
                          color: rgba(var(--primary-color), 1);
                          padding: 0;
                          font-weight: 500;
+                         font-size: 15px;
                     }
                }
           }
@@ -831,9 +840,9 @@
                          padding-left: 10px;
 
                          &::after {
+                              left: 0;
                               @include common.pos;
                               @include common.center(vertical);
-                              left: 0;
                               @include common.pseudowh($width: 1px, $height: 80%);
                               border-left: 1px solid rgba(var(--primary-color), 1);
                          }
@@ -875,9 +884,9 @@
 
                .delete-content {
                     i {
+                         margin: 0 auto 20px;
                          @include common.pseudowh($width: calc(42px + (50 - 42) * ((100vw - 320px) / (1920 - 320))), $height: calc(42px + (50 - 42) * ((100vw - 320px) / (1920 - 320))));
                          @include common.flex_common;
-                         margin: 0 auto 20px;
                          border-radius: 5px;
                          font-size: calc(20px + (24 - 20) * ((100vw - 320px) / (1920 - 320)));
                          color: rgba(var(--primary-color2), 1);
@@ -1014,8 +1023,8 @@
           max-width: 1100px;
 
           .btn-close {
-               @include common.pseudowh($width: 30px, $height: 30px);
                margin: 0;
+               @include common.pseudowh($width: 30px, $height: 30px);
                padding: 0;
                z-index: 1;
                background: none;
@@ -1028,6 +1037,11 @@
                top: 10px;
                right: 10px;
                background-color: rgba(var(--primary-color), 1);
+
+               [dir="rtl"] & {
+                    right: unset;
+                    left: 10px;
+               }
 
                i {
                     font-size: 22px;
@@ -1056,16 +1070,16 @@
                          }
 
                          img {
-                              @include common.pseudowh;
                               object-fit: contain;
+                              @include common.pseudowh;
                          }
                     }
 
                     .swiper-button-next,
                     .swiper-button-prev {
+                         margin: 0;
                          @include common.center(vertical);
                          @include common.pseudowh($width: calc(36px + (42 - 36) * ((100vw - 320px) / (1920 - 320))), $height: calc(36px + (42 - 36) * ((100vw - 320px) / (1920 - 320))));
-                         margin: 0;
                          font-size: calc(20px + (22 - 20) * ((100vw - 320px) / (1920 - 320)));
                          z-index: 1;
                          color: rgba(var(--title-color), 1);
@@ -1100,8 +1114,8 @@
                          }
 
                          img {
-                              @include common.pseudowh;
                               object-fit: contain;
+                              @include common.pseudowh;
                          }
                     }
                }
@@ -1112,7 +1126,7 @@
 
                .hurry-up-box {
                     .progress {
-                         background-color: rgba(var(--base-gray), 1);
+                         background-color: rgba(230, 231, 233, .45);
                     }
                }
 
@@ -1122,7 +1136,7 @@
                }
 
                .rating-review-sold-box {
-                    @include common.max(575px) {
+                    @include common.max(575.98px) {
                          display: flex;
                          gap: 12px;
                     }
@@ -1159,9 +1173,9 @@
                          }
 
                          .qty-btn {
+                              padding: 0;
                               @include common.flex_common;
                               @include common.pseudowh($width: calc(30px + (35 - 30) * ((100vw - 320px) / (1920 - 320))), $height: calc(30px + (35 - 30) * ((100vw - 320px) / (1920 - 320))));
-                              padding: 0;
                               border-radius: 4px;
                               background-color: rgba(var(--white), 1);
                               color: rgba(var(--content-color), 1);
@@ -1228,15 +1242,15 @@
                               object-fit: cover;
 
                               @include common.max(575.98px) {
+                                   aspect-ratio: unset;
                                    @include common.pseudowh($width: 100%, $height: 290px);
-                                   aspect-ratio: unset
                               }
                          }
                     }
 
                     .exit-left-box {
-                         @include common.flex_common;
                          padding: calc(15px + (44 - 15) * ((100vw - 320px) / (1920 - 320)));
+                         @include common.flex_common;
                          height: 100%;
                          flex-direction: column;
                          position: relative;

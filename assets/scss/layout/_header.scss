@@ -22,12 +22,20 @@ header {
     z-index: 2;
     transition: all 0.15s ease-in-out;
 
-    @include common.max(575px) {
-        z-index: unset;
+    @include common.max(1199.98px) {
+        z-index: 9;
+
+        &:has(.search-overlay.show) {
+            z-index: 10;
+        }
     }
 
     &.sticky-header {
         z-index: 3;
+
+        @include common.max(1199.98px) {
+            z-index: 9;
+        }
 
         .main-header,
         .main-dark-header {
@@ -115,8 +123,8 @@ header {
                                 }
 
                                 img {
-                                    @include common.pseudowh($width: 20px, $height: 12px);
                                     margin-right: 8px;
+                                    @include common.pseudowh($width: 20px, $height: 12px);
                                     object-fit: cover;
 
                                     [dir="rtl"] & {
@@ -134,9 +142,9 @@ header {
                                 }
 
                                 &::after {
+                                    margin-left: 3px;
                                     @include common.pos($pos: relative, $content: "\ea4e");
                                     @include common.font;
-                                    margin-left: 3px;
                                     right: 0;
                                     color: rgba(var(--white), 1);
                                     border: none;
@@ -169,8 +177,8 @@ header {
                                     }
 
                                     .dropdown-item {
-                                        @include common.flex_common;
                                         padding-block: 0;
+                                        @include common.flex_common;
                                         font-size: 14px;
                                         padding-inline: 4px;
                                         padding: 4px 5px;
@@ -241,9 +249,9 @@ header {
                             }
 
                             &::before {
-                                @include common.pos;
                                 bottom: 0;
                                 left: 0;
+                                @include common.pos;
                                 @include common.pseudowh($width: 0, $height: 1px);
                                 background-color: rgba(var(--white), 1);
                                 transition: all .5s ease-in-out;
@@ -255,7 +263,7 @@ header {
         }
 
         .middle-header {
-            @media (max-width: 1145px) {
+            @include common.max(1145px) {
                 display: none;
             }
 
@@ -288,7 +296,7 @@ header {
         }
 
         .right-header {
-            @media (max-width: 670px) {
+            @include common.max(670px) {
                 display: none;
             }
 
@@ -325,9 +333,9 @@ header {
                         }
 
                         &::before {
-                            @include common.pos;
                             bottom: 0;
                             left: 0;
+                            @include common.pos;
                             @include common.pseudowh($width: 0, $height: 1px);
                             background-color: #fff;
                             transition: all .5s ease-in-out;
@@ -357,7 +365,7 @@ header {
     }
 
     .main-header {
-        padding-block: 15px;
+        padding-block: calc(10px + (15 - 10) * ((100vw - 320px) / (1920 - 320)));
         background-color: rgba(var(--theme-blue), 1);
         position: relative;
         @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
@@ -380,20 +388,65 @@ header {
         }
 
         .middle-header {
+            @include common.max(991.98px) {
+                padding: 14px;
+                @include common.pseudowh($width: 100%, $height: auto);
+                left: 0;
+                display: block;
+                transform: translateY(-50%);
+                opacity: 0;
+                visibility: hidden;
+                position: absolute;
+                padding-inline: calc(15px + (160 - 15) * ((100vw - 320px) / (1920 - 320)));
+                transition: all 0.5s ease-in-out;
+                background-color: rgba(var(--white), 1);
+                z-index: 2;
+                top: 0;
+                position: fixed;
+
+                &.show {
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translateY(0);
+                }
+
+                .result-box {
+                    z-index: unset;
+                    margin-top: 12px;
+                    position: relative;
+                    inset: unset;
+                    overflow: auto;
+                    height: calc(100vh - calc(82px + (86 - 82) * ((100vw - 320px) / (992 - 320))));
+                }
+            }
+
             .close-icon {
                 right: 10px;
                 cursor: pointer;
                 display: none;
                 position: absolute;
-                top: 10px;
-                transform: unset;
+                @include common.center(vertical);
                 color: rgba(var(--content-color), 1);
                 z-index: 1;
-                font-size: 21px;
+                font-size: calc(16px + (21 - 16) * ((100vw - 320px) / (992 - 320)));
+                line-height: 1;
                 @include common.pseudowh($width: unset, $height: unset);
 
-                @include common.max(991px) {
+                [dir="rtl"] & {
+                    right: unset;
+                    left: 10px;
+                }
+
+                @include common.max(991.98px) {
                     display: block;
+                }
+
+                i {
+                    font-size: 21px;
+
+                    @include common.max(991.98px) {
+                        font-size: calc(16px + (21 - 16) * ((100vw - 320px) / (992 - 320)));
+                    }
                 }
             }
 
@@ -407,29 +460,6 @@ header {
                     background-color: transparent;
                     visibility: visible;
                     z-index: 2;
-                }
-
-                @include common.max(991px) {
-                    @include common.pseudowh($width: 100%, $height: calc(40vh + (50 - 40) * ((100vw - 320px) / (991 - 320))));
-                    left: 0;
-                    display: flex;
-                    align-items: center;
-                    transform: translateY(-50%);
-                    opacity: 0;
-                    visibility: hidden;
-                    position: absolute;
-                    padding-inline: calc(15px + (160 - 15) * ((100vw - 320px) / (1920 - 320)));
-                    transition: all 0.5s ease-in-out;
-                    background-color: rgba(var(--white), 1);
-                    z-index: 2;
-                    top: 0;
-                    position: fixed;
-
-                    &.show {
-                        opacity: 1;
-                        visibility: visible;
-                        transform: translateY(0);
-                    }
                 }
 
                 .input-group {
@@ -453,23 +483,23 @@ header {
                             background-color: #131921;
                         }
 
-                        @media (max-width: 1667px) {
+                        @include common.max(1667px) {
                             width: 690px;
                         }
 
-                        @media (max-width: 1550px) {
+                        @include common.max(1550px) {
                             width: 590px;
                         }
 
-                        @media (max-width: 1420px) {
+                        @include common.max(1420px) {
                             width: 450px;
                         }
 
-                        @media (max-width: 1254px) {
+                        @include common.max(1254px) {
                             width: 290px;
                         }
 
-                        @media (max-width: 1061px) {
+                        @include common.max(1061px) {
                             border-radius: 0 6px 6px 0 !important;
                             border: none;
                             margin: 0 !important;
@@ -479,7 +509,7 @@ header {
                             }
                         }
 
-                        @media (max-width: 992px) {
+                        @include common.max(992px) {
                             width: 100%;
                             background-color: #F2F3F6;
                             border-radius: 0 5px 5px 0 !important;
@@ -509,6 +539,8 @@ header {
                                 color: rgba(var(--content-color), 1);
                                 background-color: transparent;
                                 padding: 0 10px;
+                                line-height: 1;
+                                border-radius: 0;
                                 display: flex;
                                 align-items: center;
 
@@ -517,6 +549,11 @@ header {
                                     @include common.font;
                                     color: rgba(var(--content-color), 1);
                                     font-size: 18px;
+                                    margin: 0 0 0 5px;
+
+                                    [dir="rtl"] & {
+                                        margin: 0 5px 0 0;
+                                    }
                                 }
                             }
 
@@ -566,7 +603,7 @@ header {
                         color: #fff;
                         z-index: 1;
 
-                        @media (max-width: 1061px) {
+                        @include common.max(1061px) {
                             position: absolute;
                             @include common.center(vertical);
                             right: 0;
@@ -608,13 +645,13 @@ header {
                 >li {
                     position: relative;
 
-                    @include common.max(575px) {
+                    @include common.max(575.98px) {
                         display: none;
                     }
 
                     &:first-child,
                     &:last-child {
-                        @include common.max(575px) {
+                        @include common.max(575.98px) {
                             display: block;
                         }
                     }
@@ -731,20 +768,65 @@ header {
         }
 
         .middle-header {
+            @include common.max(991.98px) {
+                padding: 14px;
+                @include common.pseudowh($width: 100%, $height: auto);
+                left: 0;
+                display: block;
+                transform: translateY(-50%);
+                opacity: 0;
+                visibility: hidden;
+                position: absolute;
+                padding-inline: calc(15px + (160 - 15) * ((100vw - 320px) / (1920 - 320)));
+                transition: all 0.5s ease-in-out;
+                background-color: rgba(var(--white), 1);
+                z-index: 2;
+                top: 0;
+                position: fixed;
+
+                &.show {
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translateY(0);
+                }
+
+                .result-box {
+                    z-index: unset;
+                    margin-top: 12px;
+                    position: relative;
+                    inset: unset;
+                    overflow: auto;
+                    height: calc(100vh - calc(82px + (86 - 82) * ((100vw - 320px) / (992 - 320))));
+                }
+            }
+
             .close-icon {
                 right: 10px;
                 cursor: pointer;
                 display: none;
                 position: absolute;
-                top: 10px;
-                transform: unset;
+                @include common.center(vertical);
                 color: rgba(var(--content-color), 1);
                 z-index: 1;
-                font-size: 21px;
+                font-size: calc(16px + (21 - 16) * ((100vw - 320px) / (992 - 320)));
+                line-height: 1;
                 @include common.pseudowh($width: unset, $height: unset);
 
-                @include common.max(991px) {
+                [dir="rtl"] & {
+                    right: unset;
+                    left: 10px;
+                }
+
+                @include common.max(991.98px) {
                     display: block;
+                }
+
+                i {
+                    font-size: 21px;
+
+                    @include common.max(991.98px) {
+                        font-size: calc(16px + (21 - 16) * ((100vw - 320px) / (992 - 320)));
+                    }
                 }
             }
 
@@ -760,33 +842,11 @@ header {
                     z-index: 1;
                 }
 
-                @include common.max(991px) {
-                    @include common.pseudowh($width: 100%, $height: 250px);
-                    left: 0;
-                    display: flex;
-                    align-items: center;
-                    transform: translateY(-50%);
-                    opacity: 0;
-                    visibility: hidden;
-                    position: absolute;
-                    padding-inline: calc(15px + (160 - 15) * ((100vw - 320px) / (1920 - 320)));
-                    transition: all 0.5s ease-in-out;
-                    background-color: rgba(var(--white), 1);
-                    z-index: 2;
-                    top: 0;
-                    position: fixed;
-
-                    &.show {
-                        opacity: 1;
-                        visibility: visible;
-                        transform: translateY(0);
-                    }
-                }
-
                 .input-group {
-                    z-index: 1;
+                    z-index: 2;
                     border: 1px solid rgba(var(--content-color), 0.2);
                     border-radius: 5px;
+                    flex-wrap: nowrap;
 
                     @include common.max(991px) {
                         flex-wrap: nowrap;
@@ -806,32 +866,33 @@ header {
                             color: rgba(var(--content-color), 0.8);
                         }
 
-                        @media (max-width: 1667px) {
+                        @include common.max(1667px) {
                             width: 690px;
                         }
 
-                        @media (max-width: 1550px) {
+                        @include common.max(1550px) {
                             width: 590px;
                         }
 
-                        @media (max-width: 1420px) {
+                        @include common.max(1420px) {
                             width: 450px;
                         }
 
-                        @media (max-width: 1254px) {
+                        @include common.max(1254px) {
                             width: 290px;
                         }
 
-                        @media (max-width: 1061px) {
+                        @include common.max(1061px) {
                             border-radius: 0 !important;
                             border: none;
                             margin: 0 !important;
                         }
 
-                        @media (max-width: 992px) {
+                        @include common.max(992.98px) {
                             width: 100%;
-                            background-color: rgb(242, 243, 245);
+                            background-color: rgba(var(--content-color), 0.05);
                             border-radius: 0 5px 5px 0 !important;
+                            padding: calc(10px + (15 - 10) * ((100vw - 320px) / (1920 - 320))) calc(12px + (15 - 12) * ((100vw - 320px) / (1920 - 320)));
                         }
                     }
 
@@ -839,10 +900,14 @@ header {
                         padding: 0;
                         border: none;
                         background-color: #e6e7e9;
-                        border-radius: 5px 0 0 5px;
+                        border-radius: 5px 0 0 5px !important;
+                        margin-left: unset !important;
+                        margin-right: calc(-1 * var(--bs-border-width)) !important;
 
                         [dir="rtl"] & {
-                            border-radius: 0 5px 5px 0;
+                            border-radius: 0 5px 5px 0 !important;
+                            margin-right: unset !important;
+                            margin-left: calc(-1 * var(--bs-border-width)) !important;
                         }
 
                         .dropdown {
@@ -915,7 +980,7 @@ header {
                             border-radius: 5px 0 0 5px;
                         }
 
-                        @media (max-width: 1061px) {
+                        @include common.max(1061px) {
                             position: absolute;
                             @include common.center(vertical);
                             right: 0;
@@ -948,13 +1013,13 @@ header {
                 >li {
                     position: relative;
 
-                    @include common.max(575px) {
+                    @include common.max(575.98px) {
                         display: none;
                     }
 
                     &:first-child,
                     &:last-child {
-                        @include common.max(575px) {
+                        @include common.max(575.98px) {
                             display: block;
                         }
                     }
@@ -1050,7 +1115,7 @@ header {
         color: rgba(var(--white), 1);
         @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
 
-        @include common.max(575px) {
+        @include common.max(575.98px) {
             height: 0;
             position: relative;
         }
@@ -1065,7 +1130,6 @@ header {
                 font-weight: 400;
                 font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
                 border: none;
-                padding: 0;
                 gap: calc(7px + (15 - 7) * ((100vw - 320px) / (1920 - 320)));
                 display: flex;
                 align-items: center;
@@ -1078,13 +1142,13 @@ header {
                 }
 
                 &::before {
-                    @include common.pos;
                     bottom: -3px;
+                    @include common.pos;
                     left: 0;
                     @include common.pseudowh($width: 100%, $height: 3px);
                     background-color: rgba(var(--primary-color), 1);
 
-                    @include common.max(1199px) {
+                    @include common.max(1199.98px) {
                         bottom: 0;
                     }
                 }
@@ -1119,7 +1183,7 @@ header {
         color: rgba(var(--title-color), 1);
         @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
 
-        @include common.max(575px) {
+        @include common.max(575.98px) {
             height: 0;
         }
 
@@ -1148,9 +1212,9 @@ header {
                 }
 
                 &::before {
+                    bottom: 0;
                     @include common.pos;
                     @include common.pseudowh;
-                    bottom: 0;
                     left: 0;
                     z-index: -1;
                     background-color: rgb(255, 84, 82);
@@ -1196,9 +1260,9 @@ header {
                     }
 
                     &::before {
+                        left: 0;
                         @include common.pos;
                         @include common.center(vertical);
-                        left: 0;
                         @include common.pseudowh($width: 1px, $height: 20px);
                         background-color: rgba(var(--white), 0.2);
 
@@ -1267,10 +1331,10 @@ header {
                     }
 
                     &::before {
+                        left: 0;
                         @include common.pos;
                         @include common.center(vertical);
                         @include common.pseudowh($width: 1px, $height: 20px);
-                        left: 0;
                         background-color: rgba(var(--title-color), 0.2);
 
                         [dir="rtl"] & {
@@ -1376,6 +1440,14 @@ header {
 .header-style-2 {
     position: relative;
 
+    @include common.max(1199.98px) {
+        z-index: 9;
+
+        &:has(.search-overlay.show) {
+            z-index: 10;
+        }
+    }
+
     &.sticky-header {
         z-index: 2;
 
@@ -1399,12 +1471,16 @@ header {
         z-index: 1;
 
         &::before {
-            @include common.pos;
             left: 0;
+            @include common.pos;
             bottom: -11px;
             background-image: url(../svg/header-shape.svg);
             @include common.pseudowh($width: 100%, $height: 11px);
             z-index: -1;
+
+            body.dark & {
+                background-color: #303438;
+            }
         }
 
         .left-header {
@@ -1451,8 +1527,8 @@ header {
                                 border: none;
 
                                 img {
-                                    @include common.pseudowh($width: 20px, $height: 12px);
                                     margin-right: 8px;
+                                    @include common.pseudowh($width: 20px, $height: 12px);
                                     object-fit: cover;
 
                                     [dir="rtl"] & {
@@ -1470,9 +1546,9 @@ header {
                                 }
 
                                 &::after {
+                                    margin-left: 3px;
                                     @include common.pos($pos: relative, $content: "\ea4e");
                                     @include common.font;
-                                    margin-left: 3px;
                                     color: #fff;
                                     border: none;
                                     vertical-align: unset;
@@ -1499,8 +1575,8 @@ header {
                                     }
 
                                     .dropdown-item {
-                                        @include common.flex_common;
                                         padding-block: 0;
+                                        @include common.flex_common;
                                         font-size: 14px;
                                         padding-inline: 6px;
                                         padding: 4px 5px;
@@ -1563,8 +1639,8 @@ header {
                             transition: color .5s ease-in-out;
 
                             &::before {
-                                @include common.pos;
                                 bottom: 0;
+                                @include common.pos;
                                 left: 0;
                                 @include common.pseudowh($width: 0, $height: 1px);
                                 background-color: #fff;
@@ -1582,7 +1658,7 @@ header {
         }
 
         .middle-header {
-            @media (max-width: 1145px) {
+            @include common.max(1145px) {
                 display: none;
             }
 
@@ -1611,7 +1687,7 @@ header {
         }
 
         .right-header {
-            @media (max-width: 670px) {
+            @include common.max(670px) {
                 display: none;
             }
 
@@ -1640,8 +1716,8 @@ header {
                         transition: color .5s ease-in-out;
 
                         &::before {
-                            @include common.pos;
                             bottom: 0;
+                            @include common.pos;
                             left: 0;
                             @include common.pseudowh($width: 0, $height: 1px);
                             background-color: #fff;
@@ -1659,16 +1735,16 @@ header {
     }
 
     .main-header {
-        padding-block: 15px;
+        padding-block: 10px 15px;
         position: relative;
-        margin-top: 13px;
-        @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
+        margin-top: 10px;
+        @include common.flex_common ($dis: flex !important, $align: center, $justify: space-between);
 
         @include common.max(991px) {
             gap: 25px;
         }
 
-        @include common.max(575px) {
+        @include common.max(575.98px) {
             padding-bottom: 7px;
             border-bottom: 1px solid rgba(var(--title-color), 0.1);
         }
@@ -1687,20 +1763,65 @@ header {
         }
 
         .middle-header {
+            @include common.max(991.98px) {
+                padding: 14px;
+                @include common.pseudowh($width: 100%, $height: auto);
+                left: 0;
+                display: block;
+                transform: translateY(-50%);
+                opacity: 0;
+                visibility: hidden;
+                position: absolute;
+                padding-inline: calc(15px + (160 - 15) * ((100vw - 320px) / (1920 - 320)));
+                transition: all 0.5s ease-in-out;
+                background-color: rgba(var(--white), 1);
+                z-index: 2;
+                top: 0;
+                position: fixed;
+
+                &.show {
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translateY(0);
+                }
+
+                .result-box {
+                    z-index: unset;
+                    margin-top: 12px;
+                    position: relative;
+                    inset: unset;
+                    overflow: auto;
+                    height: calc(100vh - calc(82px + (86 - 82) * ((100vw - 320px) / (992 - 320))));
+                }
+            }
+
             .close-icon {
                 right: 10px;
                 cursor: pointer;
                 display: none;
                 position: absolute;
-                top: 10px;
-                transform: unset;
+                @include common.center(vertical);
                 color: rgba(var(--content-color), 1);
                 z-index: 1;
-                font-size: 21px;
+                font-size: calc(16px + (21 - 16) * ((100vw - 320px) / (992 - 320)));
+                line-height: 1;
                 @include common.pseudowh($width: unset, $height: unset);
 
-                @include common.max(991px) {
+                [dir="rtl"] & {
+                    right: unset;
+                    left: 10px;
+                }
+
+                @include common.max(991.98px) {
                     display: block;
+                }
+
+                i {
+                    font-size: 21px;
+
+                    @include common.max(991.98px) {
+                        font-size: calc(16px + (21 - 16) * ((100vw - 320px) / (992 - 320)));
+                    }
                 }
             }
 
@@ -1716,28 +1837,6 @@ header {
                     z-index: 1;
                 }
 
-                @include common.max(991px) {
-                    @include common.pseudowh($width: 100%, $height: 250px);
-                    left: 0;
-                    display: flex;
-                    align-items: center;
-                    transform: translateY(-50%);
-                    opacity: 0;
-                    visibility: hidden;
-                    padding-inline: calc(15px + (160 - 15) * ((100vw - 320px) / (1920 - 320)));
-                    transition: all 0.5s ease-in-out;
-                    background-color: rgba(var(--white), 1);
-                    z-index: 2;
-                    top: 0;
-                    position: fixed;
-
-                    &.show {
-                        opacity: 1;
-                        visibility: visible;
-                        transform: translateY(0);
-                    }
-                }
-
                 .input-group {
                     z-index: 2;
                     border-bottom: 1px solid rgba(var(--content-color), 0.2);
@@ -1747,6 +1846,9 @@ header {
 
                     @include common.max(991px) {
                         flex-wrap: nowrap;
+                        background-color: rgba(var(--content-color), 0.05);
+                        padding: calc(5px + (10 - 5) * ((100vw - 320px) / (992 - 320)));
+                        border-radius: 6px;
                     }
 
                     .form-control {
@@ -1765,31 +1867,31 @@ header {
                             color: rgba(var(--content-color), 1);
                         }
 
-                        @media (max-width: 1667px) {
+                        @include common.max(1667px) {
                             width: 690px;
                         }
 
-                        @media (max-width: 1550px) {
+                        @include common.max(1550px) {
                             width: 590px;
                         }
 
-                        @media (max-width: 1420px) {
+                        @include common.max(1420px) {
                             width: 450px;
                         }
 
-                        @media (max-width: 1254px) {
+                        @include common.max(1254px) {
                             width: 290px;
                         }
 
-                        @media (max-width: 1061px) {
+                        @include common.max(1061px) {
                             border-radius: 6px !important;
                             border: none;
                             margin: 0 !important;
                         }
 
-                        @media (max-width: 992px) {
+                        @include common.max(991.98) {
                             width: 100%;
-                            background-color: #F2F3F6;
+                            background-color: transparent;
                             border-radius: 0 5px 5px 0 !important;
                         }
                     }
@@ -1799,6 +1901,11 @@ header {
                         border: none;
                         background-color: rgba(var(--white), 1);
                         z-index: 1;
+
+                        @include common.max(991.98) {
+                            background-color: rgba(var(--border-color), 1);
+                            border-radius: 4px;
+                        }
 
                         .dropdown {
                             .dropdown-toggle {
@@ -1863,7 +1970,7 @@ header {
                         border-radius: 5px;
                         color: rgba(var(--content-color), 1);
 
-                        @media (max-width: 1061px) {
+                        @include common.max(1061px) {
                             position: absolute;
                             @include common.center(vertical);
                             right: 0;
@@ -1896,13 +2003,13 @@ header {
                 >li {
                     position: relative;
 
-                    @include common.max(575px) {
+                    @include common.max(575.98px) {
                         display: none;
                     }
 
                     &:first-child,
                     &:last-child {
-                        @include common.max(575px) {
+                        @include common.max(575.98px) {
                             display: block;
                         }
                     }
@@ -1999,23 +2106,23 @@ header {
         padding-bottom: 50px;
 
         &::before {
-            @include common.pos;
             left: 0;
+            @include common.pos;
             bottom: 0;
             background-image: url(../svg/cloud.svg);
             @include common.pseudowh($width: 100%, $height: 76px);
             z-index: -1;
 
             body.dark & {
-                mix-blend-mode: color-burn;
+                background-image: url(../svg/dark-cloud.svg);
             }
 
-            @include common.max(575px) {
+            @include common.max(575.98px) {
                 content: none;
             }
         }
 
-        @include common.max(575px) {
+        @include common.max(575.98px) {
             height: 0;
             padding-bottom: 0;
             position: relative;
@@ -2065,9 +2172,9 @@ header {
                     }
 
                     &::before {
+                        left: 0;
                         @include common.pos;
                         @include common.center(vertical);
-                        left: 0;
                         @include common.pseudowh($width: 1px, $height: 20px);
                         background-color: rgba(var(--title-color), 0.3);
 
@@ -2109,10 +2216,10 @@ header {
                     padding-left: 10px;
 
                     &::before {
+                        left: 0;
                         @include common.pos;
                         @include common.center(vertical);
                         @include common.pseudowh($width: 1px, $height: 20px);
-                        left: 0;
                         background-color: rgba(var(--title-color), 0.4);
                     }
                 }
@@ -2179,8 +2286,8 @@ header {
 
     .search-result-box {
         .result-list-box {
-            @include common.flex_wrap($dis: flex, $wrap: wrap, $gap: 9px);
             align-items: center;
+            @include common.flex_wrap($dis: flex, $wrap: wrap, $gap: calc(5px + (9 - 5) * ((100vw - 320px) / (1920 - 320))));
 
             li {
                 padding: 0;
@@ -2193,11 +2300,15 @@ header {
                     color: rgba(var(--title-color), 1);
                     border-radius: 4px;
                     font-weight: 400;
-                    font-size: calc(14px + (15 - 14) * ((100vw - 320px) / (1920 - 320)));
+                    font-size: calc(13px + (15 - 13) * ((100vw - 320px) / (1920 - 320)));
                     background-color: rgba(var(--content-color), 0.05);
                     outline: 1px solid transparent;
                     transition: all .15s ease-in-out;
                     text-transform: capitalize;
+
+                    @media (max-width: 991.98px) {
+                        padding: calc(7px + (11 - 7) * ((100vw - 320px) / (992 - 320))) calc(8px + (12 - 8) * ((100vw - 320px) / (992 - 320))) calc(7px + (8 - 7) * ((100vw - 320px) / (992 - 320)));
+                    }
 
                     &:hover {
                         color: rgba(var(--primary-color), 1);
@@ -2215,8 +2326,8 @@ header {
         }
 
         .search-list-box {
-            @include common.flex_wrap($dis: flex, $wrap: wrap, $gap: 9px);
             align-items: center;
+            @include common.flex_wrap($dis: flex, $wrap: wrap, $gap: calc(5px + (9 - 5) * ((100vw - 320px) / (1920 - 320))));
 
             li {
                 padding: 0;
@@ -2225,8 +2336,8 @@ header {
                     color: rgba(var(--title-color), 1);
                     display: flex;
                     align-items: center;
-                    gap: 8px;
-                    font-size: 16px;
+                    gap: calc(6px + (8 - 6) * ((100vw - 320px) / (1920 - 320)));
+                    font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
                     text-transform: capitalize;
                     font-weight: 400;
                     transition: color 0.15s ease-in-out;
@@ -2243,17 +2354,17 @@ header {
                     &::before {
                         content: "\f20e";
                         line-height: 1;
-                        font-size: 20px;
+                        font-size: calc(17px + (20 - 17) * ((100vw - 320px) / (1920 - 320)));
                         transition: color 0.15s ease-in-out;
                         @include common.font;
                         color: rgba(var(--content-color), 1);
                     }
 
                     &::after {
-                        @include common.font;
                         content: "\eb99";
+                        @include common.font;
                         line-height: 1;
-                        font-size: 18px;
+                        font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320)));
                         transition: color 0.15s ease-in-out;
                         color: rgba(var(--content-color), 1);
                         margin-left: auto;
@@ -2270,16 +2381,32 @@ header {
 
     .last-seen-search-box {
         .search-list-box {
+            grid-template-columns: repeat(6, 1fr);
             @include common.flex_wrap($dis: grid, $wrap: wrap, $gap: calc(12px + (18 - 12) * ((100vw - 992px) / (1920 - 992))));
-            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
             align-items: center;
 
             @include common.max(1410px) {
-                grid-template-columns: 1fr 1fr 1fr 1fr;
+                grid-template-columns: repeat(4, 1fr);
             }
 
             @include common.max(1254px) {
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            @include common.max(991.98px) {
+                grid-template-columns: repeat(5, 1fr);
+            }
+
+            @include common.max(720.98px) {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            @include common.max(555.98px) {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            @include common.max(400.98px) {
+                grid-template-columns: repeat(2, 1fr);
             }
 
             li {
@@ -2287,11 +2414,15 @@ header {
                 width: auto;
 
                 a {
-                    @include common.flex_common;
                     height: 120px;
-                    background-color: rgba(var(--base-gray), 1);
+                    @include common.flex_common;
+                    background-color: rgba(var(--content-color), 0.05);
                     padding: 10px;
                     border-radius: 6px;
+
+                    @include common.max(991.98px) {
+                        height: calc(80px + (120 - 80) * ((100vw - 320px) / (992 - 320)));
+                    }
 
                     &:hover {
                         img {
@@ -2327,15 +2458,15 @@ header {
 }
 
 .search-overlay {
-    @include common.pseudowh($width: 100vw, $height: 100vh);
     background-color: rgba(var(--title-color), 0.15);
+    @include common.pseudowh($width: 100vw, $height: 100vh);
     position: fixed;
     z-index: 1;
-    left: 0;
     top: 0;
+    left: 0;
     opacity: 0;
     visibility: hidden;
-    transition: 0.5s;
+    transition: .5s;
 
     body.dark & {
         background-color: rgba(19, 25, 33, 0.46);
@@ -2344,5 +2475,10 @@ header {
     &.show {
         visibility: visible;
         opacity: 1;
+
+        @include common.max(991.98px) {
+            opacity: 0;
+            visibility: hidden;
+        }
     }
 }

@@ -46,12 +46,14 @@
         </div>
         <div class="text-container">
             <div class="loading-text initial">Loading</div>
-            <div class="loading-text complete">Welcome Kartify</div>
+            <div class="loading-text complete">
+                <span>Welcome</span>
+                <span>Kartify</span>
+            </div>
         </div>
         <div class="percentage">0</div>
     </div> -->
     <!-- Loader End -->
-
 
     <!-- Header Start -->
     <header class="header-style-2">
@@ -169,7 +171,7 @@
                         <a href="cart.html">Cart</a>
                     </li>
                     <li>
-                        <a href="log-in.html">Log In</a>
+                        <a href="#authenticationModal" data-bs-toggle="modal">Log In</a>
                     </li>
                 </ul>
             </div>
@@ -187,13 +189,13 @@
                     <img src="../assets/images/logo/5.svg" class="img-fluid" alt="">
                 </a>
             </div>
-            <div class="middle-header">
+            <div class="middle-header searchInput" id="searchOffcanvas">
                 <div class="search-overlay" id="searchOverlay"></div>
-                <form class="search-form searchInput" id="searchOffcanvas">
-                    <div class="close-icon">
-                        <i class="ri-close-fill" id="close-btn"></i>
-                    </div>
+                <form class="search-form">
                     <div class="input-group">
+                        <div class="close-icon">
+                            <i class="ri-close-fill" id="close-btn"></i>
+                        </div>
                         <div class="input-group-text">
                             <div class="dropdown">
                                 <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
@@ -238,7 +240,7 @@
                     </div>
                     <div class="result-box" id="resultBox">
                         <div class="search-result-box search-border-box">
-                            <div class="result-title mb-3">
+                            <div class="result-title mb-sm-3 mb-2">
                                 <h4>Popular Product</h4>
                             </div>
                             <ul class="result-list-box">
@@ -269,7 +271,7 @@
                             </ul>
                         </div>
                         <div class="last-search-box search-border-box">
-                            <div class="result-title mb-3">
+                            <div class="result-title mb-sm-3 mb-2">
                                 <h4>Last Search</h4>
                                 <a href="#!" class="text-danger">Remove all</a>
                             </div>
@@ -289,7 +291,7 @@
                             </ul>
                         </div>
                         <div class="last-seen-search-box search-border-box">
-                            <div class="result-title mb-3">
+                            <div class="result-title mb-sm-3 mb-2">
                                 <h4>Recently Viewed</h4>
                             </div>
                             <ul class="search-list-box">
@@ -379,7 +381,7 @@
         <div class="nav-header custom-container">
             <div class="category-header category-space-header d-sm-flex d-none">
                 <a data-bs-toggle="offcanvas" href="#categoryCanvas"
-                    class="btn category-button category-button-2 category-yellow-bg d-xxl-none d-block">
+                    class="btn category-button category-button-2 category-yellow-bg d-xxl-none d-flex">
                     <i class="ri-menu-line"></i>
                     <span>Shop By Categories</span>
                 </a>
@@ -3974,20 +3976,16 @@
                                                 </div>
                                                 <ul class="menu-list">
                                                     <li>
-                                                        <a href="./invoice/invoice-1.html" class="dropdown-item">Invoice
-                                                            1</a>
+                                                        <a href="./../invoice/invoice-1.html"
+                                                            class="dropdown-item">Invoice 1</a>
                                                     </li>
                                                     <li>
-                                                        <a href="./invoice/invoice-2.html" class="dropdown-item">Invoice
-                                                            2</a>
+                                                        <a href="./../invoice/invoice-2.html"
+                                                            class="dropdown-item">Invoice 2</a>
                                                     </li>
                                                     <li>
-                                                        <a href="./invoice/invoice-3.html" class="dropdown-item">Invoice
-                                                            3</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="./invoice/invoice-4.html" class="dropdown-item">Invoice
-                                                            4</a>
+                                                        <a href="./../invoice/invoice-3.html"
+                                                            class="dropdown-item">Invoice 3</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -3997,28 +3995,24 @@
                                                 </div>
                                                 <ul class="menu-list">
                                                     <li>
-                                                        <a href="./email-templete/1.html" class="dropdown-item">Email
-                                                            templates 1</a>
+                                                        <a href="./../email-templete/black-friday.html"
+                                                            class="dropdown-item">Black friday</a>
                                                     </li>
                                                     <li>
-                                                        <a href="./email-templete/2.html" class="dropdown-item">Email
-                                                            templates 2</a>
+                                                        <a href="./../email-templete/leave-feadback.html"
+                                                            class="dropdown-item">Leave feadback</a>
                                                     </li>
                                                     <li>
-                                                        <a href="./email-templete/3.html" class="dropdown-item">Email
-                                                            templates 3</a>
+                                                        <a href="./../email-templete/order-tracking.html"
+                                                            class="dropdown-item">Order tracking</a>
                                                     </li>
                                                     <li>
-                                                        <a href="./email-templete/4.html" class="dropdown-item">Email
-                                                            templates 4</a>
+                                                        <a href="./../email-templete/reset-password.html"
+                                                            class="dropdown-item">Reset passowrd</a>
                                                     </li>
                                                     <li>
-                                                        <a href="./email-templete/5.html" class="dropdown-item">Email
-                                                            templates 5</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="./email-templete/6.html" class="dropdown-item">Email
-                                                            templates 6</a>
+                                                        <a href="./../email-templete/welcome.html"
+                                                            class="dropdown-item">Welcome</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -4327,7 +4321,7 @@
     </header>
     <!-- Header End -->
 
-    <!-- mobile fix menu start -->
+    <!-- Mobile Menu Start -->
     <div class="mobile-menu d-sm-none">
         <ul>
             <li class="active">
@@ -4366,34 +4360,34 @@
             </li>
         </ul>
     </div>
-    <!-- mobile fix menu end -->
+    <!-- Mobile Menu End -->
 
     <!-- Home Section Start -->
-    <section class="home-section">
+    <section class="home-section baby-home-section">
         <div class="custom-container">
-            <div class="row g-4 custom-row3">
-                <div class="custom-col-xxl-3 col-xl-3 d-xl-block d-none">
+            <div class="row g-lg-4 g-3 custom-row8">
+                <div class="custom-col-xl-3 col-xl-3 d-xl-block d-none">
                     <a href="shop-left-sidebar.html" class="banner-box h-100 b-top">
                         <img src="../assets/images/banner/75.jpg" class="bg-img" alt="">
                     </a>
                 </div>
 
-                <div class="custom-col-xxl-6 ratio_69 col-xl-5 col-md-8">
+                <div class="custom-col-xl-6 ratio_69 col-xl-5 col-md-8">
                     <a href="shop-left-sidebar.html" class="banner-box">
-                        <img src="../assets/images/banner/76.jpg" class="bg-img" alt="">
+                        <img src="../assets/images/banner/76.jpg" class="bg-img img-fluid" alt="">
                     </a>
                 </div>
 
-                <div class="custom-col-xxl-3 col-xl-3 col-lg-4 d-lg-block d-none">
+                <div class="custom-col-xl-3 col-xl-3 col-md-4">
                     <div class="row h-100">
-                        <div class="col-12">
+                        <div class="col-md-12 col-sm-6 right-banner-1">
                             <a href="shop-left-sidebar.html" class="banner-box h-100 b-top">
-                                <img src="../assets/images/banner/77.jpg" class="bg-img" alt="">
+                                <img src="../assets/images/banner/77.jpg" class="bg-img img-fluid" alt="">
                             </a>
                         </div>
-                        <div class="col-12 mt-4">
+                        <div class="col-md-12 col-sm-6 mt-md-4 right-banner-2 mt-sm-0 mt-3">
                             <a href="shop-left-sidebar.html" class="banner-box h-100 b-top">
-                                <img src="../assets/images/banner/78.jpg" class="bg-img" alt="">
+                                <img src="../assets/images/banner/78.jpg" class="bg-img img-fluid" alt="">
                             </a>
                         </div>
                     </div>
@@ -4444,7 +4438,7 @@
                                 </li>
                             </ul>
 
-                            <ul class="sub-menu-list">
+                            <ul class="sub-menu-list h-auto">
                                 <li>
                                     <a href="shop-left-sidebar.html" class="sub-category-box">
                                         <i class="ri-macbook-line"></i>
@@ -4516,7 +4510,7 @@
                         <a href="shop-left-sidebar.html">See all deals <i class="ri-arrow-right-s-line"></i></a>
                     </div>
 
-                    <div class="row g-sm-4 g-sm-3 g-2">
+                    <div class="row g-md-4 g-sm-3 g-2">
                         <div class="col-xl-2 col-md-3 col-sm-4 col-6">
                             <div class="product-kid-box productMain">
                                 <div class="product-image-box">
@@ -5308,8 +5302,8 @@
 
                     <div class="tab-content" id="pills-tabContent">
                         <div class="tab-pane fade show active" id="pills-arrivals">
-                            <div class="row row-cols-xxl-5 row-cols-xl-4 row-cols-lg-5 row-cols-md-4 row-cols-sm-2 row-cols-sm-3 row-cols-2 g-sm-3
-                                g-2">
+                            <div
+                                class="row row-cols-xxl-5 row-cols-xl-4 row-cols-lg-5 row-cols-md-4 row-cols-sm-2 row-cols-sm-3 row-cols-2 g-sm-3 g-2">
                                 <div class="col">
                                     <div class="product-kid-box productMain">
                                         <div class="product-image-box">
@@ -5832,8 +5826,8 @@
                             </div>
                         </div>
                         <div class="tab-pane fade" id="pills-seller">
-                            <div class="row row-cols-xxl-5 row-cols-xl-4 row-cols-lg-5 row-cols-md-4 row-cols-sm-2 row-cols-sm-3 row-cols-2 g-sm-3
-                                g-2">
+                            <div
+                                class="row row-cols-xxl-5 row-cols-xl-4 row-cols-lg-5 row-cols-md-4 row-cols-sm-2 row-cols-sm-3 row-cols-2 g-sm-3 g-2">
                                 <div class="col">
                                     <div class="product-kid-box productMain">
                                         <div class="product-image-box">
@@ -6356,8 +6350,8 @@
                             </div>
                         </div>
                         <div class="tab-pane fade" id="pills-feature">
-                            <div class="row row-cols-xxl-5 row-cols-xl-4 row-cols-lg-5 row-cols-md-4 row-cols-sm-2 row-cols-sm-3 row-cols-2 g-sm-3
-                                g-2">
+                            <div
+                                class="row row-cols-xxl-5 row-cols-xl-4 row-cols-lg-5 row-cols-md-4 row-cols-sm-2 row-cols-sm-3 row-cols-2 g-sm-3 g-2">
                                 <div class="col">
                                     <div class="product-kid-box productMain">
                                         <div class="product-image-box">
@@ -7053,7 +7047,7 @@
             </div>
             <div class="row g-sm-3 g-2 custom-row6">
                 <div class="custom-col-xxl-5 col-xl-4 col-6">
-                    <div class="row g-sm-4 g-3">
+                    <div class="row g-md-4 g-3">
                         <div class="col-xxl-4 col-xl-6 col-lg-4 col-sm-6">
                             <div class="product-kid-box productMain">
                                 <div class="product-image-box">
@@ -7746,7 +7740,7 @@
             <div class="main-footer light-b-bottom">
                 <div class="row g-sm-4 g-3">
                     <div class="col-xl-3 col-md-4 col-sm-7">
-                        <div class="footer-title">
+                        <div class="footer-title-2">
                             <h4>Contact Info</h4>
                         </div>
                         <ul class="footer-content-list">
@@ -7821,7 +7815,7 @@
                                 <a href="about-us.html">About Us</a>
                             </li>
                             <li>
-                                <a href="blog-list.html">Blogs</a>
+                                <a href="blog-3-grid.html">Blogs</a>
                             </li>
                             <li>
                                 <a href="offer.html">Offer</a>
@@ -7888,10 +7882,10 @@
                     </div>
 
                     <div class="col-xl-3 col-lg-4 col-md-5 col-sm-4">
-                        <div class="footer-title">
+                        <div class="footer-title-2">
                             <h4>Get Shopping App</h4>
                         </div>
-                        <ul class="footer-list">
+                        <ul class="footer-list-2">
                             <li>
                                 <p>Quick & Direct ordering</p>
                             </li>
@@ -8436,8 +8430,8 @@
                                     <span>Sign in with facebook</span>
                                 </a>
                             </div>
-                            <h6 class="sign-up-next">Don't have an account? <span class="next-button">Sign up
-                                    now</span></h6>
+                            <h6 class="sign-up-next">Don't have an account? <button class="next-button btn">Sign up
+                                    now</button></h6>
                         </form>
                     </div>
 
@@ -8477,7 +8471,8 @@
                                     <span>Sign up with facebook</span>
                                 </a>
                             </div>
-                            <h6 class="sign-up-next">I am already member. <span class="next-button2">Sign in</span>
+                            <h6 class="sign-up-next">I am already member. <button class="btn next-button2">Sign
+                                    in</button>
                             </h6>
                         </form>
                     </div>
@@ -8785,7 +8780,7 @@
     </div>
     <!-- Newsletter Modal End -->
 
-    <!-- alert box start -->
+    <!-- Alert Box Start -->
     <div id="alertBox" class="alert-box">
         <div class="alert-message" id="alertMessage"></div>
         <div class="alert-progressbar" id="progressBar"></div>
@@ -8795,7 +8790,7 @@
                 cart</button>
         </div>
     </div>
-    <!-- alert box end -->
+    <!-- Alert Box End -->
 
     <!-- Page Load GSAP Js -->
     <script src='../assets/js/gsap/gsap.min.js'></script>

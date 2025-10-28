@@ -29,8 +29,8 @@
     }
 
     svg {
-        @include common.pseudowh($width: 36px, $height: 36px);
         min-width: 36px;
+        @include common.pseudowh($width: 36px, $height: 36px);
         background-color: rgba(var(--primary-color), 0.1);
         fill: rgba(var(--primary-color), 1);
         padding: 6px;
@@ -94,6 +94,15 @@
         width: 100%;
         max-width: 467px;
 
+        @include common.max(575.98px) {
+            max-width: 300px;
+            padding: 0;
+            bottom: 80px;
+            right: 15px;
+            transform: unset;
+            left: unset;
+        }
+
         .cookie-bar-box {
             border-radius: 100px;
             justify-content: center;
@@ -101,20 +110,43 @@
             border: none;
             padding: 13px;
 
-            @include common.max(500px) {
-                flex-direction: column;
-                align-items: unset;
+            @include common.max(575.98px) {
+                background-color: rgba(var(--white), 1);
+                border-radius: 7px;
+                display: block;
+                padding: 14px;
             }
 
             svg {
-                @include common.pseudowh($width: 60px, $height: 60px);
                 min-width: 60px;
+                @include common.pseudowh($width: 60px, $height: 60px);
                 background-color: #363D4D;
                 border-radius: 100%;
                 padding: 12px;
-                margin: -14px;
-                margin-left: -14px;
-                margin-right: 0px;
+                margin: -14px 0px -14px -25px;
+
+                [dir="rtl"] & {
+                    margin-inline: -25px 0;
+                }
+
+                @include common.max(575.98px) {
+                    background-color: transparent;
+                    padding: 0;
+                    @include common.pseudowh($width: 42px, $height: 42px);
+                    margin: 0;
+                    min-width: 42px;
+
+                    [dir="rtl"] & {
+                        margin: 0;
+                    }
+                }
+            }
+
+            p {
+                @include common.max(575.98px) {
+                    margin-top: 7px;
+                    font-size: 14px;
+                }
             }
 
             .cookie-buttons {
@@ -123,9 +155,15 @@
                     color: rgba(var(--title-color), 1);
                     padding: 0;
 
+                    @include common.max(575.98px) {
+                        position: absolute;
+                        top: 5px;
+                        right: 8px;
+                    }
+
                     i {
                         line-height: 1;
-                        font-size: 20px;
+                        font-size: calc(18px + (20 - 18) * ((100vw - 320px) / (1920 - 320)));
                     }
                 }
             }
@@ -164,8 +202,8 @@
     }
 
     .cookie-buttons {
-        @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
         gap: calc(8px + (10 - 8) * ((100vw - 320px) / (1920 - 320)));
+        @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
         margin-top: calc(12px + (18 - 12) * ((100vw - 320px) / (1920 - 320)));
 
         .btn {
@@ -208,8 +246,8 @@
     }
 
     svg {
-        @include common.pseudowh($width: 70px, $height: 70px);
         position: absolute;
+        @include common.pseudowh($width: 70px, $height: 70px);
         top: -16px;
         right: -16px;
         transform: rotate(-55deg);
@@ -229,8 +267,8 @@
     }
 
     .cookie-buttons {
-        @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
         gap: calc(8px + (10 - 8) * ((100vw - 320px) / (1920 - 320)));
+        @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
         margin-top: calc(12px + (18 - 12) * ((100vw - 320px) / (1920 - 320)));
 
         .btn {

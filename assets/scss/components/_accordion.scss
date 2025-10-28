@@ -145,9 +145,9 @@
 
         &:has(.accordion-header .form-check .form-check-input:checked) {
             &::before {
+                top: 0;
                 @include common.pos;
                 @include common.pseudowh($width: 3px, $height: 100%);
-                top: 0;
                 left: 0;
                 border-left: 3px solid rgba(var(--primary-color), 1);
 
@@ -228,16 +228,16 @@
                         @include common.pseudowh($width: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320))), $height: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320))));
 
                         &::before {
+                            border-radius: 100%;
                             @include common.pos;
                             @include common.center(both);
                             @include common.pseudowh($width: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320))), $height: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320))));
-                            border-radius: 100%;
                             border: 1px solid rgba(var(--border-color), 1);
                         }
 
                         &::after {
-                            @include common.pos;
                             top: 50%;
+                            @include common.pos;
                             left: 50%;
                             transform: translate(-50%, -50%) scale(0);
                             @include common.pseudowh($width: calc(10px + (11 - 10) * ((100vw - 320px) / (1920 - 320))), $height: calc(10px + (11 - 10) * ((100vw - 320px) / (1920 - 320))));
