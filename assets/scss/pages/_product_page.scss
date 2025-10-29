@@ -811,7 +811,7 @@
 
                                     span {
                                         background-color: rgba(var(--primary-color), 1);
-                                        color: rgba(var(--white), 1);
+                                        color: #fff;
                                     }
                                 }
                             }
@@ -1843,7 +1843,7 @@
             bottom: 95px;
 
             @include common.max(575.98px) {
-                bottom: calc(140px + (146 - 140) * ((100vw - 320px) / (768 - 320)));
+                bottom: calc(208px + (218 - 208) * ((100vw - 320px) / (768 - 320)));
             }
         }
     }

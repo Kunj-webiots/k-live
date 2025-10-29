@@ -1150,6 +1150,7 @@ var specialOffer = new Swiper(".special-offer-slider", {
 var relatedProducts = new Swiper(".related-products", {
     slidesPerView: 6,
     spaceBetween: 20,
+    loop: true,
     pagination: {
         el: ".swiper-pagination",
         clickable: true,

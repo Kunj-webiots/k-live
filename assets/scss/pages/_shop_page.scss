@@ -1381,6 +1381,14 @@
                 @include common.line($line: 3);
                 display: none;
             }
+
+            .option-box {
+                background-color: transparent;
+
+                body.dark & {
+                    background-color: transparent;
+                }
+            }
         }
     }
 
