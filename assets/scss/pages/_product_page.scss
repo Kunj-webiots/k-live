@@ -1724,15 +1724,6 @@
             margin-inline: auto;
         }
 
-        // @include common.max(630.98px) {
-        //     margin-left: unset;
-
-        //     [dir="rtl"] & {
-        //         margin-left: auto;
-        //         margin-right: unset;
-        //     }
-        // }
-
         @include common.max(767.98px) {
             display: none;
         }
@@ -1904,6 +1895,7 @@
                 position: relative;
 
                 .product-box-4 {
+                    background-color: rgba(var(--light-gray), 1);
                     width: calc(176px + (250 - 176) * ((100vw - 320px) / (1920 - 320)));
 
                     .product-image {
@@ -1940,6 +1932,7 @@
                 gap: calc(10px + (13 - 10) * ((100vw - 320px) / (1920 - 320)));
 
                 .form-check-input {
+                    cursor: pointer;
                     background-color: transparent;
                     border: none;
                     @include common.pseudowh($width: 20px, $height: 20px);
@@ -1981,6 +1974,7 @@
                 }
 
                 .form-check-label {
+                    cursor: pointer;
                     gap: 6px;
                     display: flex;
                     align-items: center;

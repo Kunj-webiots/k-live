@@ -663,17 +663,9 @@ const completeText = new SplitType(".loading-text.complete", {
 });
 
 /* Initial states */
-gsap.set(".loading-text.complete", {
-    y: "100%"
-});
-gsap.set(loadingText.chars, {
-    opacity: 0,
-    y: 100
-});
-gsap.set(completeText.chars, {
-    opacity: 0,
-    y: 100
-});
+gsap.set(".loading-text.complete", { y: "100%" });
+gsap.set(loadingText.chars, { opacity: 0, y: 100 });
+gsap.set(completeText.chars, { opacity: 0, y: 100 });
 
 /* Animate in loading text */
 gsap.to(loadingText.chars, {
@@ -684,36 +676,38 @@ gsap.to(loadingText.chars, {
     ease: "power2.out"
 });
 
-const colorStages = [{
-    bg: "rgb(230, 231, 233)",
-    text: "rgba(32, 44, 60)"
-},
-{
-    bg: "rgba(194, 194, 194)",
-    text: "rgba(255, 255, 255)"
-},
-{
-    bg: "rgb(35 47 62)",
-    text: "rgb(221, 221, 221)"
-},
-{
-    bg: "rgb(54, 70, 83)",
-    text: "rgb(255, 255, 255)"
-}
+const colorStages = [
+    { bg: "rgb(230, 231, 233)", text: "rgba(32, 44, 60)" },
+    { bg: "rgba(135,135,135)", text: "rgba(255, 255, 255)" },
+    { bg: "rgb(35, 47, 62)", text: "rgb(221, 221, 221)" },
+    { bg: "rgb(54, 70, 83)", text: "rgb(255, 255, 255)" }
 ];
+
+let currentStage = 0;
 
 function updateColors(progress) {
     const stage = Math.floor(progress / 25);
-    if (stage < colorStages.length) {
-        document.querySelector(".preloader").style.backgroundColor =
-            colorStages[stage].bg;
-        document.querySelector(".preloader-progress-bar").style.backgroundColor =
-            colorStages[stage].text;
-        document
-            .querySelectorAll(".loading-text .char, .percentage")
-            .forEach((el) => {
-                el.style.color = colorStages[stage].text;
-            });
+    if (stage !== currentStage && stage < colorStages.length) {
+        currentStage = stage;
+
+        const { bg, text } = colorStages[stage];
+
+        // Smoothly animate background and text color transitions
+        gsap.to(".preloader", {
+            backgroundColor: bg,
+            duration: 0.6,
+            ease: "power2.inOut"
+        });
+        gsap.to(".preloader-progress-bar", {
+            backgroundColor: text,
+            duration: 0.6,
+            ease: "power2.inOut"
+        });
+        gsap.to(".loading-text .char, .percentage", {
+            color: text,
+            duration: 0.6,
+            ease: "power2.inOut"
+        });
     }
 }
 
@@ -734,33 +728,25 @@ tl.to(".preloader-progress-bar", {
         duration: 0.5,
         ease: "power2.inOut"
     })
-    .to(
-        ".loading-text.complete", {
+    .to(".loading-text.complete", {
         y: "0%",
         duration: 0.5,
         ease: "power2.inOut"
-    },
-        "<"
-    )
-    .to(
-        completeText.chars, {
+    }, "<")
+    .to(completeText.chars, {
         opacity: 1,
         y: 0,
         duration: 0.3,
         stagger: 0.03,
         ease: "power2.out"
-    },
-        "<0.2"
-    )
+    }, "<0.2")
     .to(".preloader", {
         y: "-100vh",
         duration: 1,
         ease: "power2.inOut",
         delay: 0.8
     })
-    .set(".preloader", {
-        display: "none"
-    })
+
 
 /*=====================
     22. Recent Product Show Js

@@ -581,7 +581,9 @@ header {
                                         font-weight: 400;
 
                                         &:hover {
-                                            background-color: #131921;
+                                            body.dark & {
+                                                background-color: #131921;
+                                            }
                                         }
 
                                         &:active {

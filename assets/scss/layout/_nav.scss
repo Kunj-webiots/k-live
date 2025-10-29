@@ -676,7 +676,7 @@ header {
                 @include common.max(1199.98px) {
                     transform: translateX(-101%);
                     @include common.pseudowh($width: calc(310px + (350 - 310) * ((100vw - 320px) / (1200 - 320))), $height: 100vh);
-                    z-index: 9;
+                    z-index: 13;
 
                     [dir="rtl"] & {
                         transform: translateX(101%);

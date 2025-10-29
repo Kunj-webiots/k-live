@@ -10,6 +10,17 @@
     }
 }
 
+input[type="search"i]::-webkit-search-cancel-button {
+    appearance: none;
+    background-image: url(../svg/close-line.svg);
+    height: 18px;
+    width: 18px;
+
+    body.dark & {
+        filter: invert(1);
+    }
+}
+
 .was-validated :valid~.valid-feedback,
 .was-validated :valid~.valid-tooltip,
 .is-valid~.valid-feedback,

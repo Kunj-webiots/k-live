@@ -39,8 +39,8 @@
 </head>
 
 <body class="base-bg-color">
-    <!-- Loader Start -->
-    <!-- <div class="preloader">
+    <!-- Page Loader Start -->
+    <div class="preloader">
         <div class="progress-container">
             <div class="progress-bar preloader-progress-bar"></div>
         </div>
@@ -52,8 +52,8 @@
             </div>
         </div>
         <div class="percentage">0</div>
-    </div> -->
-    <!-- Loader End -->
+    </div>
+    <!-- Page Loader End -->
 
     <!-- Header Start -->
     <header class="header-style-1">
@@ -5642,15 +5642,10 @@
                         </div>
                     </div>
                     <div class="col-xl-6">
-                        <form class="newsletter-form needs-validation" novalidate>
+                        <form class="newsletter-form">
                             <div class="input-group">
-                                <input type="text" class="form-control" required
-                                    placeholder="Enter Your E-mail Address">
-                                <div class="valid-tooltip">
-                                    Looks good!
-                                </div>
-                                <button class="input-group-text btn newsletter-form-button" type="submit">Subscribe
-                                    Now!</button>
+                                <input type="text" class="form-control" placeholder="Enter Your E-mail Address">
+                                <button class="input-group-text btn newsletter-form-button">Subscribe Now!</button>
                             </div>
                         </form>
                     </div>
@@ -7219,6 +7214,22 @@
     </div>
     <!-- Newsletter Modal End -->
 
+    <!-- Cookie Box Start -->
+    <div class="cookie-bar-section cookie">
+        <div class="cookie-bar-box">
+            <svg>
+                <use xlink:href="../assets/images/cookie/1.svg#one"></use>
+            </svg>
+            <p>We use cookies to ensure that we give you the best experience on our website. <a href="#!">Read cookies
+                    policies.</a></p>
+            <div class="cookie-buttons">
+                <button class="btn decline-btn">Decline</button>
+                <button class="btn allow-btn">Allow</button>
+            </div>
+        </div>
+    </div>
+    <!-- Cookie Box End -->
+
     <!-- Exit Modal Start -->
     <div class="modal fade exit-modal theme-modal" id="exitModal">
         <div class="modal-dialog modal-custom-size modal-dialog-centered">
@@ -7292,6 +7303,9 @@
 
     <!-- Quantity js -->
     <script src="../assets/js/qty.js"></script>
+
+    <!-- Cookie Js -->
+    <script src="../assets/js/cookie.js"></script>
 
     <!-- Script js -->
     <script src="../assets/js/script.js"></script>
