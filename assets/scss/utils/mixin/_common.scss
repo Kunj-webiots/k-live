@@ -1,16 +1,16 @@
 /**=====================
    5.1.2 Common Mixins CSS
 ==========================**/
-/*======= Font Awesome Font Family And Weight Start  ======= */
+// ======= Font Awesome Font Family And Weight Start  =======
 @mixin font {
     font-family: remixicon;
     font-style: normal;
     -webkit-font-smoothing: antialiased;
 }
 
-/*======= Font Awesome Font Family And Weight End  ======= */
+// ======= Font Awesome Font Family And Weight End  =======
 
-/*======= Breakpoint Start  ======= */
+// ======= Breakpoint Start  =======
 @mixin max($width) {
     @media (max-width: $width) {
         @content;
@@ -29,9 +29,9 @@
     }
 }
 
-/*======= Breakpoint End  ======= */
+// ======= Breakpoint End  =======
 
-/*======= position css starts  ======= */
+// ======= position css starts  =======
 @mixin pos($pos: absolute, $content: "") {
     content: $content;
     position: $pos;
@@ -60,18 +60,18 @@
     }
 }
 
-/*======= position css ends  ======= */
+// ======= position css ends  =======
 
-/*======= display flex css starts  ======= */
+// ======= display flex css starts  =======
 @mixin flex_common($dis: flex, $align: center, $justify: center) {
     display: $dis;
     align-items: $align;
     justify-content: $justify;
 }
 
-/*======= display flex css ends  ======= */
+// ======= display flex css ends  =======
 
-/*======= one, two, three line start ======= */
+// ======= one, two, three line start =======
 @mixin line($line: 1) {
     -webkit-line-clamp: $line;
     -webkit-box-orient: vertical;
@@ -79,18 +79,18 @@
     overflow: hidden;
 }
 
-/*======= one, two, three line end  ======= */
+// ======= one, two, three line end  =======
 
-/* ======= Gap Flex Css Start ======= */
+// ======= Gap Flex Css Start =======
 @mixin flex_wrap($dis: flex, $wrap: wrap, $gap: 15px) {
     display: $dis;
     flex-wrap: $wrap;
     gap: $gap;
 }
 
-/* ======= Gap Flex Css End ======= */
+// ======= Gap Flex Css End =======
 
-/*======= align css starts  ======= */
+// ======= align css starts  =======
 @mixin rtl($property, $ltr-value, $rtl-value) {
     #{$property}: $ltr-value;
 
@@ -99,9 +99,9 @@
     }
 }
 
-/*======= align css ends  ======= */
+// ======= align css ends  =======
 
-/*======= Image Full Height And Width Start  ======= */
+// ======= Image Full Height And Width Start  =======
 %img-contain {
     @include pseudowh;
     object-fit: contain;
@@ -119,9 +119,9 @@
     left: 0;
 }
 
-/*======= Image Full Height And Width ends  ======= */
+// ======= Image Full Height And Width ends  =======
 
-/*======= Image Ratio starts  ======= */
+// ======= Image Ratio starts  =======
 
 @mixin ratio($aspect-ratio, $object-fit, $object-position) {
     aspect-ratio: $aspect-ratio;
@@ -129,4 +129,4 @@
     object-position: $object-position;
 }
 
-/*======= Image Ratio ends   ======= */
+// ======= Image Ratio ends   =======
