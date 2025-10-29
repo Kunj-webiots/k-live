@@ -1354,16 +1354,6 @@ var swiper2 = new Swiper(".quick-main-slider", {
     },
 });
 
-var testimonialSwiper = new Swiper(".testimonial-swiper", {
-    navigation: {
-        prevEl: ".slidePrev-btn",
-        nextEl: ".slideNext-btn",
-    },
-    direction: "vertical",
-    effect: "cards",
-    grabCursor: true,
-});
-
 var sellSlider = new Swiper(".sell-slider", {
     slidesPerView: 4,
     loop: true,

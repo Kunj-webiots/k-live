@@ -388,7 +388,7 @@
 
                 img {
                     border-radius: 4px;
-                    @include common.pseudowh($width: 74px, $height: 74px);
+                    @include common.pseudowh($width: calc(54px + (74 - 54) * ((100vw - 320px) / (1920 - 320))), $height: calc(54px + (74 - 54) * ((100vw - 320px) / (1920 - 320))));
                     object-fit: cover;
                 }
             }
@@ -419,13 +419,13 @@
                     margin-top: 15px;
                     display: flex;
                     align-items: center;
-                    gap: 13px;
+                    gap: calc(8px + (13 - 8) * ((100vw - 320px) / (1920 - 320)));
 
                     li {
                         a {
                             font-size: 17px;
                             @include common.flex_common;
-                            @include common.pseudowh($width: 38px, $height: 38px);
+                            @include common.pseudowh($width: calc(34px + (38 - 34) * ((100vw - 320px) / (1920 - 320))), $height: calc(34px + (38 - 34) * ((100vw - 320px) / (1920 - 320))));
                             border-radius: 3px;
                             color: rgba(var(--content-color), 1);
                             transition: all 0.25s ease-in-out;
@@ -438,6 +438,7 @@
 
                             i {
                                 line-height: 1;
+                                font-size: calc(15px + (17 - 15) * ((100vw - 320px) / (1920 - 320)));
                             }
                         }
                     }
