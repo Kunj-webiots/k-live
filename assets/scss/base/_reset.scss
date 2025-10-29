@@ -835,7 +835,7 @@ theme-blue-dark;
     }
 
     .percentage {
-        position: fixed;
+        position: absolute;
         @include common.center(both);
         font-family: variables.$br-hendrix;
         font-weight: 700;

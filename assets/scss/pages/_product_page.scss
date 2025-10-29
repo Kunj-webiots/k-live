@@ -1671,7 +1671,7 @@
 
             @include common.max(767.98px) {
                 display: block;
-                width: calc(100% - calc(50px + (60 - 50) * ((100vw - 320px) / (1920 - 320))) - 12px);
+                width: calc(100% - 12px);
             }
 
             h5,
@@ -1842,7 +1842,7 @@
         &.show {
             bottom: 95px;
 
-            @include common.max(767px) {
+            @include common.max(575.98px) {
                 bottom: calc(140px + (146 - 140) * ((100vw - 320px) / (768 - 320)));
             }
         }
