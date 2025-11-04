@@ -115,11 +115,11 @@
 
                 &:after {
                     bottom: 0;
-                    @include common.pos;
                     left: 0;
-                    @include common.pseudowh($width: 0, $height: 2px);
                     background-color: rgba(var(--primary-color), 1);
                     transition: all 0.15s ease-in-out;
+                    @include common.pos;
+                    @include common.pseudowh($width: 0, $height: 2px);
                 }
 
                 &.active {
@@ -225,8 +225,8 @@
 
     .description-list {
         list-style: disc;
-        @include common.flex_wrap($dis: flex, $wrap: wrap, $gap: 5px);
         padding-left: 22px;
+        @include common.flex_wrap($dis: flex, $wrap: wrap, $gap: 5px);
 
         [dir="rtl"] & {
             padding-left: unset;
@@ -261,8 +261,8 @@
 
     .shipping-info-list {
         list-style: disc;
-        @include common.flex_wrap($dis: grid, $wrap: wrap, $gap: 5px);
         padding-left: 22px;
+        @include common.flex_wrap($dis: grid, $wrap: wrap, $gap: 5px);
 
         [dir="rtl"] & {
             padding-left: unset;
@@ -308,8 +308,8 @@
 
             img {
                 cursor: pointer;
-                @include common.pseudowh($width: auto, $height: auto);
                 object-fit: contain;
+                @include common.pseudowh($width: auto, $height: auto);
             }
         }
     }
@@ -350,10 +350,10 @@
 
         .size-delivery-info {
             border-top: 1px solid rgba(var(--content-color), 0.1);
-            @include common.flex_wrap($dis: flex, $wrap: wrap, $gap: calc(6px + (18 - 6) * ((100vw - 320px) / (1920 - 320))));
             padding-top: calc(10px + (16 - 10) * ((100vw - 320px) / (1920 - 320)));
             margin-top: calc(10px + (16 - 10) * ((100vw - 320px) / (1920 - 320)));
             align-items: center;
+            @include common.flex_wrap($dis: flex, $wrap: wrap, $gap: calc(6px + (18 - 6) * ((100vw - 320px) / (1920 - 320))));
 
             @include common.max(767px) {
                 justify-content: center;
@@ -409,8 +409,8 @@
         .product-count {
             ul {
                 align-items: center;
-                @include common.flex_wrap($dis: inline-flex, $wrap: wrap, $gap: 3px 15px);
                 margin-bottom: calc(8px + (16 - 8) * ((100vw - 320px) / (1920 - 320)));
+                @include common.flex_wrap($dis: inline-flex, $wrap: wrap, $gap: 3px 15px);
 
                 @include common.max(767.98px) {
                     justify-content: center;
@@ -481,9 +481,9 @@
 
                 &:nth-child(even) {
                     border-radius: 100%;
-                    @include common.pseudowh($width: 5px, $height: 5px);
                     margin-top: -4px;
                     background-color: rgba(var(--content-color), 0.4);
+                    @include common.pseudowh($width: 5px, $height: 5px);
 
                     @include common.max(575.98px) {
                         display: none;
@@ -587,14 +587,14 @@
 
                     &::after {
                         top: 50%;
-                        @include common.pos;
-                        @include common.pseudowh($width: 100%, $height: 1px);
                         transform: translateY(-50%) rotate(45deg);
                         left: 0;
                         background-color: #ff7272;
                         cursor: default;
                         user-select: none;
                         z-index: 1;
+                        @include common.pos;
+                        @include common.pseudowh($width: 100%, $height: 1px);
                     }
                 }
 
@@ -615,12 +615,12 @@
                     .form-check-input {
                         cursor: pointer;
                         position: absolute;
-                        @include common.pseudowh;
                         top: 0;
                         left: 0;
                         margin: 0;
                         opacity: 0;
                         float: unset;
+                        @include common.pseudowh;
 
                         &:checked {
                             ~.form-check-label {
@@ -660,20 +660,20 @@
                         .form-check-input {
                             position: relative;
                             inset: unset;
-                            @include common.pseudowh($width: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320))), $height: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320))));
                             opacity: 1;
                             border: 1px solid rgba(var(--content-color), 0.1);
                             transition: all 0.15s ease-in-out;
+                            @include common.pseudowh($width: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320))), $height: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320))));
 
                             &::before {
                                 top: 50%;
-                                @include common.pos;
                                 left: 50%;
                                 transform: translate(-50%, -50%) scale(0);
-                                @include common.pseudowh($width: calc(100% - calc(3px + (4 - 3) * ((100vw - 320px) / (1920 - 320)))), $height: calc(100% - calc(3px + (4 - 3) * ((100vw - 320px) / (1920 - 320)))));
                                 background-color: rgba(var(--primary-color), 1);
                                 border-radius: 100%;
                                 transition: all 0.15s ease-in-out;
+                                @include common.pos;
+                                @include common.pseudowh($width: calc(100% - calc(3px + (4 - 3) * ((100vw - 320px) / (1920 - 320)))), $height: calc(100% - calc(3px + (4 - 3) * ((100vw - 320px) / (1920 - 320)))));
                             }
 
                             &:checked {
@@ -724,12 +724,12 @@
 
                         .form-check-label {
                             line-height: 1;
-                            @include common.pseudowh($width: calc(38px + (42 - 38) * ((100vw - 320px) / (1920 - 320))), $height: calc(38px + (42 - 38) * ((100vw - 320px) / (1920 - 320))));
-                            @include common.flex_common;
                             border: 1px solid rgba(var(--content-color), 0.1);
                             font-size: 15px;
                             position: relative;
                             padding: 3px;
+                            @include common.pseudowh($width: calc(38px + (42 - 38) * ((100vw - 320px) / (1920 - 320))), $height: calc(38px + (42 - 38) * ((100vw - 320px) / (1920 - 320))));
+                            @include common.flex_common;
 
                             span {
                                 transition: all 0.15s ease-in-out;
@@ -829,9 +829,9 @@
                             span {
                                 transition: all 0.15s ease-in-out;
                                 border-radius: 100%;
+                                padding-top: 1px;
                                 @include common.pseudowh;
                                 @include common.flex_common;
-                                padding-top: 1px;
                             }
                         }
                     }
@@ -866,7 +866,6 @@
 
                     .form-check-input {
                         cursor: pointer;
-                        @include common.pseudowh;
                         position: absolute;
                         top: 0;
                         left: 0;
@@ -874,6 +873,7 @@
                         border-radius: 4px;
                         opacity: 1;
                         float: unset;
+                        @include common.pseudowh;
 
                         &:active {
                             filter: unset;
@@ -933,7 +933,6 @@
                     .form-check-label {
                         cursor: pointer;
                         position: relative;
-                        @include common.pseudowh($width: calc(36px + (40 - 36) * ((100vw - 320px) / (1920 - 320))), $height: calc(36px + (40 - 36) * ((100vw - 320px) / (1920 - 320))));
                         min-height: unset;
                         margin: 0;
                         padding: 0;
@@ -943,14 +942,15 @@
                         font-size: 14px;
                         border: 4px solid rgba(var(--white), 1);
                         transition: all 0.15s ease-in-out;
+                        @include common.pseudowh($width: calc(36px + (40 - 36) * ((100vw - 320px) / (1920 - 320))), $height: calc(36px + (40 - 36) * ((100vw - 320px) / (1920 - 320))));
 
                         &::after {
                             transition: all 0.15s ease-in-out;
+                            border-radius: 0;
+                            border: 1px solid #efeff1;
                             @include common.pos;
                             @include common.center(both);
                             @include common.pseudowh($width: calc(100% + calc(7px + (8 - 7) * ((100vw - 320px) / (1920 - 320)))), $height: calc(100% + calc(7px + (8 - 7) * ((100vw - 320px) / (1920 - 320)))));
-                            border-radius: 0;
-                            border: 1px solid #efeff1;
 
                             body.dark & {
                                 border-color: #374658;
@@ -969,12 +969,12 @@
                         .form-check-input {
                             position: relative;
                             inset: unset;
-                            @include common.pseudowh($width: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320))), $height: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320))));
                             opacity: 1;
                             margin-top: -3px;
                             border: 1px solid rgba(var(--content-color), 0.1);
                             transition: all 0.15s ease-in-out;
                             border-radius: 100%;
+                            @include common.pseudowh($width: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320))), $height: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320))));
 
                             &:active {
                                 filter: unset;
@@ -1062,8 +1062,8 @@
 
         .note-box {
             align-items: center;
-            @include common.flex_wrap ($dis: flex, $wrap: nowrap, $gap: calc(7px + (15 - 7) * ((100vw - 320px) / (1920 - 320))));
             margin-top: 20px;
+            @include common.flex_wrap ($dis: flex, $wrap: nowrap, $gap: calc(7px + (15 - 7) * ((100vw - 320px) / (1920 - 320))));
 
             @include common.max(767px) {
                 justify-content: center;
@@ -1094,12 +1094,12 @@
 
                     .btn {
                         border: none;
-                        @include common.pseudowh($width: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))), $height: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))));
-                        @include common.flex_common;
                         padding: 0;
                         background-color: rgba(var(--white), 1);
                         z-index: 0;
                         border-radius: 4px !important;
+                        @include common.pseudowh($width: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))), $height: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))));
+                        @include common.flex_common;
                     }
 
                     .form-control {
@@ -1127,12 +1127,12 @@
 
                         button {
                             border: none;
-                            @include common.pseudowh($width: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))), $height: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))));
-                            @include common.flex_common;
                             padding: 0;
                             background-color: rgba(var(--white), 1);
                             z-index: 0;
                             border-radius: 4px !important;
+                            @include common.pseudowh($width: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))), $height: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))));
+                            @include common.flex_common;
 
                             i {
                                 font-size: 13px;
@@ -1171,10 +1171,10 @@
 
         .buy-box {
             align-items: center;
-            @include common.flex_wrap ($dis: flex, $wrap: wrap, $gap: 11px);
             margin-top: 20px;
             border-bottom: 1px solid #ececec;
             padding-bottom: 16px;
+            @include common.flex_wrap ($dis: flex, $wrap: wrap, $gap: 11px);
 
             .team-box {
                 padding: 0;
@@ -1207,8 +1207,8 @@
 
             a {
                 align-items: center;
-                @include common.flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(5px + (8 - 5) * ((100vw - 320px) / (1920 - 320))));
                 color: #777;
+                @include common.flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(5px + (8 - 5) * ((100vw - 320px) / (1920 - 320))));
 
                 i {
                     font-size: 17px;
@@ -1257,11 +1257,11 @@
 
                         &::after {
                             left: 0;
+                            background-color: rgba(var(--content-color), 1);
+                            border-radius: 100%;
                             @include common.pos;
                             @include common.center(vertical);
                             @include common.pseudowh($width: 5px, $height: 5px);
-                            background-color: rgba(var(--content-color), 1);
-                            border-radius: 100%;
                         }
 
                         a {
@@ -1399,9 +1399,9 @@
 
         .product-offer-box {
             padding: 18px 27px;
-            @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
             background-color: rgba(var(--primary-color2), 1);
             color: rgba(var(--white), 1);
+            @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
 
             >div {
                 h3 {
@@ -1450,9 +1450,9 @@
 
                 .product-image {
                     background-color: rgba(var(--base-gray), 1);
-                    @include common.pseudowh($width: calc(78px + (90 - 78) * ((100vw - 990px) / (1920 - 990))), $height: calc(78px + (90 - 78) * ((100vw - 990px) / (1920 - 990))));
                     padding: calc(8px + (10 - 8) * ((100vw - 990px) / (1920 - 990)));
                     border-radius: 4px;
+                    @include common.pseudowh($width: calc(78px + (90 - 78) * ((100vw - 990px) / (1920 - 990))), $height: calc(78px + (90 - 78) * ((100vw - 990px) / (1920 - 990))));
 
                     img {
                         @extend %img-contain;
@@ -1484,11 +1484,11 @@
 
                     .qty-btn {
                         padding: 0;
-                        @include common.flex_common;
-                        @include common.pseudowh($width: calc(30px + (35 - 30) * ((100vw - 991px) / (1920 - 991))), $height: calc(30px + (35 - 30) * ((100vw - 991px) / (1920 - 991))));
                         border-radius: calc(2px + (4 - 2) * ((100vw - 991px) / (1920 - 991)));
                         background-color: rgba(var(--white), 1);
                         color: rgba(var(--content-color), 1);
+                        @include common.flex_common;
+                        @include common.pseudowh($width: calc(30px + (35 - 30) * ((100vw - 991px) / (1920 - 991))), $height: calc(30px + (35 - 30) * ((100vw - 991px) / (1920 - 991))));
 
                         &:hover {
                             background-color: rgba(var(--primary-color), 1);
@@ -1541,8 +1541,8 @@
 
                 h4 {
                     font-weight: 600;
-                    @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
                     font-size: calc(20px + (25 - 20) * ((100vw - 990px) / (1920 - 990)));
+                    @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
 
                     span {
                         color: rgba(var(--content-color), 1);
@@ -1562,9 +1562,9 @@
 
                 button {
                     border-radius: 6px;
-                    @include common.flex_common;
                     font-weight: 500;
                     gap: 8px;
+                    @include common.flex_common;
 
                     i {
                         line-height: 1;
@@ -1742,13 +1742,13 @@
 
                 button {
                     border: unset;
-                    @include common.flex_common;
-                    @include common.pseudowh($width: calc(30px + (35 - 30) * ((100vw - 320px) / (1920 - 320))), $height: 100%);
                     background-color: rgba(var(--white), 1);
                     padding: 0;
                     border-radius: calc(3px + (5 - 3) * ((100vw - 320px) / (1920 - 320))) !important;
                     color: rgba(var(--title-color), 1);
                     font-size: calc(15px + (17 - 15) * ((100vw - 320px) / (1920 - 320)));
+                    @include common.flex_common;
+                    @include common.pseudowh($width: calc(30px + (35 - 30) * ((100vw - 320px) / (1920 - 320))), $height: 100%);
 
                     i {
                         line-height: 1;
@@ -1848,7 +1848,7 @@
         }
     }
 
-    .recent-product-box {
+    .recently-product-box {
         &.active {
             bottom: 100px;
             opacity: 1;
@@ -1935,11 +1935,11 @@
                     cursor: pointer;
                     background-color: transparent;
                     border: none;
-                    @include common.pseudowh($width: 20px, $height: 20px);
                     float: unset;
                     margin: 0;
                     margin-top: -5px;
                     position: relative;
+                    @include common.pseudowh($width: 20px, $height: 20px);
 
                     &:checked {
                         &::after {
@@ -1953,11 +1953,11 @@
 
                     &::before {
                         background-color: rgba(var(--white), 1);
+                        border: 1px solid rgba(var(--border-color), 1);
+                        transition: all 0.15s ease-in-out;
                         @include common.pos;
                         @include common.center(both);
                         @include common.pseudowh;
-                        border: 1px solid rgba(var(--border-color), 1);
-                        transition: all 0.15s ease-in-out;
                     }
 
                     &::after {
@@ -1967,9 +1967,9 @@
                         border: 2px solid rgba(var(--primary-color), 1);
                         border-top: unset;
                         border-left: unset;
+                        transition: all 0.15s ease-in-out;
                         @include common.pos;
                         @include common.pseudowh($width: 6px, $height: 10px);
-                        transition: all 0.15s ease-in-out;
                     }
                 }
 
@@ -2089,10 +2089,10 @@
     .lg-outer {
         .lg-thumb {
             padding: 10px 0 13px;
-            @include common.flex_common;
             gap: 15px;
             flex-wrap: nowrap;
             width: 100% !important;
+            @include common.flex_common;
         }
 
         .lg-thumb-item {

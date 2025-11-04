@@ -9,9 +9,9 @@
     padding-inline: 15px;
     position: fixed;
     bottom: calc(15px + (20 - 15) * ((100vw - 320px) / (1920 - 320)));
-    @include common.center(horizontal);
-    z-index: 9;
+    z-index: 7;
     transition: all 0.3s ease-in-out;
+    @include common.center(horizontal);
 
     .cookie-bar-box {
         box-shadow: 0px 12px 24px -6px rgba(96, 96, 96, 0.149);
@@ -30,11 +30,11 @@
 
     svg {
         min-width: 36px;
-        @include common.pseudowh($width: 36px, $height: 36px);
         background-color: rgba(var(--primary-color), 0.1);
         fill: rgba(var(--primary-color), 1);
         padding: 6px;
         border-radius: 8px;
+        @include common.pseudowh($width: 36px, $height: 36px);
     }
 
     p {
@@ -81,11 +81,11 @@
 
             svg {
                 min-width: 32px;
-                @include common.pseudowh($width: 32px, $height: 32px);
                 background-color: transparent;
                 fill: rgba(var(--primary-color), 1);
                 padding: 0;
                 border-radius: 0;
+                @include common.pseudowh($width: 32px, $height: 32px);
             }
         }
     }
@@ -110,6 +110,10 @@
             border: none;
             padding: 13px;
 
+            body.dark & {
+                background-color: #02201e;
+            }
+
             @include common.max(575.98px) {
                 background-color: rgba(var(--white), 1);
                 border-radius: 7px;
@@ -119,11 +123,15 @@
 
             svg {
                 min-width: 60px;
-                @include common.pseudowh($width: 60px, $height: 60px);
                 background-color: #363D4D;
                 border-radius: 100%;
                 padding: 12px;
                 margin: -14px 0px -14px -25px;
+                @include common.pseudowh($width: 60px, $height: 60px);
+
+                body.dark & {
+                    background-color: rgba(var(--base-gray), 1);
+                }
 
                 [dir="rtl"] & {
                     margin-inline: -25px 0;
@@ -132,9 +140,9 @@
                 @include common.max(575.98px) {
                     background-color: transparent;
                     padding: 0;
-                    @include common.pseudowh($width: 42px, $height: 42px);
                     margin: 0;
                     min-width: 42px;
+                    @include common.pseudowh($width: 42px, $height: 42px);
 
                     [dir="rtl"] & {
                         margin: 0;
@@ -203,8 +211,8 @@
 
     .cookie-buttons {
         gap: calc(8px + (10 - 8) * ((100vw - 320px) / (1920 - 320)));
-        @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
         margin-top: calc(12px + (18 - 12) * ((100vw - 320px) / (1920 - 320)));
+        @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
 
         .btn {
             padding: 8px calc(14px + (20 - 14) * ((100vw - 320px) / (1920 - 320))) 6px;
@@ -247,12 +255,12 @@
 
     svg {
         position: absolute;
-        @include common.pseudowh($width: 70px, $height: 70px);
         top: -16px;
         right: -16px;
         transform: rotate(-55deg);
         opacity: 0.6;
         z-index: -1;
+        @include common.pseudowh($width: 70px, $height: 70px);
     }
 
     h4 {
@@ -268,8 +276,8 @@
 
     .cookie-buttons {
         gap: calc(8px + (10 - 8) * ((100vw - 320px) / (1920 - 320)));
-        @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
         margin-top: calc(12px + (18 - 12) * ((100vw - 320px) / (1920 - 320)));
+        @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
 
         .btn {
             width: 100%;

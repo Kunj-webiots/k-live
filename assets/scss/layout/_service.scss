@@ -54,8 +54,8 @@
 
         svg {
             fill: transparent;
-            @include common.pseudowh($width: 29px, $height: 29px);
             stroke: rgba(var(--primary-color), 1);
+            @include common.pseudowh($width: 29px, $height: 29px);
         }
 
         >div {
@@ -153,9 +153,9 @@
         gap: calc(7px + (10 - 7) * ((100vw - 320px) / (1920 - 320)));
 
         svg {
-            @include common.pseudowh($width: calc(28px + (37 - 28) * ((100vw - 320px) / (1920 - 320))), $height: calc(28px + (37 - 28) * ((100vw - 320px) / (1920 - 320))));
             fill: rgba(var(--primary-color3), 1);
             stroke: transparent;
+            @include common.pseudowh($width: calc(28px + (37 - 28) * ((100vw - 320px) / (1920 - 320))), $height: calc(28px + (37 - 28) * ((100vw - 320px) / (1920 - 320))));
 
             body.dark & {
                 fill: rgba(255, 255, 255, 1);
@@ -191,8 +191,8 @@
     .service-box {
         background: linear-gradient(180deg, rgba(var(--white), 1) 0%, rgba(var(--white), 0) 100%);
         padding: calc(22px + (38 - 22) * ((100vw - 320px) / (1920 - 320))) calc(9px + (13 - 9) * ((100vw - 320px) / (1920 - 320))) calc(9px + (13 - 9) * ((100vw - 320px) / (1920 - 320)));
-        @include common.flex_common;
         text-align: center;
+        @include common.flex_common;
 
         body.dark & {
             background: linear-gradient(180deg, #0f162c 0%, rgba(var(--white), 0) 100%);

@@ -587,23 +587,6 @@ header {
         }
     }
 
-    .envato-img {
-        position: absolute;
-        top: calc(90px + (150 - 90) * ((100vw - 991px) / (1920 - 991)));
-        left: calc(165px + (195 - 165) * ((100vw - 991px) / (1920 - 991)));
-        width: calc(129px + (140 - 129) * ((100vw - 991px) / (1920 - 991)));
-
-        @media (max-width: 991.98px) {
-            position: relative;
-            inset: unset;
-            width: 100%;
-            height: calc(85px + (110 - 85) * ((100vw - 320px) / (991 - 320)));
-            margin-bottom: calc(10px + (20 - 10) * ((100vw - 320px) / (991 - 320)));
-            text-align: center;
-            object-fit: contain;
-        }
-    }
-
     .home-contain {
         width: 66%;
         margin-inline: auto;

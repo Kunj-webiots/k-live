@@ -20,7 +20,7 @@
     <title>Shop Page</title>
 
     <!-- Google Font Link -->
-    <link rel="stylesheet" href="../assets/fonts/br-hendrix/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="../assets/fonts/br-hendrix/stylesheet.css">
 
     <!-- Bootstrap Link -->
     <link id="rtl-link" rel="stylesheet" type="text/css" href="../assets/css/vendors/bootstrap.css">
@@ -40,7 +40,7 @@
 
 <body class="base-bg-color">
     <!-- Page Loader Start -->
-    <div class="preloader">
+    <!-- <div class="preloader">
         <div class="progress-container">
             <div class="progress-bar preloader-progress-bar"></div>
         </div>
@@ -52,7 +52,7 @@
             </div>
         </div>
         <div class="percentage">0</div>
-    </div>
+    </div> -->
     <!-- Page Loader End -->
 
     <!-- Header Start -->
@@ -453,16 +453,16 @@
                                             <a class="dropdown-item" href="#!">Shop grid</a>
                                             <ul class="sub-menu">
                                                 <li>
-                                                    <a href="shop-grid-2.html">Shop grid 2</a>
-                                                </li>
-                                                <li>
-                                                    <a href="shop-grid-3.html">Shop grid 3</a>
+                                                    <a href="shop-grid-5.html">Shop grid 5</a>
                                                 </li>
                                                 <li>
                                                     <a href="shop-grid-4.html">Shop grid 4</a>
                                                 </li>
                                                 <li>
-                                                    <a href="shop-grid-5.html">Shop grid 5</a>
+                                                    <a href="shop-grid-3.html">Shop grid 3</a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop-grid-2.html">Shop grid 2</a>
                                                 </li>
                                             </ul>
                                         </li>
@@ -470,16 +470,16 @@
                                             <a class="dropdown-item" href="#!">Shop collection</a>
                                             <ul class="sub-menu">
                                                 <li>
-                                                    <a href="shop-collection-grid-2.html">Shop collection 2</a>
-                                                </li>
-                                                <li>
-                                                    <a href="shop-collection-grid-3.html">Shop collection 3</a>
+                                                    <a href="shop-collection-grid-5.html">Shop collection 5</a>
                                                 </li>
                                                 <li>
                                                     <a href="shop-collection-grid-4.html">Shop collection 4</a>
                                                 </li>
                                                 <li>
-                                                    <a href="shop-collection-grid-5.html">Shop collection 5</a>
+                                                    <a href="shop-collection-grid-3.html">Shop collection 3</a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop-collection-grid-2.html">Shop collection 2</a>
                                                 </li>
                                                 <li>
                                                     <a href="shop-collection-list.html">Shop collection list</a>
@@ -3638,8 +3638,8 @@
                                                             class="dropdown-item">Black friday</a>
                                                     </li>
                                                     <li>
-                                                        <a href="./../email-templete/leave-feadback.html"
-                                                            class="dropdown-item">Leave feadback</a>
+                                                        <a href="./../email-templete/leave-feedback.html"
+                                                            class="dropdown-item">Leave feedback</a>
                                                     </li>
                                                     <li>
                                                         <a href="./../email-templete/order-tracking.html"
@@ -3647,7 +3647,7 @@
                                                     </li>
                                                     <li>
                                                         <a href="./../email-templete/reset-password.html"
-                                                            class="dropdown-item">Reset passowrd</a>
+                                                            class="dropdown-item">Reset password</a>
                                                     </li>
                                                     <li>
                                                         <a href="./../email-templete/welcome.html"
@@ -3696,10 +3696,12 @@
                                                             data-bs-toggle="modal">Add to Cart</a>
                                                     </li>
                                                     <li>
-                                                        <a class="dropdown-item newsletter-btn" href="#!">Newsletter</a>
+                                                        <a class="dropdown-item newsletter-btn" data-bs-toggle="modal"
+                                                            href="#newsletterModal">Newsletter</a>
                                                     </li>
                                                     <li>
-                                                        <a class="dropdown-item exit-modal-btn" href="#!">Exit</a>
+                                                        <a class="dropdown-item exit-modal-btn" data-bs-toggle="modal"
+                                                            href="#exitModal">Exit</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -6251,7 +6253,7 @@
                                 <a href="blog-3-grid.html">Blogs</a>
                             </li>
                             <li>
-                                <a href="offer.html">Offer</a>
+                                <a href="shop-banner.html">Offer</a>
                             </li>
                             <li>
                                 <a href="search.html">Search</a>
@@ -7031,7 +7033,7 @@
     <!-- Tap To Top Button End -->
 
     <!-- Recent Product View Box Start -->
-    <div class="recent-product-box">
+    <div class="recently-product-box">
         <button class="btn recent-close">
             <i class="iconsax" data-icon-name="add"></i>
         </button>
@@ -7213,11 +7215,11 @@
                                     </div>
 
                                     <div class="qty-stock-box">
-                                        <div class="qty-box h-100 qty-container">
+                                        <div class="qty-box h-100 qty-container quantity-box-2">
                                             <button class="btn qty-btn qty-btn-minus">
                                                 <i class="ri-subtract-line"></i>
                                             </button>
-                                            <input type="number" readonly="" name="qty" value="1"
+                                            <input type="number" readonly="" name="qty" value="0"
                                                 class="qty-input form-control input-qty">
                                             <button class="btn qty-btn qty-btn-plus">
                                                 <i class="ri-add-line"></i>

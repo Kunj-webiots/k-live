@@ -23,7 +23,7 @@ header {
     transition: all 0.15s ease-in-out;
 
     @include common.max(1199.98px) {
-        z-index: 9;
+        z-index: unset;
 
         &:has(.search-overlay.show) {
             z-index: 10;
@@ -64,8 +64,8 @@ header {
     .top-header {
         background-color: rgba(var(--theme-blue-dark), 1);
         padding-block: 11px;
-        @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
         width: 100%;
+        @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
 
         &.blue-color {
             background-color: rgba(var(--theme-blue2), 1);
@@ -113,10 +113,10 @@ header {
                                 font-weight: 400;
                                 color: rgba(var(--white), 1);
                                 padding: revert;
-                                @include common.flex_common;
                                 padding: 0;
                                 line-height: 1;
                                 border: none;
+                                @include common.flex_common;
 
                                 body.dark & {
                                     color: #fff;
@@ -124,8 +124,8 @@ header {
 
                                 img {
                                     margin-right: 8px;
-                                    @include common.pseudowh($width: 20px, $height: 12px);
                                     object-fit: cover;
+                                    @include common.pseudowh($width: 20px, $height: 12px);
 
                                     [dir="rtl"] & {
                                         margin-right: unset;
@@ -143,14 +143,14 @@ header {
 
                                 &::after {
                                     margin-left: 3px;
-                                    @include common.pos($pos: relative, $content: "\ea4e");
-                                    @include common.font;
                                     right: 0;
                                     color: rgba(var(--white), 1);
                                     border: none;
                                     vertical-align: unset;
                                     font-size: 17px;
                                     margin-top: 0;
+                                    @include common.pos($pos: relative, $content: "\ea4e");
+                                    @include common.font;
 
                                     [dir="rtl"] & {
                                         margin-left: unset;
@@ -178,10 +178,10 @@ header {
 
                                     .dropdown-item {
                                         padding-block: 0;
-                                        @include common.flex_common;
                                         font-size: 14px;
                                         padding-inline: 4px;
                                         padding: 4px 5px;
+                                        @include common.flex_common;
 
                                         &:hover,
                                         &:focus {
@@ -251,10 +251,10 @@ header {
                             &::before {
                                 bottom: 0;
                                 left: 0;
-                                @include common.pos;
-                                @include common.pseudowh($width: 0, $height: 1px);
                                 background-color: rgba(var(--white), 1);
                                 transition: all .5s ease-in-out;
+                                @include common.pos;
+                                @include common.pseudowh($width: 0, $height: 1px);
                             }
                         }
                     }
@@ -335,10 +335,10 @@ header {
                         &::before {
                             bottom: 0;
                             left: 0;
-                            @include common.pos;
-                            @include common.pseudowh($width: 0, $height: 1px);
                             background-color: #fff;
                             transition: all .5s ease-in-out;
+                            @include common.pos;
+                            @include common.pseudowh($width: 0, $height: 1px);
 
                             [dir="rtl"] & {
                                 left: unset;
@@ -390,7 +390,6 @@ header {
         .middle-header {
             @include common.max(991.98px) {
                 padding: 14px;
-                @include common.pseudowh($width: 100%, $height: auto);
                 left: 0;
                 display: block;
                 transform: translateY(-50%);
@@ -403,6 +402,7 @@ header {
                 z-index: 2;
                 top: 0;
                 position: fixed;
+                @include common.pseudowh($width: 100%, $height: auto);
 
                 &.show {
                     opacity: 1;
@@ -425,11 +425,11 @@ header {
                 cursor: pointer;
                 display: none;
                 position: absolute;
-                @include common.center(vertical);
                 color: rgba(var(--content-color), 1);
                 z-index: 1;
                 font-size: calc(16px + (21 - 16) * ((100vw - 320px) / (992 - 320)));
                 line-height: 1;
+                @include common.center(vertical);
                 @include common.pseudowh($width: unset, $height: unset);
 
                 [dir="rtl"] & {
@@ -456,10 +456,10 @@ header {
                     inset: unset;
                     display: flex;
                     transform: unset;
-                    @include common.pseudowh($width: max-content, $height: max-content);
                     background-color: transparent;
                     visibility: visible;
                     z-index: 2;
+                    @include common.pseudowh($width: max-content, $height: max-content);
                 }
 
                 .input-group {
@@ -546,10 +546,10 @@ header {
 
                                 &::after {
                                     content: "\ea4e";
-                                    @include common.font;
                                     color: rgba(var(--content-color), 1);
                                     font-size: 18px;
                                     margin: 0 0 0 5px;
+                                    @include common.font;
 
                                     [dir="rtl"] & {
                                         margin: 0 5px 0 0;
@@ -607,10 +607,10 @@ header {
 
                         @include common.max(1061px) {
                             position: absolute;
-                            @include common.center(vertical);
                             right: 0;
                             border: none;
                             height: 100%;
+                            @include common.center(vertical);
 
                             [dir="rtl"] & {
                                 right: unset;
@@ -688,11 +688,11 @@ header {
                             right: -6px;
                             color: #fff;
                             background-color: rgba(var(--primary-color2), 1);
-                            @include common.pseudowh($width: calc(13px + (18 - 13) * ((100vw - 320px) / (1920 - 320))), $height: calc(13px + (18 - 13) * ((100vw - 320px) / (1920 - 320))));
                             border-radius: 100%;
-                            @include common.flex_common;
                             font-size: calc(10px + (12 - 10) * ((100vw - 320px) / (1920 - 320)));
                             font-weight: 500;
+                            @include common.pseudowh($width: calc(13px + (18 - 13) * ((100vw - 320px) / (1920 - 320))), $height: calc(13px + (18 - 13) * ((100vw - 320px) / (1920 - 320))));
+                            @include common.flex_common;
 
                             [dir="rtl"] & {
                                 right: unset;
@@ -772,7 +772,6 @@ header {
         .middle-header {
             @include common.max(991.98px) {
                 padding: 14px;
-                @include common.pseudowh($width: 100%, $height: auto);
                 left: 0;
                 display: block;
                 transform: translateY(-50%);
@@ -785,6 +784,7 @@ header {
                 z-index: 2;
                 top: 0;
                 position: fixed;
+                @include common.pseudowh($width: 100%, $height: auto);
 
                 &.show {
                     opacity: 1;
@@ -807,11 +807,11 @@ header {
                 cursor: pointer;
                 display: none;
                 position: absolute;
-                @include common.center(vertical);
                 color: rgba(var(--content-color), 1);
                 z-index: 1;
                 font-size: calc(16px + (21 - 16) * ((100vw - 320px) / (992 - 320)));
                 line-height: 1;
+                @include common.center(vertical);
                 @include common.pseudowh($width: unset, $height: unset);
 
                 [dir="rtl"] & {
@@ -838,10 +838,10 @@ header {
                     inset: unset;
                     display: flex;
                     transform: unset;
-                    @include common.pseudowh($width: max-content, $height: max-content);
                     background-color: transparent;
                     visibility: visible;
                     z-index: 1;
+                    @include common.pseudowh($width: max-content, $height: max-content);
                 }
 
                 .input-group {
@@ -926,9 +926,9 @@ header {
 
                                 &::after {
                                     content: "\ea4e";
-                                    @include common.font;
                                     color: rgba(var(--content-color), 1);
                                     font-size: 18px;
+                                    @include common.font;
                                 }
                             }
 
@@ -984,10 +984,10 @@ header {
 
                         @include common.max(1061px) {
                             position: absolute;
-                            @include common.center(vertical);
                             right: 0;
                             border: none;
                             height: 100%;
+                            @include common.center(vertical);
                         }
 
                         @include common.max(991px) {
@@ -1056,11 +1056,11 @@ header {
                             right: -6px;
                             color: #fff;
                             background-color: rgba(var(--primary-color2), 1);
-                            @include common.pseudowh($width: calc(13px + (18 - 13) * ((100vw - 320px) / (1920 - 320))), $height: calc(13px + (18 - 13) * ((100vw - 320px) / (1920 - 320))));
                             border-radius: 100%;
-                            @include common.flex_common;
                             font-size: calc(10px + (12 - 10) * ((100vw - 320px) / (1920 - 320)));
                             font-weight: 500;
+                            @include common.pseudowh($width: calc(13px + (18 - 13) * ((100vw - 320px) / (1920 - 320))), $height: calc(13px + (18 - 13) * ((100vw - 320px) / (1920 - 320))));
+                            @include common.flex_common;
 
                             [dir="rtl"] & {
                                 right: unset;
@@ -1145,10 +1145,10 @@ header {
 
                 &::before {
                     bottom: -3px;
-                    @include common.pos;
                     left: 0;
-                    @include common.pseudowh($width: 100%, $height: 3px);
                     background-color: rgba(var(--primary-color), 1);
+                    @include common.pos;
+                    @include common.pseudowh($width: 100%, $height: 3px);
 
                     @include common.max(1199.98px) {
                         bottom: 0;
@@ -1164,8 +1164,12 @@ header {
                 }
 
                 &.category-yellow-bg {
-                    color: rgba(var(--title-color), 1);
+                    color: #202326;
                     background-color: rgba(var(--theme-yellow), 1);
+
+                    body.dark & {
+                        color: #202326;
+                    }
                 }
 
                 i {
@@ -1215,13 +1219,13 @@ header {
 
                 &::before {
                     bottom: 0;
-                    @include common.pos;
-                    @include common.pseudowh;
                     left: 0;
                     z-index: -1;
                     background-color: rgb(255, 84, 82);
                     background: linear-gradient(274.63deg, rgb(255, 84, 82) 13.1%, rgb(255, 168, 0) 174.18%);
                     transition: all 0.15s ease-in-out;
+                    @include common.pos;
+                    @include common.pseudowh;
                 }
 
                 i {
@@ -1263,10 +1267,10 @@ header {
 
                     &::before {
                         left: 0;
+                        background-color: rgba(var(--white), 0.2);
                         @include common.pos;
                         @include common.center(vertical);
                         @include common.pseudowh($width: 1px, $height: 20px);
-                        background-color: rgba(var(--white), 0.2);
 
                         body.dark & {
                             background-color: rgba(255, 255, 255, 0.2);
@@ -1334,10 +1338,10 @@ header {
 
                     &::before {
                         left: 0;
+                        background-color: rgba(var(--title-color), 0.2);
                         @include common.pos;
                         @include common.center(vertical);
                         @include common.pseudowh($width: 1px, $height: 20px);
-                        background-color: rgba(var(--title-color), 0.2);
 
                         [dir="rtl"] & {
                             left: unset;
@@ -1394,11 +1398,11 @@ header {
             background-color: rgba(var(--title-color), 1);
             color: rgba(var(--white), 1);
             line-height: 1;
-            @include common.pseudowh($width: 18px, $height: 18px);
             border-radius: 4px;
-            @include common.flex_common;
             font-size: 16px;
             font-weight: 900;
+            @include common.pseudowh($width: 18px, $height: 18px);
+            @include common.flex_common;
         }
 
         .banner-timer {
@@ -1443,7 +1447,7 @@ header {
     position: relative;
 
     @include common.max(1199.98px) {
-        z-index: 9;
+        z-index: unset;
 
         &:has(.search-overlay.show) {
             z-index: 10;
@@ -1467,18 +1471,18 @@ header {
     .top-header {
         background-color: rgba(var(--primary-color2), 1);
         padding-block: 6px 0px;
-        @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
         width: 100%;
         position: relative;
         z-index: 1;
+        @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
 
         &::before {
             left: 0;
-            @include common.pos;
             bottom: -11px;
             background-image: url(../svg/header-shape.svg);
-            @include common.pseudowh($width: 100%, $height: 11px);
             z-index: -1;
+            @include common.pos;
+            @include common.pseudowh($width: 100%, $height: 11px);
 
             body.dark & {
                 background-color: #303438;
@@ -1523,15 +1527,15 @@ header {
                                 font-weight: 400;
                                 color: #fff;
                                 padding: revert;
-                                @include common.flex_common;
                                 padding: 0;
                                 line-height: 1;
                                 border: none;
+                                @include common.flex_common;
 
                                 img {
                                     margin-right: 8px;
-                                    @include common.pseudowh($width: 20px, $height: 12px);
                                     object-fit: cover;
+                                    @include common.pseudowh($width: 20px, $height: 12px);
 
                                     [dir="rtl"] & {
                                         margin-right: unset;
@@ -1549,12 +1553,12 @@ header {
 
                                 &::after {
                                     margin-left: 3px;
-                                    @include common.pos($pos: relative, $content: "\ea4e");
-                                    @include common.font;
                                     color: #fff;
                                     border: none;
                                     vertical-align: unset;
                                     font-size: 17px;
+                                    @include common.pos($pos: relative, $content: "\ea4e");
+                                    @include common.font;
 
                                     [dir="rtl"] & {
                                         margin-left: unset;
@@ -1578,11 +1582,11 @@ header {
 
                                     .dropdown-item {
                                         padding-block: 0;
-                                        @include common.flex_common;
                                         font-size: 14px;
                                         padding-inline: 6px;
                                         padding: 4px 5px;
                                         color: rgba(var(--title-color), 1);
+                                        @include common.flex_common;
 
                                         &:hover,
                                         &:focus {
@@ -1642,11 +1646,11 @@ header {
 
                             &::before {
                                 bottom: 0;
-                                @include common.pos;
                                 left: 0;
-                                @include common.pseudowh($width: 0, $height: 1px);
                                 background-color: #fff;
                                 transition: all .5s ease-in-out;
+                                @include common.pos;
+                                @include common.pseudowh($width: 0, $height: 1px);
 
                                 [dir="rtl"] & {
                                     left: unset;
@@ -1719,11 +1723,11 @@ header {
 
                         &::before {
                             bottom: 0;
-                            @include common.pos;
                             left: 0;
-                            @include common.pseudowh($width: 0, $height: 1px);
                             background-color: #fff;
                             transition: all .5s ease-in-out;
+                            @include common.pos;
+                            @include common.pseudowh($width: 0, $height: 1px);
 
                             [dir="rtl"] & {
                                 left: unset;
@@ -1767,7 +1771,6 @@ header {
         .middle-header {
             @include common.max(991.98px) {
                 padding: 14px;
-                @include common.pseudowh($width: 100%, $height: auto);
                 left: 0;
                 display: block;
                 transform: translateY(-50%);
@@ -1780,6 +1783,7 @@ header {
                 z-index: 2;
                 top: 0;
                 position: fixed;
+                @include common.pseudowh($width: 100%, $height: auto);
 
                 &.show {
                     opacity: 1;
@@ -1802,11 +1806,11 @@ header {
                 cursor: pointer;
                 display: none;
                 position: absolute;
-                @include common.center(vertical);
                 color: rgba(var(--content-color), 1);
                 z-index: 1;
                 font-size: calc(16px + (21 - 16) * ((100vw - 320px) / (992 - 320)));
                 line-height: 1;
+                @include common.center(vertical);
                 @include common.pseudowh($width: unset, $height: unset);
 
                 [dir="rtl"] & {
@@ -1833,10 +1837,10 @@ header {
                     inset: unset;
                     display: flex;
                     transform: unset;
-                    @include common.pseudowh($width: max-content, $height: max-content);
                     background-color: transparent;
                     visibility: visible;
                     z-index: 1;
+                    @include common.pseudowh($width: max-content, $height: max-content);
                 }
 
                 .input-group {
@@ -1923,9 +1927,9 @@ header {
 
                                 &::after {
                                     content: "\ea4e";
-                                    @include common.font;
                                     color: rgba(var(--content-color), 1);
                                     font-size: 18px;
+                                    @include common.font;
                                 }
                             }
 
@@ -1974,10 +1978,10 @@ header {
 
                         @include common.max(1061px) {
                             position: absolute;
-                            @include common.center(vertical);
                             right: 0;
                             border: none;
                             height: 100%;
+                            @include common.center(vertical);
                         }
 
                         @include common.max(991px) {
@@ -2046,11 +2050,11 @@ header {
                             right: -6px;
                             color: #fff;
                             background-color: rgba(var(--primary-color2), 1);
-                            @include common.pseudowh($width: calc(13px + (18 - 13) * ((100vw - 320px) / (1920 - 320))), $height: calc(13px + (18 - 13) * ((100vw - 320px) / (1920 - 320))));
                             border-radius: 100%;
-                            @include common.flex_common;
                             font-size: calc(10px + (12 - 10) * ((100vw - 320px) / (1920 - 320)));
                             font-weight: 500;
+                            @include common.pseudowh($width: calc(13px + (18 - 13) * ((100vw - 320px) / (1920 - 320))), $height: calc(13px + (18 - 13) * ((100vw - 320px) / (1920 - 320))));
+                            @include common.flex_common;
 
                             [dir="rtl"] & {
                                 right: unset;
@@ -2103,17 +2107,17 @@ header {
 
     .nav-header {
         color: rgba(var(--white), 1);
-        @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
         position: relative;
         padding-bottom: 50px;
+        @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
 
         &::before {
             left: 0;
-            @include common.pos;
             bottom: 0;
             background-image: url(../svg/cloud.svg);
-            @include common.pseudowh($width: 100%, $height: 76px);
             z-index: -1;
+            @include common.pos;
+            @include common.pseudowh($width: 100%, $height: 76px);
 
             body.dark & {
                 background-image: url(../svg/dark-cloud.svg);
@@ -2175,10 +2179,10 @@ header {
 
                     &::before {
                         left: 0;
+                        background-color: rgba(var(--title-color), 0.3);
                         @include common.pos;
                         @include common.center(vertical);
                         @include common.pseudowh($width: 1px, $height: 20px);
-                        background-color: rgba(var(--title-color), 0.3);
 
                         [dir="rtl"] & {
                             left: unset;
@@ -2219,10 +2223,10 @@ header {
 
                     &::before {
                         left: 0;
+                        background-color: rgba(var(--title-color), 0.4);
                         @include common.pos;
                         @include common.center(vertical);
                         @include common.pseudowh($width: 1px, $height: 20px);
-                        background-color: rgba(var(--title-color), 0.4);
                     }
                 }
 
@@ -2260,7 +2264,6 @@ header {
     position: absolute;
     top: 110%;
     left: 0;
-    @include common.pseudowh($width: 100%, $height: 0);
     z-index: 1;
     background-color: rgba(var(--white), 1);
     border-radius: 5px;
@@ -2271,6 +2274,7 @@ header {
     transition: height .15s ease-in-out,
         opacity .15s ease-in-out,
         visibility .15s ease-in-out;
+    @include common.pseudowh($width: 100%, $height: 0);
 
     &.show {
         height: auto;
@@ -2358,18 +2362,18 @@ header {
                         line-height: 1;
                         font-size: calc(17px + (20 - 17) * ((100vw - 320px) / (1920 - 320)));
                         transition: color 0.15s ease-in-out;
-                        @include common.font;
                         color: rgba(var(--content-color), 1);
+                        @include common.font;
                     }
 
                     &::after {
                         content: "\eb99";
-                        @include common.font;
                         line-height: 1;
                         font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320)));
                         transition: color 0.15s ease-in-out;
                         color: rgba(var(--content-color), 1);
                         margin-left: auto;
+                        @include common.font;
 
                         [dir="rtl"] & {
                             margin-left: unset;
@@ -2384,8 +2388,8 @@ header {
     .last-seen-search-box {
         .search-list-box {
             grid-template-columns: repeat(6, 1fr);
-            @include common.flex_wrap($dis: grid, $wrap: wrap, $gap: calc(12px + (18 - 12) * ((100vw - 992px) / (1920 - 992))));
             align-items: center;
+            @include common.flex_wrap($dis: grid, $wrap: wrap, $gap: calc(12px + (18 - 12) * ((100vw - 992px) / (1920 - 992))));
 
             @include common.max(1410px) {
                 grid-template-columns: repeat(4, 1fr);
@@ -2417,10 +2421,10 @@ header {
 
                 a {
                     height: 120px;
-                    @include common.flex_common;
                     background-color: rgba(var(--content-color), 0.05);
                     padding: 10px;
                     border-radius: 6px;
+                    @include common.flex_common;
 
                     @include common.max(991.98px) {
                         height: calc(80px + (120 - 80) * ((100vw - 320px) / (992 - 320)));
@@ -2461,7 +2465,6 @@ header {
 
 .search-overlay {
     background-color: rgba(var(--title-color), 0.15);
-    @include common.pseudowh($width: 100vw, $height: 100vh);
     position: fixed;
     z-index: 1;
     top: 0;
@@ -2469,6 +2472,7 @@ header {
     opacity: 0;
     visibility: hidden;
     transition: .5s;
+    @include common.pseudowh($width: 100vw, $height: 100vh);
 
     body.dark & {
         background-color: rgba(19, 25, 33, 0.46);

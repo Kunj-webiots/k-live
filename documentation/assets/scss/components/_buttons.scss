@@ -2,7 +2,7 @@
     06. Button CSS start
 ==========================**/
 .btn-link {
-  color: var(--theme-deafult);
+  color: var(--theme-default:);
 }
 
 /*======= Button-color css starts  ======= */
@@ -77,21 +77,21 @@ $btn-color in (primary, $primary-color),
 /*======= Badge-color css starts  ======= */
 
 $badge-name: primary,
-  secondary,
-  success,
-  danger,
-  info,
-  light,
-  dark,
-  warning;
+secondary,
+success,
+danger,
+info,
+light,
+dark,
+warning;
 $badge-color: $primary-color,
-  $secondary-color,
-  $success-color,
-  $danger-color,
-  $info-color,
-  $light-color,
-  $dark-color,
-  $warning-color;
+$secondary-color,
+$success-color,
+$danger-color,
+$info-color,
+$light-color,
+$dark-color,
+$warning-color;
 
 @each $var in $badge-name {
   $i: index($badge-name, $var);
@@ -121,7 +121,7 @@ $badge-color: $primary-color,
   transition: all 0.3s ease;
 }
 
-.btn-primary-gradien {
+.btn-primary-gradient {
   @include btn-gradien(60, lighten($primary-color, 8%), 0%, darken($primary-color, 8%), 100%, $white);
   color: $white;
 
@@ -134,7 +134,7 @@ $badge-color: $primary-color,
   }
 }
 
-.btn-secondary-gradien {
+.btn-secondary-gradient {
   @include btn-gradien(60, lighten($secondary-color, 8%), 0%, darken($secondary-color, 8%), 100%, $white);
 
   &:hover,
@@ -148,7 +148,7 @@ $badge-color: $primary-color,
   }
 }
 
-.btn-success-gradien {
+.btn-success-gradient {
   @include btn-gradien(60, lighten($success-color, 8%), 0%, darken($success-color, 8%), 100%, $white);
 
   &:hover,
@@ -162,7 +162,7 @@ $badge-color: $primary-color,
   }
 }
 
-.btn-danger-gradien {
+.btn-danger-gradient {
   @include btn-gradien(60, lighten($danger-color, 8%), 0%, darken($danger-color, 8%), 100%, $white);
 
   &:hover,
@@ -176,7 +176,7 @@ $badge-color: $primary-color,
   }
 }
 
-.btn-warning-gradien {
+.btn-warning-gradient {
   @include btn-gradien(60, lighten($warning-color, 8%), 0%, darken($warning-color, 8%), 100%, $white);
 
   &:hover,
@@ -190,7 +190,7 @@ $badge-color: $primary-color,
   }
 }
 
-.btn-info-gradien {
+.btn-info-gradient {
   @include btn-gradien(60, lighten($info-color, 8%), 0%, darken($info-color, 8%), 100%, $white);
 
   &:hover,
@@ -204,7 +204,7 @@ $badge-color: $primary-color,
   }
 }
 
-.btn-light-gradien {
+.btn-light-gradient {
   @include btn-gradien(60, lighten($light-color, 8%), 0%, darken($light-color, 8%), 100%, $white);
 
   &:hover,
@@ -218,7 +218,7 @@ $badge-color: $primary-color,
   }
 }
 
-.btn-dark-gradien {
+.btn-dark-gradient {
   @include btn-gradien(60, lighten($dark-color, 8%), 0%, darken($dark-color, 8%), 100%, $white);
 
   &:hover,

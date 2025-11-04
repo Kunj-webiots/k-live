@@ -54,10 +54,10 @@
 
             i {
                 position: absolute;
-                @include common.center(vertical);
                 right: calc(14px + (20 - 14) * ((100vw - 320px) / (1920 - 320)));
                 color: rgba(var(--content-color), 1);
                 font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (1920 - 320)));
+                @include common.center(vertical);
             }
         }
 
@@ -117,12 +117,12 @@
 
                     &::before {
                         top: calc(50% - 2px);
-                        @include common.pos;
                         transform: translateY(-50%);
                         left: 0;
-                        @include common.pseudowh($width: 4px, $height: 4px);
                         border-radius: 100%;
                         background-color: rgba(var(--content-color), 1);
+                        @include common.pos;
+                        @include common.pseudowh($width: 4px, $height: 4px);
                     }
                 }
 

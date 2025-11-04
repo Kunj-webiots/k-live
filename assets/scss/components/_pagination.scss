@@ -61,13 +61,13 @@
                 border-radius: calc(3px + (5 - 3) * ((100vw - 320px) / (1920 - 320)));
                 line-height: 1;
                 z-index: 0;
-                @include common.pseudowh($width: calc(34px + (40 - 34) * ((100vw - 320px) / (1920 - 320))), $height: calc(34px + (40 - 34) * ((100vw - 320px) / (1920 - 320))));
-                @include common.flex_common;
                 padding: 0;
                 background-color: rgba(var(--white), 1);
                 font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
                 --size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
                 position: relative;
+                @include common.pseudowh($width: calc(34px + (40 - 34) * ((100vw - 320px) / (1920 - 320))), $height: calc(34px + (40 - 34) * ((100vw - 320px) / (1920 - 320))));
+                @include common.flex_common;
 
                 &:hover {
                     border: 1px solid rgba(var(--primary-color), 1);

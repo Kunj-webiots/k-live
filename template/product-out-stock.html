@@ -20,7 +20,7 @@
     <title>Product Page</title>
 
     <!-- Google Font Link -->
-    <link rel="stylesheet" href="../assets/fonts/br-hendrix/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="../assets/fonts/br-hendrix/stylesheet.css">
 
     <!-- Bootstrap Link -->
     <link id="rtl-link" rel="stylesheet" type="text/css" href="../assets/css/vendors/bootstrap.css">
@@ -40,7 +40,7 @@
 
 <body class="base-bg-color">
     <!-- Page Loader Start -->
-    <div class="preloader">
+    <!-- <div class="preloader">
         <div class="progress-container">
             <div class="progress-bar preloader-progress-bar"></div>
         </div>
@@ -52,7 +52,7 @@
             </div>
         </div>
         <div class="percentage">0</div>
-    </div>
+    </div> -->
     <!-- Page Loader End -->
 
     <!-- Header Start -->
@@ -453,16 +453,16 @@
                                             <a class="dropdown-item" href="#!">Shop grid</a>
                                             <ul class="sub-menu">
                                                 <li>
-                                                    <a href="shop-grid-2.html">Shop grid 2</a>
-                                                </li>
-                                                <li>
-                                                    <a href="shop-grid-3.html">Shop grid 3</a>
+                                                    <a href="shop-grid-5.html">Shop grid 5</a>
                                                 </li>
                                                 <li>
                                                     <a href="shop-grid-4.html">Shop grid 4</a>
                                                 </li>
                                                 <li>
-                                                    <a href="shop-grid-5.html">Shop grid 5</a>
+                                                    <a href="shop-grid-3.html">Shop grid 3</a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop-grid-2.html">Shop grid 2</a>
                                                 </li>
                                             </ul>
                                         </li>
@@ -470,16 +470,16 @@
                                             <a class="dropdown-item" href="#!">Shop collection</a>
                                             <ul class="sub-menu">
                                                 <li>
-                                                    <a href="shop-collection-grid-2.html">Shop collection 2</a>
-                                                </li>
-                                                <li>
-                                                    <a href="shop-collection-grid-3.html">Shop collection 3</a>
+                                                    <a href="shop-collection-grid-5.html">Shop collection 5</a>
                                                 </li>
                                                 <li>
                                                     <a href="shop-collection-grid-4.html">Shop collection 4</a>
                                                 </li>
                                                 <li>
-                                                    <a href="shop-collection-grid-5.html">Shop collection 5</a>
+                                                    <a href="shop-collection-grid-3.html">Shop collection 3</a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop-collection-grid-2.html">Shop collection 2</a>
                                                 </li>
                                                 <li>
                                                     <a href="shop-collection-list.html">Shop collection list</a>
@@ -3638,8 +3638,8 @@
                                                             class="dropdown-item">Black friday</a>
                                                     </li>
                                                     <li>
-                                                        <a href="./../email-templete/leave-feadback.html"
-                                                            class="dropdown-item">Leave feadback</a>
+                                                        <a href="./../email-templete/leave-feedback.html"
+                                                            class="dropdown-item">Leave feedback</a>
                                                     </li>
                                                     <li>
                                                         <a href="./../email-templete/order-tracking.html"
@@ -3647,7 +3647,7 @@
                                                     </li>
                                                     <li>
                                                         <a href="./../email-templete/reset-password.html"
-                                                            class="dropdown-item">Reset passowrd</a>
+                                                            class="dropdown-item">Reset password</a>
                                                     </li>
                                                     <li>
                                                         <a href="./../email-templete/welcome.html"
@@ -3696,10 +3696,12 @@
                                                             data-bs-toggle="modal">Add to Cart</a>
                                                     </li>
                                                     <li>
-                                                        <a class="dropdown-item newsletter-btn" href="#!">Newsletter</a>
+                                                        <a class="dropdown-item newsletter-btn" data-bs-toggle="modal"
+                                                            href="#newsletterModal">Newsletter</a>
                                                     </li>
                                                     <li>
-                                                        <a class="dropdown-item exit-modal-btn" href="#!">Exit</a>
+                                                        <a class="dropdown-item exit-modal-btn" data-bs-toggle="modal"
+                                                            href="#exitModal">Exit</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -4323,511 +4325,346 @@
     <!-- Nav Tab Section Start -->
     <section class="section-t-space">
         <div class="custom-container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="product-section-box m-0">
-                        <ul class="nav nav-tabs custom-nav" id="myTab">
-                            <li class="nav-item">
-                                <button class="nav-link active" id="description-tab" data-bs-toggle="tab"
-                                    data-bs-target="#description" type="button">Description</button>
-                            </li>
+            <div class="product-section-box m-0">
+                <ul class="nav nav-tabs custom-nav" id="myTab">
+                    <li class="nav-item">
+                        <button class="nav-link active" id="description-tab" data-bs-toggle="tab"
+                            data-bs-target="#description" type="button">Description</button>
+                    </li>
 
-                            <li class="nav-item">
-                                <button class="nav-link" id="info-tab" data-bs-toggle="tab" data-bs-target="#info"
-                                    type="button">Additional info</button>
-                            </li>
+                    <li class="nav-item">
+                        <button class="nav-link" id="info-tab" data-bs-toggle="tab" data-bs-target="#info"
+                            type="button">Additional info</button>
+                    </li>
 
-                            <li class="nav-item">
-                                <button class="nav-link" id="care-tab" data-bs-toggle="tab" data-bs-target="#care"
-                                    type="button">Care Instructions</button>
-                            </li>
+                    <li class="nav-item">
+                        <button class="nav-link" id="care-tab" data-bs-toggle="tab" data-bs-target="#care"
+                            type="button">Care Instructions</button>
+                    </li>
 
-                            <li class="nav-item">
-                                <button class="nav-link" id="review-tab" data-bs-toggle="tab" data-bs-target="#review"
-                                    type="button">Review</button>
-                            </li>
-                        </ul>
+                    <li class="nav-item">
+                        <button class="nav-link" id="review-tab" data-bs-toggle="tab" data-bs-target="#review"
+                            type="button">Review</button>
+                    </li>
+                </ul>
 
-                        <div class="tab-content custom-tab" id="myTabContent">
-                            <div class="tab-pane fade show active" id="description">
-                                <div class="product-description">
-                                    <div class="nav-desh">
-                                        <p>There is the Dynamic Island on the display instead of a notch, which launched
-                                            with the iPhone 14 Pro models. The pill-shaped cutout gives you better
-                                            visibility of ongoing activities and alerts and new multi-tasking abilities.
-                                            The standard iPhone 15 model inherits several features from last year's
-                                            iPhone 14 Pro series, including an improved Dynamic Island, the A16 Bionic
-                                            chip, and a 48MP main camera. There are additionally five colors to choose
-                                            from in a textured matte finish: pink, yellow, blue, green and black
-                                        </p>
-                                    </div>
-
-                                    <div class="nav-desh">
-                                        <div class="desh-title">
-                                            <h5>Display :</h5>
-                                        </div>
-                                        <p>Apple iPhone 15 Pro models could have a 6.7-inch ProMotion display (with
-                                            Always-on mode) while the iPhone 15 and iPhone 15 Plus could have a 6.1-inch
-                                            display.</p>
-                                    </div>
-
-                                    <div class="nav-desh">
-                                        <div class="desh-title">
-                                            <h5>Cameras :</h5>
-                                        </div>
-                                        <p>While the vanilla variants could have similar camera specs as before, the
-                                            Pro Max model could sport an almost 1-inch sensor and a periscope telephoto
-                                            lens (with 5x/6x zoom).</p>
-                                    </div>
-
-                                    <div class="nav-desh">
-                                        <div class="desh-title">
-                                            <h5>Processor :</h5>
-                                        </div>
-                                        <p>iPhone 15 and iPhone 15 Plus could come powered by last-gen A16 Bionic chip
-                                            but the Pro models could have a newer 3nm A17 Bionic chipset along with 8GB
-                                            of RAM.</p>
-                                    </div>
-
-                                    <div class="nav-desh">
-                                        <div class="desh-title">
-                                            <h5>Battery :</h5>
-                                        </div>
-                                        <p>All iPhones could have bigger batteries viz. a 3,877mAh battery on the iPhone
-                                            15, a 4,912mAh battery on the iPhone 15 Plus, a 3,650mAh battery on the
-                                            iPhone 15 Pro, and a 4,852mAh battery on the iPhone 15 Pro Max. At least the
-                                            Pro models are expected to feature 35W wired charging and Qi2 Magnate
-                                            charging support</p>
-                                    </div>
-                                </div>
+                <div class="tab-content custom-tab" id="myTabContent">
+                    <div class="tab-pane fade active show" id="description">
+                        <div class="product-description">
+                            <div class="nav-desh">
+                                <p>There is the Dynamic Island on the display instead of a notch, which launched
+                                    with the iPhone 14 Pro models. The pill-shaped cutout gives you better
+                                    visibility of ongoing activities and alerts and new multi-tasking abilities.
+                                    The standard iPhone 15 model inherits several features from last year's
+                                    iPhone 14 Pro series, including an improved Dynamic Island, the A16 Bionic
+                                    chip, and a 48MP main camera. There are additionally five colors to choose
+                                    from in a textured matte finish: pink, yellow, blue, green and black
+                                </p>
                             </div>
 
-                            <div class="tab-pane fade" id="info">
-                                <div class="table-responsive">
-                                    <table class="table info-table">
-                                        <tbody>
-                                            <tr>
-                                                <th>Specialty</th>
-                                                <td>6 GB of RAM</td>
-                                            </tr>
-                                            <tr>
-                                                <th>Ingredient Type</th>
-                                                <td>Aluminum design</td>
-                                            </tr>
-                                            <tr>
-                                                <th>Brand</th>
-                                                <td>Apple</td>
-                                            </tr>
-                                            <tr>
-                                                <th>Canada</th>
-                                                <td>Bar Brownie</td>
-                                            </tr>
-                                            <tr>
-                                                <th>Package Information</th>
-                                                <td>XYZ</td>
-                                            </tr>
-                                            <tr>
-                                                <th>Manufacturer</th>
-                                                <td>Apple's hardware manufacturing partner Foxconn</td>
-                                            </tr>
-                                            <tr>
-                                                <th>Item part number</th>
-                                                <td>354986211279</td>
-                                            </tr>
-                                            <tr>
-                                                <th>Net Quantity</th>
-                                                <td>Support for HDR and Dolby Vision</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                            <div class="nav-desh">
+                                <div class="desh-title">
+                                    <h5>Display :</h5>
                                 </div>
+                                <p>Apple iPhone 15 Pro models could have a 6.7-inch ProMotion display (with
+                                    Always-on mode) while the iPhone 15 and iPhone 15 Plus could have a 6.1-inch
+                                    display.</p>
                             </div>
 
-                            <div class="tab-pane fade" id="care">
-                                <div class="information-box">
-                                    <ul>
-                                        <li>Turn off your iPhone and unplug all of the cords.</li>
-
-                                        <li>Use a lens cloth or any other gentle, slightly wet, lint-free cloth.</li>
-
-                                        <li>Prevent moisture from entering holes.</li>
-
-                                        <li>Use cleaning chemicals only as directed by your iPhone's instructions.</li>
-
-                                        <li>Avoid using compressed air.</li>
-                                    </ul>
+                            <div class="nav-desh">
+                                <div class="desh-title">
+                                    <h5>Cameras :</h5>
                                 </div>
+                                <p>While the vanilla variants could have similar camera specs as before, the
+                                    Pro Max model could sport an almost 1-inch sensor and a periscope telephoto
+                                    lens (with 5x/6x zoom).</p>
                             </div>
 
-                            <div class="tab-pane fade" id="review">
-                                <div class="review-box">
-                                    <div class="row g-xl-5 g-md-4 g-3">
-                                        <div class="col-xl-6 b-end">
-                                            <div class="review-title">
-                                                <h4>Customer reviews</h4>
-                                            </div>
+                            <div class="nav-desh">
+                                <div class="desh-title">
+                                    <h5>Processor :</h5>
+                                </div>
+                                <p>iPhone 15 and iPhone 15 Plus could come powered by last-gen A16 Bionic chip
+                                    but the Pro models could have a newer 3nm A17 Bionic chipset along with 8GB
+                                    of RAM.</p>
+                            </div>
 
-                                            <div class="d-flex">
-                                                <div class="product-rating">
-                                                    <ul class="rating">
-                                                        <li class="theme-color">
-                                                            <i class="ri-star-fill fill"></i>
-                                                        </li>
-                                                        <li class="theme-color">
-                                                            <i class="ri-star-fill fill"></i>
-                                                        </li>
-                                                        <li class="theme-color">
-                                                            <i class="ri-star-fill fill"></i>
-                                                        </li>
-                                                        <li class="theme-color">
-                                                            <i class="ri-star-fill fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i class="ri-star-line"></i>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <h6 class="ms-3">4.2 Out Of 5</h6>
-                                            </div>
+                            <div class="nav-desh">
+                                <div class="desh-title">
+                                    <h5>Battery :</h5>
+                                </div>
+                                <p>All iPhones could have bigger batteries viz. a 3,877mAh battery on the iPhone
+                                    15, a 4,912mAh battery on the iPhone 15 Plus, a 3,650mAh battery on the
+                                    iPhone 15 Pro, and a 4,852mAh battery on the iPhone 15 Pro Max. At least the
+                                    Pro models are expected to feature 35W wired charging and Qi2 Magnate
+                                    charging support</p>
+                            </div>
+                        </div>
+                    </div>
 
-                                            <div class="rating-box">
-                                                <ul>
-                                                    <li>
-                                                        <div class="rating-list">
-                                                            <h5>5 Star</h5>
-                                                            <div class="progress">
-                                                                <div class="progress-bar" style="width: 68%">68%</div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
+                    <div class="tab-pane fade" id="info">
+                        <div class="table-responsive">
+                            <table class="table info-table">
+                                <tbody>
+                                    <tr>
+                                        <th>Specialty</th>
+                                        <td>6 GB of RAM</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Ingredient Type</th>
+                                        <td>Aluminum design</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Brand</th>
+                                        <td>Apple</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Canada</th>
+                                        <td>Bar Brownie</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Package Information</th>
+                                        <td>XYZ</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Manufacturer</th>
+                                        <td>Apple's hardware manufacturing partner Foxconn</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Item part number</th>
+                                        <td>354986211279</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Net Quantity</th>
+                                        <td>Support for HDR and Dolby Vision</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
 
-                                                    <li>
-                                                        <div class="rating-list">
-                                                            <h5>4 Star</h5>
-                                                            <div class="progress">
-                                                                <div class="progress-bar" style="width: 67%">67%</div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
+                    <div class="tab-pane fade" id="care">
+                        <div class="information-box">
+                            <ul>
+                                <li>Turn off your iPhone and unplug all of the cords.</li>
+                                <li>Use a lens cloth or any other gentle, slightly wet, lint-free cloth.</li>
+                                <li>Prevent moisture from entering holes.</li>
+                                <li>Use cleaning chemicals only as directed by your iPhone's instructions.</li>
+                                <li>Avoid using compressed air.</li>
+                            </ul>
+                        </div>
+                    </div>
 
-                                                    <li>
-                                                        <div class="rating-list">
-                                                            <h5>3 Star</h5>
-                                                            <div class="progress">
-                                                                <div class="progress-bar" style="width: 42%">42%</div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-
-                                                    <li>
-                                                        <div class="rating-list">
-                                                            <h5>2 Star</h5>
-                                                            <div class="progress">
-                                                                <div class="progress-bar" style="width: 30%">30%</div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-
-                                                    <li>
-                                                        <div class="rating-list">
-                                                            <h5>1 Star</h5>
-                                                            <div class="progress">
-                                                                <div class="progress-bar" style="width: 24%">24%</div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-xl-6">
-                                            <div class="review-title">
-                                                <h4 class="fw-500">Add a review</h4>
-                                            </div>
-
-                                            <div class="row g-sm-4 g-3">
-                                                <div class="col-md-6">
-                                                    <div class="review-form-box theme-form">
-                                                        <label for="name" class="form-label">Name</label>
-                                                        <input type="text" class="form-control" id="name"
-                                                            placeholder="Enter your name">
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-6">
-                                                    <div class="review-form-box theme-form">
-                                                        <label for="email" class="form-label">Email Address</label>
-                                                        <input type="email" class="form-control" id="email"
-                                                            placeholder="Email Address">
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-12">
-                                                    <div class="review-form-box theme-form">
-                                                        <label class="form-label" for="floatingTextarea2">Write Your
-                                                            Comment</label>
-                                                        <textarea class="form-control" id="floatingTextarea2"
-                                                            placeholder="Leave a comment here"
-                                                            style="height: 150px"></textarea>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-12">
-                                                    <button type="submit"
-                                                        class="btn theme-bg-color text-light">Submit</button>
-                                                </div>
-                                            </div>
-                                        </div>
+                    <div class="tab-pane fade" id="review">
+                        <div class="review-box">
+                            <div class="row g-xl-5 g-md-4 g-3">
+                                <div class="col-xl-6 b-end">
+                                    <div class="review-title">
+                                        <h4>Customer reviews</h4>
                                     </div>
 
-                                    <div class="product-review-box">
-                                        <div class="review-title">
-                                            <h4 class="fw-500">Customer questions & answers</h4>
-                                            <div class="sort-message">
-                                                <span>Sort By :</span>
-                                                <select class="form-select">
-                                                    <option selected="">Newest</option>
-                                                    <option value="1">Oldest</option>
-                                                    <option value="2">Top</option>
-                                                </select>
-                                            </div>
-                                        </div>
-
-                                        <div class="review-people">
-                                            <ul class="review-list">
+                                    <div class="customer-review-box">
+                                        <h6>4.2 <span>/5</span></h6>
+                                        <div class="product-rating">
+                                            <ul class="rating">
+                                                <li class="theme-color">
+                                                    <i class="ri-star-fill fill"></i>
+                                                </li>
+                                                <li class="theme-color">
+                                                    <i class="ri-star-fill fill"></i>
+                                                </li>
+                                                <li class="theme-color">
+                                                    <i class="ri-star-fill fill"></i>
+                                                </li>
+                                                <li class="theme-color">
+                                                    <i class="ri-star-fill fill"></i>
+                                                </li>
                                                 <li>
-                                                    <div class="people-box">
-                                                        <div>
-                                                            <div class="people-image">
-                                                                <img src="../assets/images/review/1.jpg"
-                                                                    class="img-fluid" alt="">
-                                                            </div>
-                                                        </div>
+                                                    <i class="ri-star-line"></i>
+                                                </li>
+                                            </ul>
+                                            <h6>35K ratings</h6>
+                                        </div>
+                                    </div>
 
-                                                        <div class="people-comment">
-                                                            <div class="name">
-                                                                <a href="#!">Tracey</a>
-                                                                <div class="product-rating">
-                                                                    <ul class="rating">
-                                                                        <li>
-                                                                            <i class="ri-star-fill fill"></i>
-                                                                        </li>
-                                                                        <li>
-                                                                            <i class="ri-star-fill fill"></i>
-                                                                        </li>
-                                                                        <li>
-                                                                            <i class="ri-star-fill fill"></i>
-                                                                        </li>
-                                                                        <li>
-                                                                            <i class="ri-star-fill fill"></i>
-                                                                        </li>
-                                                                        <li>
-                                                                            <i class="ri-star-line"></i>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                            <div class="date-time">
-                                                                <h6 class="text-content">1 week ago</h6>
-                                                            </div>
+                                    <div class="rating-box">
+                                        <ul>
+                                            <li>
+                                                <div class="rating-list">
+                                                    <h5>5 Star</h5>
+                                                    <div class="progress">
+                                                        <div class="progress-bar" style="width: 68%">68%</div>
+                                                    </div>
+                                                </div>
+                                            </li>
 
-                                                            <div class="reply">
-                                                                <p>Icing cookie carrot cake chocolate cake sugar
-                                                                    plum jelly-o danish. Dragée dragée shortbread
-                                                                    tootsie roll croissant muffin cake I love gummy
-                                                                    bears. Candy canes ice cream caramels tiramisu
-                                                                    marshmallow cake shortbread candy canes cookie.
-                                                                </p>
-                                                            </div>
+                                            <li>
+                                                <div class="rating-list">
+                                                    <h5>4 Star</h5>
+                                                    <div class="progress">
+                                                        <div class="progress-bar" style="width: 67%">67%</div>
+                                                    </div>
+                                                </div>
+                                            </li>
 
-                                                            <ul class="share-box">
+                                            <li>
+                                                <div class="rating-list">
+                                                    <h5>3 Star</h5>
+                                                    <div class="progress">
+                                                        <div class="progress-bar" style="width: 42%">42%</div>
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <div class="rating-list">
+                                                    <h5>2 Star</h5>
+                                                    <div class="progress">
+                                                        <div class="progress-bar" style="width: 30%">30%</div>
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <div class="rating-list">
+                                                    <h5>1 Star</h5>
+                                                    <div class="progress">
+                                                        <div class="progress-bar" style="width: 24%">24%</div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-6">
+                                    <div class="review-title">
+                                        <h4 class="fw-500">Add a review</h4>
+                                    </div>
+
+                                    <div class="row g-sm-4 g-3">
+                                        <div class="col-md-6">
+                                            <div class="review-form-box theme-form">
+                                                <label for="name" class="form-label">Name</label>
+                                                <input type="text" class="form-control" id="name"
+                                                    placeholder="Enter your name">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="review-form-box theme-form">
+                                                <label for="email" class="form-label">Email Address</label>
+                                                <input type="email" class="form-control" id="email"
+                                                    placeholder="Email Address">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <div class="review-form-box theme-form">
+                                                <label class="form-label" for="floatingTextarea2">Write Your
+                                                    Comment</label>
+                                                <textarea class="form-control" id="floatingTextarea2"
+                                                    placeholder="Leave a comment here" style="height: 150px"></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <button type="submit" class="btn theme-bg-color text-light">Submit</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="product-review-box">
+                                <div class="review-title">
+                                    <h4 class="fw-500">Customer questions & answers</h4>
+                                    <div class="sort-message">
+                                        <span>Sort By :</span>
+                                        <select class="form-select">
+                                            <option selected="">Newest</option>
+                                            <option value="1">Oldest</option>
+                                            <option value="2">Top</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="review-people">
+                                    <ul class="review-list">
+                                        <li>
+                                            <div class="people-box">
+                                                <div>
+                                                    <div class="people-image">
+                                                        <img src="../assets/images/review/1.jpg" class="img-fluid"
+                                                            alt="">
+                                                    </div>
+                                                </div>
+
+                                                <div class="people-comment">
+                                                    <div class="name">
+                                                        <a href="#!">Tracey</a>
+                                                        <div class="product-rating">
+                                                            <ul class="rating">
                                                                 <li>
-                                                                    <a href="#!">
-                                                                        <i class="ri-heart-3-line"></i>
-                                                                        <span>Like</span>
-                                                                    </a>
+                                                                    <i class="ri-star-fill fill"></i>
                                                                 </li>
                                                                 <li>
-                                                                    <a href="#!">
-                                                                        <i class="ri-share-line"></i>
-                                                                        <span>Reply</span>
-                                                                    </a>
+                                                                    <i class="ri-star-fill fill"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="ri-star-fill fill"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="ri-star-fill fill"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="ri-star-line"></i>
                                                                 </li>
                                                             </ul>
                                                         </div>
                                                     </div>
+                                                    <div class="date-time">
+                                                        <h6 class="text-content">1 week ago</h6>
+                                                    </div>
 
-                                                    <ul class="review-list reply-review-list">
+                                                    <div class="reply">
+                                                        <p>Icing cookie carrot cake chocolate cake sugar
+                                                            plum jelly-o danish. Dragée dragée shortbread
+                                                            tootsie roll croissant muffin cake I love gummy
+                                                            bears. Candy canes ice cream caramels tiramisu
+                                                            marshmallow cake shortbread candy canes cookie.
+                                                        </p>
+                                                    </div>
+
+                                                    <ul class="share-box">
                                                         <li>
-                                                            <div class="people-box">
-                                                                <div>
-                                                                    <div class="people-image">
-                                                                        <img src="../assets/images/review/2.jpg"
-                                                                            class="img-fluid" alt="">
-                                                                    </div>
-                                                                </div>
-
-                                                                <div class="people-comment">
-                                                                    <div class="name">
-                                                                        <a href="#!">Ms. Bryce Price</a>
-                                                                        <div class="product-rating">
-                                                                            <ul class="rating">
-                                                                                <li class="theme-color">
-                                                                                    <i class="ri-star-line"></i>
-                                                                                </li>
-                                                                                <li class="theme-color">
-                                                                                    <i class="ri-star-line"></i>
-                                                                                </li>
-                                                                                <li class="theme-color">
-                                                                                    <i class="ri-star-line"></i>
-                                                                                </li>
-                                                                                <li class="theme-color">
-                                                                                    <i class="ri-star-line"></i>
-                                                                                </li>
-                                                                                <li>
-                                                                                    <i class="ri-star-line"></i>
-                                                                                </li>
-                                                                            </ul>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="date-time">
-                                                                        <h6 class="text-content">1 week ago</h6>
-                                                                    </div>
-
-                                                                    <div class="reply">
-                                                                        <p>Icing cookie carrot cake chocolate cake
-                                                                            sugar
-                                                                            plum jelly-o danish. Dragée dragée
-                                                                            shortbread
-                                                                            tootsie roll croissant muffin cake I
-                                                                            love gummy
-                                                                            bears. Candy canes ice cream caramels
-                                                                            tiramisu
-                                                                            marshmallow cake shortbread candy canes
-                                                                            cookie.
-                                                                        </p>
-                                                                    </div>
-
-                                                                    <ul class="share-box">
-                                                                        <li>
-                                                                            <a href="#!">
-                                                                                <i class="ri-heart-3-line"></i>
-                                                                                <span>Like</span>
-                                                                            </a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="#!">
-                                                                                <i class="ri-share-line"></i>
-                                                                                <span>Reply</span>
-                                                                            </a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="#!">
-                                                                                <span>7 Likes</span>
-                                                                            </a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="#!">
-                                                                                <span>2 Reply</span>
-                                                                            </a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
+                                                            <a href="#!">
+                                                                <i class="ri-heart-3-line"></i>
+                                                                <span>Like</span>
+                                                            </a>
                                                         </li>
-
                                                         <li>
-                                                            <div class="people-box">
-                                                                <div>
-                                                                    <div class="people-image">
-                                                                        <img src="../assets/images/review/4.jpg"
-                                                                            class="img-fluid" alt="">
-                                                                    </div>
-                                                                </div>
-
-                                                                <div class="people-comment">
-                                                                    <div class="name">
-                                                                        <a href="#!">Wendy Turcotte</a>
-                                                                        <div class="product-rating">
-                                                                            <ul class="rating">
-                                                                                <li class="theme-color">
-                                                                                    <i class="ri-star-line"></i>
-                                                                                </li>
-                                                                                <li class="theme-color">
-                                                                                    <i class="ri-star-line"></i>
-                                                                                </li>
-                                                                                <li class="theme-color">
-                                                                                    <i class="ri-star-line"></i>
-                                                                                </li>
-                                                                                <li class="theme-color">
-                                                                                    <i class="ri-star-line"></i>
-                                                                                </li>
-                                                                                <li>
-                                                                                    <i class="ri-star-line"></i>
-                                                                                </li>
-                                                                            </ul>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="date-time">
-                                                                        <h6 class="text-content">1 week ago</h6>
-                                                                    </div>
-
-                                                                    <div class="reply">
-                                                                        <p>Icing cookie carrot cake chocolate cake
-                                                                            sugar
-                                                                            plum jelly-o danish. Dragée dragée
-                                                                            shortbread
-                                                                            tootsie roll croissant muffin cake I
-                                                                            love gummy
-                                                                            bears. Candy canes ice cream caramels
-                                                                            tiramisu
-                                                                            marshmallow cake shortbread candy canes
-                                                                            cookie.
-                                                                        </p>
-                                                                    </div>
-
-                                                                    <ul class="share-box">
-                                                                        <li>
-                                                                            <a href="#!">
-                                                                                <i class="ri-heart-3-line"></i>
-                                                                                <span>Like</span>
-                                                                            </a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="#!">
-                                                                                <i class="ri-share-line"></i>
-                                                                                <span>Reply</span>
-                                                                            </a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="#!">
-                                                                                <span>7 Likes</span>
-                                                                            </a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="#!">
-                                                                                <span>2 Reply</span>
-                                                                            </a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
+                                                            <a href="#!">
+                                                                <i class="ri-share-line"></i>
+                                                                <span>Reply</span>
+                                                            </a>
                                                         </li>
                                                     </ul>
-                                                </li>
+                                                </div>
+                                            </div>
 
+                                            <ul class="review-list reply-review-list">
                                                 <li>
                                                     <div class="people-box">
                                                         <div>
                                                             <div class="people-image">
-                                                                <img src="../assets/images/review/5.jpg"
+                                                                <img src="../assets/images/review/2.jpg"
                                                                     class="img-fluid" alt="">
                                                             </div>
                                                         </div>
 
                                                         <div class="people-comment">
                                                             <div class="name">
-                                                                <a href="#!">Kianna Gulgowski</a>
+                                                                <a href="#!">Ms. Bryce Price</a>
                                                                 <div class="product-rating">
                                                                     <ul class="rating">
                                                                         <li class="theme-color">
@@ -4853,11 +4690,16 @@
                                                             </div>
 
                                                             <div class="reply">
-                                                                <p>Icing cookie carrot cake chocolate cake sugar
-                                                                    plum jelly-o danish. Dragée dragée shortbread
-                                                                    tootsie roll croissant muffin cake I love gummy
-                                                                    bears. Candy canes ice cream caramels tiramisu
-                                                                    marshmallow cake shortbread candy canes cookie.
+                                                                <p>Icing cookie carrot cake chocolate cake
+                                                                    sugar
+                                                                    plum jelly-o danish. Dragée dragée
+                                                                    shortbread
+                                                                    tootsie roll croissant muffin cake I
+                                                                    love gummy
+                                                                    bears. Candy canes ice cream caramels
+                                                                    tiramisu
+                                                                    marshmallow cake shortbread candy canes
+                                                                    cookie.
                                                                 </p>
                                                             </div>
 
@@ -4872,6 +4714,16 @@
                                                                     <a href="#!">
                                                                         <i class="ri-share-line"></i>
                                                                         <span>Reply</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="#!">
+                                                                        <span>7 Likes</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="#!">
+                                                                        <span>2 Reply</span>
                                                                     </a>
                                                                 </li>
                                                             </ul>
@@ -4883,14 +4735,14 @@
                                                     <div class="people-box">
                                                         <div>
                                                             <div class="people-image">
-                                                                <img src="../assets/images/review/6.jpg"
+                                                                <img src="../assets/images/review/4.jpg"
                                                                     class="img-fluid" alt="">
                                                             </div>
                                                         </div>
 
                                                         <div class="people-comment">
                                                             <div class="name">
-                                                                <a href="#!">Ariane Fritsch</a>
+                                                                <a href="#!">Wendy Turcotte</a>
                                                                 <div class="product-rating">
                                                                     <ul class="rating">
                                                                         <li class="theme-color">
@@ -4916,11 +4768,16 @@
                                                             </div>
 
                                                             <div class="reply">
-                                                                <p>Icing cookie carrot cake chocolate cake sugar
-                                                                    plum jelly-o danish. Dragée dragée shortbread
-                                                                    tootsie roll croissant muffin cake I love gummy
-                                                                    bears. Candy canes ice cream caramels tiramisu
-                                                                    marshmallow cake shortbread candy canes cookie.
+                                                                <p>Icing cookie carrot cake chocolate cake
+                                                                    sugar
+                                                                    plum jelly-o danish. Dragée dragée
+                                                                    shortbread
+                                                                    tootsie roll croissant muffin cake I
+                                                                    love gummy
+                                                                    bears. Candy canes ice cream caramels
+                                                                    tiramisu
+                                                                    marshmallow cake shortbread candy canes
+                                                                    cookie.
                                                                 </p>
                                                             </div>
 
@@ -4935,6 +4792,16 @@
                                                                     <a href="#!">
                                                                         <i class="ri-share-line"></i>
                                                                         <span>Reply</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="#!">
+                                                                        <span>7 Likes</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="#!">
+                                                                        <span>2 Reply</span>
                                                                     </a>
                                                                 </li>
                                                             </ul>
@@ -4942,8 +4809,134 @@
                                                     </div>
                                                 </li>
                                             </ul>
-                                        </div>
-                                    </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="people-box">
+                                                <div>
+                                                    <div class="people-image">
+                                                        <img src="../assets/images/review/5.jpg" class="img-fluid"
+                                                            alt="">
+                                                    </div>
+                                                </div>
+
+                                                <div class="people-comment">
+                                                    <div class="name">
+                                                        <a href="#!">Kianna Gulgowski</a>
+                                                        <div class="product-rating">
+                                                            <ul class="rating">
+                                                                <li class="theme-color">
+                                                                    <i class="ri-star-line"></i>
+                                                                </li>
+                                                                <li class="theme-color">
+                                                                    <i class="ri-star-line"></i>
+                                                                </li>
+                                                                <li class="theme-color">
+                                                                    <i class="ri-star-line"></i>
+                                                                </li>
+                                                                <li class="theme-color">
+                                                                    <i class="ri-star-line"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="ri-star-line"></i>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="date-time">
+                                                        <h6 class="text-content">1 week ago</h6>
+                                                    </div>
+
+                                                    <div class="reply">
+                                                        <p>Icing cookie carrot cake chocolate cake sugar
+                                                            plum jelly-o danish. Dragée dragée shortbread
+                                                            tootsie roll croissant muffin cake I love gummy
+                                                            bears. Candy canes ice cream caramels tiramisu
+                                                            marshmallow cake shortbread candy canes cookie.
+                                                        </p>
+                                                    </div>
+
+                                                    <ul class="share-box">
+                                                        <li>
+                                                            <a href="#!">
+                                                                <i class="ri-heart-3-line"></i>
+                                                                <span>Like</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#!">
+                                                                <i class="ri-share-line"></i>
+                                                                <span>Reply</span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="people-box">
+                                                <div>
+                                                    <div class="people-image">
+                                                        <img src="../assets/images/review/6.jpg" class="img-fluid"
+                                                            alt="">
+                                                    </div>
+                                                </div>
+
+                                                <div class="people-comment">
+                                                    <div class="name">
+                                                        <a href="#!">Ariane Fritsch</a>
+                                                        <div class="product-rating">
+                                                            <ul class="rating">
+                                                                <li class="theme-color">
+                                                                    <i class="ri-star-line"></i>
+                                                                </li>
+                                                                <li class="theme-color">
+                                                                    <i class="ri-star-line"></i>
+                                                                </li>
+                                                                <li class="theme-color">
+                                                                    <i class="ri-star-line"></i>
+                                                                </li>
+                                                                <li class="theme-color">
+                                                                    <i class="ri-star-line"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="ri-star-line"></i>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="date-time">
+                                                        <h6 class="text-content">1 week ago</h6>
+                                                    </div>
+
+                                                    <div class="reply">
+                                                        <p>Icing cookie carrot cake chocolate cake sugar
+                                                            plum jelly-o danish. Dragée dragée shortbread
+                                                            tootsie roll croissant muffin cake I love gummy
+                                                            bears. Candy canes ice cream caramels tiramisu
+                                                            marshmallow cake shortbread candy canes cookie.
+                                                        </p>
+                                                    </div>
+
+                                                    <ul class="share-box">
+                                                        <li>
+                                                            <a href="#!">
+                                                                <i class="ri-heart-3-line"></i>
+                                                                <span>Like</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#!">
+                                                                <i class="ri-share-line"></i>
+                                                                <span>Reply</span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -5986,7 +5979,7 @@
                                 <a href="blog-3-grid.html">Blogs</a>
                             </li>
                             <li>
-                                <a href="offer.html">Offer</a>
+                                <a href="shop-banner.html">Offer</a>
                             </li>
                             <li>
                                 <a href="search.html">Search</a>
@@ -7022,7 +7015,7 @@
     <!-- Social Media Share End -->
 
     <!-- Recent Product View Box Start -->
-    <div class="recent-product-box">
+    <div class="recently-product-box">
         <button class="btn recent-close">
             <i class="iconsax" data-icon-name="add"></i>
         </button>
@@ -7204,11 +7197,11 @@
                                     </div>
 
                                     <div class="qty-stock-box">
-                                        <div class="qty-box h-100 qty-container">
+                                        <div class="qty-box h-100 qty-container quantity-box-2">
                                             <button class="btn qty-btn qty-btn-minus">
                                                 <i class="ri-subtract-line"></i>
                                             </button>
-                                            <input type="number" readonly="" name="qty" value="1"
+                                            <input type="number" readonly="" name="qty" value="0"
                                                 class="qty-input form-control input-qty">
                                             <button class="btn qty-btn qty-btn-plus">
                                                 <i class="ri-add-line"></i>

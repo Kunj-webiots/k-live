@@ -5,8 +5,8 @@
 ==========================**/
 .title-flex {
     flex-wrap: wrap;
-    @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
     gap: calc(6px + (15 - 6) * ((100vw - 320px) / (1920 - 320)));
+    @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
 
     h3 {
         display: flex;
@@ -174,11 +174,11 @@
 
             &::before {
                 bottom: -2px;
-                @include common.pos;
                 left: 0;
-                @include common.pseudowh($width: 0, $height: 2px);
                 background-color: rgba(var(--content-color), 1);
                 transition: 0.5s ease-in-out;
+                @include common.pos;
+                @include common.pseudowh($width: 0, $height: 2px);
 
                 [dir="rtl"] & {
                     left: unset;
@@ -242,11 +242,11 @@
 
             &::before {
                 bottom: -2px;
+                background-color: rgba(var(--content-color), 1);
+                transition: 0.5s ease-in-out;
                 @include common.pos;
                 @include common.center(horizontal);
                 @include common.pseudowh($width: 0, $height: 2px);
-                background-color: rgba(var(--content-color), 1);
-                transition: 0.5s ease-in-out;
             }
 
             &:hover {
@@ -290,11 +290,11 @@
 
             &::before {
                 bottom: -3px;
-                @include common.pos;
                 left: 0;
-                @include common.pseudowh($width: 0, $height: 3px);
                 background-color: rgba(var(--primary-color), 1);
                 transition: 0.5s ease-in-out;
+                @include common.pos;
+                @include common.pseudowh($width: 0, $height: 3px);
 
                 [dir="rtl"] & {
                     left: unset;
@@ -330,8 +330,8 @@
 
 .slider-button {
     position: relative;
-    @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
     flex-wrap: wrap;
+    @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
 
     .swiper-btn-next,
     .swiper-btn-prev {
@@ -339,12 +339,12 @@
         z-index: 0;
         inset: unset;
         border: none;
-        @include common.pseudowh($width: calc(30px + (36 - 30) * ((100vw - 320px) / (1920 - 320))), $height: calc(30px + (36 - 30) * ((100vw - 320px) / (1920 - 320))));
         background-color: rgba(var(--light-gray), 1);
         border-radius: calc(5px + (12 - 5) * ((100vw - 320px) / (1920 - 320)));
         font-size: calc(18px + (23 - 18) * ((100vw - 320px) / (1920 - 320)));
         margin: 0;
         color: rgba(var(--title-color), 1);
+        @include common.pseudowh($width: calc(30px + (36 - 30) * ((100vw - 320px) / (1920 - 320))), $height: calc(30px + (36 - 30) * ((100vw - 320px) / (1920 - 320))));
         @include common.flex_common;
 
         &.swiper-button-disabled {
@@ -361,8 +361,8 @@
 
 .slider-button-sm {
     position: relative;
-    @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
     flex-wrap: wrap;
+    @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
 
     .swiper-btn-next,
     .swiper-btn-prev {
@@ -370,13 +370,13 @@
         z-index: 0;
         inset: unset;
         border: none;
-        @include common.pseudowh($width: 30px, $height: 30px);
         background-color: rgba(var(--light-gray), 1);
         border-radius: 8px;
         font-size: 18px;
         margin: 0;
         color: rgba(var(--title-color), 1);
         @include common.flex_common;
+        @include common.pseudowh($width: 30px, $height: 30px);
 
         &.swiper-button-disabled {
             opacity: 0.35;

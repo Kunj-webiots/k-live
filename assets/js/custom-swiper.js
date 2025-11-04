@@ -447,7 +447,6 @@ var swiperMain1 = new Swiper(".swiper-main1", {
 var hotDealSlider = new Swiper(".hot-deal-slider", {
     loop: true,
     slidesPerView: 1,
-    effect: "fade",
     breakpoints: {
         0: {
             slidesPerView: 1,

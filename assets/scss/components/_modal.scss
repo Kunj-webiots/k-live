@@ -29,7 +29,6 @@
 
                .btn-close {
                     margin: 0;
-                    @include common.pseudowh($width: calc(26px + (30 - 26) * ((100vw - 320px) / (1920 - 320))), $height: calc(26px + (30 - 26) * ((100vw - 320px) / (1920 - 320))));
                     padding: 0;
                     background: none;
                     line-height: 1;
@@ -37,6 +36,7 @@
                     color: #fff;
                     opacity: 1;
                     background-color: rgba(var(--primary-color), 1);
+                    @include common.pseudowh($width: calc(26px + (30 - 26) * ((100vw - 320px) / (1920 - 320))), $height: calc(26px + (30 - 26) * ((100vw - 320px) / (1920 - 320))));
 
                     i {
                          font-size: calc(18px + (22 - 18) * ((100vw - 320px) / (1920 - 320)));
@@ -86,7 +86,6 @@
 
      .btn-close {
           margin: 0;
-          @include common.pseudowh($width: calc(26px + (30 - 26) * ((100vw - 320px) / (1920 - 320))), $height: calc(26px + (30 - 26) * ((100vw - 320px) / (1920 - 320))));
           padding: 0;
           background: none;
           line-height: 1;
@@ -98,6 +97,7 @@
           top: 10px;
           right: 10px;
           background-color: rgba(var(--primary-color), 1);
+          @include common.pseudowh($width: calc(26px + (30 - 26) * ((100vw - 320px) / (1920 - 320))), $height: calc(26px + (30 - 26) * ((100vw - 320px) / (1920 - 320))));
 
           i {
                font-size: calc(18px + (22 - 18) * ((100vw - 320px) / (1920 - 320)));
@@ -191,9 +191,9 @@
 
                .items-img {
                     background-color: rgba(var(--white), 1);
-                    @include common.pseudowh($width: 110px, $height: 110px);
                     padding: 10px;
                     border-radius: 7px;
+                    @include common.pseudowh($width: 110px, $height: 110px);
 
                     img {
                          @extend %img-contain;
@@ -243,9 +243,9 @@
 
                .items-img {
                     background-color: rgba(var(--white), 1);
-                    @include common.pseudowh($width: calc(82px + (110 - 82) * ((100vw - 320px) / (1920 - 320))), $height: calc(82px + (110 - 82) * ((100vw - 320px) / (1920 - 320))));
                     padding: calc(8px + (10 - 8) * ((100vw - 320px) / (1920 - 320)));
                     border-radius: calc(4px + (7 - 4) * ((100vw - 320px) / (1920 - 320)));
+                    @include common.pseudowh($width: calc(82px + (110 - 82) * ((100vw - 320px) / (1920 - 320))), $height: calc(82px + (110 - 82) * ((100vw - 320px) / (1920 - 320))));
 
                     img {
                          @extend %img-contain;
@@ -311,6 +311,7 @@
                     border: none;
                     border-radius: 0;
                     height: 100%;
+                    min-height: 100vh;
                     display: block;
                     background-color: rgba(var(--white), 1);
                }
@@ -332,8 +333,6 @@
 
           .btn-close {
                position: absolute;
-               @include common.pseudowh($width: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))), $height: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))));
-               @include common.flex_common;
                margin: 0;
                padding: 0;
                top: calc(6px + (10 - 6) * ((100vw - 320px) / (1920 - 320)));
@@ -344,6 +343,13 @@
                color: rgba(var(--white), 1);
                border-radius: 0;
                z-index: 1;
+               @include common.pseudowh($width: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))), $height: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))));
+               @include common.flex_common;
+
+               [dir="rtl"] & {
+                    right: unset;
+                    left: calc(6px + (10 - 6) * ((100vw - 320px) / (1920 - 320)));
+               }
 
                i {
                     font-size: calc(18px + (22 - 18) * ((100vw - 320px) / (1920 - 320)));
@@ -378,25 +384,42 @@
                     color: rgba(var(--content-color), 1);
                     border: 1px solid transparent;
 
+                    body.dark & {
+                         background-color: rgba(var(--base-gray), 1);
+                    }
+
                     &:hover {
                          background-color: transparent;
                          border-color: rgba(var(--border-color), 1);
+
+                         body.dark & {
+                              background-color: transparent;
+                         }
                     }
                }
 
                .auth-form {
                     .form-control {
                          padding: 13px;
+                         color: rgba(var(--title-color), 1);
                          border: unset;
                          font-size: calc(15px + (17 - 15) * ((100vw - 320px) / (1920 - 320)));
                          border-radius: 0;
                          background-color: rgba(var(--base-gray), 1);
+
+                         [dir="rtl"] & {
+                              text-align: right;
+                         }
+
+                         &::placeholder {
+                              color: rgba(var(--content-color), 0.8);
+                         }
                     }
 
                     .forgot-box {
                          gap: 10px 0;
-                         @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
                          flex-wrap: wrap;
+                         @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
 
                          .form-check {
                               min-height: unset;
@@ -409,29 +432,29 @@
                               .form-check-input {
                                    float: unset;
                                    margin: 0;
-                                   @include common.pseudowh($width: 20px, $height: 20px);
                                    border: unset;
                                    background: unset;
                                    position: relative;
+                                   @include common.pseudowh($width: 20px, $height: 20px);
 
                                    &::before {
                                         border: 1px solid rgba(var(--content-color), 0.1);
+                                        background-color: rgba(var(--base-gray), 1);
                                         @include common.pos;
                                         @include common.center(both);
                                         @include common.pseudowh;
-                                        background-color: rgba(var(--base-gray), 1);
                                    }
 
                                    &::after {
                                         border: 2px solid rgba(var(--primary-color), 1);
-                                        @include common.pos;
-                                        @include common.pseudowh($width: 7px, $height: 12px);
                                         border-top: unset;
                                         border-left: unset;
                                         top: 2px;
                                         left: 7px;
                                         transform: rotate(51deg) scale(0);
                                         transition: transform 0.3s ease-in-out;
+                                        @include common.pos;
+                                        @include common.pseudowh($width: 7px, $height: 12px);
                                    }
 
                                    &:checked {
@@ -458,11 +481,11 @@
 
                          &::before {
                               left: 0;
+                              border-top: 1px solid rgba(var(--content-color), 0.1);
+                              z-index: -1;
                               @include common.pos;
                               @include common.center(vertical);
                               @include common.pseudowh($width: 100%, $height: 1px);
-                              border-top: 1px solid rgba(var(--content-color), 0.1);
-                              z-index: -1;
                          }
 
                          span {
@@ -479,10 +502,10 @@
 
                          a {
                               gap: 11px;
-                              @include common.flex_common;
                               font-weight: 400;
                               background-color: rgba(var(--base-gray), 1);
                               color: rgba(var(--content-color), 1);
+                              @include common.flex_common;
 
                               img {
                                    @include common.pseudowh($width: calc(22px + (26 - 22) * ((100vw - 320px) / (1920 - 320))), $height: calc(22px + (26 - 22) * ((100vw - 320px) / (1920 - 320))));
@@ -542,10 +565,10 @@
 
                               &::after {
                                    left: 0;
+                                   border-left: 1px solid rgba(var(--primary-color), 1);
                                    @include common.pos;
                                    @include common.center(vertical);
                                    @include common.pseudowh($width: 1px, $height: 80%);
-                                   border-left: 1px solid rgba(var(--primary-color), 1);
                               }
                          }
                     }
@@ -588,9 +611,9 @@
 
                .product-image {
                     overflow: hidden;
-                    @include common.pseudowh($width: 80px, $height: 80px);
                     background-color: rgba(var(--white), 1);
                     padding: 8px;
+                    @include common.pseudowh($width: 80px, $height: 80px);
 
                     img {
                          @extend %img-contain;
@@ -630,18 +653,18 @@
 
      .btn-close {
           position: absolute;
-          @include common.flex_common;
           margin: 0;
           padding: 0;
           top: calc(6px + (10 - 6) * ((100vw - 320px) / (1920 - 320)));
           right: calc(6px + (10 - 6) * ((100vw - 320px) / (1920 - 320)));
           background: unset;
-          @include common.pseudowh($width: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))), $height: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))));
           background-color: rgba(var(--primary-color), 1);
           opacity: 1;
           color: #fff;
           border-radius: 0;
           z-index: 1;
+          @include common.flex_common;
+          @include common.pseudowh($width: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))), $height: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))));
 
           [dir="rtl"] & {
                right: unset;
@@ -684,6 +707,10 @@
                     border-radius: 5px;
                     background-color: rgba(var(--base-gray), 1);
 
+                    body.demo-6.dark & {
+                         background-color: #303438;
+                    }
+
                     [dir="rtl"] & {
                          text-align: right;
                     }
@@ -695,8 +722,8 @@
 
                .forgot-box {
                     gap: 10px 0;
-                    @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
                     flex-wrap: wrap;
+                    @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
 
                     .form-check {
                          min-height: unset;
@@ -709,29 +736,33 @@
                          .form-check-input {
                               float: unset;
                               margin: 0;
-                              @include common.pseudowh($width: 20px, $height: 20px);
                               border: unset;
                               background: unset;
                               position: relative;
+                              @include common.pseudowh($width: 20px, $height: 20px);
 
                               &::before {
                                    border: 1px solid rgba(var(--content-color), 0.1);
+                                   background-color: rgba(var(--base-gray), 1);
                                    @include common.pos;
                                    @include common.center(both);
                                    @include common.pseudowh;
-                                   background-color: rgba(var(--base-gray), 1);
+
+                                   body.demo-6.dark & {
+                                        background-color: #303438;
+                                   }
                               }
 
                               &::after {
                                    border: 2px solid rgba(var(--primary-color), 1);
-                                   @include common.pos;
-                                   @include common.pseudowh($width: 7px, $height: 12px);
                                    border-top: unset;
                                    border-left: unset;
                                    top: 2px;
                                    left: 7px;
                                    transform: rotate(51deg) scale(0);
                                    transition: transform 0.3s ease-in-out;
+                                   @include common.pos;
+                                   @include common.pseudowh($width: 7px, $height: 12px);
                               }
 
                               &:checked {
@@ -759,11 +790,11 @@
 
                     &::before {
                          left: 0;
+                         border-top: 1px solid rgba(var(--content-color), 0.1);
+                         z-index: -1;
                          @include common.pos;
                          @include common.center(vertical);
                          @include common.pseudowh($width: 100%, $height: 1px);
-                         border-top: 1px solid rgba(var(--content-color), 0.1);
-                         z-index: -1;
                     }
 
                     span {
@@ -780,10 +811,14 @@
 
                     a {
                          gap: 11px;
-                         @include common.flex_common;
                          font-weight: 400;
                          background-color: rgba(var(--base-gray), 1);
                          color: rgba(var(--content-color), 1);
+                         @include common.flex_common;
+
+                         body.demo-6.dark & {
+                              background-color: #303438;
+                         }
 
                          img {
                               @include common.pseudowh($width: calc(22px + (26 - 22) * ((100vw - 320px) / (1920 - 320))), $height: calc(22px + (26 - 22) * ((100vw - 320px) / (1920 - 320))));
@@ -844,10 +879,10 @@
 
                          &::after {
                               left: 0;
+                              border-left: 1px solid rgba(var(--primary-color), 1);
                               @include common.pos;
                               @include common.center(vertical);
                               @include common.pseudowh($width: 1px, $height: 80%);
-                              border-left: 1px solid rgba(var(--primary-color), 1);
                          }
                     }
                }
@@ -888,13 +923,13 @@
                .delete-content {
                     i {
                          margin: 0 auto 20px;
-                         @include common.pseudowh($width: calc(42px + (50 - 42) * ((100vw - 320px) / (1920 - 320))), $height: calc(42px + (50 - 42) * ((100vw - 320px) / (1920 - 320))));
-                         @include common.flex_common;
                          border-radius: 5px;
                          font-size: calc(20px + (24 - 20) * ((100vw - 320px) / (1920 - 320)));
                          color: rgba(var(--primary-color2), 1);
                          background-color: rgba(var(--primary-color2), 0.1);
                          border: 1px solid rgba(var(--primary-color2), 1);
+                         @include common.pseudowh($width: calc(42px + (50 - 42) * ((100vw - 320px) / (1920 - 320))), $height: calc(42px + (50 - 42) * ((100vw - 320px) / (1920 - 320))));
+                         @include common.flex_common;
 
                          &.success-box {
                               color: rgba(var(--theme-green), 1);
@@ -982,8 +1017,8 @@
                          border: 1px solid rgba(var(--border-color), 1);
                          border-radius: 4px;
                          padding: 0;
-                         @include common.pseudowh($width: calc(41px + (48 - 41) * ((100vw - 320px) / (1920 - 320))), $height: calc(38px + (42 - 38) * ((100vw - 320px) / (1920 - 320))));
                          color: rgba(var(--content-color), 1);
+                         @include common.pseudowh($width: calc(41px + (48 - 41) * ((100vw - 320px) / (1920 - 320))), $height: calc(38px + (42 - 38) * ((100vw - 320px) / (1920 - 320))));
 
                          &.active {
                               border-color: transparent;
@@ -1015,6 +1050,16 @@
                     .btn {
                          font-size: calc(14px + (15 - 14) * ((100vw - 320px) / (1920 - 320)));
                          padding-inline: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320)));
+                         margin: 0 !important;
+                         outline: 1px solid transparent;
+
+                         &:hover,
+                         &:focus,
+                         &:active {
+                              outline: 1px solid rgba(var(--primary-color), 1);
+                              color: rgba(var(--primary-color), 1);
+                              background-color: transparent;
+                         }
                     }
                }
           }
@@ -1027,7 +1072,6 @@
 
           .btn-close {
                margin: 0;
-               @include common.pseudowh($width: 30px, $height: 30px);
                padding: 0;
                z-index: 1;
                background: none;
@@ -1040,6 +1084,7 @@
                top: 10px;
                right: 10px;
                background-color: rgba(var(--primary-color), 1);
+               @include common.pseudowh($width: 30px, $height: 30px);
 
                [dir="rtl"] & {
                     right: unset;
@@ -1060,8 +1105,8 @@
                     .view-image {
                          height: calc(412px + (552 - 412) * ((100vw - 767px) / (1920 - 767)));
                          padding: calc(24px + (65 - 24) * ((100vw - 767px) / (1920 - 767)));
-                         @include common.flex_common;
                          background-color: rgba(230, 231, 233, 0.45);
+                         @include common.flex_common;
 
                          body.dark & {
                               background-color: rgba(var(--base-gray), 0.45);
@@ -1081,13 +1126,13 @@
                     .swiper-button-next,
                     .swiper-button-prev {
                          margin: 0;
-                         @include common.center(vertical);
-                         @include common.pseudowh($width: calc(36px + (42 - 36) * ((100vw - 320px) / (1920 - 320))), $height: calc(36px + (42 - 36) * ((100vw - 320px) / (1920 - 320))));
                          font-size: calc(20px + (22 - 20) * ((100vw - 320px) / (1920 - 320)));
                          z-index: 1;
                          color: rgba(var(--title-color), 1);
                          background-color: rgba(var(--white), 1);
                          border-radius: 100%;
+                         @include common.center(vertical);
+                         @include common.pseudowh($width: calc(36px + (42 - 36) * ((100vw - 320px) / (1920 - 320))), $height: calc(36px + (42 - 36) * ((100vw - 320px) / (1920 - 320))));
 
                          &::after {
                               content: none;
@@ -1104,9 +1149,9 @@
 
                     .image-box {
                          background-color: rgba(230, 231, 233, 0.45);
-                         @include common.flex_common;
                          padding: 15px;
                          height: calc(96px + (140 - 96) * ((100vw - 767px) / (1920 - 767)));
+                         @include common.flex_common;
 
                          body.dark & {
                               background-color: rgba(var(--base-gray), 0.45);
@@ -1130,6 +1175,10 @@
                .hurry-up-box {
                     .progress {
                          background-color: rgba(230, 231, 233, .45);
+
+                         body.dark & {
+                              background-color: #1a232e;
+                         }
                     }
                }
 
@@ -1177,11 +1226,11 @@
 
                          .qty-btn {
                               padding: 0;
-                              @include common.flex_common;
-                              @include common.pseudowh($width: calc(30px + (35 - 30) * ((100vw - 320px) / (1920 - 320))), $height: calc(30px + (35 - 30) * ((100vw - 320px) / (1920 - 320))));
                               border-radius: 4px;
                               background-color: rgba(var(--white), 1);
                               color: rgba(var(--content-color), 1);
+                              @include common.flex_common;
+                              @include common.pseudowh($width: calc(30px + (35 - 30) * ((100vw - 320px) / (1920 - 320))), $height: calc(30px + (35 - 30) * ((100vw - 320px) / (1920 - 320))));
 
                               &:hover {
                                    background-color: rgba(var(--primary-color), 1);
@@ -1253,12 +1302,12 @@
 
                     .exit-left-box {
                          padding: calc(15px + (44 - 15) * ((100vw - 320px) / (1920 - 320)));
-                         @include common.flex_common;
                          height: 100%;
                          flex-direction: column;
                          position: relative;
                          inset: unset;
                          text-align: center;
+                         @include common.flex_common;
 
                          h4 {
                               font-size: calc(18px + (22 - 18) * ((100vw - 320px) / (1920 - 320)));
@@ -1305,12 +1354,12 @@
                                         span {
                                              font-size: calc(18px + (22 - 18) * ((100vw - 320px) / (1920 - 320)));
                                              line-height: 1;
-                                             @include common.flex_common;
                                              padding-top: calc(2px + (3 - 2) * ((100vw - 320px) / (1920 - 320)));
                                              border-radius: calc(4px + (5 - 4) * ((100vw - 320px) / (1920 - 320)));
-                                             @include common.pseudowh($width: calc(39px + (47 - 39) * ((100vw - 320px) / (1920 - 320))), $height: calc(38px + (44 - 38) * ((100vw - 320px) / (1920 - 320))));
                                              background-color: rgba(var(--title-color), 1);
                                              color: rgba(var(--white), 1);
+                                             @include common.flex_common;
+                                             @include common.pseudowh($width: calc(39px + (47 - 39) * ((100vw - 320px) / (1920 - 320))), $height: calc(38px + (44 - 38) * ((100vw - 320px) / (1920 - 320))));
                                         }
                                    }
                               }

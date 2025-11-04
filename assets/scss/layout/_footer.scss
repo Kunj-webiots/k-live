@@ -38,8 +38,8 @@
         }
 
         .footer-content-list {
-            @include common.flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(8px + (10 - 8) * ((100vw - 320px) / (1920 - 320))));
             margin-bottom: calc(10px + (17 - 10) * ((100vw - 320px) / (1920 - 320)));
+            @include common.flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(8px + (10 - 8) * ((100vw - 320px) / (1920 - 320))));
 
             li {
                 width: 100%;
@@ -112,8 +112,8 @@
         }
 
         .social-icon-box {
-            @include common.flex_wrap($dis: flex, $wrap: wrap, $gap: calc(6px + (10 - 6) * ((100vw - 320px) / (1920 - 320))));
             align-items: center;
+            @include common.flex_wrap($dis: flex, $wrap: wrap, $gap: calc(6px + (10 - 6) * ((100vw - 320px) / (1920 - 320))));
 
             .social-icon-list {
                 li {
@@ -131,11 +131,11 @@
                         }
 
                         &::before {
+                            left: -2px;
+                            background-color: rgba(var(--content-color), 0.8);
                             @include common.pos;
                             @include common.center(vertical);
-                            left: -2px;
                             @include common.pseudowh($width: 1px, $height: 14px);
-                            background-color: rgba(var(--content-color), 0.2);
 
                             [dir="rtl"] & {
                                 left: unset;
@@ -186,12 +186,12 @@
                     }
 
                     &::before {
-                        @include common.pos;
                         bottom: 0;
                         left: 0;
-                        @include common.pseudowh($width: 0, $height: 2px);
                         background-color: rgba(var(--content-color), 0.3);
                         transition: 0.3s ease-in-out;
+                        @include common.pos;
+                        @include common.pseudowh($width: 0, $height: 2px);
 
                         [dir="rtl"] & {
                             left: unset;
@@ -201,10 +201,10 @@
                         @include common.max(575.98px) {
                             position: relative;
                             inset: unset;
-                            @include common.pseudowh($width: calc(4px + (5 - 4) * ((100vw - 320px) / (576 - 320))), $height: calc(4px + (5 - 4) * ((100vw - 320px) / (576 - 320))));
                             display: block;
                             border-radius: 100%;
                             background-color: rgba(var(--title-color), 0.7);
+                            @include common.pseudowh($width: calc(4px + (5 - 4) * ((100vw - 320px) / (576 - 320))), $height: calc(4px + (5 - 4) * ((100vw - 320px) / (576 - 320))));
                         }
                     }
 
@@ -236,8 +236,8 @@
 
         .app-store-link {
             margin-top: calc(11px + (18 - 11) * ((100vw - 320px) / (1920 - 320)));
-            @include common.flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(6px + (11 - 6) * ((100vw - 320px) / (1920 - 320))));
             align-items: center;
+            @include common.flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(6px + (11 - 6) * ((100vw - 320px) / (1920 - 320))));
 
             li {
                 a {
@@ -311,9 +311,9 @@
 
     .sub-footer {
         padding-block: 14px 13px;
-        @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
         flex-wrap: wrap;
         gap: 15px;
+        @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
 
         @include common.max(767px) {
             justify-content: center;
@@ -364,8 +364,8 @@
         }
 
         .footer-content-list {
-            @include common.flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(8px + (10 - 8) * ((100vw - 320px) / (1920 - 320))));
             margin-bottom: calc(10px + (17 - 10) * ((100vw - 320px) / (1920 - 320)));
+            @include common.flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(8px + (10 - 8) * ((100vw - 320px) / (1920 - 320))));
 
             li {
                 width: 100%;
@@ -411,8 +411,8 @@
                         place-items: center;
 
                         svg {
-                            @include common.pseudowh($width: 21px, $height: 21px);
                             fill: rgba(var(--white), 0.5);
+                            @include common.pseudowh($width: 21px, $height: 21px);
 
                             body.dark & {
                                 fill: rgba(255, 255, 255, 0.5);
@@ -466,11 +466,11 @@
                         }
 
                         &::before {
+                            left: -2px;
+                            background-color: rgba(var(--white), 0.2);
                             @include common.pos;
                             @include common.center(vertical);
-                            left: -2px;
                             @include common.pseudowh($width: 1px, $height: 14px);
-                            background-color: rgba(var(--white), 0.2);
 
                             [dir="rtl"] & {
                                 left: unset;
@@ -555,12 +555,12 @@
                     }
 
                     &::after {
-                        @include common.pos;
                         bottom: 0;
                         left: 0;
-                        @include common.pseudowh($width: 0, $height: 1px);
                         background-color: rgba(var(--white), 0.5);
                         transition: .3s ease-in-out;
+                        @include common.pos;
+                        @include common.pseudowh($width: 0, $height: 1px);
 
                         [dir="rtl"] & {
                             left: unset;
@@ -574,10 +574,10 @@
                         @include common.max(575.98px) {
                             position: relative;
                             inset: unset;
-                            @include common.pseudowh($width: calc(4px + (5 - 4) * ((100vw - 320px) / (576 - 320))), $height: calc(4px + (5 - 4) * ((100vw - 320px) / (576 - 320))));
                             display: block;
                             border-radius: 100%;
                             background-color: rgba(var(--content-color), 0.7);
+                            @include common.pseudowh($width: calc(4px + (5 - 4) * ((100vw - 320px) / (576 - 320))), $height: calc(4px + (5 - 4) * ((100vw - 320px) / (576 - 320))));
 
                             [dir="rtl"] & {
                                 inset: unset;
@@ -603,8 +603,8 @@
 
         .app-store-link {
             margin-top: calc(11px + (18 - 11) * ((100vw - 320px) / (1920 - 320)));
-            @include common.flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(6px + (11 - 6) * ((100vw - 320px) / (1920 - 320))));
             align-items: center;
+            @include common.flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(6px + (11 - 6) * ((100vw - 320px) / (1920 - 320))));
 
             li {
                 a {
@@ -617,9 +617,9 @@
 
     .sub-footer {
         padding-block: 14px 13px;
-        @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
         flex-wrap: wrap;
         gap: calc(7px + (15 - 7) * ((100vw - 320px) / (1920 - 320)));
+        @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
 
         @include common.max(767px) {
             justify-content: center;

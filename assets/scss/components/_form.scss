@@ -110,9 +110,9 @@ input[type="search"i]::-webkit-search-cancel-button {
                     &::after {
                         content: "\eb7b";
                         color: rgba(var(--theme-green), 1);
-                        @include common.font;
                         font-size: 17px;
                         font-weight: 600;
+                        @include common.font;
                     }
                 }
             }
@@ -126,9 +126,9 @@ input[type="search"i]::-webkit-search-cancel-button {
                     &::after {
                         content: "\eb99";
                         color: rgba(var(--danger-color), 1);
-                        @include common.font;
                         font-size: 17px;
                         font-weight: 600;
+                        @include common.font;
                     }
                 }
             }
@@ -292,7 +292,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
     .form-check-input {
         cursor: pointer;
-        @include common.pseudowh($width: 18px, $height: 18px);
         background-color: transparent;
         position: relative;
         border: none;
@@ -300,11 +299,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
         float: unset;
         margin: -3px 0 0 0;
         filter: unset;
+        @include common.pseudowh($width: 18px, $height: 18px);
 
         &:before {
             transition: transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75);
-            @include common.pos;
-            @include common.pseudowh($width: 10px, $height: 5px);
             transform: rotate(-45deg) scale(0, 0);
             left: 4px;
             top: 5px;
@@ -312,17 +310,19 @@ input[type="date"]::-webkit-calendar-picker-indicator {
             border: 2px solid rgba(var(--primary-color), 1);
             border-top-style: none;
             border-right-style: none;
+            @include common.pos;
+            @include common.pseudowh($width: 10px, $height: 5px);
         }
 
         &:after {
             top: 0;
-            @include common.pos;
-            @include common.pseudowh($width: 18px, $height: 18px);
             left: 0;
             border: 1px solid rgba(var(--content-color), 0.2);
             cursor: pointer;
             background-color: rgba(var(--white), 1);
             border-radius: 4px;
+            @include common.pos;
+            @include common.pseudowh($width: 18px, $height: 18px);
         }
 
         &:checked {
@@ -347,14 +347,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     position: relative;
     margin-right: 16px;
     height: 100%;
-    @include common.pseudowh($width: 18px, $height: 18px);
     border: none;
     box-shadow: none;
+    @include common.pseudowh($width: 18px, $height: 18px);
 
     &:before {
         transition: transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75);
-        @include common.pos;
-        @include common.pseudowh($width: 10px, $height: 5px);
         transform: rotate(-45deg) scale(0, 0);
         left: 4px;
         top: 5px;
@@ -362,16 +360,18 @@ input[type="date"]::-webkit-calendar-picker-indicator {
         border: 2px solid rgba(var(--primary-color), 1);
         border-top-style: none;
         border-right-style: none;
+        @include common.pos;
+        @include common.pseudowh($width: 10px, $height: 5px);
     }
 
     &:after {
         top: 0;
-        @include common.pos;
-        @include common.pseudowh;
         left: 0;
         border: 1px solid rgba(var(--content-color), 0.2);
         cursor: pointer;
         background-color: rgba(var(--white), 1);
+        @include common.pos;
+        @include common.pseudowh;
     }
 
     &:checked {

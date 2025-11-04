@@ -77,10 +77,10 @@
 
         .seller-img {
             background-color: rgba(var(--content-color), 0.05);
-            @include common.flex_common;
-            @include common.pseudowh($width: calc(94px + (110 - 94) * ((100vw - 320px) / (1920 - 320))), $height: calc(54px + (60 - 54) * ((100vw - 320px) / (1920 - 320))));
             padding: calc(12px + (14 - 12) * ((100vw - 320px) / (1920 - 320)));
             border-radius: calc(6px + (8 - 6) * ((100vw - 320px) / (1920 - 320)));
+            @include common.flex_common;
+            @include common.pseudowh($width: calc(94px + (110 - 94) * ((100vw - 320px) / (1920 - 320))), $height: calc(54px + (60 - 54) * ((100vw - 320px) / (1920 - 320))));
 
             img {
                 @extend %img-contain;
@@ -160,9 +160,9 @@
                 span {
                     font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
                     line-height: 1.5;
-                    @include common.line($line: 2);
                     font-weight: 400;
                     color: rgba(var(--content-color), 1);
+                    @include common.line($line: 2);
                 }
             }
         }
@@ -170,8 +170,8 @@
 
     .seller-bottom {
         gap: calc(10px + (14 - 10) * ((100vw - 320px) / (1920 - 320)));
-        @include common.flex_common($dis: flex, $align: center, $justify: space-between);
         flex-wrap: wrap;
+        @include common.flex_common($dis: flex, $align: center, $justify: space-between);
 
         .badge {
             background-color: rgba(var(--primary-color2), 0.08);
@@ -214,10 +214,10 @@
 
                 &::before {
                     top: 0;
-                    @include common.pos;
-                    @include common.pseudowh($width: 1px, $height: 100%);
                     right: 0;
                     border-right: 1px solid rgba(var(--border-color), 1);
+                    @include common.pos;
+                    @include common.pseudowh($width: 1px, $height: 100%);
 
                     [dir="rtl"] & {
                         right: unset;
@@ -236,9 +236,9 @@
 
                 .progress {
                     background-color: rgba(var(--content-color), 0.05);
-                    @include common.pseudowh($width: 115px, $height: calc(3px + (5 - 3) * ((100vw - 320px) / (1920 - 320))));
                     margin-top: 2px;
                     border-radius: 100px;
+                    @include common.pseudowh($width: 115px, $height: calc(3px + (5 - 3) * ((100vw - 320px) / (1920 - 320))));
 
                     body.dark & {
                         background-color: rgba(var(--border-color), 1);
@@ -255,13 +255,13 @@
         .right-box {
             .btn {
                 padding: calc(8px + (10 - 8) * ((100vw - 320px) / (1920 - 320))) calc(10px + (12 - 10) * ((100vw - 320px) / (1920 - 320))) calc(7px + (9 - 7) * ((100vw - 320px) / (1920 - 320)));
-                @include common.flex_common;
                 line-height: 1;
                 font-size: calc(14px + (15 - 14) * ((100vw - 320px) / (1920 - 320)));
                 background-color: transparent;
                 gap: calc(4px + (6 - 4) * ((100vw - 320px) / (1920 - 320)));
                 color: rgba(var(--primary-color), 1);
                 border: 1px solid rgba(var(--primary-color), 1);
+                @include common.flex_common;
 
                 &:hover {
                     color: #fff;
@@ -363,8 +363,8 @@
 
         .profile-image {
             text-align: center;
-            @include common.flex_common;
             width: 20%;
+            @include common.flex_common;
 
             @include common.max(1199.98px) {
                 order: 1;
@@ -373,10 +373,10 @@
 
             .band-image {
                 background-color: rgba(var(--content-color), 0.05);
-                @include common.pseudowh($width: calc(96px + (120 - 96) * ((100vw - 320px) / (1920 - 320))), $height: calc(56px + (70 - 56) * ((100vw - 320px) / (1920 - 320))));
                 margin: 0 auto calc(12px + (16 - 12) * ((100vw - 320px) / (1920 - 320)));
                 padding: calc(12px + (14 - 12) * ((100vw - 320px) / (1920 - 320)));
                 border-radius: 6px;
+                @include common.pseudowh($width: calc(96px + (120 - 96) * ((100vw - 320px) / (1920 - 320))), $height: calc(56px + (70 - 56) * ((100vw - 320px) / (1920 - 320))));
                 @include common.flex_common;
 
                 img {
@@ -474,11 +474,11 @@
 
         .vendor-contact {
             border-left: 1px solid rgba(var(--border-color), 1);
-            @include common.flex_common;
             padding-left: calc(12px + (20 - 12) * ((100vw - 320px) / (1920 - 320)));
             margin-left: calc(12px + (20 - 12) * ((100vw - 320px) / (1920 - 320)));
             width: 20%;
             text-align: center;
+            @include common.flex_common;
 
             [dir="rtl"] & {
                 border-right: 1px solid rgba(var(--border-color), 1);
@@ -611,9 +611,9 @@
 
                     .band-image {
                         background-color: rgba(var(--content-color), 0.05);
-                        @include common.flex_common;
                         padding: calc(10px + (14 - 10) * ((100vw - 320px) / (1920 - 320)));
                         border-radius: 6px;
+                        @include common.flex_common;
                         @include common.pseudowh($width: calc(98px + (120 - 98) * ((100vw - 320px) / (1920 - 320))), $height: calc(54px + (70 - 54) * ((100vw - 320px) / (1920 - 320))));
 
                         img {
@@ -706,12 +706,12 @@
 
                     i {
                         position: absolute;
-                        @include common.center(vertical);
                         left: 0;
                         font-size: calc(16px + (17 - 16) * ((100vw - 320px) / (1920 - 320)));
                         padding-inline: calc(10px + (14 - 10) * ((100vw - 320px) / (1920 - 320)));
                         border-right: 1px solid rgba(var(--border-color), 1);
                         color: rgba(var(--content-color), 1);
+                        @include common.center(vertical);
                     }
                 }
 
@@ -740,10 +740,10 @@
 
                     ul {
                         align-items: center;
-                        @include common.flex_wrap($dis: flex, $wrap: wrap, $gap: calc(4px + (8 - 4) * ((100vw - 320px) / (1920 - 320))));
                         display: flex;
                         flex-wrap: wrap;
                         gap: calc(4px + (8 - 4) * ((100vw - 320px) / (1920 - 320)));
+                        @include common.flex_wrap($dis: flex, $wrap: wrap, $gap: calc(4px + (8 - 4) * ((100vw - 320px) / (1920 - 320))));
 
                         li {
                             position: relative;
@@ -754,8 +754,8 @@
                                 left: 0;
                                 margin: 0;
                                 cursor: pointer;
-                                @include common.pseudowh;
                                 opacity: 0;
+                                @include common.pseudowh;
 
                                 &:hover {
                                     ~.form-check-label {
@@ -997,22 +997,22 @@
 
             &::before {
                 bottom: 12px;
-                @include common.pos;
-                @include common.pseudowh($width: calc(100% + 38px), $height: 1px);
                 z-index: -1;
                 left: 0;
                 border-top: 1px solid rgba(var(--border-color), 1);
+                @include common.pos;
+                @include common.pseudowh($width: calc(100% + 38px), $height: 1px);
             }
 
             &::after {
                 content: "";
-                @include common.pseudowh($width: 24px, $height: 24px);
                 display: block;
                 border-radius: 100%;
                 background-color: rgba(var(--primary-color), 1);
                 border: 8px solid rgba(var(--white), 1);
                 margin-inline: auto;
                 box-shadow: 0px 0px 9.1px 2px rgba(var(--title-color), 0.07);
+                @include common.pseudowh($width: 24px, $height: 24px);
             }
 
             .contain-text {
@@ -1040,14 +1040,14 @@
 
                 &::before {
                     z-index: -1;
-                    @include common.center(horizontal);
-                    @include common.pseudowh($width: 0, $height: 0);
-                    @include common.pos;
                     bottom: -14px;
                     border: 0 solid transparent;
                     border-left-width: calc(14px + (23 - 14) * ((100vw - 320px) / (1920 - 320)));
                     border-right-width: calc(14px + (23 - 14) * ((100vw - 320px) / (1920 - 320)));
                     border-top: calc(10px + (15 - 10) * ((100vw - 320px) / (1920 - 320))) solid rgba(var(--white), 1);
+                    @include common.center(horizontal);
+                    @include common.pseudowh($width: 0, $height: 0);
+                    @include common.pos;
                 }
             }
         }

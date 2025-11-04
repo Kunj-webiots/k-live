@@ -71,13 +71,13 @@
 
         .circle {
             border-radius: 100%;
-            @include common.pseudowh($width: 46px, $height: 46px);
             border: 3px solid #60C7EB;
             display: block;
             position: absolute;
             left: -23px;
             top: 14px;
             z-index: -1;
+            @include common.pseudowh($width: 46px, $height: 46px);
 
             [dir="rtl"] & {
                 left: unset;
@@ -86,45 +86,45 @@
 
             &::after {
                 border: 3px solid #fff;
+                border-radius: 100%;
                 @include common.pos;
                 @include common.center(both);
                 @include common.pseudowh;
-                border-radius: 100%;
             }
 
             &::before {
                 border: 3px solid #FFD1DE;
+                border-radius: 100%;
                 @include common.pseudowh($width: calc(100% - 6px), $height: calc(100% - 6px));
                 @include common.pos;
                 @include common.center(both);
-                border-radius: 100%;
             }
         }
 
         .circle-2 {
             border-radius: 100%;
-            @include common.pseudowh($width: 46px, $height: 46px);
             border: 3px solid #60c7eb;
             display: block;
             position: absolute;
             right: 582px;
             bottom: -13px;
             z-index: -1;
+            @include common.pseudowh($width: 46px, $height: 46px);
 
             &::after {
                 border: 3px solid #fff;
+                border-radius: 100%;
                 @include common.pos;
                 @include common.center(both);
                 @include common.pseudowh;
-                border-radius: 100%;
             }
 
             &::before {
                 border: 3px solid #FFD1DE;
+                border-radius: 100%;
                 @include common.pseudowh($width: calc(100% - 6px), $height: calc(100% - 6px));
                 @include common.pos;
                 @include common.center(both);
-                border-radius: 100%;
             }
         }
 
@@ -146,10 +146,10 @@
             &::before {
                 content: "";
                 background-color: #5E627880;
-                @include common.pseudowh($width: 1px, $height: 59px);
                 display: block;
                 margin-bottom: -7px;
                 margin-inline: auto;
+                @include common.pseudowh($width: 1px, $height: 59px);
             }
 
             i {
@@ -175,10 +175,10 @@
             &::before {
                 content: "";
                 background-color: #5E627880;
-                @include common.pseudowh($width: 1px, $height: 78px);
                 display: block;
                 margin-bottom: -7px;
                 margin-inline: auto;
+                @include common.pseudowh($width: 1px, $height: 78px);
             }
 
             i {
@@ -204,10 +204,10 @@
             &::before {
                 content: "";
                 background-color: #5E627880;
-                @include common.pseudowh($width: 1px, $height: 65px);
                 display: block;
                 margin-bottom: -7px;
                 margin-inline: auto;
+                @include common.pseudowh($width: 1px, $height: 65px);
             }
 
             i {
@@ -224,15 +224,15 @@
 
         .newsletter-img {
             position: absolute;
-            @include common.center(vertical);
             z-index: 1;
             left: calc(8px + (80 - 8) * ((100vw - 1398px) / (1920 - 1398)));
             width: calc(240px + (283 - 240) * ((100vw - 1398px) / (1920 - 1398)));
+            @include common.center(vertical);
 
             [dir="rtl"] & {
                 left: unset;
                 right: calc(8px + (80 - 8) * ((100vw - 1398px) / (1920 - 1398)));
-                transform: scalex(-1) translateY(-50%);
+                transform: scaleX(-1) translateY(-50%);
             }
 
             @include common.max(1399.98px) {
@@ -300,11 +300,11 @@
 
             .newsletter-form {
                 gap: 10px;
-                @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
                 border-left: 1px solid #5E627880;
                 padding-left: calc(30px + (50 - 30) * ((100vw - 1398px) / (1920 - 1398)));
                 margin-left: calc(30px + (50 - 30) * ((100vw - 1398px) / (1920 - 1398)));
                 width: calc(100% - calc(60px + (100 - 60) * ((100vw - 1398px) / (1920 - 1398))));
+                @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
 
                 [dir="rtl"] & {
                     border-right: 1px solid #5E627880;
@@ -369,7 +369,6 @@
                     .newsletter-form-button {
                         position: absolute;
                         right: 4px;
-                        @include common.center(vertical);
                         background-color: rgba(var(--primary-color), 1);
                         color: #fff;
                         font-size: 14px;
@@ -378,6 +377,7 @@
                         font-weight: 400;
                         padding: 0 calc(14px + (26 - 14) * ((100vw - 320px) / (1920 - 320)));
                         border-radius: 6px !important;
+                        @include common.center(vertical);
 
                         [dir="rtl"] & {
                             right: unset;
@@ -401,7 +401,7 @@
     }
 }
 
-.shpping-section {
+.shopping-section {
     .banner-box {
         overflow: unset;
         position: relative;
@@ -411,13 +411,12 @@
         &::before {
             z-index: 1;
             left: 0;
-            @include common.pos;
-            ;
-            @include common.pseudowh($width: 100%, $height: 11px);
             bottom: 0;
             background-image: url(../svg/shipping.svg);
             transform: scaleY(-1);
             background-repeat: no-repeat;
+            @include common.pos;
+            @include common.pseudowh($width: 100%, $height: 11px);
 
             body.dark & {
                 background-image: url(../svg/shipping-dark.svg);
@@ -433,10 +432,9 @@
             position: absolute;
             top: 0;
             background-image: url(../svg/shipping.svg);
-            @include common.pos;
-            ;
-            @include common.pseudowh($width: 100%, $height: 11px);
             background-repeat: no-repeat;
+            @include common.pos;
+            @include common.pseudowh($width: 100%, $height: 11px);
 
             body.dark & {
                 top: -4px;
@@ -447,10 +445,10 @@
 
         .shipping-img {
             position: absolute;
-            @include common.center(both);
             object-fit: cover;
-            @extend %img-cover;
             z-index: -1;
+            @extend %img-cover;
+            @include common.center(both);
         }
 
         >.row {
@@ -471,12 +469,17 @@
 
                 +div {
                     &::before {
-                        background-color: #5E627880;
-                        @include common.pos;
-                        ;
-                        @include common.center(both);
-                        @include common.pseudowh($width: 1px, $height: 39px);
+                        background-color: rgba(94, 98, 120, 0.502);
+                        left: 0;
                         display: block;
+                        @include common.pos;
+                        @include common.center(vertical);
+                        @include common.pseudowh($width: 1px, $height: 39px);
+
+                        [dir="rtl"] & {
+                            left: unset;
+                            right: 0;
+                        }
 
                         @include common.max(767.98px) {
                             content: none;
@@ -500,8 +503,8 @@
 
             svg {
                 color: rgba(var(--primary-color2), 1);
-                @include common.pseudowh($width: calc(31px + (43 - 31) * ((100vw - 320px) / (1920 - 320))), $height: calc(31px + (43 - 31) * ((100vw - 320px) / (1920 - 320))));
                 fill: transparent;
+                @include common.pseudowh($width: calc(31px + (43 - 31) * ((100vw - 320px) / (1920 - 320))), $height: calc(31px + (43 - 31) * ((100vw - 320px) / (1920 - 320))));
             }
 
             >div {
@@ -568,9 +571,9 @@
 .banner-box-17 {
     .banner-image {
         mix-blend-mode: darken;
-        @include common.pseudowh($width: 100%, $height: 371px);
         object-fit: cover;
         object-position: bottom;
+        @include common.pseudowh($width: 100%, $height: 371px);
     }
 
     .banner-contain {
@@ -588,9 +591,9 @@
             &::before,
             &::after {
                 top: 50%;
+                border-radius: 100%;
                 @include common.pos;
                 @include common.pseudowh($width: 60px, $height: 2px);
-                border-radius: 100%;
             }
 
             &::before {
@@ -640,10 +643,10 @@
             li {
                 background-color: #fff;
                 padding: calc(9px + (12 - 9) * ((100vw - 1200px) / (1920 - 1200)));
-                @include common.flex_common;
                 text-align: center;
                 box-shadow: 2.65556px 4.42593px 8.85185px rgba(45, 126, 87, 0.05);
                 border-radius: 5px;
+                @include common.flex_common;
                 @include common.pseudowh($width: 54px, $height: 72px);
 
                 >div {
@@ -679,10 +682,10 @@
             background-color: rgba(var(--primary-color), 1);
             margin-top: 15px;
             width: 100%;
-            @include common.flex_common;
             gap: 10px;
             font-size: 14px;
             color: #202326;
+            @include common.flex_common;
 
             i {
                 margin-top: -3px;
@@ -705,9 +708,9 @@
         position: absolute;
         top: 0;
         left: 0;
-        @include common.pseudowh;
         display: flex;
         align-items: center;
+        @include common.pseudowh;
 
         [dir="rtl"] & {
             transform: scaleX(-1);

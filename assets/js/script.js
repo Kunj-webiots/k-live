@@ -495,44 +495,44 @@ product_details_array.forEach((item) => {
 /*=====================
   16. Disable Inspect Js
 ==========================*/
-document.addEventListener("contextmenu", (e) => e.preventDefault());
+// document.addEventListener("contextmenu", (e) => e.preventDefault());
 
-/* Disable specific keys */
-document.onkeydown = function (e) {
-    /* F12 */
-    if (e.keyCode == 123) {
-        return false;
-    }
-    /* Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C */
-    if (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74 || e.keyCode == 67)) {
-        return false;
-    }
-    /* Ctrl+U (View Source) */
-    if (e.ctrlKey && e.keyCode == 85) {
-        return false;
-    }
-};
+// /* Disable specific keys */
+// document.onkeydown = function (e) {
+//     /* F12 */
+//     if (e.keyCode == 123) {
+//         return false;
+//     }
+//     /* Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C */
+//     if (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74 || e.keyCode == 67)) {
+//         return false;
+//     }
+//     /* Ctrl+U (View Source) */
+//     if (e.ctrlKey && e.keyCode == 85) {
+//         return false;
+//     }
+// };
 
-/* Detect if DevTools open */
-(function () {
-    let devtoolsOpen = false;
-    const element = new Image();
-    Object.defineProperty(element, "id", {
-        get: function () {
-            devtoolsOpen = true;
-            alert("Developer Tools are disabled 🚫");
-            window.location.href = "about:blank";
-        }
-    });
-    setInterval(function () {
-        devtoolsOpen = false;
-        console.log(element);
-        if (devtoolsOpen) {
-            /* extra safety */
-            window.location.href = "about:blank";
-        }
-    }, 1000);
-})();
+// /* Detect if DevTools open */
+// (function () {
+//     let devtoolsOpen = false;
+//     const element = new Image();
+//     Object.defineProperty(element, "id", {
+//         get: function () {
+//             devtoolsOpen = true;
+//             alert("Developer Tools are disabled 🚫");
+//             window.location.href = "about:blank";
+//         }
+//     });
+//     setInterval(function () {
+//         devtoolsOpen = false;
+//         console.log(element);
+//         if (devtoolsOpen) {
+//             /* extra safety */
+//             window.location.href = "about:blank";
+//         }
+//     }, 1000);
+// })();
 
 /*=====================
   17. Quantity Js
@@ -546,7 +546,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const input = container.querySelector(".input-qty");
 
         function toggleMinus() {
-            if (parseInt(input.value) <= parseInt(input.min || 1)) {
+            if (parseInt(input.value) <= parseInt(input.min || 0)) {
                 minusBtn.setAttribute("disabled", "disabled");
             } else {
                 minusBtn.removeAttribute("disabled");
@@ -556,15 +556,15 @@ document.addEventListener("DOMContentLoaded", function () {
         toggleMinus();
 
         minusBtn.addEventListener("click", () => {
-            let value = parseInt(input.value) || 1;
-            if (value > parseInt(input.min || 1)) {
+            let value = parseInt(input.value) || 0;
+            if (value > parseInt(input.min || 0)) {
                 input.value = value - 1;
             }
             toggleMinus();
         });
 
         plusBtn.addEventListener("click", () => {
-            let value = parseInt(input.value) || 1;
+            let value = parseInt(input.value) || 0;
             input.value = value + 1;
             toggleMinus();
         });
@@ -742,12 +742,10 @@ tl.to(".preloader-progress-bar", {
         delay: 0.8
     });
 
-
-
 /*=====================
     22. Recent Product Show Js
 ==========================*/
-const box = document.querySelector('.recent-product-box');
+const box = document.querySelector('.recently-product-box');
 const closeBtn = document.querySelector('.recent-close');
 const timerElement = document.querySelector('.recent-content .timer');
 

@@ -75,8 +75,8 @@
             }
 
             svg {
-                @include common.pseudowh($width: calc(40px + (48 - 40) * ((100vw - 320px) / (1920 - 320))), $height: calc(28px + (36 - 28) * ((100vw - 320px) / (1920 - 320))));
                 fill: rgba(var(--primary-color), 1);
+                @include common.pseudowh($width: calc(40px + (48 - 40) * ((100vw - 320px) / (1920 - 320))), $height: calc(28px + (36 - 28) * ((100vw - 320px) / (1920 - 320))));
 
                 @include common.max(480px) {
                     margin-bottom: 8px;
@@ -384,8 +384,8 @@
             }
 
             svg {
-                @include common.pseudowh($width: calc(40px + (48 - 40) * ((100vw - 320px) / (1920 - 320))), $height: calc(28px + (36 - 28) * ((100vw - 320px) / (1920 - 320))));
                 fill: rgba(var(--primary-color), 1);
+                @include common.pseudowh($width: calc(40px + (48 - 40) * ((100vw - 320px) / (1920 - 320))), $height: calc(28px + (36 - 28) * ((100vw - 320px) / (1920 - 320))));
 
                 @include common.max(480px) {
                     margin-bottom: 8px;

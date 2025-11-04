@@ -40,11 +40,11 @@
 
                 &::after {
                     right: 51px;
+                    opacity: .3;
+                    background-color: rgba(var(--border-color), 1);
                     @include common.pos;
                     @include common.center(vertical);
                     @include common.pseudowh($width: 1px, $height: 60%);
-                    opacity: .3;
-                    background-color: rgba(var(--border-color), 1);
 
                     [dir="rtl"] & {
                         right: unset;
@@ -201,8 +201,8 @@
 
                                 .recent-image {
                                     border-radius: 4px;
-                                    @include common.pseudowh($width: 130px, $height: 85px);
                                     overflow: hidden;
+                                    @include common.pseudowh($width: 130px, $height: 85px);
 
                                     @include common.min(1400px) {
                                         @include common.pseudowh($width: calc(95px + (130 - 95) * ((100vw - 1400px) / (1920 - 1400))), $height: calc(65px + (85 - 65) * ((100vw - 1400px) / (1920 - 1400))));
@@ -244,14 +244,14 @@
 
                                     p {
                                         color: rgba(var(--content-color), 1);
-                                        @include common.line($line: 2);
                                         margin-top: 6px;
+                                        @include common.line($line: 2);
                                     }
 
                                     h6 {
                                         margin-top: 8px;
-                                        @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
                                         color: rgba(var(--content-color), 1);
+                                        @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
 
                                         .feather {
                                             stroke-width: 1;
@@ -388,8 +388,8 @@
 
                 img {
                     border-radius: 4px;
-                    @include common.pseudowh($width: calc(54px + (74 - 54) * ((100vw - 320px) / (1920 - 320))), $height: calc(54px + (74 - 54) * ((100vw - 320px) / (1920 - 320))));
                     object-fit: cover;
+                    @include common.pseudowh($width: calc(54px + (74 - 54) * ((100vw - 320px) / (1920 - 320))), $height: calc(54px + (74 - 54) * ((100vw - 320px) / (1920 - 320))));
                 }
             }
 
@@ -424,12 +424,12 @@
                     li {
                         a {
                             font-size: 17px;
-                            @include common.flex_common;
-                            @include common.pseudowh($width: calc(34px + (38 - 34) * ((100vw - 320px) / (1920 - 320))), $height: calc(34px + (38 - 34) * ((100vw - 320px) / (1920 - 320))));
                             border-radius: 3px;
                             color: rgba(var(--content-color), 1);
                             transition: all 0.25s ease-in-out;
                             background-color: rgba(var(--base-gray), 1);
+                            @include common.flex_common;
+                            @include common.pseudowh($width: calc(34px + (38 - 34) * ((100vw - 320px) / (1920 - 320))), $height: calc(34px + (38 - 34) * ((100vw - 320px) / (1920 - 320))));
 
                             &:hover {
                                 background-color: rgba(var(--theme-blue), 1);
@@ -457,7 +457,6 @@
 
         @include common.max(1199.98px) {
             border-right: unset;
-            @include common.pseudowh($width: calc(300px + (350 - 300) * ((100vw - 320px) / (1199 - 320))), $height: 100%);
             position: fixed;
             top: 0;
             left: calc(-320px + (-370 - -320) * ((100vw - 320px) / (1199 - 320)));
@@ -465,6 +464,7 @@
             z-index: 1041;
             overflow-y: auto;
             transition: all 0.15s ease-in-out;
+            @include common.pseudowh($width: calc(300px + (350 - 300) * ((100vw - 320px) / (1199 - 320))), $height: 100%);
 
             [dir="rtl"] & {
                 left: unset;
@@ -531,8 +531,6 @@
         &.sticky-blog-box {
             .pinned {
                 position: absolute;
-                @include common.flex_common;
-                @include common.pseudowh($width: 33px, $height: 33px);
                 -webkit-font-smoothing: antialiased;
                 color: #fff;
                 top: 8px;
@@ -541,6 +539,8 @@
                 z-index: 1;
                 border-radius: 6px;
                 font-size: 18px;
+                @include common.flex_common;
+                @include common.pseudowh($width: 33px, $height: 33px);
             }
         }
 
@@ -576,7 +576,6 @@
 
             label {
                 position: absolute;
-                @include common.flex_common;
                 top: 8px;
                 left: 8px;
                 border-radius: 4px;
@@ -587,6 +586,7 @@
                 font-size: 13px;
                 font-weight: 600;
                 gap: 3px;
+                @include common.flex_common;
 
                 [dir="rtl"] & {
                     left: unset;
@@ -640,14 +640,13 @@
 
                 .blog-image {
                     border-radius: 4px;
-                    @include common.pseudowh($width: 50px, $height: 50px);
                     margin: 0;
                     border: 1px solid rgba(var(--content-color), 0.1);
                     transform: unset;
+                    @include common.pseudowh($width: 50px, $height: 50px);
 
                     img {
                         aspect-ratio: unset;
-
                     }
                 }
             }
@@ -664,10 +663,10 @@
 
                 h3 {
                     font-weight: 500;
-                    @include common.line($line: 2);
                     color: rgba(var(--title-color), 1);
                     font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320)));
                     transition: all 0.15s ease-in-out;
+                    @include common.line($line: 2);
                 }
 
                 i {
@@ -679,8 +678,8 @@
 
             p {
                 color: rgba(var(--content-color), 1);
-                @include common.line($line: 3);
                 margin-bottom: 0;
+                @include common.line($line: 3);
 
                 @include common.max(1399px) {
                     -webkit-line-clamp: 2;
@@ -836,10 +835,10 @@
 
                     .blog-image {
                         border-radius: 4px;
-                        @include common.pseudowh($width: 50px, $height: 50px);
                         margin: 0;
                         border: 1px solid rgba(var(--content-color), 0.1);
                         transform: unset;
+                        @include common.pseudowh($width: 50px, $height: 50px);
 
                         img {
                             aspect-ratio: unset;
@@ -857,16 +856,16 @@
 
                 &::before {
                     top: 8px;
-                    @include common.pos($pos: absolute, $content: "\f038");
-                    @include common.flex_common;
-                    @include common.pseudowh($width: calc(29px + (33 - 29) * ((100vw - 320px) / (1920 - 320))), $height: calc(29px + (33 - 29) * ((100vw - 320px) / (1920 - 320))));
-                    @include common.font;
                     right: 8px;
                     color: #fff;
                     background-color: rgba(var(--primary-color), 1);
                     z-index: 1;
                     border-radius: calc(4px + (6 - 4) * ((100vw - 320px) / (1920 - 320)));
                     font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320)));
+                    @include common.pos($pos: absolute, $content: "\f038");
+                    @include common.flex_common;
+                    @include common.pseudowh($width: calc(29px + (33 - 29) * ((100vw - 320px) / (1920 - 320))), $height: calc(29px + (33 - 29) * ((100vw - 320px) / (1920 - 320))));
+                    @include common.font;
                 }
             }
         }
@@ -931,8 +930,8 @@
 
             @include common.max(767px) {
                 margin-bottom: 8px;
-                @include common.pseudowh($width: 100%, $height: auto);
                 text-align: center;
+                @include common.pseudowh($width: 100%, $height: auto);
             }
 
             img {
@@ -1007,10 +1006,10 @@
 
                     &::before {
                         background-color: rgba(var(--title-color), 1);
+                        left: -24px;
                         @include common.pos;
                         @include common.pseudowh($width: 15px, $height: 1px);
                         @include common.center(vertical);
-                        left: -24px;
                     }
                 }
 
@@ -1027,10 +1026,10 @@
 
         .contain-comment-list {
             justify-content: unset;
-            @include common.flex_common;
             flex-wrap: wrap;
             gap: calc(10px + (23 - 10) * ((100vw - 320px) / (1920 - 320)));
             color: rgba(var(--content-color), 1);
+            @include common.flex_common;
 
             &.user-list {
                 display: flex;
@@ -1080,19 +1079,19 @@
 
                     .form-check-input {
                         cursor: pointer;
-                        @include common.pseudowh($width: auto, $height: auto);
                         position: relative;
                         margin-top: 0;
                         line-height: 1;
                         border: unset;
                         background-color: transparent;
+                        @include common.pseudowh($width: auto, $height: auto);
 
                         &:before {
                             content: "\ee0f";
-                            @include common.font;
                             font-size: 18px;
                             color: rgba(var(--content-color), 1);
                             font-weight: 400;
+                            @include common.font;
                         }
 
                         &:checked {
@@ -1139,12 +1138,12 @@
 
             .first {
                 font-size: calc(55px + (70 - 55) * ((100vw - 320px) / (1920 - 320)));
-                @include common.pseudowh($width: calc(38px + (50 - 38) * ((100vw - 320px) / (1920 - 320))), $height: calc(38px + (50 - 38) * ((100vw - 320px) / (1920 - 320))));
-                @include common.flex_common;
                 color: rgba(var(--content-color), 1);
                 float: left;
                 margin-right: calc(8px + (20 - 8) * ((100vw - 320px) / (1920 - 320)));
                 margin-top: 8px;
+                @include common.pseudowh($width: calc(38px + (50 - 38) * ((100vw - 320px) / (1920 - 320))), $height: calc(38px + (50 - 38) * ((100vw - 320px) / (1920 - 320))));
+                @include common.flex_common;
             }
         }
 
@@ -1185,14 +1184,14 @@
 
             &::before {
                 font-size: calc(142px + (200 - 142) * ((100vw - 320px) / (1920 - 320)));
-                @include common.pos($pos: absolute, $content: "\ec52");
-                @include common.font;
                 color: rgba(var(--white), 0.06);
                 top: calc(-42px + (-46 - -42) * ((100vw - 320px) / (1920 - 320)));
                 right: calc(-36px + (-32 - -36) * ((100vw - 320px) / (1920 - 320)));
                 line-height: 1;
                 transform: rotate(-6deg);
                 z-index: -1;
+                @include common.pos($pos: absolute, $content: "\ec52");
+                @include common.font;
 
                 body.dark & {
                     color: rgba(255, 255, 255, 0.06);
@@ -1265,9 +1264,9 @@
 
                         img {
                             object-fit: cover;
-                            @include common.pseudowh($width: 60px, $height: 60px);
                             border-radius: 100%;
                             overflow: hidden;
+                            @include common.pseudowh($width: 60px, $height: 60px);
                         }
 
                         .name {

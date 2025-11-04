@@ -1,7 +1,7 @@
 @import "theme/variables";
 
 :root {
-    --theme-deafult: #122635;
+    --theme-default: #122635;
     --theme-secondary: #f73164;
 }
 
@@ -20,10 +20,6 @@
 @import "components/form-wizard";
 @import "components/table.scss";
 @import "components/according";
-
-@import "layout/select2";
-
-@import "pages/chart";
 
 @import "theme/document";
 @import "theme/responsive";

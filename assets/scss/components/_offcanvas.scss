@@ -15,13 +15,13 @@
 
         .category-header {
             flex-shrink: 0;
-            @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
             z-index: 1;
             box-shadow: 0 2px 10px -3px rgba(var(--title-color), 0.1);
             position: relative;
             padding: calc(16px + (24 - 16) * ((100vw - 320px) / (1920 - 320))) calc(15px + (20 - 15) * ((100vw - 320px) / (1920 - 320)));
             background-color: rgba(var(--base-gray), 1);
             border-bottom: 1px solid rgba(var(--content-color), 0.2);
+            @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
 
             h5 {
                 color: rgba(var(--title-color), 1);
@@ -36,8 +36,8 @@
                 font-size: 20px;
                 line-height: 1;
                 background: unset;
-                @include common.pseudowh($width: unset, $height: unset);
                 opacity: 1;
+                @include common.pseudowh($width: unset, $height: unset);
 
                 body.dark & {
                     color: #fff;
@@ -104,8 +104,8 @@
 
                         svg {
                             fill: rgba(var(--content-color), 1);
-                            @include common.pseudowh($width: 20px, $height: 20px);
                             margin-top: -4px;
+                            @include common.pseudowh($width: 20px, $height: 20px);
                         }
 
                         h5 {
@@ -179,11 +179,11 @@
 
                         &::after {
                             color: rgba(var(--content-color), 1);
-                            @include common.pos($pos: relative, $content: "\ea6e");
-                            @include common.font;
                             font-size: 18px;
                             margin-left: auto;
                             transition: all .5s ease-in-out;
+                            @include common.pos($pos: relative, $content: "\ea6e");
+                            @include common.font;
 
                             [dir="rtl"] & {
                                 margin-left: unset;
@@ -199,8 +199,8 @@
 
                         svg {
                             fill: rgba(var(--content-color), 1);
-                            @include common.pseudowh($width: 20px, $height: 20px);
                             margin-top: -4px;
+                            @include common.pseudowh($width: 20px, $height: 20px);
                         }
 
                         h5 {
@@ -274,8 +274,8 @@
                     padding: 0;
                     color: rgba(var(--title-color), 1);
                     border: none;
-                    @include common.pseudowh($width: unset, $height: unset);
                     line-height: 1;
+                    @include common.pseudowh($width: unset, $height: unset);
 
                     i {
                         font-size: calc(18px + (22 - 18) * ((100vw - 320px) / (1920 - 320)));
@@ -381,14 +381,14 @@
 
                             .iconsax {
                                 position: absolute;
-                                @include common.center(vertical);
-                                @include common.pseudowh($width: calc(22px + (28 - 22) * ((100vw - 320px) / (1920 - 320))), $height: calc(22px + (28 - 22) * ((100vw - 320px) / (1920 - 320))));
-                                @include common.flex_common;
                                 right: 0;
                                 border-radius: 100%;
                                 background-color: rgba(var(--primary-color), 1);
                                 --Color: #fff;
                                 --size: calc(15px + (17 - 15) * ((100vw - 320px) / (1920 - 320)));
+                                @include common.center(vertical);
+                                @include common.pseudowh($width: calc(22px + (28 - 22) * ((100vw - 320px) / (1920 - 320))), $height: calc(22px + (28 - 22) * ((100vw - 320px) / (1920 - 320))));
+                                @include common.flex_common;
 
                                 [dir="rtl"] & {
                                     right: unset;
@@ -416,9 +416,9 @@
 
                     .sub-total {
                         font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (1920 - 320)));
-                        @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
                         color: rgba(var(--title-color), 1);
                         font-weight: 400;
+                        @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
 
                         span {
                             font-weight: 500;
@@ -613,16 +613,16 @@
 
             .btn-close {
                 padding: 0;
-                @include common.pseudowh($width: unset, $height: unset);
                 margin: 0;
                 background: unset;
                 opacity: 1;
+                @include common.pseudowh($width: unset, $height: unset);
 
                 &::before {
                     content: "\eb99";
-                    @include common.font;
                     font-size: 18px;
                     color: rgba(var(--content-color), 1);
+                    @include common.font;
                 }
             }
         }
@@ -647,7 +647,6 @@
             .left-box {
                 @include common.max(991px) {
                     border: unset;
-                    @include common.pseudowh($width: unset, $height: unset);
                     position: relative;
                     inset: unset;
                     background-color: transparent;
@@ -655,6 +654,7 @@
                     transition: all 0.5s ease;
                     overflow: visible;
                     transition: all 0.15s ease-in-out;
+                    @include common.pseudowh($width: unset, $height: unset);
                 }
 
                 .filter-category-2 {
@@ -689,11 +689,11 @@
 
                             &:after {
                                 color: rgba(var(--content-color), 1);
-                                @include common.pos($pos: relative, $content: "\eb99");
-                                @include common.font;
                                 cursor: pointer;
                                 line-height: 1;
                                 margin-top: -2px;
+                                @include common.pos($pos: relative, $content: "\eb99");
+                                @include common.font;
                             }
 
                             a {
@@ -751,7 +751,6 @@
 
                         .search-button {
                             position: absolute;
-                            @include common.center(vertical);
                             right: 0;
                             border-left: 1px solid rgba(var(--content-color), 0.3);
                             font-size: 15px;
@@ -760,6 +759,7 @@
                             display: flex;
                             align-items: center;
                             color: rgba(var(--content-color), 1);
+                            @include common.center(vertical);
                         }
 
                         .form-control {
@@ -812,10 +812,10 @@
 
                         .nav-item {
                             background-color: #f7f6f3;
-                            @include common.pseudowh($width: 100%, $height: 60px);
                             border-radius: 6px;
                             display: flex;
                             overflow: hidden;
+                            @include common.pseudowh($width: 100%, $height: 60px);
 
                             .nav-link {
                                 width: 100%;
@@ -830,18 +830,18 @@
                                 &:hover(not) {
                                     img {
                                         transform: translateY(-50%) rotate(-4deg);
-                                        @include common.pseudowh($width: 75px, $height: 75px);
                                         right: -12px;
                                         opacity: 0.45;
+                                        @include common.pseudowh($width: 75px, $height: 75px);
                                     }
                                 }
 
                                 &:hover {
                                     img {
                                         transform: translateY(-50%) rotate(-4deg);
-                                        @include common.pseudowh($width: 75px, $height: 75px);
                                         right: -12px;
                                         opacity: 0.29;
+                                        @include common.pseudowh($width: 75px, $height: 75px);
                                     }
                                 }
 
@@ -853,21 +853,21 @@
 
                                     img {
                                         position: absolute;
-                                        @include common.center(vertical);
-                                        @include common.pseudowh($width: 90px, $height: 90px);
                                         right: -10px;
                                         filter: invert(1);
                                         opacity: 0.4;
+                                        @include common.center(vertical);
+                                        @include common.pseudowh($width: 90px, $height: 90px);
                                     }
                                 }
 
                                 img {
                                     position: absolute;
-                                    @include common.center(vertical);
-                                    @include common.pseudowh($width: 70px, $height: 70px);
                                     right: -10px;
                                     opacity: 0.1;
                                     transition: all 0.15s ease-in-out;
+                                    @include common.center(vertical);
+                                    @include common.pseudowh($width: 70px, $height: 70px);
                                 }
                             }
                         }
@@ -1021,11 +1021,11 @@
 
                 &::before {
                     bottom: 0;
-                    @include common.pos;
                     left: 0;
-                    @include common.pseudowh($width: 0, $height: 2px);
                     background-color: rgba(var(--primary-color2), 1);
                     transition: .5s;
+                    @include common.pos;
+                    @include common.pseudowh($width: 0, $height: 2px);
 
                     [dir="rtl"] & {
                         left: unset;

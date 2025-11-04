@@ -97,12 +97,12 @@ header {
 
                         &:before {
                             margin-left: auto;
-                            @include common.pos($pos: relative !important, $content: "\ea4e" !important);
-                            @include common.font;
-                            @include common.pseudowh($width: auto !important, $height: auto !important);
                             transform: unset !important;
                             inset: unset !important;
                             background-color: transparent !important;
+                            @include common.pos($pos: relative !important, $content: "\ea4e" !important);
+                            @include common.font;
+                            @include common.pseudowh($width: auto !important, $height: auto !important);
 
                             [dir="rtl"] & {
                                 margin-left: unset;
@@ -156,7 +156,6 @@ header {
 
                 .sub-menu {
                     position: absolute;
-                    @include common.flex_wrap($dis: flex, $wrap: wrap, $gap: 10px);
                     top: -17px;
                     left: 123%;
                     min-width: 200px;
@@ -167,6 +166,7 @@ header {
                     visibility: hidden;
                     opacity: 0;
                     transition: all 0.15s ease-in-out;
+                    @include common.flex_wrap($dis: flex, $wrap: wrap, $gap: 10px);
 
                     @include common.max(1199.98px) {
                         position: relative;
@@ -202,7 +202,6 @@ header {
 
                             @include common.max(1199.98px) {
                                 flex-direction: row-reverse;
-                                @include common.flex_common ($dis: flex, $align: center, $justify: flex-end);
                                 gap: 8px;
                                 text-transform: capitalize;
                                 color: rgba(var(--content-color), 1);
@@ -210,6 +209,7 @@ header {
                                 padding: 6px 9px;
                                 position: relative;
                                 line-height: 1;
+                                @include common.flex_common ($dis: flex, $align: center, $justify: flex-end);
                             }
 
                             &:hover {
@@ -230,20 +230,20 @@ header {
 
                             &::after {
                                 bottom: -1px;
-                                @include common.pos;
-                                @include common.pseudowh($width: 0, $height: 4px);
                                 left: 0;
                                 background-color: rgba(var(--primary-color), 0.5);
                                 border-radius: 100px;
                                 transition: all 0.15s ease-in-out;
                                 z-index: -1;
+                                @include common.pos;
+                                @include common.pseudowh($width: 0, $height: 4px);
 
                                 @include common.max(1199.98px) {
                                     background-color: rgba(var(--content-color), 1);
-                                    @include common.pseudowh($width: 4px, $height: 4px);
                                     position: relative;
                                     inset: unset;
                                     display: block;
+                                    @include common.pseudowh($width: 4px, $height: 4px);
                                 }
 
                                 [dir="rtl"] & {
@@ -274,8 +274,8 @@ header {
 
         .demo-list {
             gap: calc(8px + (18 - 8) * ((100vw - 1198px) / (1920 - 1198)));
-            @include common.flex_common;
             flex-wrap: wrap;
+            @include common.flex_common;
 
             @include common.max(1199.98px) {
                 gap: 12px;
@@ -296,8 +296,8 @@ header {
 
                     @include common.max(1199.98px) {
                         object-fit: cover;
-                        @include common.pseudowh($height: calc(140px + (163 - 140) * ((100vw - 320px) / (1200 - 320))), $width: 100%);
                         object-position: top;
+                        @include common.pseudowh($height: calc(140px + (163 - 140) * ((100vw - 320px) / (1200 - 320))), $width: 100%);
                     }
                 }
 
@@ -362,14 +362,14 @@ header {
 
                         &::after {
                             left: 0;
-                            @include common.pos;
-                            @include common.pseudowh($width: 0, $height: 4px);
                             bottom: 2px;
                             background-color: rgba(var(--white), 1);
                             opacity: 0.3;
                             border-radius: 50px;
                             transition: all 0.15s ease-in-out;
                             z-index: -1;
+                            @include common.pos;
+                            @include common.pseudowh($width: 0, $height: 4px);
                         }
                     }
                 }
@@ -418,12 +418,12 @@ header {
 
             .nav-link {
                 padding: 0;
-                @include common.flex_common;
                 font-size: 16px;
                 font-weight: normal;
                 box-shadow: none;
                 position: relative;
                 padding-block: 15px;
+                @include common.flex_common;
 
                 body.dark & {
                     color: #fff;
@@ -460,12 +460,12 @@ header {
 
                     &::before {
                         display: inline-block;
-                        @include common.pos;
-                        @include common.pseudowh($width: 0, $height: 0);
                         top: 100%;
                         left: 10px;
                         border-right: 4px solid transparent;
                         border-top: 4px solid var(--primary-color);
+                        @include common.pos;
+                        @include common.pseudowh($width: 0, $height: 0);
 
                         @include common.max(1199.98px) {
                             content: none;
@@ -517,9 +517,9 @@ header {
 
     .navbar-toggler-icon {
         font-size: 20px;
+        color: rgba(var(--white), 1);
         @include common.pseudowh($width: auto, $height: auto);
         @include common.flex_common;
-        color: rgba(var(--white), 1);
 
         body.dark & {
             color: #fff;
@@ -675,8 +675,8 @@ header {
 
                 @include common.max(1199.98px) {
                     transform: translateX(-101%);
-                    @include common.pseudowh($width: calc(310px + (350 - 310) * ((100vw - 320px) / (1200 - 320))), $height: 100vh);
                     z-index: 13;
+                    @include common.pseudowh($width: calc(310px + (350 - 310) * ((100vw - 320px) / (1200 - 320))), $height: 100vh);
 
                     [dir="rtl"] & {
                         transform: translateX(101%);
@@ -693,12 +693,12 @@ header {
 
     .offcanvas-header {
         flex-shrink: 0;
-        @include common.flex_common($dis: flex, $align: center, $justify: space-between);
         padding: 20px 24px;
         z-index: 1;
         padding: calc(16px + (26 - 16) * ((100vw - 320px) / (1920 - 320))) calc(19px + (32 - 19) * ((100vw - 320px) / (1920 - 320))) 16px;
         background-color: #F2F3F8;
         border-bottom: 1px solid rgba(var(--content-color), 0.2);
+        @include common.flex_common($dis: flex, $align: center, $justify: space-between);
 
         body.dark & {
             background-color: rgba(var(--theme-blue-dark), 1);
@@ -712,9 +712,9 @@ header {
             font-size: 20px;
             line-height: 1;
             background: unset;
-            @include common.pseudowh($width: unset, $height: unset);
             opacity: 1;
             color: rgba(var(--title-color), 1);
+            @include common.pseudowh($width: unset, $height: unset);
         }
 
         h5 {
@@ -789,8 +789,8 @@ header {
 
     .offcanvas-footer {
         flex-shrink: 0;
-        @include common.flex_common($dis: flex, $align: center, $justify: space-between);
         padding: 20px 24px;
+        @include common.flex_common($dis: flex, $align: center, $justify: space-between);
     }
 
     .dropdown {
@@ -805,14 +805,14 @@ header {
 
             &::after {
                 border: none;
-                @include common.pos($pos: relative, $content: "\ea4e");
-                @include common.font;
-                @include common.pseudowh($width: unset, $height: unset);
                 color: rgba(var(--white), 1);
                 margin: 0;
                 vertical-align: unset;
                 margin-left: 5px;
                 line-height: 1;
+                @include common.pos($pos: relative, $content: "\ea4e");
+                @include common.font;
+                @include common.pseudowh($width: unset, $height: unset);
 
                 body.dark & {
                     color: #fff;
@@ -848,8 +848,8 @@ header {
         color: rgb(226, 23, 25);
         font-weight: 600;
         font-size: 16px;
-        @include common.flex_common;
         margin-left: 12px;
+        @include common.flex_common;
 
         img {
             margin-right: 7px;
@@ -955,11 +955,11 @@ header {
 
                         &::before {
                             left: 4px;
+                            border-radius: 100%;
+                            background-color: rgba(var(--content-color), 1);
                             @include common.center(vertical);
                             @include common.pos;
                             @include common.pseudowh($width: 4px, $height: 4px);
-                            border-radius: 100%;
-                            background-color: rgba(var(--content-color), 1);
                         }
                     }
 
@@ -985,8 +985,8 @@ header {
                     }
 
                     h5 {
-                        @include common.line;
                         word-break: break-all;
+                        @include common.line;
 
                         @include common.max(1199.98px) {
                             color: rgba(var(--content-color), 1);
@@ -997,10 +997,10 @@ header {
 
                             &::before {
                                 content: "";
-                                @include common.pseudowh($width: 4px, $height: 4px);
                                 display: block;
                                 background-color: rgba(var(--content-color), 1);
                                 border-radius: 100%;
+                                @include common.pseudowh($width: 4px, $height: 4px);
                             }
                         }
                     }
@@ -1047,9 +1047,9 @@ header {
             left: 0;
             border-radius: 4px;
             z-index: -1;
+            background-color: rgba(var(--white), 1);
             @include common.pos;
             @include common.pseudowh;
-            background-color: rgba(var(--white), 1);
         }
 
         .product-image {
@@ -1189,13 +1189,13 @@ header {
 
                     &::after {
                         bottom: -1px;
-                        @include common.pos;
-                        @include common.pseudowh($width: 0, $height: 4px);
                         left: 0;
                         background-color: rgba(var(--primary-color), 0.5);
                         border-radius: 50px;
                         transition: all 0.15s ease-in-out;
                         z-index: -1;
+                        @include common.pos;
+                        @include common.pseudowh($width: 0, $height: 4px);
 
                         [dir="rtl"] & {
                             left: unset;
@@ -1332,12 +1332,12 @@ header {
             display: block;
             position: static;
             inset: auto !important;
-            @include common.pseudowh($width: auto !important, $height: auto !important);
             max-width: 100% !important;
             height: auto !important;
             transform: none !important;
             background-color: transparent;
             box-shadow: none;
+            @include common.pseudowh($width: auto !important, $height: auto !important);
 
             .offcanvas-header {
                 display: none;
@@ -1368,9 +1368,9 @@ header {
 
                     .nav-link {
                         color: rgba(var(--title-color), 1);
-                        @include common.flex_common($dis: flex, $align: center, $justify: space-between);
                         font-weight: 500;
                         padding: 0;
+                        @include common.flex_common($dis: flex, $align: center, $justify: space-between);
 
                         &:hover {
                             color: rgba(var(--title-color), 1);
@@ -1420,11 +1420,11 @@ header {
 
                             &::before {
                                 left: 4px;
+                                border-radius: 100%;
+                                background-color: rgba(var(--content-color), 1);
                                 @include common.pos;
                                 @include common.center(vertical);
                                 @include common.pseudowh($width: 4px, $height: 4px);
-                                border-radius: 100%;
-                                background-color: rgba(var(--content-color), 1);
 
                                 [dir="rtl"] & {
                                     left: unset;

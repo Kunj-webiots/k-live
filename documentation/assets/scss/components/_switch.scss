@@ -11,7 +11,7 @@
 		display: none;
 
 		&:checked+.switch-state {
-			background-color: var(--theme-deafult);
+			background-color: var(--theme-default:);
 
 			&:before {
 				transform: translateX(26px);
@@ -19,7 +19,7 @@
 		}
 
 		&:focus+.switch-state {
-			box-shadow: 0 0 1px var(--theme-deafult);
+			box-shadow: 0 0 1px var(--theme-default:);
 		}
 	}
 }
@@ -51,8 +51,8 @@
 .form-switch {
 	.form-check-input {
 		&:checked {
-			background-color: var(--theme-deafult);
-			border-color: var(--theme-deafult);
+			background-color: var(--theme-default:);
+			border-color: var(--theme-default:);
 		}
 	}
 }

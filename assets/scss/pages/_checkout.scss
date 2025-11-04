@@ -6,13 +6,13 @@
 .return-login-section {
     .return-box {
         padding: calc(12px + (8 - 12) * ((100vw - 320px) / (1920 - 320))) calc(12px + (8 - 12) * ((100vw - 320px) / (1920 - 320))) calc(12px + (8 - 12) * ((100vw - 320px) / (1920 - 320))) calc(12px + (19 - 12) * ((100vw - 320px) / (1920 - 320)));
-        @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
         background-color: rgba(var(--white), 1);
         overflow: hidden;
         border-radius: 5px;
         position: relative;
         flex-wrap: wrap;
         gap: 10px;
+        @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
 
         [dir="rtl"] & {
             padding-left: calc(12px + (8 - 12) * ((100vw - 320px) / (1920 - 320)));
@@ -21,10 +21,10 @@
 
         &::before {
             top: 0;
-            @include common.pos;
-            @include common.pseudowh($width: 2px, $height: 100%);
             left: 0;
             background-color: rgba(var(--primary-color), 1);
+            @include common.pos;
+            @include common.pseudowh($width: 2px, $height: 100%);
 
             [dir="rtl"] & {
                 left: unset;

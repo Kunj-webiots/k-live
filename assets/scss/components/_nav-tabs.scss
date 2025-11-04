@@ -30,11 +30,11 @@
 
                 &::after {
                     bottom: 0;
-                    @include common.pos;
-                    @include common.pseudowh($width: 0, $height: 3px);
                     left: 0;
                     background-color: transparent;
                     transition: all 0.15s ease-in-out;
+                    @include common.pos;
+                    @include common.pseudowh($width: 0, $height: 3px);
                 }
 
                 &:focus,
@@ -163,8 +163,8 @@
 
         .review-title {
             margin-bottom: calc(10px + (18 - 10) * ((100vw - 320px) / (1920 - 320)));
-            @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
             flex-wrap: wrap;
+            @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
 
             h4 {
                 margin: 0;
@@ -178,7 +178,7 @@
 
             ul {
                 align-items: center;
-                @include common.flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(13px + (20 - 13) * ((100vw - 320px) / (1920 - 320))));
+                @include common.flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(10px + (20 - 10) * ((100vw - 320px) / (1920 - 320))));
 
                 li {
                     width: 100%;
@@ -190,7 +190,7 @@
                         h5 {
                             white-space: nowrap;
                             line-height: 1;
-                            padding-top: 4px;
+                            padding-top: calc(2px + (4 - 2) * ((100vw - 320px) / (1920 - 320)));
                             width: calc(37px + (44 - 37) * ((100vw - 320px) / (1920 - 320)));
                         }
 
@@ -198,6 +198,7 @@
                             width: calc(100% - calc(37px + (44 - 37) * ((100vw - 320px) / (1920 - 320))) - 14px);
                             border-radius: 0;
                             background-color: rgba(var(--base-gray), 1);
+                            height: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
 
                             .progress-bar {
                                 background: rgba(var(--primary-color), 1);
@@ -256,6 +257,45 @@
                 color: rgba(var(--title-color), 1);
                 background-color: rgba(var(--base-gray), 1);
                 border: 1px solid rgba(var(--border-color), 1);
+            }
+        }
+
+        .customer-review-box {
+            display: flex;
+            align-items: center;
+
+            h6 {
+                font-size: calc(32px + (38 - 32) * ((100vw - 320px) / (1920 - 320)));
+                font-weight: 600;
+                line-height: 1;
+                border-right: 1px solid rgba(var(--border-color), 1);
+                padding-right: 7px;
+                margin-right: 7px;
+
+                [dir="rtl"] & {
+                    margin-left: 7px;
+                    padding-left: 7px;
+                    margin-right: unset;
+                    padding-right: unset;
+                    border-right: unset;
+                    border-left: 1px solid rgba(var(--border-color), 1);
+                }
+
+                span {
+                    font-size: calc(20px + (24 - 20) * ((100vw - 320px) / (1920 - 320)));
+                    font-weight: 500;
+                }
+            }
+
+            .product-rating {
+                h6 {
+                    font-size: calc(14px + (15 - 14) * ((100vw - 320px) / (1920 - 320)));
+                    font-weight: 500;
+                    border: none;
+                    padding: 0;
+                    margin: calc(4px + (6 - 4) * ((100vw - 320px) / (1920 - 320))) 0 0;
+                    color: rgba(var(--content-color), 0.8);
+                }
             }
         }
     }
@@ -358,10 +398,10 @@
 
                 &::before {
                     top: 0;
-                    @include common.pos;
                     left: calc(20px + (30 - 20) * ((100vw - 320px) / (1920 - 320)));
                     height: 100%;
                     border-left: 1px solid rgba(var(--content-color), 0.1);
+                    @include common.pos;
 
                     [dir="rtl"] & {
                         left: unset;
@@ -376,11 +416,11 @@
 
                     &::before {
                         right: 0;
+                        border-top: 1px solid rgba(var(--content-color), 0.1);
+                        z-index: -1;
                         @include common.pos;
                         @include common.center(vertical);
                         @include common.pseudowh($width: calc(100% + calc(20px + (30 - 20) * ((100vw - 320px) / (1920 - 320)))), $height: 1px);
-                        border-top: 1px solid rgba(var(--content-color), 0.1);
-                        z-index: -1;
                     }
                 }
             }
@@ -411,8 +451,8 @@
 
                 .people-image {
                     border-radius: 4px;
-                    @include common.pseudowh($width: calc(62px + (70 - 62) * ((100vw - 320px) / (1920 - 320))), $height: calc(62px + (70 - 62) * ((100vw - 320px) / (1920 - 320))));
                     overflow: hidden;
+                    @include common.pseudowh($width: calc(62px + (70 - 62) * ((100vw - 320px) / (1920 - 320))), $height: calc(62px + (70 - 62) * ((100vw - 320px) / (1920 - 320))));
 
                     img {
                         @extend %img-cover;

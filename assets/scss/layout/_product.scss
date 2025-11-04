@@ -164,11 +164,11 @@
                     }
 
                     &::before {
+                        left: 0;
+                        border-left: 1px solid rgba(var(--content-color), 0.2);
                         @include common.pos;
                         @include common.center(vertical);
                         @include common.pseudowh($width: 1px, $height: 15px);
-                        left: 0;
-                        border-left: 1px solid rgba(var(--content-color), 0.2);
 
                         [dir="rtl"] & {
                             left: unset;
@@ -257,10 +257,10 @@
 
             +div {
                 &::before {
-                    @include common.pos;
-                    @include common.center(vertical);
                     left: 0;
                     background: linear-gradient(0deg, rgba(var(--content-color), 0) -3.39%, rgba(var(--content-color), 0.2) 54.49%, rgba(var(--content-color), 0) 114.83%);
+                    @include common.pos;
+                    @include common.center(vertical);
                     @include common.pseudowh($width: 1px, $height: 80%);
 
                     [dir="rtl"] & {
@@ -394,19 +394,19 @@
             padding: 0;
             z-index: 1;
             line-height: 1;
-            @include common.pseudowh($width: 30px, $height: 30px);
-            @include common.flex_common;
             background-color: rgba(var(--theme-blue), 1);
             color: rgba(var(--white), 1);
             border-radius: 4px;
             font-size: 20px;
+            @include common.pseudowh($width: 30px, $height: 30px);
+            @include common.flex_common;
         }
 
         a {
             mix-blend-mode: darken;
             display: block;
-            @include common.pseudowh;
             transition: opacity .5s, transform 1.25s cubic-bezier(0, 0, .44, 1.18);
+            @include common.pseudowh;
 
             body.dark & {
                 mix-blend-mode: difference;
@@ -419,13 +419,13 @@
 
         .quick-view-button-box {
             position: absolute;
-            @include common.center(both);
             width: 100%;
             padding-inline: 19px;
             margin-top: 35px;
             transition: .5s;
             opacity: 0;
             visibility: hidden;
+            @include common.center(both);
 
             @include common.max(767px) {
                 top: unset;
@@ -443,13 +443,13 @@
             }
 
             .view-btn {
-                background-color: rgba(var(--white), 0.6);
+                background-color: rgba(255, 255, 255, 0.6);
                 backdrop-filter: blur(2px);
                 padding: calc(7px + (10 - 7) * ((100vw - 320px) / (1920 - 320))) calc(7px + (10 - 7) * ((100vw - 320px) / (1920 - 320))) calc(5px + (8 - 5) * ((100vw - 320px) / (1920 - 320)));
                 line-height: 1;
                 font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
                 width: 100%;
-                color: rgba(var(--primary-color3), 1);
+                color: #2242a3;
 
                 body.dark & {
                     background-color: rgba(255, 255, 255, 0.6);
@@ -476,16 +476,16 @@
             h5 {
                 text-transform: capitalize;
                 margin-bottom: 4px;
-                @include common.line;
                 color: rgba(var(--title-color), 1);
                 margin-top: 6px;
+                @include common.line;
             }
         }
 
         .price {
-            @include common.flex_wrap($dis: flex, $wrap: wrap, $gap: 6px);
             margin-top: 9px;
             align-items: center;
+            @include common.flex_wrap($dis: flex, $wrap: wrap, $gap: 6px);
 
             del {
                 color: rgba(var(--content-color), 0.8);
@@ -493,7 +493,6 @@
         }
 
         .option-box {
-            @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
             position: absolute;
             bottom: -30px;
             left: 0;
@@ -505,6 +504,7 @@
             gap: calc(7px + (15 - 7) * ((100vw - 320px) / (1920 - 320)));
             visibility: hidden;
             border-radius: 0 0 6px 6px;
+            @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
 
             body.dark & {
                 background-color: rgba(var(--base-gray), 1);
@@ -816,8 +816,8 @@
     .product-image {
         aspect-ratio: 143 / 100;
         margin-block: calc(12px + (15 - 12) * ((100vw - 320px) / (1920 - 320)));
-        @include common.flex_common;
         position: relative;
+        @include common.flex_common;
 
         a {
             height: 100%;
@@ -834,11 +834,11 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            @include common.flex_common;
             gap: 5px;
             transition: all 0.5s ease-in-out;
             opacity: 0;
             visibility: hidden;
+            @include common.flex_common;
 
             @include common.max(575.98px) {
                 opacity: 1;
@@ -849,12 +849,12 @@
             li {
                 a {
                     box-shadow: 0px 2.33333px 4.66667px rgba(68, 128, 103, 0.25);
-                    @include common.pseudowh($width: calc(28px + (35 - 28) * ((100vw - 320px) / (1920 - 320))), $height: calc(28px + (35 - 28) * ((100vw - 320px) / (1920 - 320))));
                     border-radius: 100%;
                     font-size: calc(15px + (16 - 15) * ((100vw - 320px) / (1920 - 320)));
                     color: rgba(var(--content-color), 1);
-                    @include common.flex_common;
                     background-color: rgba(var(--white), 1);
+                    @include common.flex_common;
+                    @include common.pseudowh($width: calc(28px + (35 - 28) * ((100vw - 320px) / (1920 - 320))), $height: calc(28px + (35 - 28) * ((100vw - 320px) / (1920 - 320))));
 
                     i {
                         line-height: 1;
@@ -883,9 +883,9 @@
         }
 
         .price {
-            @include common.flex_wrap($dis: flex, $wrap: wrap, $gap: 6px);
             color: rgba(var(--theme-green), 1);
             align-items: center;
+            @include common.flex_wrap($dis: flex, $wrap: wrap, $gap: 6px);
 
             del {
                 color: rgba(var(--content-color), 0.8);
@@ -919,11 +919,11 @@
 
             .btn {
                 padding: 8px;
-                @include common.flex_common;
                 gap: 6px;
                 color: rgba(var(--title-color), 1);
                 background-color: rgba(var(--primary-color), 1);
                 font-size: 14px;
+                @include common.flex_common;
             }
         }
     }
@@ -964,9 +964,9 @@
         background-color: rgba(var(--white), 1);
         border: 1px solid rgba(var(--content-color), 0.3);
         margin-bottom: calc(4px + (8 - 4) * ((100vw - 320px) / (1920 - 320)));
-        @include common.flex_common;
         padding: calc(13px + (28 - 13) * ((100vw - 320px) / (1920 - 320))) calc(13px + (23 - 13) * ((100vw - 320px) / (1920 - 320)));
         transition: all 0.15s ease-in-out;
+        @include common.flex_common;
 
         img {
             @extend %img-contain;
@@ -978,9 +978,9 @@
         font-weight: 500;
         font-size: calc(14px + (15 - 14) * ((100vw - 320px) / (1920 - 320)));
         text-transform: capitalize;
-        @include common.line;
         color: rgba(var(--content-color), 1);
         transition: all 0.15s ease-in-out;
+        @include common.line;
     }
 }
 
@@ -1001,8 +1001,8 @@
                 background-color: rgba(var(--white), 1);
                 border: 1px solid rgba(var(--content-color), 0.3);
                 margin-bottom: 8px;
-                @include common.flex_common;
                 padding: 11px;
+                @include common.flex_common;
 
                 img {
                     @extend %img-contain;
@@ -1013,8 +1013,8 @@
                 font-weight: 500;
                 font-size: 15px;
                 text-transform: capitalize;
-                @include common.line;
                 color: rgba(var(--content-color), 1);
+                @include common.line;
             }
         }
     }
@@ -1070,8 +1070,8 @@
                 text-transform: capitalize;
                 font-weight: 500;
                 line-height: 1.3;
-                @include common.line($line: 2);
                 color: rgba(var(--primary-color3), 1);
+                @include common.line($line: 2);
 
                 body.dark & {
                     color: #fff;
@@ -1129,12 +1129,12 @@
             overflow: hidden;
 
             &::before {
-                @include common.pos;
-                @include common.pseudowh($width: 0, $height: 2px);
                 bottom: 0;
                 left: 0;
                 background-color: rgba(var(--content-color), 1);
                 transition: .5s;
+                @include common.pos;
+                @include common.pseudowh($width: 0, $height: 2px);
             }
 
             &:hover {
@@ -1338,8 +1338,8 @@
                 text-transform: capitalize;
                 font-weight: 500;
                 line-height: 1.3;
-                @include common.line($line: 2);
                 color: rgba(var(--primary-color3), 1);
+                @include common.line($line: 2);
 
                 body.dark & {
                     color: #fff;
@@ -1348,12 +1348,12 @@
         }
 
         .price {
-            @include common.flex_wrap($dis: flex, $wrap: wrap, $gap: 4px);
             margin-top: 5px;
             color: rgba(var(--theme-green), 1);
             font-weight: 500;
             align-items: center;
             margin-bottom: 0;
+            @include common.flex_wrap($dis: flex, $wrap: wrap, $gap: 4px);
 
             del {
                 color: rgba(var(--content-color), 1);
@@ -1423,8 +1423,8 @@
                 text-transform: capitalize;
                 font-weight: 500;
                 line-height: 1.3;
-                @include common.line($line: 2);
                 color: rgba(var(--primary-color3), 1);
+                @include common.line($line: 2);
 
                 body.dark & {
                     color: #fff;
@@ -1433,12 +1433,12 @@
         }
 
         .price {
-            @include common.flex_wrap($dis: flex, $wrap: wrap, $gap: 4px);
             margin-top: 5px;
             color: rgba(var(--theme-green), 1);
             font-weight: 500;
             align-items: center;
             margin-bottom: 0;
+            @include common.flex_wrap($dis: flex, $wrap: wrap, $gap: 4px);
 
             del {
                 color: rgba(var(--content-color), 1);
@@ -1494,10 +1494,10 @@
                     }
 
                     .thumbnail-image {
-                        @include common.pseudowh($width: calc(53px + (65 - 53) * ((100vw - 320px) / (1920 - 320))), $height: calc(53px + (65 - 53) * ((100vw - 320px) / (1920 - 320))));
                         padding: 8px 10px;
                         background-color: rgba(var(--light-gray), 1);
                         border: 1px solid transparent;
+                        @include common.pseudowh($width: calc(53px + (65 - 53) * ((100vw - 320px) / (1920 - 320))), $height: calc(53px + (65 - 53) * ((100vw - 320px) / (1920 - 320))));
 
                         img {
                             @extend %img-contain;
@@ -1517,9 +1517,9 @@
 
         .swiper-main,
         .swiper-main1 {
-            @include common.pseudowh($width: 100%, $height: calc(100% - 65%));
             text-align: center;
             margin-left: 65px;
+            @include common.pseudowh($width: 100%, $height: calc(100% - 65%));
 
             @include common.max(400px) {
                 width: 100%;
@@ -1540,10 +1540,10 @@
         .product-timer {
             position: absolute;
             bottom: 0;
-            @include common.center(horizontal);
             z-index: 1;
             display: flex;
             align-items: center;
+            @include common.center(horizontal);
 
             li {
                 background-color: rgba(var(--white), 0.7);
@@ -1552,8 +1552,8 @@
                 position: relative;
                 padding: 8px;
                 width: 52px;
-                @include common.flex_common;
                 text-align: center;
+                @include common.flex_common;
 
                 body.dark & {
                     background-color: rgba(19, 25, 33, 0.7);
@@ -1563,12 +1563,12 @@
                     margin-left: 10px;
 
                     &::before {
-                        @include common.pos;
                         left: -7px;
-                        @include common.center(vertical);
                         font-weight: 700;
                         font-size: 15px;
                         color: rgba(var(--content-color), 0.5);
+                        @include common.pos;
+                        @include common.center(vertical);
                     }
                 }
 
@@ -1586,8 +1586,8 @@
                     font-size: 13px;
                     color: rgba(var(--content-color), 1);
                     text-transform: capitalize;
-                    @include common.line;
                     word-break: break-all;
+                    @include common.line;
                 }
             }
         }
@@ -1600,6 +1600,7 @@
             font-size: calc(18px + (22 - 18) * ((100vw - 320px) / (1920 - 320)));
             margin-bottom: 6px;
             color: rgba(var(--title-color), 1);
+            @include common.line($line: 2);
         }
 
         .price-stock {
@@ -1615,7 +1616,6 @@
             .price {
                 line-height: 1;
                 gap: 6px;
-                font-size: calc(18px + (22 - 18) * ((100vw - 320px) / (1920 - 320)));
                 color: rgba(var(--theme-green), 1);
                 display: flex;
                 align-items: center;
@@ -1686,8 +1686,8 @@
 }
 
 .hot-tag-list {
-    @include common.flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(7px + (10 - 7) * ((100vw - 320px) / (1920 - 320))));
     align-items: center;
+    @include common.flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(7px + (10 - 7) * ((100vw - 320px) / (1920 - 320))));
 
     li {
         a {
@@ -1751,7 +1751,6 @@
     }
 
     .hover-box {
-        @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
         position: absolute;
         width: 100%;
         bottom: -50px;
@@ -1759,6 +1758,7 @@
         background-color: rgba(var(--white), 1);
         padding: 4px;
         transition: all 0.5s ease;
+        @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
 
         @include common.max(575.98px) {
             bottom: 0;
@@ -1766,18 +1766,16 @@
         }
 
         a {
-            @include common.flex_common;
-            @include common.pseudowh($width: 30px, $height: 30px);
             border-radius: 100%;
             background-color: rgba(var(--white), 1);
             color: rgba(var(--content-color), 1);
             font-size: 16px;
             position: relative;
             z-index: 1;
+            @include common.flex_common;
+            @include common.pseudowh($width: 30px, $height: 30px);
 
             &::after {
-                @include common.pos;
-                @include common.pseudowh;
                 left: 0;
                 top: 0;
                 background-color: #FFE500;
@@ -1785,6 +1783,8 @@
                 z-index: -1;
                 border-radius: 100%;
                 transition: all 0.5s ease;
+                @include common.pos;
+                @include common.pseudowh;
             }
 
             i {
@@ -1792,8 +1792,7 @@
             }
 
             &:hover {
-                color: rgba(var(--title-color), 1);
-                transition: all 0.5s ease;
+                color: #202326;
 
                 &.show {
                     i {
@@ -1829,11 +1828,11 @@
         mask-composite: exclude;
         opacity: 0;
         transition: all 0.5s ease-in-out;
-        @include common.pos;
-        @include common.pseudowh($width: calc(100% + 2px), $height: 100%);
         left: -1px;
         top: -1px;
         z-index: -1;
+        @include common.pos;
+        @include common.pseudowh($width: calc(100% + 2px), $height: 100%);
     }
 
     &:hover {
@@ -1901,10 +1900,10 @@
     }
 
     .product-image {
-        @include common.pseudowh($width: 100%, $height: calc(105px + (135 - 105) * ((100vw - 320px) / (1920 - 320))));
         margin-bottom: 14px;
-        @include common.flex_common;
         position: relative;
+        @include common.flex_common;
+        @include common.pseudowh($width: 100%, $height: calc(105px + (135 - 105) * ((100vw - 320px) / (1920 - 320))));
 
         a {
             height: 100%;
@@ -1921,11 +1920,11 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            @include common.flex_common;
             gap: 5px;
             transition: all 0.5s ease-in-out;
             opacity: 0;
             visibility: hidden;
+            @include common.flex_common;
 
             @include common.max(575.98px) {
                 opacity: 1;
@@ -1935,12 +1934,12 @@
             li {
                 a {
                     box-shadow: 0px 2.33333px 4.66667px rgba(68, 128, 103, 0.25);
-                    @include common.pseudowh($width: calc(28px + (35 - 28) * ((100vw - 320px) / (1920 - 320))), $height: calc(28px + (35 - 28) * ((100vw - 320px) / (1920 - 320))));
                     border-radius: 100%;
                     font-size: calc(15px + (16 - 15) * ((100vw - 320px) / (1920 - 320)));
                     color: rgba(var(--content-color), 1);
-                    @include common.flex_common;
                     background-color: rgba(var(--white), 1);
+                    @include common.flex_common;
+                    @include common.pseudowh($width: calc(28px + (35 - 28) * ((100vw - 320px) / (1920 - 320))), $height: calc(28px + (35 - 28) * ((100vw - 320px) / (1920 - 320))));
 
                     i {
                         line-height: 1;
@@ -1959,12 +1958,12 @@
 
         .name {
             text-transform: capitalize;
-            @include common.line($line: 3);
             margin-bottom: 6px;
             height: calc(58px + (67 - 58) * ((100vw - 320px) / (1920 - 320)));
             color: rgba(var(--primary-color3), 1);
             line-height: 1.4;
             transition: color 0.15s ease-in-out;
+            @include common.line($line: 3);
 
             body.dark & {
                 color: #fff;
@@ -1976,8 +1975,8 @@
             }
 
             &.tow-line {
-                @include common.line($line: 2);
                 height: auto;
+                @include common.line($line: 2);
             }
         }
 
@@ -2011,12 +2010,12 @@
             }
 
             .btn {
-                @include common.flex_common;
                 padding: 8px;
                 gap: 6px;
                 color: rgba(var(--title-color), 1);
                 background-color: rgba(var(--primary-color), 1);
                 font-size: 14px;
+                @include common.flex_common;
             }
         }
     }
@@ -2090,8 +2089,6 @@
     }
 
     .select-option-box {
-        @include common.pseudowh($width: calc(100% - 15px), $height: calc(100% - 15px));
-        @include common.flex_common;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -2103,6 +2100,8 @@
         visibility: hidden;
         background-color: rgba(var(--white), 1);
         z-index: 2;
+        @include common.pseudowh($width: calc(100% - 15px), $height: calc(100% - 15px));
+        @include common.flex_common;
 
         &.show {
             transform: translate(-50%, -50%) scale(1);
@@ -2125,9 +2124,9 @@
             }
 
             .color-list {
-                @include common.flex_common;
                 gap: 8px;
                 margin-top: 5px;
+                @include common.flex_common;
 
                 li {
                     &:first-child {
@@ -2149,9 +2148,8 @@
                     }
 
                     a {
-                        @include common.pseudowh($width: 25px, $height: 25px);
                         border-radius: 3px;
-
+                        @include common.pseudowh($width: 25px, $height: 25px);
                     }
                 }
             }
@@ -2165,18 +2163,18 @@
             }
 
             .size-list {
-                @include common.flex_common;
                 gap: 5px;
                 margin-top: 5px;
+                @include common.flex_common;
 
                 li {
                     a {
-                        @include common.pseudowh($width: 25px, $height: 25px);
                         border-radius: 3px;
                         border: 1px solid rgba(var(--content-color), 1);
                         color: rgba(var(--title-color), 1);
                         font-weight: 400;
                         opacity: 0.6;
+                        @include common.pseudowh($width: 25px, $height: 25px);
                         @include common.flex_common;
 
                         &.active {
@@ -2231,10 +2229,10 @@
                 cursor: pointer;
 
                 .thumbnail-image-box {
-                    @include common.pseudowh($width: calc(63px + (75 - 63) * ((100vw - 1200px) / (1920 - 1200))), $height: calc(63px + (75 - 63) * ((100vw - 1200px) / (1920 - 1200))));
                     background-color: rgba(var(--light-gray), 1);
                     padding: calc(5px + (10 - 5) * ((100vw - 1200px) / (1920 - 1200))) calc(9px + (13 - 9) * ((100vw - 1200px) / (1920 - 1200)));
                     margin-inline: auto;
+                    @include common.pseudowh($width: calc(63px + (75 - 63) * ((100vw - 1200px) / (1920 - 1200))), $height: calc(63px + (75 - 63) * ((100vw - 1200px) / (1920 - 1200))));
 
                     @include common.max(1199.98px) {
                         padding: 5px 9px
@@ -2268,10 +2266,10 @@
     }
 
     .product-content-box {
-        @include common.pseudowh;
         display: flex;
         align-items: center;
         margin-top: 10px;
+        @include common.pseudowh;
 
         @include common.max(729px) {
             display: block;
@@ -2386,12 +2384,12 @@
 
                         &::before {
                             z-index: -1;
-                            @include common.pos;
-                            @include common.pseudowh;
                             bottom: -7px;
                             right: -7px;
                             background-color: rgba(var(--white), 1);
                             box-shadow: 0px 11px 20px rgba(49, 90, 152, 0.07);
+                            @include common.pos;
+                            @include common.pseudowh;
 
                             body.dark & {
                                 background-color: #0F162C;
@@ -2430,8 +2428,8 @@
 
                         .smalltext {
                             color: rgba(var(--content-color), 1);
-                            @include common.line;
                             line-height: 1;
+                            @include common.line;
                         }
                     }
                 }
@@ -2483,16 +2481,8 @@
     .recent-product-box {
         border-radius: 5px;
         overflow: hidden;
-        @include common.pseudowh($width: 100%, $height: calc(124px + (140 - 124) * ((100vw - 320px) / (1920 - 320))));
-        position: relative;
-        inset: unset;
-        opacity: 1;
-        visibility: visible;
+        height: calc(124px + (140 - 124) * ((100vw - 320px) / (1920 - 320)));
         background-color: rgba(var(--base-gray), 1);
-        padding: 0;
-        z-index: unset;
-        box-shadow: none;
-        margin: 0;
         display: block;
 
         img {
@@ -2509,9 +2499,9 @@
         text-align: center;
 
         .rating-box {
-            @include common.flex_common;
             gap: 7px;
             margin-bottom: 7px;
+            @include common.flex_common;
 
             .rating {
                 li {
@@ -2535,10 +2525,10 @@
         }
 
         h4 {
-            @include common.flex_common;
             gap: 5px;
             color: rgba(var(--theme-green), 1);
             font-size: calc(18px + (20 - 18) * ((100vw - 1400px) / (1920 - 1400)));
+            @include common.flex_common;
 
             del {
                 font-size: 14px;
@@ -2548,8 +2538,8 @@
 
         .product-timer {
             margin-top: calc(9px + (21 - 9) * ((100vw - 1400px) / (1920 - 1400)));
-            @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
             gap: 5px;
+            @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
 
             li {
                 position: relative;
@@ -2596,10 +2586,10 @@
 
 .discover-product-box {
     .product-image {
-        @include common.pseudowh($width: 100%, $height: calc(137px + (177 - 137) * ((100vw - 320px) / (1920 - 320))));
         border-radius: 10px;
         background-color: #F2F3F8;
         padding: calc(19px + (23 - 19) * ((100vw - 320px) / (1920 - 320))) calc(9px + (14 - 9) * ((100vw - 320px) / (1920 - 320)));
+        @include common.pseudowh($width: 100%, $height: calc(137px + (177 - 137) * ((100vw - 320px) / (1920 - 320))));
 
         img {
             @extend %img-contain;
@@ -2634,11 +2624,13 @@
     &:hover {
         .product-image-box {
             &::before {
-                background: rgba(var(--primary-color), 1);
+                opacity: 0;
+                visibility: hidden;
+            }
 
-                body.dark & {
-                    background: rgba(var(--primary-color), 1);
-                }
+            &::after {
+                opacity: 1;
+                visibility: visible;
             }
 
             .product-option {
@@ -2657,7 +2649,6 @@
 
     .product-image-box {
         padding: 2px;
-        @include common.pseudowh($width: 100%, $height: calc(135px + (210 - 135) * ((100vw - 320px) / (1920 - 320))));
         position: relative;
         z-index: 0;
         border-radius: 10px;
@@ -2665,6 +2656,7 @@
         color: #ffd1de;
         background-color: #F0F9FE;
         transition: all 0.15s ease-in-out;
+        @include common.pseudowh($width: 100%, $height: calc(135px + (210 - 135) * ((100vw - 320px) / (1920 - 320))));
 
         body.dark & {
             background-color: #303438;
@@ -2675,8 +2667,6 @@
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%) rotate(26deg);
-            @include common.pos;
-            @include common.pseudowh($width: 150%, $height: 150%);
             z-index: -1;
             background: linear-gradient(to right, #F0F9FE 0%, #F0F9FE 0%,
                     #FFA7BF 5%, #FFA7BF 5%,
@@ -2698,14 +2688,27 @@
                     #a1d9ff 85%, #d1f0ff 85%,
                     #d1f0ff 90%, #ffd1de 90%,
                     #ffd1de 100%, #ffd1de 100%);
+            @include common.pos;
+            @include common.pseudowh($width: 150%, $height: 150%);
+        }
+
+        &:after {
+            background-color: rgba(var(--primary-color), 1);
+            z-index: -1;
+            transition: all .15s ease-in-out;
+            opacity: 0;
+            visibility: hidden;
+            @include common.pos;
+            @include common.pseudowh;
+            @include common.center(both);
         }
 
         .image-box {
             background-color: rgba(var(--white), 1);
-            @include common.pseudowh;
             display: block;
             padding: 19px;
             border-radius: 8px;
+            @include common.pseudowh;
 
             body.dark & {
                 background-color: #303438;
@@ -2719,11 +2722,17 @@
         .product-option {
             position: absolute;
             top: -67px;
-            @include common.center(horizontal);
             transition: all 0.15s ease-in-out;
             opacity: 0;
             visibility: visible;
             width: max-content;
+            @include common.center(horizontal);
+
+            @include common.max(575.98px) {
+                top: 3px;
+                opacity: 1;
+                visibility: visible;
+            }
 
             li {
                 position: relative;
@@ -2740,10 +2749,10 @@
                 }
 
                 &::before {
+                    background-color: rgba(var(--content-color), 1);
                     @include common.pos;
                     @include common.pseudowh($width: 2px, $height: 100%);
                     @include common.center(both);
-                    background-color: rgba(var(--content-color), 1);
 
                     body.dark & {
                         background-color: #5e6278;
@@ -2751,12 +2760,12 @@
                 }
 
                 &::after {
-                    @include common.pos;
-                    @include common.pseudowh($width: 6px, $height: 6px);
-                    @include common.center(horizontal);
                     background-color: rgba(var(--content-color), 1);
                     border-radius: 100%;
                     top: 0;
+                    @include common.pos;
+                    @include common.pseudowh($width: 6px, $height: 6px);
+                    @include common.center(horizontal);
 
                     body.dark & {
                         background-color: #5e6278;
@@ -2764,33 +2773,32 @@
                 }
 
                 a {
-                    @include common.pseudowh($width: calc(29px + (41 - 29) * ((100vw - 320px) / (1920 - 320))), $height: calc(29px + (41 - 29) * ((100vw - 320px) / (1920 - 320))));
-                    @include common.flex_common;
                     background-color: #EEF8FD;
                     border-radius: 100%;
                     font-size: calc(15px + (20 - 15) * ((100vw - 320px) / (1920 - 320)));
                     color: rgba(var(--content-color), 1);
                     margin-top: 25px;
                     position: relative;
+                    @include common.pseudowh($width: calc(29px + (41 - 29) * ((100vw - 320px) / (1920 - 320))), $height: calc(29px + (41 - 29) * ((100vw - 320px) / (1920 - 320))));
+                    @include common.flex_common;
 
                     body.dark & {
                         color: #5e6278;
                     }
 
                     &::before {
-                        @include common.pos;
-                        @include common.pseudowh($width: 6px, $height: 6px);
-                        @include common.center(horizontal);
                         border-radius: 100%;
                         background-color: rgba(var(--primary-color), 1);
                         top: 1px;
+                        @include common.pos;
+                        @include common.pseudowh($width: 6px, $height: 6px);
+                        @include common.center(horizontal);
                     }
                 }
             }
         }
 
         .p-shop-btn {
-            @include common.center(horizontal);
             position: absolute;
             bottom: -40px;
             width: max-content;
@@ -2806,6 +2814,13 @@
             transition: all 0.15s ease-in-out;
             opacity: 0;
             visibility: visible;
+            @include common.center(horizontal);
+
+            @include common.max(575.98px) {
+                bottom: 10px;
+                opacity: 1;
+                visibility: visible;
+            }
 
             i {
                 font-size: 17px;

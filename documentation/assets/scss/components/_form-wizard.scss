@@ -16,7 +16,7 @@
 		height: 10px;
 		width: 10px;
 		margin: 0 2px;
-		background-color: var(--theme-deafult);
+		background-color: var(--theme-default:);
 		border: none;
 		border-radius: 50%;
 		display: inline-block;
@@ -101,7 +101,7 @@
 
 			.f1-progress-line {
 				height: 1px;
-				background: var(--theme-deafult);
+				background: var(--theme-default:);
 				width: 16%;
 			}
 		}
@@ -115,12 +115,12 @@
 			&.activated {
 				.f1-step-icon {
 					background: $white;
-					border: 1px solid var(--theme-deafult);
-					color: var(--theme-deafult);
+					border: 1px solid var(--theme-default:);
+					color: var(--theme-default:);
 				}
 
 				p {
-					color: var(--theme-deafult);
+					color: var(--theme-default:);
 				}
 			}
 
@@ -128,13 +128,13 @@
 				.f1-step-icon {
 					width: 48px;
 					height: 48px;
-					background: var(--theme-deafult);
+					background: var(--theme-default:);
 					font-size: 22px;
 					line-height: 20px;
 				}
 
 				p {
-					color: var(--theme-deafult);
+					color: var(--theme-default:);
 				}
 			}
 
@@ -178,7 +178,7 @@
 			margin: 0 5px;
 			background-color: #e3e0ff !important;
 			border-color: #e3e0ff !important;
-			color: var(--theme-deafult);
+			color: var(--theme-default:);
 		}
 
 		.buttonDisabled {
@@ -199,6 +199,7 @@
 		overflow: hidden;
 		clear: right;
 		width: 70%;
+
 		div.content {
 			display: block;
 			position: absolute;
@@ -211,6 +212,7 @@
 			-webkit-box-sizing: border-box;
 			box-sizing: border-box;
 			clear: both;
+
 			.wizard-title {
 				width: 450px;
 				margin: 0 auto;
@@ -334,7 +336,7 @@
 				&.done {
 					h4 {
 						color: $white;
-						background: var(--theme-deafult);
+						background: var(--theme-default:);
 
 						&:before {
 							font-size: 12px;
@@ -344,7 +346,7 @@
 							content: "\e64c";
 							font-family: 'themify';
 							background-color: $white;
-							color: var(--theme-deafult);
+							color: var(--theme-default:);
 							border-radius: 15px;
 							padding: 2px;
 							border: 1px solid;

@@ -6,10 +6,10 @@
 .portfolio-section {
     .filters-button-list {
         gap: calc(10px + (14 - 10) * ((100vw - 320px) / (1920 - 320)));
-        @include common.flex_common;
         margin-bottom: calc(12px + (24 - 12) * ((100vw - 320px) / (1920 - 320)));
         flex-wrap: nowrap;
         overflow: auto;
+        @include common.flex_common;
 
         @include common.max(575.98px) {
             justify-content: flex-start;
