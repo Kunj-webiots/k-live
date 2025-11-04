@@ -1,3 +1,9 @@
+const app = new Framework7({
+    el: '#app',
+    name: 'MyApp',
+    theme: 'auto', // can be 'ios', 'md', or 'auto'
+});
+
 /*=====================
     Theme Settings Js
 ==========================*/
