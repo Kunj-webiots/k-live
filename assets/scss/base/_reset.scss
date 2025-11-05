@@ -678,6 +678,10 @@ theme-blue-dark;
         border-radius: calc(3px + (5 - 3) * ((100vw - 320px) / (1920 - 320)));
         @include common.pseudowh($width: calc(36px + (42 - 36) * ((100vw - 320px) / (1920 - 320))), $height: calc(36px + (42 - 36) * ((100vw - 320px) / (1920 - 320))));
 
+        body.demo-6.dark & {
+            background-color: #303438;
+        }
+
         &:hover {
             background-color: rgba(var(--theme-blue), 1);
 

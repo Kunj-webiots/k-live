@@ -52,6 +52,10 @@
             border-color: rgba(var(--border-color), 1);
         }
 
+        body.demo-5.dark & {
+            background-color: #1c1a3b;
+        }
+
         @include common.max(1399.98px) {
             @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
 

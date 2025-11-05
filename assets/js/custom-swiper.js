@@ -1260,7 +1260,7 @@ var productSlider = new Swiper(".product-slider", {
 
 var dealThumbnailSlider = new Swiper(".deal-thumbnail-slider", {
     spaceBetween: 10,
-    slidesPerView: 2,
+    slidesPerView: 3,
     freeMode: true,
 });
 

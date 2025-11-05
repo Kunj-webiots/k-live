@@ -4,7 +4,6 @@
     "bootstrap": "^5.3.3",
     "browser-sync": "^2.27.9",
     "cssnano": "^5.1.7",
-    "framework7": "^8.3.4",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-concat": "^2.6.1",
