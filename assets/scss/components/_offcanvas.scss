@@ -267,7 +267,7 @@
                         margin-top: -3px;
                         color: rgba(var(--title-color), 1);
 
-                        @include common.max(767px) {
+                        @include common.max(767.98px) {
                             font-size: calc(18px + (23 - 18) * ((100vw - 320px) / (768 - 320)));
                             line-height: 1;
                             margin-top: -2px;
@@ -650,7 +650,7 @@
             }
 
             .left-box {
-                @include common.max(991px) {
+                @include common.max(991.98px) {
                     border: unset;
                     position: relative;
                     inset: unset;
@@ -709,7 +709,7 @@
                 }
 
                 .shop-left-sidebar {
-                    @include common.max(991px) {
+                    @include common.max(991.98px) {
                         padding: 0
                     }
 
@@ -717,7 +717,7 @@
                         padding-left: calc(16px + (26 - 16) * ((100vw - 320px) / (1920 - 320)));
                         padding-right: unset;
 
-                        @include common.max(991px) {
+                        @include common.max(991.98px) {
                             padding: calc(16px + (26 - 16) * ((100vw - 320px) / (1920 - 320)));
                         }
 
@@ -734,7 +734,7 @@
                     .back-button {
                         display: none;
 
-                        @include common.max(991px) {
+                        @include common.max(991.98px) {
                             display: block;
                             margin-bottom: 26px;
                         }
@@ -990,7 +990,7 @@
                     left: 0;
                 }
 
-                @include common.max(767px) {
+                @include common.max(767.98px) {
                     display: none;
                 }
 

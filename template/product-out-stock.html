@@ -23,7 +23,7 @@
     <link rel="stylesheet" type="text/css" href="../assets/fonts/br-hendrix/stylesheet.css">
 
     <!-- Bootstrap Link -->
-    <link id="rtl-link" rel="stylesheet" type="text/css" href="../assets/css/vendors/bootstrap.css">
+    <link rel="stylesheet" id="rtl-link" type="text/css" href="../assets/css/vendors/bootstrap.css">
 
     <!-- Iconsax Icon Link -->
     <link rel="stylesheet" type="text/css" href="../assets/css/vendors/iconsax.css">
@@ -40,7 +40,7 @@
 
 <body class="base-bg-color">
     <!-- Page Loader Start -->
-    <div class="preloader">
+    <!-- <div class="preloader">
         <div class="progress-container">
             <div class="progress-bar preloader-progress-bar"></div>
         </div>
@@ -52,7 +52,7 @@
             </div>
         </div>
         <div class="percentage">0</div>
-    </div>
+    </div> -->
     <!-- Page Loader End -->
 
     <!-- Header Start -->
@@ -4978,7 +4978,7 @@
     <!-- Nav Tab Section End -->
 
     <!-- Related Product Section Start -->
-    <section class="product-list-section section-block-space">
+    <section class="product-list-section section-block-space ">
         <div class="custom-container">
             <div class="related-title">
                 <h2>Related Products</h2>
@@ -5028,823 +5028,25 @@
                                         </div>
 
                                         <button class="btn add-cart-btn">add to cart</button>
-                                        <button class="close-btn btn">
+                                        <button class="close-btn btn" onclick="closeSidebar()">
                                             <i class="ri-close-line"></i>
                                         </button>
                                     </div>
                                 </div>
                             </div>
-                            <div class="product-box-4 pro-bg-white">
+                            <div class="productMain product-box-4 pro-bg-white">
                                 <div class="product-image">
                                     <a href="product-color.html">
-                                        <img src="../assets/images/product/96.png" class="img-fluid" alt="">
+                                        <img src="../assets/images/product/106.png" class="img-fluid productImage"
+                                            alt="">
                                     </a>
                                     <div class="quick-view-button-box">
-                                        <button class="btn view-btn">Quick View</button>
+                                        <button class="btn view-btn" data-bs-target="#quickViewModal"
+                                            data-bs-toggle="modal">Quick View</button>
                                     </div>
                                 </div>
                                 <div class="product-content">
-                                    <h6 class="sub-name">Marth product</h6>
-                                    <a href="product-color.html" class="name">
-                                        <h5>Cleansers Beauty Product</h5>
-                                    </a>
-                                    <ul class="rating">
-                                        <li>
-                                            <i class="ri-star-fill fill"></i>
-                                        </li>
-                                        <li>
-                                            <i class="ri-star-fill fill"></i>
-                                        </li>
-                                        <li>
-                                            <i class="ri-star-fill fill"></i>
-                                        </li>
-                                        <li>
-                                            <i class="ri-star-fill fill"></i>
-                                        </li>
-                                        <li>
-                                            <i class="ri-star-fill"></i>
-                                        </li>
-                                    </ul>
-                                    <h5 class="price">$1300.00 <del>$1402.00</del></h5>
-                                    <div class="option-box">
-                                        <button class="btn select-btn">Select Options</button>
-                                        <ul class="option-list">
-                                            <li>
-                                                <a href="#!">
-                                                    <i class="ri-heart-3-line"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#!">
-                                                    <i class="ri-repeat-2-line"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="product-box-4-main">
-                            <div class="select-option-box">
-                                <div class="select-box">
-                                    <div>
-                                        <div class="color-box">
-                                            <h5>Colors</h5>
-                                            <ul class="color-list">
-                                                <li>
-                                                    <a href="#!"></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!"></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!"></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                        <div class="size-box">
-                                            <h5>Sizes</h5>
-                                            <ul class="size-list">
-                                                <li>
-                                                    <a href="#!">xs</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!">s</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!">m</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!">l</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!">xl</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                        <button class="btn add-cart-btn">add to cart</button>
-                                        <button class="close-btn btn">
-                                            <i class="ri-close-line"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-box-4 pro-bg-white">
-                                <div class="product-image">
-                                    <a href="product-color.html">
-                                        <img src="../assets/images/product/97.png" class="img-fluid" alt="">
-                                    </a>
-                                    <div class="quick-view-button-box">
-                                        <button class="btn view-btn">Quick View</button>
-                                    </div>
-                                </div>
-                                <div class="product-content">
-                                    <h6 class="sub-name">Marth product</h6>
-                                    <a href="product-color.html" class="name">
-                                        <h5>Fresh Apricot Scrub</h5>
-                                    </a>
-                                    <ul class="rating">
-                                        <li>
-                                            <i class="ri-star-fill fill"></i>
-                                        </li>
-                                        <li>
-                                            <i class="ri-star-fill fill"></i>
-                                        </li>
-                                        <li>
-                                            <i class="ri-star-fill fill"></i>
-                                        </li>
-                                        <li>
-                                            <i class="ri-star-fill fill"></i>
-                                        </li>
-                                        <li>
-                                            <i class="ri-star-fill"></i>
-                                        </li>
-                                    </ul>
-                                    <h5 class="price">$210.00 <del>$289.00</del></h5>
-                                    <div class="option-box">
-                                        <button class="btn select-btn">Select Options</button>
-                                        <ul class="option-list">
-                                            <li>
-                                                <a href="#!">
-                                                    <i class="ri-heart-3-line"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#!">
-                                                    <i class="ri-repeat-2-line"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="product-box-4-main">
-                            <div class="select-option-box">
-                                <div class="select-box">
-                                    <div>
-                                        <div class="color-box">
-                                            <h5>Colors</h5>
-                                            <ul class="color-list">
-                                                <li>
-                                                    <a href="#!"></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!"></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!"></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                        <div class="size-box">
-                                            <h5>Sizes</h5>
-                                            <ul class="size-list">
-                                                <li>
-                                                    <a href="#!">xs</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!">s</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!">m</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!">l</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!">xl</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                        <button class="btn add-cart-btn">add to cart</button>
-                                        <button class="close-btn btn">
-                                            <i class="ri-close-line"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-box-4 pro-bg-white">
-                                <div class="product-image">
-                                    <a href="product-color.html">
-                                        <img src="../assets/images/product/99.png" class="img-fluid" alt="">
-                                    </a>
-                                    <div class="quick-view-button-box">
-                                        <button class="btn view-btn">Quick View</button>
-                                    </div>
-                                </div>
-                                <div class="product-content">
-                                    <h6 class="sub-name">Marth product</h6>
-                                    <a href="product-color.html" class="name">
-                                        <h5>Cleansers Beauty Product</h5>
-                                    </a>
-                                    <ul class="rating">
-                                        <li>
-                                            <i class="ri-star-fill fill"></i>
-                                        </li>
-                                        <li>
-                                            <i class="ri-star-fill fill"></i>
-                                        </li>
-                                        <li>
-                                            <i class="ri-star-fill fill"></i>
-                                        </li>
-                                        <li>
-                                            <i class="ri-star-fill fill"></i>
-                                        </li>
-                                        <li>
-                                            <i class="ri-star-fill"></i>
-                                        </li>
-                                    </ul>
-                                    <h5 class="price">$192.00 <del>$250.00</del></h5>
-                                    <div class="option-box">
-                                        <button class="btn select-btn">Select Options</button>
-                                        <ul class="option-list">
-                                            <li>
-                                                <a href="#!">
-                                                    <i class="ri-heart-3-line"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#!">
-                                                    <i class="ri-repeat-2-line"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="product-box-4-main">
-                            <div class="select-option-box">
-                                <div class="select-box">
-                                    <div>
-                                        <div class="color-box">
-                                            <h5>Colors</h5>
-                                            <ul class="color-list">
-                                                <li>
-                                                    <a href="#!"></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!"></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!"></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                        <div class="size-box">
-                                            <h5>Sizes</h5>
-                                            <ul class="size-list">
-                                                <li>
-                                                    <a href="#!">xs</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!">s</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!">m</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!">l</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!">xl</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                        <button class="btn add-cart-btn">add to cart</button>
-                                        <button class="close-btn btn">
-                                            <i class="ri-close-line"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-box-4 pro-bg-white">
-                                <div class="product-image">
-                                    <a href="product-color.html">
-                                        <img src="../assets/images/product/100.png" class="img-fluid" alt="">
-                                    </a>
-                                    <div class="quick-view-button-box">
-                                        <button class="btn view-btn">Quick View</button>
-                                    </div>
-                                </div>
-                                <div class="product-content">
-                                    <h6 class="sub-name">Marth product</h6>
-                                    <a href="product-color.html" class="name">
-                                        <h5>Kundan Studded Necklace</h5>
-                                    </a>
-                                    <ul class="rating">
-                                        <li>
-                                            <i class="ri-star-fill fill"></i>
-                                        </li>
-                                        <li>
-                                            <i class="ri-star-fill fill"></i>
-                                        </li>
-                                        <li>
-                                            <i class="ri-star-fill fill"></i>
-                                        </li>
-                                        <li>
-                                            <i class="ri-star-fill fill"></i>
-                                        </li>
-                                        <li>
-                                            <i class="ri-star-fill"></i>
-                                        </li>
-                                    </ul>
-                                    <h5 class="price">$1998.00 <del>$2100.00</del></h5>
-                                    <div class="option-box">
-                                        <button class="btn select-btn">Select Options</button>
-                                        <ul class="option-list">
-                                            <li>
-                                                <a href="#!">
-                                                    <i class="ri-heart-3-line"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#!">
-                                                    <i class="ri-repeat-2-line"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="product-box-4-main">
-                            <div class="select-option-box">
-                                <div class="select-box">
-                                    <div>
-                                        <div class="color-box">
-                                            <h5>Colors</h5>
-                                            <ul class="color-list">
-                                                <li>
-                                                    <a href="#!"></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!"></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!"></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                        <div class="size-box">
-                                            <h5>Sizes</h5>
-                                            <ul class="size-list">
-                                                <li>
-                                                    <a href="#!">xs</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!">s</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!">m</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!">l</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!">xl</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                        <button class="btn add-cart-btn">add to cart</button>
-                                        <button class="close-btn btn">
-                                            <i class="ri-close-line"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-box-4 pro-bg-white">
-                                <div class="product-image">
-                                    <a href="product-color.html">
-                                        <img src="../assets/images/product/101.png" class="img-fluid" alt="">
-                                    </a>
-                                    <div class="quick-view-button-box">
-                                        <button class="btn view-btn">Quick View</button>
-                                    </div>
-                                </div>
-                                <div class="product-content">
-                                    <h6 class="sub-name">Grocery</h6>
-                                    <a href="product-color.html" class="name">
-                                        <h5>Vedaka Raw Peanuts</h5>
-                                    </a>
-                                    <ul class="rating">
-                                        <li>
-                                            <i class="ri-star-fill fill"></i>
-                                        </li>
-                                        <li>
-                                            <i class="ri-star-fill fill"></i>
-                                        </li>
-                                        <li>
-                                            <i class="ri-star-fill fill"></i>
-                                        </li>
-                                        <li>
-                                            <i class="ri-star-fill fill"></i>
-                                        </li>
-                                        <li>
-                                            <i class="ri-star-fill"></i>
-                                        </li>
-                                    </ul>
-                                    <h5 class="price">$170.00 <del>$210.00</del></h5>
-                                    <div class="option-box">
-                                        <button class="btn select-btn">Select Options</button>
-                                        <ul class="option-list">
-                                            <li>
-                                                <a href="#!">
-                                                    <i class="ri-heart-3-line"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#!">
-                                                    <i class="ri-repeat-2-line"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="product-box-4-main">
-                            <div class="select-option-box">
-                                <div class="select-box">
-                                    <div>
-                                        <div class="color-box">
-                                            <h5>Colors</h5>
-                                            <ul class="color-list">
-                                                <li>
-                                                    <a href="#!"></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!"></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!"></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                        <div class="size-box">
-                                            <h5>Sizes</h5>
-                                            <ul class="size-list">
-                                                <li>
-                                                    <a href="#!">xs</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!">s</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!">m</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!">l</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!">xl</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                        <button class="btn add-cart-btn">add to cart</button>
-                                        <button class="close-btn btn">
-                                            <i class="ri-close-line"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-box-4 pro-bg-white">
-                                <div class="product-image">
-                                    <a href="product-color.html">
-                                        <img src="../assets/images/product/102.png" class="img-fluid" alt="">
-                                    </a>
-                                    <div class="quick-view-button-box">
-                                        <button class="btn view-btn">Quick View</button>
-                                    </div>
-                                </div>
-                                <div class="product-content">
-                                    <h6 class="sub-name">Marth product</h6>
-                                    <a href="product-color.html" class="name">
-                                        <h5>Office Wear Perfume</h5>
-                                    </a>
-                                    <ul class="rating">
-                                        <li>
-                                            <i class="ri-star-fill fill"></i>
-                                        </li>
-                                        <li>
-                                            <i class="ri-star-fill fill"></i>
-                                        </li>
-                                        <li>
-                                            <i class="ri-star-fill fill"></i>
-                                        </li>
-                                        <li>
-                                            <i class="ri-star-fill fill"></i>
-                                        </li>
-                                        <li>
-                                            <i class="ri-star-fill"></i>
-                                        </li>
-                                    </ul>
-                                    <h5 class="price">$123.00 <del>$150.00</del></h5>
-                                    <div class="option-box">
-                                        <button class="btn select-btn">Select Options</button>
-                                        <ul class="option-list">
-                                            <li>
-                                                <a href="#!">
-                                                    <i class="ri-heart-3-line"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#!">
-                                                    <i class="ri-repeat-2-line"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="product-box-4-main">
-                            <div class="select-option-box">
-                                <div class="select-box">
-                                    <div>
-                                        <div class="color-box">
-                                            <h5>Colors</h5>
-                                            <ul class="color-list">
-                                                <li>
-                                                    <a href="#!"></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!"></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!"></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                        <div class="size-box">
-                                            <h5>Sizes</h5>
-                                            <ul class="size-list">
-                                                <li>
-                                                    <a href="#!">xs</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!">s</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!">m</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!">l</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!">xl</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                        <button class="btn add-cart-btn">add to cart</button>
-                                        <button class="close-btn btn">
-                                            <i class="ri-close-line"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-box-4 pro-bg-white">
-                                <div class="product-image">
-                                    <a href="product-color.html">
-                                        <img src="../assets/images/product/103.png" class="img-fluid" alt="">
-                                    </a>
-                                    <div class="quick-view-button-box">
-                                        <button class="btn view-btn">Quick View</button>
-                                    </div>
-                                </div>
-                                <div class="product-content">
-                                    <h6 class="sub-name">Electronic</h6>
-                                    <a href="product-color.html" class="name">
-                                        <h5>Wireless Black Headphone</h5>
-                                    </a>
-                                    <ul class="rating">
-                                        <li>
-                                            <i class="ri-star-fill fill"></i>
-                                        </li>
-                                        <li>
-                                            <i class="ri-star-fill fill"></i>
-                                        </li>
-                                        <li>
-                                            <i class="ri-star-fill fill"></i>
-                                        </li>
-                                        <li>
-                                            <i class="ri-star-fill fill"></i>
-                                        </li>
-                                        <li>
-                                            <i class="ri-star-fill"></i>
-                                        </li>
-                                    </ul>
-                                    <h5 class="price">$1300.00 <del>$1402.00</del></h5>
-                                    <div class="option-box">
-                                        <button class="btn select-btn">Select Options</button>
-                                        <ul class="option-list">
-                                            <li>
-                                                <a href="#!">
-                                                    <i class="ri-heart-3-line"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#!">
-                                                    <i class="ri-repeat-2-line"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="product-box-4-main">
-                            <div class="select-option-box">
-                                <div class="select-box">
-                                    <div>
-                                        <div class="color-box">
-                                            <h5>Colors</h5>
-                                            <ul class="color-list">
-                                                <li>
-                                                    <a href="#!"></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!"></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!"></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                        <div class="size-box">
-                                            <h5>Sizes</h5>
-                                            <ul class="size-list">
-                                                <li>
-                                                    <a href="#!">xs</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!">s</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!">m</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!">l</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!">xl</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                        <button class="btn add-cart-btn">add to cart</button>
-                                        <button class="close-btn btn">
-                                            <i class="ri-close-line"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-box-4 pro-bg-white">
-                                <div class="product-image">
-                                    <a href="product-color.html">
-                                        <img src="../assets/images/product/104.png" class="img-fluid" alt="">
-                                    </a>
-                                    <div class="quick-view-button-box">
-                                        <button class="btn view-btn">Quick View</button>
-                                    </div>
-                                </div>
-                                <div class="product-content">
-                                    <h6 class="sub-name">Sisak Product</h6>
-                                    <a href="product-color.html" class="name">
-                                        <h5>Pluto SW250 Smart Watch</h5>
-                                    </a>
-                                    <ul class="rating">
-                                        <li>
-                                            <i class="ri-star-fill fill"></i>
-                                        </li>
-                                        <li>
-                                            <i class="ri-star-fill fill"></i>
-                                        </li>
-                                        <li>
-                                            <i class="ri-star-fill fill"></i>
-                                        </li>
-                                        <li>
-                                            <i class="ri-star-fill fill"></i>
-                                        </li>
-                                        <li>
-                                            <i class="ri-star-fill"></i>
-                                        </li>
-                                    </ul>
-                                    <h5 class="price">$400.00 <del>$450.00</del></h5>
-                                    <div class="option-box">
-                                        <button class="btn select-btn">Select Options</button>
-                                        <ul class="option-list">
-                                            <li>
-                                                <a href="#!">
-                                                    <i class="ri-heart-3-line"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#!">
-                                                    <i class="ri-repeat-2-line"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="product-box-4-main">
-                            <div class="select-option-box">
-                                <div class="select-box">
-                                    <div>
-                                        <div class="color-box">
-                                            <h5>Colors</h5>
-                                            <ul class="color-list">
-                                                <li>
-                                                    <a href="#!"></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!"></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!"></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                        <div class="size-box">
-                                            <h5>Sizes</h5>
-                                            <ul class="size-list">
-                                                <li>
-                                                    <a href="#!">xs</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!">s</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!">m</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!">l</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#!">xl</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                        <button class="btn add-cart-btn">add to cart</button>
-                                        <button class="close-btn btn">
-                                            <i class="ri-close-line"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-box-4 pro-bg-white">
-                                <div class="product-image">
-                                    <a href="product-color.html">
-                                        <img src="../assets/images/product/98.png" class="img-fluid" alt="">
-                                    </a>
-                                    <div class="quick-view-button-box">
-                                        <button class="btn view-btn">Quick View</button>
-                                    </div>
-                                </div>
-                                <div class="product-content">
-                                    <h6 class="sub-name">Apple Product</h6>
+                                    <h6 class="sub-name productName">Apple Product</h6>
                                     <a href="product-color.html" class="name">
                                         <h5>Apple iPhone 13 (128GB)</h5>
                                     </a>
@@ -5862,15 +5064,831 @@
                                             <i class="ri-star-fill fill"></i>
                                         </li>
                                         <li>
-                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill fill"></i>
                                         </li>
                                     </ul>
-                                    <h5 class="price">$1820.00 <del>$2399.00</del></h5>
+                                    <h5 class="price">$1920.00 <del>$2100.00</del></h5>
                                     <div class="option-box">
                                         <button class="btn select-btn">Select Options</button>
                                         <ul class="option-list">
                                             <li>
+                                                <a href="#!" class="wishlistProduct">
+                                                    <i class="ri-heart-3-line"></i>
+                                                </a>
+                                            </li>
+                                            <li>
                                                 <a href="#!">
+                                                    <i class="ri-repeat-2-line"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="product-box-4-main">
+                            <div class="select-option-box">
+                                <div class="select-box">
+                                    <div>
+                                        <div class="color-box">
+                                            <h5>Colors</h5>
+                                            <ul class="color-list">
+                                                <li>
+                                                    <a href="#!"></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!"></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!"></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="size-box">
+                                            <h5>Sizes</h5>
+                                            <ul class="size-list">
+                                                <li>
+                                                    <a href="#!">xs</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!">s</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!">m</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!">l</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!">xl</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <button class="btn add-cart-btn">add to cart</button>
+                                        <button class="close-btn btn" onclick="closeSidebar()">
+                                            <i class="ri-close-line"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="productMain product-box-4 pro-bg-white">
+                                <div class="product-image">
+                                    <a href="product-color.html">
+                                        <img src="../assets/images/product/114.png" class="img-fluid productImage"
+                                            alt="">
+                                    </a>
+                                    <div class="quick-view-button-box">
+                                        <button class="btn view-btn" data-bs-target="#quickViewModal"
+                                            data-bs-toggle="modal">Quick View</button>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <h6 class="sub-name productName">Home Furniture</h6>
+                                    <a href="product-color.html" class="name">
+                                        <h5>hand_truck3</h5>
+                                    </a>
+                                    <ul class="rating">
+                                        <li>
+                                            <i class="ri-star-fill fill"></i>
+                                        </li>
+                                        <li>
+                                            <i class="ri-star-fill fill"></i>
+                                        </li>
+                                        <li>
+                                            <i class="ri-star-fill fill"></i>
+                                        </li>
+                                        <li>
+                                            <i class="ri-star-fill fill"></i>
+                                        </li>
+                                        <li>
+                                            <i class="ri-star-fill fill"></i>
+                                        </li>
+                                    </ul>
+                                    <h5 class="price">$1010.00 <del>$1200.00</del></h5>
+                                    <div class="option-box">
+                                        <button class="btn select-btn">Select Options</button>
+                                        <ul class="option-list">
+                                            <li>
+                                                <a href="#!" class="wishlistProduct">
+                                                    <i class="ri-heart-3-line"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#!">
+                                                    <i class="ri-repeat-2-line"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="product-box-4-main">
+                            <div class="select-option-box">
+                                <div class="select-box">
+                                    <div>
+                                        <div class="color-box">
+                                            <h5>Colors</h5>
+                                            <ul class="color-list">
+                                                <li>
+                                                    <a href="#!"></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!"></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!"></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="size-box">
+                                            <h5>Sizes</h5>
+                                            <ul class="size-list">
+                                                <li>
+                                                    <a href="#!">xs</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!">s</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!">m</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!">l</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!">xl</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <button class="btn add-cart-btn">add to cart</button>
+                                        <button class="close-btn btn" onclick="closeSidebar()">
+                                            <i class="ri-close-line"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="productMain product-box-4 pro-bg-white">
+                                <div class="product-image">
+                                    <a href="product-color.html">
+                                        <img src="../assets/images/product/113.png" class="img-fluid productImage"
+                                            alt="">
+                                    </a>
+                                    <div class="quick-view-button-box">
+                                        <button class="btn view-btn" data-bs-target="#quickViewModal"
+                                            data-bs-toggle="modal">Quick View</button>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <h6 class="sub-name productName">American Tourister</h6>
+                                    <a href="product-color.html" class="name">
+                                        <h5>travel luggage bag</h5>
+                                    </a>
+                                    <ul class="rating">
+                                        <li>
+                                            <i class="ri-star-fill fill"></i>
+                                        </li>
+                                        <li>
+                                            <i class="ri-star-fill fill"></i>
+                                        </li>
+                                        <li>
+                                            <i class="ri-star-fill fill"></i>
+                                        </li>
+                                        <li>
+                                            <i class="ri-star-fill"></i>
+                                        </li>
+                                        <li>
+                                            <i class="ri-star-fill"></i>
+                                        </li>
+                                    </ul>
+                                    <h5 class="price">$1009.00 <del>$1200.00</del></h5>
+                                    <div class="option-box">
+                                        <button class="btn select-btn">Select Options</button>
+                                        <ul class="option-list">
+                                            <li>
+                                                <a href="#!" class="wishlistProduct">
+                                                    <i class="ri-heart-3-line"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#!">
+                                                    <i class="ri-repeat-2-line"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="product-box-4-main">
+                            <div class="select-option-box">
+                                <div class="select-box">
+                                    <div>
+                                        <div class="color-box">
+                                            <h5>Colors</h5>
+                                            <ul class="color-list">
+                                                <li>
+                                                    <a href="#!"></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!"></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!"></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="size-box">
+                                            <h5>Sizes</h5>
+                                            <ul class="size-list">
+                                                <li>
+                                                    <a href="#!">xs</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!">s</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!">m</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!">l</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!">xl</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <button class="btn add-cart-btn">add to cart</button>
+                                        <button class="close-btn btn" onclick="closeSidebar()">
+                                            <i class="ri-close-line"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="productMain product-box-4 pro-bg-white">
+                                <div class="product-image">
+                                    <a href="product-color.html">
+                                        <img src="../assets/images/product/112.png" class="img-fluid productImage"
+                                            alt="">
+                                    </a>
+                                    <div class="quick-view-button-box">
+                                        <button class="btn view-btn" data-bs-target="#quickViewModal"
+                                            data-bs-toggle="modal">Quick View</button>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <h6 class="sub-name productName">Electronic Product</h6>
+                                    <a href="product-color.html" class="name">
+                                        <h5>miniprojector</h5>
+                                    </a>
+                                    <ul class="rating">
+                                        <li>
+                                            <i class="ri-star-fill fill"></i>
+                                        </li>
+                                        <li>
+                                            <i class="ri-star-fill fill"></i>
+                                        </li>
+                                        <li>
+                                            <i class="ri-star-fill fill"></i>
+                                        </li>
+                                        <li>
+                                            <i class="ri-star-fill"></i>
+                                        </li>
+                                        <li>
+                                            <i class="ri-star-fill"></i>
+                                        </li>
+                                    </ul>
+                                    <h5 class="price">$1009.00 <del>$1366.00</del></h5>
+                                    <div class="option-box">
+                                        <button class="btn select-btn">Select Options</button>
+                                        <ul class="option-list">
+                                            <li>
+                                                <a href="#!" class="wishlistProduct">
+                                                    <i class="ri-heart-3-line"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#!">
+                                                    <i class="ri-repeat-2-line"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="product-box-4-main">
+                            <div class="select-option-box">
+                                <div class="select-box">
+                                    <div>
+                                        <div class="color-box">
+                                            <h5>Colors</h5>
+                                            <ul class="color-list">
+                                                <li>
+                                                    <a href="#!"></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!"></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!"></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="size-box">
+                                            <h5>Sizes</h5>
+                                            <ul class="size-list">
+                                                <li>
+                                                    <a href="#!">xs</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!">s</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!">m</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!">l</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!">xl</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <button class="btn add-cart-btn">add to cart</button>
+                                        <button class="close-btn btn" onclick="closeSidebar()">
+                                            <i class="ri-close-line"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="productMain product-box-4 pro-bg-white">
+                                <div class="product-image">
+                                    <a href="product-color.html">
+                                        <img src="../assets/images/product/111.png" class="img-fluid productImage"
+                                            alt="">
+                                    </a>
+                                    <div class="quick-view-button-box">
+                                        <button class="btn view-btn" data-bs-target="#quickViewModal"
+                                            data-bs-toggle="modal">Quick View</button>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <h6 class="sub-name productName">Man Accessories</h6>
+                                    <a href="product-color.html" class="name">
+                                        <h5>Men brown casual belt</h5>
+                                    </a>
+                                    <ul class="rating">
+                                        <li>
+                                            <i class="ri-star-fill fill"></i>
+                                        </li>
+                                        <li>
+                                            <i class="ri-star-fill fill"></i>
+                                        </li>
+                                        <li>
+                                            <i class="ri-star-fill fill"></i>
+                                        </li>
+                                        <li>
+                                            <i class="ri-star-fill"></i>
+                                        </li>
+                                        <li>
+                                            <i class="ri-star-fill"></i>
+                                        </li>
+                                    </ul>
+                                    <h5 class="price">$1300.00 <del>$1402.00</del></h5>
+                                    <div class="option-box">
+                                        <button class="btn select-btn">Select Options</button>
+                                        <ul class="option-list">
+                                            <li>
+                                                <a href="#!" class="wishlistProduct">
+                                                    <i class="ri-heart-3-line"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#!">
+                                                    <i class="ri-repeat-2-line"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="product-box-4-main">
+                            <div class="select-option-box">
+                                <div class="select-box">
+                                    <div>
+                                        <div class="color-box">
+                                            <h5>Colors</h5>
+                                            <ul class="color-list">
+                                                <li>
+                                                    <a href="#!"></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!"></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!"></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="size-box">
+                                            <h5>Sizes</h5>
+                                            <ul class="size-list">
+                                                <li>
+                                                    <a href="#!">xs</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!">s</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!">m</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!">l</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!">xl</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <button class="btn add-cart-btn">add to cart</button>
+                                        <button class="close-btn btn" onclick="closeSidebar()">
+                                            <i class="ri-close-line"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="productMain product-box-4 pro-bg-white">
+                                <div class="product-image">
+                                    <a href="product-color.html">
+                                        <img src="../assets/images/product/110.png" class="img-fluid productImage"
+                                            alt="">
+                                    </a>
+                                    <div class="quick-view-button-box">
+                                        <button class="btn view-btn" data-bs-target="#quickViewModal"
+                                            data-bs-toggle="modal">Quick View</button>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <h6 class="sub-name productName">Apple Product</h6>
+                                    <a href="product-color.html" class="name">
+                                        <h5>Apple iPhone 14 Plus</h5>
+                                    </a>
+                                    <ul class="rating">
+                                        <li>
+                                            <i class="ri-star-fill fill"></i>
+                                        </li>
+                                        <li>
+                                            <i class="ri-star-fill fill"></i>
+                                        </li>
+                                        <li>
+                                            <i class="ri-star-fill fill"></i>
+                                        </li>
+                                        <li>
+                                            <i class="ri-star-fill fill"></i>
+                                        </li>
+                                        <li>
+                                            <i class="ri-star-fill fill"></i>
+                                        </li>
+                                    </ul>
+                                    <h5 class="price">$1450.00 <del>$1500.00</del></h5>
+                                    <div class="option-box">
+                                        <button class="btn select-btn">Select Options</button>
+                                        <ul class="option-list">
+                                            <li>
+                                                <a href="#!" class="wishlistProduct">
+                                                    <i class="ri-heart-3-line"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#!">
+                                                    <i class="ri-repeat-2-line"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="product-box-4-main">
+                            <div class="select-option-box">
+                                <div class="select-box">
+                                    <div>
+                                        <div class="color-box">
+                                            <h5>Colors</h5>
+                                            <ul class="color-list">
+                                                <li>
+                                                    <a href="#!"></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!"></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!"></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="size-box">
+                                            <h5>Sizes</h5>
+                                            <ul class="size-list">
+                                                <li>
+                                                    <a href="#!">xs</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!">s</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!">m</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!">l</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!">xl</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <button class="btn add-cart-btn">add to cart</button>
+                                        <button class="close-btn btn" onclick="closeSidebar()">
+                                            <i class="ri-close-line"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="productMain product-box-4 pro-bg-white">
+                                <div class="product-image">
+                                    <a href="product-color.html">
+                                        <img src="../assets/images/product/109.png" class="img-fluid productImage"
+                                            alt="">
+                                    </a>
+                                    <div class="quick-view-button-box">
+                                        <button class="btn view-btn" data-bs-target="#quickViewModal"
+                                            data-bs-toggle="modal">Quick View</button>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <h6 class="sub-name productName">Man Accessories</h6>
+                                    <a href="product-color.html" class="name">
+                                        <h5>Men Lace Up Shoes</h5>
+                                    </a>
+                                    <ul class="rating">
+                                        <li>
+                                            <i class="ri-star-fill fill"></i>
+                                        </li>
+                                        <li>
+                                            <i class="ri-star-fill fill"></i>
+                                        </li>
+                                        <li>
+                                            <i class="ri-star-fill fill"></i>
+                                        </li>
+                                        <li>
+                                            <i class="ri-star-fill fill"></i>
+                                        </li>
+                                        <li>
+                                            <i class="ri-star-fill fill"></i>
+                                        </li>
+                                    </ul>
+                                    <h5 class="price">$1020.00 <del>$1100.00</del></h5>
+                                    <div class="option-box">
+                                        <button class="btn select-btn">Select Options</button>
+                                        <ul class="option-list">
+                                            <li>
+                                                <a href="#!" class="wishlistProduct">
+                                                    <i class="ri-heart-3-line"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#!">
+                                                    <i class="ri-repeat-2-line"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="product-box-4-main">
+                            <div class="select-option-box">
+                                <div class="select-box">
+                                    <div>
+                                        <div class="color-box">
+                                            <h5>Colors</h5>
+                                            <ul class="color-list">
+                                                <li>
+                                                    <a href="#!"></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!"></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!"></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="size-box">
+                                            <h5>Sizes</h5>
+                                            <ul class="size-list">
+                                                <li>
+                                                    <a href="#!">xs</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!">s</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!">m</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!">l</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!">xl</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <button class="btn add-cart-btn">add to cart</button>
+                                        <button class="close-btn btn" onclick="closeSidebar()">
+                                            <i class="ri-close-line"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="productMain product-box-4 pro-bg-white">
+                                <div class="product-image">
+                                    <a href="product-color.html">
+                                        <img src="../assets/images/product/108.png" class="img-fluid productImage"
+                                            alt="">
+                                    </a>
+                                    <div class="quick-view-button-box">
+                                        <button class="btn view-btn" data-bs-target="#quickViewModal"
+                                            data-bs-toggle="modal">Quick View</button>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <h6 class="sub-name productName">Apple Smart HD TV</h6>
+                                    <a href="product-color.html" class="name">
+                                        <h5>Apple Smart HD TV</h5>
+                                    </a>
+                                    <ul class="rating">
+                                        <li>
+                                            <i class="ri-star-fill fill"></i>
+                                        </li>
+                                        <li>
+                                            <i class="ri-star-fill fill"></i>
+                                        </li>
+                                        <li>
+                                            <i class="ri-star-fill fill"></i>
+                                        </li>
+                                        <li>
+                                            <i class="ri-star-fill fill"></i>
+                                        </li>
+                                        <li>
+                                            <i class="ri-star-fill"></i>
+                                        </li>
+                                    </ul>
+                                    <h5 class="price">$1020.00 <del>$1130.00</del></h5>
+                                    <div class="option-box">
+                                        <button class="btn select-btn">Select Options</button>
+                                        <ul class="option-list">
+                                            <li>
+                                                <a href="#!" class="wishlistProduct">
+                                                    <i class="ri-heart-3-line"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#!">
+                                                    <i class="ri-repeat-2-line"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="product-box-4-main">
+                            <div class="select-option-box">
+                                <div class="select-box">
+                                    <div>
+                                        <div class="color-box">
+                                            <h5>Colors</h5>
+                                            <ul class="color-list">
+                                                <li>
+                                                    <a href="#!"></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!"></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!"></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="size-box">
+                                            <h5>Sizes</h5>
+                                            <ul class="size-list">
+                                                <li>
+                                                    <a href="#!">xs</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!">s</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!">m</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!">l</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#!">xl</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <button class="btn add-cart-btn">add to cart</button>
+                                        <button class="close-btn btn" onclick="closeSidebar()">
+                                            <i class="ri-close-line"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="productMain product-box-4 pro-bg-white">
+                                <div class="product-image">
+                                    <a href="product-color.html">
+                                        <img src="../assets/images/product/107.png" class="img-fluid productImage"
+                                            alt="">
+                                    </a>
+                                    <div class="quick-view-button-box">
+                                        <button class="btn view-btn" data-bs-target="#quickViewModal"
+                                            data-bs-toggle="modal">Quick View</button>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <h6 class="sub-name productName">Rainbow Umbral</h6>
+                                    <a href="product-color.html" class="name">
+                                        <h5>Cyanic Pop Burst Long</h5>
+                                    </a>
+                                    <ul class="rating">
+                                        <li>
+                                            <i class="ri-star-fill fill"></i>
+                                        </li>
+                                        <li>
+                                            <i class="ri-star-fill fill"></i>
+                                        </li>
+                                        <li>
+                                            <i class="ri-star-fill fill"></i>
+                                        </li>
+                                        <li>
+                                            <i class="ri-star-fill"></i>
+                                        </li>
+                                        <li>
+                                            <i class="ri-star-fill"></i>
+                                        </li>
+                                    </ul>
+                                    <h5 class="price">$120.00 <del>$135.00</del></h5>
+                                    <div class="option-box">
+                                        <button class="btn select-btn">Select Options</button>
+                                        <ul class="option-list">
+                                            <li>
+                                                <a href="#!" class="wishlistProduct">
                                                     <i class="ri-heart-3-line"></i>
                                                 </a>
                                             </li>

@@ -233,7 +233,7 @@
             padding-right: 22px;
         }
 
-        @include common.max(767px) {
+        @include common.max(767.98px) {
             padding-left: unset;
 
             [dir="rtl"] & {
@@ -248,7 +248,7 @@
             font-weight: 400;
             font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
 
-            @include common.max(767px) {
+            @include common.max(767.98px) {
                 display: block;
                 text-align: center;
             }
@@ -381,7 +381,7 @@
             align-items: center;
             @include common.flex_wrap($dis: flex, $wrap: wrap, $gap: calc(6px + (18 - 6) * ((100vw - 320px) / (1920 - 320))));
 
-            @include common.max(767px) {
+            @include common.max(767.98px) {
                 justify-content: center;
             }
 
@@ -412,7 +412,7 @@
                     color: rgba(var(--content-color), 1);
                     width: 100%;
 
-                    @include common.max(767px) {
+                    @include common.max(767.98px) {
                         text-align: center;
                     }
 
@@ -484,7 +484,7 @@
             align-items: center;
             @include common.flex_wrap($dis: flex, $wrap: wrap, $gap: calc(6px + (10 - 6) * ((100vw - 320px) / (1920 - 320))));
 
-            @include common.max(767px) {
+            @include common.max(767.98px) {
                 justify-content: center;
             }
 
@@ -676,12 +676,12 @@
         .price-rating {
             @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
 
-            @include common.max(767px) {
+            @include common.max(767.98px) {
                 display: block;
             }
 
             .custom-rate {
-                @include common.max(767px) {
+                @include common.max(767.98px) {
                     margin-top: 10px;
                     justify-content: center;
                 }
@@ -750,7 +750,7 @@
             .select-package {
                 @include common.flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(5px + (13 - 5) * ((100vw - 320px) / (1920 - 320))));
 
-                @include common.max(767px) {
+                @include common.max(767.98px) {
                     justify-content: center;
                 }
 
@@ -1242,7 +1242,7 @@
             margin-top: 20px;
             @include common.flex_wrap ($dis: flex, $wrap: nowrap, $gap: calc(7px + (15 - 7) * ((100vw - 320px) / (1920 - 320))));
 
-            @include common.max(767px) {
+            @include common.max(767.98px) {
                 justify-content: center;
             }
 
@@ -1258,7 +1258,7 @@
                 width: auto;
                 margin-top: 0;
 
-                @include common.max(360px) {
+                @include common.max(360.98px) {
                     width: 160px;
                 }
 
@@ -1378,7 +1378,7 @@
                 }
             }
 
-            @include common.max(767px) {
+            @include common.max(767.98px) {
                 justify-content: center;
             }
 
@@ -1488,7 +1488,7 @@
                 align-items: center;
                 @include common.flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(3px + (8 - 3) * ((100vw - 320px) / (1920 - 320))));
 
-                @include common.max(767px) {
+                @include common.max(767.98px) {
                     justify-content: center;
                 }
 
@@ -1508,7 +1508,7 @@
                 align-items: center;
                 @include common.flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(8px + (20 - 8) * ((100vw - 320px) / (1920 - 320))));
 
-                @include common.max(767px) {
+                @include common.max(767.98px) {
                     justify-content: center;
                 }
 

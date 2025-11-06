@@ -106,7 +106,7 @@
 
     &-load-more {
         background-color: rgba(var(--primary-color), 1);
-        color: rgba(var(--white), 1);
+        color: #fff;
         padding-inline: calc(28px + (55 - 28) * ((100vw - 320px) / (1920 - 320)));
         margin-top: calc(20px + (33 - 20) * ((100vw - 320px) / (1920 - 320)));
         font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320)));

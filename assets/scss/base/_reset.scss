@@ -408,7 +408,7 @@
     right: calc(15px + (20 - 15) * ((100vw - 380px) / (1920 - 380)));
     width: 305px;
     background-color: #f9f9f9;
-    box-shadow: 0 0 10px rgba(var(--title-color), 0.32);
+    box-shadow: 4px 4px 7px 6px rgba(var(--title-color), 0.06);
     border: 2px solid transparent;
     z-index: 9;
     border-radius: calc(8px + (10 - 8) * ((100vw - 320px) / (1920 - 320)));

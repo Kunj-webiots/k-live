@@ -42,7 +42,7 @@
 .product-box-slider {
     margin-bottom: -70px;
 
-    @include common.max(767px) {
+    @include common.max(767.98px) {
         margin-bottom: 0;
     }
 
@@ -50,7 +50,7 @@
         .swiper-slide {
             padding-bottom: 70px;
 
-            @include common.max(767px) {
+            @include common.max(767.98px) {
                 padding-bottom: 0;
             }
         }
@@ -251,14 +251,14 @@
 .product-option-box {
     margin-bottom: -45px;
 
-    @include common.max(767px) {
+    @include common.max(767.98px) {
         margin: 0;
     }
 
     .swiper-slide {
         padding-bottom: 45px;
 
-        @include common.max(767px) {
+        @include common.max(767.98px) {
             padding: 0;
         }
     }

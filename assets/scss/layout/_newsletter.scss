@@ -20,7 +20,7 @@
                 opacity: 0.12;
                 animation: plane-animation 5s linear infinite;
 
-                @include common.max(767px) {
+                @include common.max(767.98px) {
                     display: none;
                 }
             }
@@ -202,7 +202,7 @@
         display: flex;
         align-items: center;
 
-        @include common.max(767px) {
+        @include common.max(767.98px) {
             display: block;
             text-align: center;
         }
@@ -226,7 +226,7 @@
                     border-left: unset;
                 }
 
-                @include common.max(767px) {
+                @include common.max(767.98px) {
                     margin-left: unset;
                     margin-top: 10px;
                     padding: 0;
@@ -244,14 +244,14 @@
                 align-items: center;
                 gap: calc(6px + (10 - 6) * ((100vw - 320px) / (1920 - 320)));
 
-                @include common.max(767px) {
+                @include common.max(767.98px) {
                     justify-content: center;
                 }
 
                 >div {
                     width: calc(100% - 37px - 10px);
 
-                    @include common.max(767px) {
+                    @include common.max(767.98px) {
                         width: unset;
                     }
                 }

@@ -144,7 +144,7 @@
                          color: #5e6278;
                     }
 
-                    @include common.max(767px) {
+                    @include common.max(767.98px) {
                          width: 100%;
                     }
                }
@@ -366,7 +366,7 @@
                          font-weight: 600;
                          font-size: calc(22px + (27 - 22) * ((100vw - 320px) / (1920 - 320)));
 
-                         @include common.max(767px) {
+                         @include common.max(767.98px) {
                               font-weight: 500;
                          }
                     }
@@ -686,7 +686,7 @@
                     font-weight: 600;
                     font-size: calc(22px + (26 - 22) * ((100vw - 320px) / (1920 - 320)));
 
-                    @include common.max(767px) {
+                    @include common.max(767.98px) {
                          font-weight: 500;
                     }
                }

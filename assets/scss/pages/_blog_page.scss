@@ -681,7 +681,7 @@
                 margin-bottom: 0;
                 @include common.line($line: 3);
 
-                @include common.max(1399px) {
+                @include common.max(1399.98px) {
                     -webkit-line-clamp: 2;
                 }
             }
@@ -880,11 +880,11 @@
             display: block;
         }
 
-        @include common.max(991px) {
+        @include common.max(991.98px) {
             display: flex;
         }
 
-        @include common.max(767px) {
+        @include common.max(767.98px) {
             display: block;
         }
 
@@ -916,7 +916,7 @@
             width: 38%;
             transition: all 0.15s ease-in-out;
 
-            @include common.max(1399px) {
+            @include common.max(1399.98px) {
                 width: 45%;
             }
 
@@ -924,11 +924,11 @@
                 width: 100%;
             }
 
-            @include common.max(991px) {
+            @include common.max(991.98px) {
                 width: 45%;
             }
 
-            @include common.max(767px) {
+            @include common.max(767.98px) {
                 margin-bottom: 8px;
                 text-align: center;
                 @include common.pseudowh($width: 100%, $height: auto);
@@ -941,11 +941,11 @@
                     width: 100%;
                 }
 
-                @include common.max(991px) {
+                @include common.max(991.98px) {
                     width: auto;
                 }
 
-                @include common.max(767px) {
+                @include common.max(767.98px) {
                     width: 100%;
                 }
             }
@@ -955,7 +955,7 @@
             padding: calc(10px + (25 - 10) * ((100vw - 320px) / (1920 - 320)));
             width: 62%;
 
-            @include common.max(1399px) {
+            @include common.max(1399.98px) {
                 width: 55%;
             }
 
@@ -963,11 +963,11 @@
                 width: 100%;
             }
 
-            @include common.max(991px) {
+            @include common.max(991.98px) {
                 width: 55%;
             }
 
-            @include common.max(767px) {
+            @include common.max(767.98px) {
                 width: 100%;
             }
         }

@@ -525,7 +525,7 @@ header {
             color: #fff;
         }
 
-        @include common.max(767px) {
+        @include common.max(767.98px) {
             margin-right: 0;
         }
     }

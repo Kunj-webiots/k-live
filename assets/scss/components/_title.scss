@@ -28,7 +28,7 @@
             }
         }
 
-        @include common.max(767px) {
+        @include common.max(767.98px) {
             display: block;
         }
     }
@@ -54,7 +54,7 @@
         font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
         color: rgba(var(--content-color), 1);
 
-        @include common.max(991px) {
+        @include common.max(991.98px) {
             display: none;
         }
     }

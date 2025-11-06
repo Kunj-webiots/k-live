@@ -243,17 +243,17 @@
     margin-bottom: 14px;
 
     button {
-        color: rgba(var(--white), 1);
+        color: #fff;
         font-weight: 500;
         font-size: 16px;
         border: none;
-        gap: 9px;
+        gap: calc(5px + (9 - 5) * ((100vw - 320px) / (1920 - 320)));
         display: flex;
         align-items: center;
         line-height: 1;
         position: relative;
         padding: calc(12px + (13 - 12) * ((100vw - 320px) / (1920 - 320))) 11px calc(8px + (10 - 8) * ((100vw - 320px) / (1920 - 320)));
-        border-radius: 6px;
+        border-radius: calc(5px + (6 - 5) * ((100vw - 320px) / (1920 - 320)));
         background-color: rgba(var(--primary-color), 1);
 
         i {
@@ -263,7 +263,7 @@
 
         &:hover,
         &:first-child:active {
-            color: rgba(var(--white), 1);
+            color: #fff;
             background-color: rgba(var(--primary-color), 1);
         }
     }
@@ -280,7 +280,7 @@
         padding: 17px 21px 14px;
         border-bottom: 1px solid rgba(var(--border-color), 1);
 
-        @include common.max(991px) {
+        @include common.max(991.98px) {
             padding: 0 0 14px;
         }
 
@@ -355,7 +355,7 @@
         border-right: unset;
         border-left: 1px solid rgba(var(--content-color), 0.3);
 
-        @include common.max(991px) {
+        @include common.max(991.98px) {
             border-left: unset;
             left: unset;
             right: -350px;
@@ -381,7 +381,7 @@
     }
 
     .shop-left-sidebar {
-        @include common.max(991px) {
+        @include common.max(991.98px) {
             padding: calc(16px + (26 - 16) * ((100vw - 320px) / (1920 - 320)));
         }
 
@@ -389,7 +389,7 @@
             padding: 20px;
             margin-bottom: 20px;
 
-            @include common.max(991px) {
+            @include common.max(991.98px) {
                 padding: 0;
             }
 
@@ -413,7 +413,7 @@
             padding-left: calc(16px + (26 - 16) * ((100vw - 320px) / (1920 - 320)));
             padding-right: unset;
 
-            @include common.max(991px) {
+            @include common.max(991.98px) {
                 padding: calc(16px + (26 - 16) * ((100vw - 320px) / (1920 - 320)));
             }
 
@@ -430,7 +430,7 @@
         .back-button {
             display: none;
 
-            @include common.max(991px) {
+            @include common.max(991.98px) {
                 position: sticky;
                 z-index: 2;
                 top: 0;
@@ -494,7 +494,7 @@
         .custom-accordion-2 {
             @include common.flex_wrap ($dis: flex, $wrap: wrap, $gap: 22px);
 
-            @include common.max(991px) {
+            @include common.max(991.98px) {
                 gap: 0;
             }
 
@@ -511,7 +511,7 @@
                     }
                 }
 
-                @include common.max(991px) {
+                @include common.max(991.98px) {
                     padding: 0;
                     border-radius: 0;
 
@@ -854,7 +854,7 @@
             display: flex;
             align-items: center;
 
-            @include common.max(991px) {
+            @include common.max(991.98px) {
                 margin-top: 0;
             }
 
@@ -874,7 +874,7 @@
                 align-items: center;
 
                 h5 {
-                    @include common.max(360px) {
+                    @include common.max(360.98px) {
                         display: none;
                     }
                 }
@@ -882,7 +882,7 @@
                 .dropdown {
                     margin-left: 10px;
 
-                    @include common.max(360px) {
+                    @include common.max(360.98px) {
                         margin-left: 0;
                     }
 
@@ -1208,7 +1208,7 @@
                     }
                 }
 
-                @include common.max(767px) {
+                @include common.max(767.98px) {
                     border: none;
                 }
             }
@@ -1286,6 +1286,7 @@
 
                 li {
                     border-radius: 100%;
+                    z-index: 1;
                     background-color: rgba(var(--base-gray), 1);
                     padding: calc(5px + (7 - 5) * ((100vw - 320px) / (1920 - 320)));
                     transition: transform 0.15s ease-in-out;

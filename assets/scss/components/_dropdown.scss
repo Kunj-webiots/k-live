@@ -195,7 +195,7 @@
                 max-height: none;
             }
 
-            @include common.max(767px) {
+            @include common.max(767.98px) {
                 height: calc(100% - 50px);
                 max-height: 100%;
             }

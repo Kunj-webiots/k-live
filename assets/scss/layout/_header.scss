@@ -370,7 +370,7 @@ header {
         position: relative;
         @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
 
-        @include common.max(991px) {
+        @include common.max(991.98px) {
             gap: 25px;
         }
 
@@ -618,7 +618,7 @@ header {
                             }
                         }
 
-                        @include common.max(991px) {
+                        @include common.max(991.98px) {
                             display: none;
                         }
 
@@ -640,7 +640,7 @@ header {
                 align-items: center;
                 gap: 14px;
 
-                @include common.max(991px) {
+                @include common.max(991.98px) {
                     gap: calc(8px + (14 - 8) * ((100vw - 320px) / (600 - 320)));
                 }
 
@@ -661,7 +661,7 @@ header {
                     &.contact-list {
                         margin-right: 9px;
 
-                        @include common.max(991px) {
+                        @include common.max(991.98px) {
                             margin-right: 0;
                         }
                     }
@@ -669,7 +669,7 @@ header {
                     &:first-child {
                         display: none;
 
-                        @include common.max(991px) {
+                        @include common.max(991.98px) {
                             display: block;
                         }
                     }
@@ -709,7 +709,7 @@ header {
                             font-size: 25px;
                             color: #fff;
 
-                            @include common.max(991px) {
+                            @include common.max(991.98px) {
                                 font-size: calc(17px + (25 - 17) * ((100vw - 320px) / (992 - 320)));
                             }
                         }
@@ -718,13 +718,13 @@ header {
                             --size: 25px;
                             --Color: #fff;
 
-                            @include common.max(991px) {
+                            @include common.max(991.98px) {
                                 --size: calc(19px + (25 - 19) * ((100vw - 320px) / (992 - 320)));
                             }
                         }
 
                         >div {
-                            @include common.max(991px) {
+                            @include common.max(991.98px) {
                                 display: none;
                             }
                         }
@@ -752,7 +752,7 @@ header {
         position: relative;
         @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
 
-        @include common.max(991px) {
+        @include common.max(991.98px) {
             gap: 25px;
         }
 
@@ -850,7 +850,7 @@ header {
                     border-radius: 5px;
                     flex-wrap: nowrap;
 
-                    @include common.max(991px) {
+                    @include common.max(991.98px) {
                         flex-wrap: nowrap;
                     }
 
@@ -990,7 +990,7 @@ header {
                             @include common.center(vertical);
                         }
 
-                        @include common.max(991px) {
+                        @include common.max(991.98px) {
                             display: none;
                         }
 
@@ -1008,7 +1008,7 @@ header {
                 align-items: center;
                 gap: 14px;
 
-                @include common.max(991px) {
+                @include common.max(991.98px) {
                     gap: calc(8px + (14 - 8) * ((100vw - 320px) / (600 - 320)));
                 }
 
@@ -1029,7 +1029,7 @@ header {
                     &.contact-list {
                         margin-right: 9px;
 
-                        @include common.max(991px) {
+                        @include common.max(991.98px) {
                             margin-right: 0;
                         }
                     }
@@ -1037,7 +1037,7 @@ header {
                     &:first-child {
                         display: none;
 
-                        @include common.max(991px) {
+                        @include common.max(991.98px) {
                             display: block;
                         }
                     }
@@ -1077,7 +1077,7 @@ header {
                             font-size: 25px;
                             color: rgba(var(--white), 1);
 
-                            @include common.max(991px) {
+                            @include common.max(991.98px) {
                                 font-size: calc(17px + (25 - 17) * ((100vw - 320px) / (991 - 320)));
                             }
                         }
@@ -1086,13 +1086,13 @@ header {
                             --size: 25px;
                             --Color: rgba(var(--title-color), 1);
 
-                            @include common.max(991px) {
+                            @include common.max(991.98px) {
                                 --size: calc(17px + (25 - 17) * ((100vw - 320px) / (991 - 320)));
                             }
                         }
 
                         >div {
-                            @include common.max(991px) {
+                            @include common.max(991.98px) {
                                 display: none;
                             }
                         }
@@ -1367,7 +1367,7 @@ header {
                             @include common.pos($pos: relative, $content: "\ea4e");
                             @include common.font;
 
-                            @include common.max(1399px) {
+                            @include common.max(1399.98px) {
                                 content: none;
                             }
                         }
@@ -1746,7 +1746,7 @@ header {
         margin-top: 10px;
         @include common.flex_common ($dis: flex !important, $align: center, $justify: space-between);
 
-        @include common.max(991px) {
+        @include common.max(991.98px) {
             gap: 25px;
         }
 
@@ -1850,7 +1850,7 @@ header {
                     background-color: rgba(var(--white), 1);
                     border-radius: 0;
 
-                    @include common.max(991px) {
+                    @include common.max(991.98px) {
                         flex-wrap: nowrap;
                         background-color: rgba(var(--content-color), 0.05);
                         padding: calc(5px + (10 - 5) * ((100vw - 320px) / (992 - 320)));
@@ -1984,7 +1984,7 @@ header {
                             @include common.center(vertical);
                         }
 
-                        @include common.max(991px) {
+                        @include common.max(991.98px) {
                             display: none;
                         }
 
@@ -2002,7 +2002,7 @@ header {
                 align-items: center;
                 gap: 14px;
 
-                @include common.max(991px) {
+                @include common.max(991.98px) {
                     gap: calc(8px + (14 - 8) * ((100vw - 320px) / (600 - 320)));
                 }
 
@@ -2023,7 +2023,7 @@ header {
                     &.contact-list {
                         margin-right: 9px;
 
-                        @include common.max(991px) {
+                        @include common.max(991.98px) {
                             margin-right: 0;
                         }
                     }
@@ -2031,7 +2031,7 @@ header {
                     &:first-child {
                         display: none;
 
-                        @include common.max(991px) {
+                        @include common.max(991.98px) {
                             display: block;
                         }
                     }
@@ -2071,7 +2071,7 @@ header {
                             font-size: 25px;
                             color: rgba(var(--title-color), 1);
 
-                            @include common.max(991px) {
+                            @include common.max(991.98px) {
                                 font-size: calc(17px + (25 - 17) * ((100vw - 320px) / (991 - 320)));
                             }
                         }
@@ -2080,13 +2080,13 @@ header {
                             --size: 25px;
                             --Color: rgba(var(--title-color), 1);
 
-                            @include common.max(991px) {
+                            @include common.max(991.98px) {
                                 --size: calc(17px + (25 - 17) * ((100vw - 320px) / (991 - 320)));
                             }
                         }
 
                         >div {
-                            @include common.max(991px) {
+                            @include common.max(991.98px) {
                                 display: none;
                             }
                         }

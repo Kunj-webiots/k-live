@@ -104,7 +104,7 @@ table,
                         padding-left: 8px;
                     }
 
-                    @include common.max(991px) {
+                    @include common.max(991.98px) {
                         min-width: 325px;
                     }
                 }

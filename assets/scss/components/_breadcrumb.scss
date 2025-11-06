@@ -41,7 +41,7 @@
                 width: 90%;
             }
 
-            @include common.max(360px) {
+            @include common.max(360.98px) {
                 width: 100%;
             }
 
@@ -174,11 +174,11 @@
                 width: 70%;
             }
 
-            @include common.max(991px) {
+            @include common.max(991.98px) {
                 width: 90%;
             }
 
-            @include common.max(767px) {
+            @include common.max(767.98px) {
                 width: 100%;
             }
 
@@ -200,11 +200,11 @@
                 width: 70%;
             }
 
-            @include common.max(991px) {
+            @include common.max(991.98px) {
                 width: 90%;
             }
 
-            @include common.max(767px) {
+            @include common.max(767.98px) {
                 width: 100%;
             }
 

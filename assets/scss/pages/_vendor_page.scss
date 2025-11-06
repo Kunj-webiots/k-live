@@ -603,7 +603,7 @@
                 margin-left: auto;
                 box-shadow: 6px 4px 8px 3px rgba(var(--title-color), 0.02);
 
-                @include common.max(1399px) {
+                @include common.max(1399.98px) {
                     width: 58%;
                 }
 
