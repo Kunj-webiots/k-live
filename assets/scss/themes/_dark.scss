@@ -28,7 +28,9 @@ body {
             .dropdown-box {
                 .review-dropdown {
                     .dropdown-title {
-                        background-color: rgba(var(--base-gray), 1);
+                        @include common.max(1399.98px) {
+                            background-color: rgba(var(--base-gray), 1);
+                        }
                     }
                 }
             }

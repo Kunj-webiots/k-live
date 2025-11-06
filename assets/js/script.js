@@ -33,7 +33,7 @@
 */
 
 /*====================
-  01. Tap To Tap Js
+    01. Tap To Tap Js
 =======================*/
 var scrollToTopBtn = document.querySelector(".tap-top-button");
 var rootElement = document.documentElement;
@@ -57,7 +57,7 @@ scrollToTopBtn.addEventListener("click", scrollToTop);
 document.addEventListener("scroll", handleScroll);
 
 /*====================
-  02. Sub Dropdown Menu Js
+    02. Sub Dropdown Menu Js
 =======================*/
 const subButtons = document.querySelectorAll(".sub-dropdown-hover .dropdown-item");
 
@@ -72,7 +72,7 @@ subButtons.forEach((btn) => {
 });
 
 /*====================
-  03. Sticky Header Js
+    03. Sticky Header Js
 =======================*/
 const header = document.querySelector("header");
 const toggleClass = "sticky-header";
@@ -87,7 +87,7 @@ window.addEventListener("scroll", () => {
 });
 
 /*====================
-  04. Dropdown Filter Js
+    04. Dropdown Filter Js
 =======================*/
 document.querySelectorAll(".dropdown-box .dropdown-menu a").forEach(function (element) {
     element.addEventListener("click", function (event) {
@@ -99,7 +99,7 @@ document.querySelectorAll(".dropdown-box .dropdown-menu a").forEach(function (el
 });
 
 /*====================
-  05. Ratio Js
+    05. Ratio Js
 =======================*/
 window.addEventListener("load", () => {
     const bgImg = document.querySelectorAll(".bg-img");
@@ -142,7 +142,7 @@ window.addEventListener("load", () => {
 });
 
 /*====================
-  06. Onclick Link Add & Remove Js
+    06. Onclick Link Add & Remove Js
 =======================*/
 const shopBtns = document.querySelectorAll(".shopBtn");
 
@@ -180,7 +180,7 @@ updateOnclick();
 window.addEventListener("resize", updateOnclick);
 
 /*====================
-  07. Open Search Bar Js
+    07. Open Search Bar Js
 =======================*/
 const div = document.getElementById("searchOffcanvas");
 const searchOverlay = document.getElementById("searchOverlay");
@@ -207,7 +207,7 @@ searchOverlay.addEventListener("click", () => {
 });
 
 /*=====================
-  08. Wishlist Box Remove Js
+    08. Wishlist Box Remove Js
 ==========================*/
 const productList = document.querySelector('.wishlist-offcanvas .product-box-list');
 
@@ -264,7 +264,7 @@ document.querySelectorAll(".close-button").forEach((btn) => {
 checkEmptyList();
 
 /*=====================
-  09. Change Website Title Js
+    09. Change Website Title Js
 ==========================*/
 var title = document.title;
 
@@ -343,7 +343,7 @@ handleFooter();
 window.addEventListener("resize", handleFooter);
 
 /*=====================
-  10. Switch Authentication Js
+    10. Switch Authentication Js
 ==========================*/
 let myPopup = document.querySelector(".login-box");
 let btnClose = document.querySelector(".next-button");
@@ -393,7 +393,7 @@ cancelBtn.onclick = function () {
 };
 
 /*=====================
-  11. Open Select Option Js
+    11. Open Select Option Js
 ==========================*/
 const viewBtns = document.querySelectorAll(".select-btn");
 const selectBoxes = document.querySelectorAll(".select-option-box");
@@ -412,7 +412,7 @@ closeBtns.forEach((closeBtn, index) => {
 });
 
 /*=====================
-  12. Change Text Js
+    12. Change Text Js
 ==========================*/
 const changeTexts = document.querySelectorAll(".add-cart-btn");
 
@@ -424,9 +424,8 @@ changeTexts.forEach((changeText) => {
 });
 
 /*=====================
-  13. Size List Active Add & Remove Js
+    13. Size List Active Add & Remove Js
 ==========================*/
-
 const productBoxes = document.querySelectorAll(".product-box-4-main");
 
 productBoxes.forEach((box, index) => {
@@ -455,7 +454,7 @@ productBoxes.forEach((box, index) => {
 });
 
 /*=====================
-  14. Open Search Box Suggestion Js
+    14. Open Search Box Suggestion Js
 ==========================*/
 const searchInputBox = document.getElementById("searchInputBox");
 const resultBox1 = document.getElementById("resultBox");
@@ -472,7 +471,7 @@ overlay.addEventListener("click", () => {
 });
 
 /*=====================
-  15. Empty Cart Js
+    15. Empty Cart Js
 ==========================*/
 function CheckProductQuantity() {
     let AllProducts = document.getElementsByClassName("table-row");
@@ -493,7 +492,7 @@ product_details_array.forEach((item) => {
 });
 
 /*=====================
-  16. Disable Inspect Js
+    16. Disable Inspect Js
 ==========================*/
 // document.addEventListener("contextmenu", (e) => e.preventDefault());
 
@@ -535,7 +534,7 @@ product_details_array.forEach((item) => {
 // })();
 
 /*=====================
-  17. Quantity Js
+    17. Quantity Js
 ==========================*/
 document.addEventListener("DOMContentLoaded", function () {
     const qtyContainers = document.querySelectorAll(".quantity-box-2");
@@ -545,11 +544,13 @@ document.addEventListener("DOMContentLoaded", function () {
         const plusBtn = container.querySelector(".qty-btn-plus");
         const input = container.querySelector(".input-qty");
 
+        if (!input) return;
+
         function toggleMinus() {
             if (parseInt(input.value) <= parseInt(input.min || 0)) {
-                minusBtn.setAttribute("disabled", "disabled");
+                minusBtn.disabled = true;
             } else {
-                minusBtn.removeAttribute("disabled");
+                minusBtn.disabled = false;
             }
         }
 
@@ -573,7 +574,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 /*=====================
-  18. Page Load Newsletter Modal Js
+    18. Page Load Newsletter Modal Js
 ==========================*/
 document.addEventListener("DOMContentLoaded", function () {
     if (!localStorage.getItem("modalShown")) {
@@ -584,7 +585,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 /*====================
-  19. Exit Modal Open js
+    19. Exit Modal Open js
 =======================*/
 document.addEventListener("DOMContentLoaded", function () {
     const exitModalEl = document.getElementById("exitModal");
@@ -601,7 +602,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 /*====================
-  20. Random Timer On Exit Modal Js
+    20. Random Timer On Exit Modal Js
 =======================*/
 window.onload = function () {
     let minMinutes = 10;
@@ -649,7 +650,7 @@ window.onload = function () {
 }
 
 /*====================
-  21. Loader Js
+    21. Loader Js
 =======================*/
 const loadingText = new SplitType(".loading-text.initial", {
     types: "chars"

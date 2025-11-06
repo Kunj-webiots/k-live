@@ -994,11 +994,11 @@
                     border: none;
                     background-color: rgba(var(--content-color), 0.05);
                     font-size: calc(14px + (15 - 14) * ((100vw - 320px) / (1920 - 320)));
-                    padding: 12px 15px 9px;
-                    border-radius: 5px;
+                    padding: calc(8px + (12 - 8) * ((100vw - 320px) / (1920 - 320))) calc(12px + (15 - 12) * ((100vw - 320px) / (1920 - 320))) calc(6px + (9 - 6) * ((100vw - 320px) / (1920 - 320)));
+                    border-radius: calc(4px + (5 - 4) * ((100vw - 320px) / (1920 - 320)));
                     color: rgba(var(--content-color), 1);
                     flex-wrap: nowrap;
-                    gap: 10px;
+                    gap: calc(6px + (10 - 6) * ((100vw - 320px) / (1920 - 320)));
                     text-align: left;
                     @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
 
@@ -1154,10 +1154,9 @@
 
                 &::before {
                     right: 13px;
-                    font-family: remixicon;
-                    font-style: normal;
                     color: rgba(var(--content-color), 1);
                     cursor: pointer;
+                    @include common.font;
                     @include common.pos($pos: absolute, $content: "\eb99");
                     @include common.center(vertical);
                 }
@@ -1379,7 +1378,6 @@
             .product-details {
                 line-height: 1.3;
                 display: none;
-                @include common.line($line: 3);
             }
 
             .option-box {
@@ -1425,10 +1423,10 @@
                         }
 
                         .product-details {
-                            display: -webkit-box;
                             font-size: calc(13px + (15 - 13) * ((100vw - 320px) / (1920 - 320)));
                             margin-block: 8px 14px;
                             color: rgba(var(--content-color), 1);
+                            @include common.line($line: 3);
                         }
 
                         .price {

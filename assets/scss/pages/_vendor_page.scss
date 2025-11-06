@@ -466,6 +466,10 @@
                 font-weight: 400;
                 color: rgba(var(--content-color), 1);
 
+                @include common.max(575.98px) {
+                    text-align: center;
+                }
+
                 +p {
                     margin-top: 10px
                 }
@@ -501,6 +505,12 @@
                 border-left: unset;
                 padding-left: unset;
                 margin-left: unset;
+
+                [dir="rtl"] & {
+                    border-right: none;
+                    padding-right: unset;
+                    margin-right: unset;
+                }
             }
 
             .footer-social {

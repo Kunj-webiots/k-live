@@ -11,6 +11,8 @@
     &.category-fixed-box {
         width: calc(310px + (400 - 310) * ((100vw - 320px) / (1920 - 320)));
         top: 0;
+        border: none;
+        background-color: rgba(var(--white), 1);
         transition: all 0.3s ease-in-out;
 
         .category-header {
@@ -22,6 +24,10 @@
             background-color: rgba(var(--base-gray), 1);
             border-bottom: 1px solid rgba(var(--content-color), 0.2);
             @include common.flex_common ($dis: flex, $align: center, $justify: space-between);
+
+            body.dark & {
+                box-shadow: none;
+            }
 
             h5 {
                 color: rgba(var(--title-color), 1);
@@ -149,8 +155,7 @@
                 li {
                     display: block;
                     width: 100%;
-                    padding-inline: 17px 20px;
-                    padding-block: 13px;
+                    padding: 13px 20px 13px 17px;
                     border-left: 3px solid transparent;
                     transition: 0.3s;
 

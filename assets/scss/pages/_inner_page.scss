@@ -1574,7 +1574,7 @@
 
             p {
                 color: rgba(var(--content-color), 1);
-                font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+                font-size: calc(13px + (16 - 13) * ((100vw - 320px) / (1920 - 320)));
                 font-weight: 400;
             }
         }
@@ -1599,7 +1599,7 @@
                 a {
                     background-color: rgba(var(--content-color), 1);
                     border-radius: 50%;
-                    color: rgba(var(--white), 1);
+                    color: #fff;
                     @include common.pseudowh($width: 30px, $height: 30px);
                     @include common.flex_common;
 
@@ -1608,7 +1608,7 @@
                         @include common.pseudowh($width: unset, $height: unset);
 
                         i {
-                            font-size: 18px;
+                            font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320)));
                         }
                     }
                 }
@@ -1728,7 +1728,7 @@
 /* Compare Scss */
 .compare-section {
     .compare-table {
-        padding: 20px;
+        padding: calc(14px + (20 - 14) * ((100vw - 320px) / (1920 - 320)));
         background-color: rgba(var(--white), 1);
         margin-bottom: 0;
 
@@ -1739,7 +1739,7 @@
                 color: rgba(var(--title-color), 1);
                 min-width: 200px;
                 vertical-align: middle;
-                padding: calc(12px + (16 - 12) * ((100vw - 320px) / (1920 - 320))) 10px;
+                padding: calc(10px + (16 - 10) * ((100vw - 320px) / (1920 - 320))) 10px;
                 text-align: center;
                 border-right: 1px solid rgba(var(--border-color), 1);
                 border-bottom: 1px solid rgba(var(--border-color), 1);
@@ -1868,7 +1868,7 @@
 
                     img {
                         object-fit: contain;
-                        @include common.pseudowh($width: 100%, $height: calc(138px + (220 - 138) * ((100vw - 320px) / (1920 - 320))));
+                        @include common.pseudowh($width: 100%, $height: calc(120px + (220 - 120) * ((100vw - 320px) / (1920 - 320))));
                     }
                 }
 
@@ -1941,9 +1941,8 @@
             top: 0;
             left: -320px;
             border-radius: 0;
-            z-index: 6;
-            overflow-y: auto;
-            overflow-x: hidden;
+            z-index: 21;
+            overflow: hidden auto;
             transition: all 0.15s ease-in-out;
             @include common.pseudowh($width: 300px, $height: 100vh);
 
@@ -2033,10 +2032,10 @@
                 .profile-image {
                     object-fit: contain;
                     background-color: #ecf3fa;
-                    border-radius: 8px;
+                    border-radius: calc(6px + (8 - 6) * ((100vw - 320px) / (1920 - 320)));
                     overflow: hidden;
                     border: 1px solid rgba(var(--border-color), 1);
-                    @include common.pseudowh($width: 76px, $height: 76px);
+                    @include common.pseudowh($width: calc(62px + (76 - 62) * ((100vw - 320px) / (1920 - 320))), $height: calc(62px + (76 - 62) * ((100vw - 320px) / (1920 - 320))));
 
                     img {
                         @extend %img-contain;
@@ -2062,27 +2061,17 @@
         }
 
         .user-nav-pills {
-            flex-wrap: wrap;
-            gap: calc(2px + (7 - 2) * ((100vw - 320px) / (1920 - 320)));
+            display: block;
             margin: calc(10px + (20 - 10) * ((100vw - 320px) / (1920 - 320))) 0 0;
+            overflow: auto;
+            height: calc(100% - calc(98px + (106 - 98) * ((100vw - 320px) / (1920 - 320))) - 78px - calc(10px + (20 - 10) * ((100vw - 320px) / (1920 - 320))));
 
             .nav-item {
                 width: 100%;
                 display: block;
 
-                &:last-child {
-                    border-top: 1px solid rgba(var(--border-color), 1);
-                    margin-top: 8px;
-                    padding: 14px calc(10px + (13 - 10)*((100vw - 320px) /(1920 - 320))) calc(10px + (13 - 10)*((100vw - 320px) /(1920 - 320)));
-
-                    .nav-link {
-                        border-radius: 6px;
-                        @include common.flex_common;
-
-                        i {
-                            margin-top: -2px;
-                        }
-                    }
+                +.nav-item {
+                    margin-top: calc(2px + (7 - 2) * ((100vw - 320px) / (1920 - 320)));
                 }
 
                 .nav-link {
@@ -2127,6 +2116,37 @@
                             margin-left: 10px;
                         }
                     }
+                }
+            }
+        }
+
+        .logout-box {
+            border-top: 1px solid rgba(var(--border-color), 1);
+            margin-top: 8px;
+            width: 100%;
+            padding: 14px calc(10px + (13 - 10)*((100vw - 320px) /(1920 - 320))) calc(10px + (13 - 10)*((100vw - 320px) /(1920 - 320)));
+
+            .logout-btn {
+                box-shadow: unset;
+                font-size: calc(17px + (18 - 17) * ((100vw - 320px) / (1920 - 320)));
+                position: relative;
+                color: rgba(var(--content-color), 1);
+                width: 100%;
+                text-align: left;
+                padding: calc(10px + (13 - 10) * ((100vw - 320px) / (1920 - 320))) calc(10px + (13 - 10) * ((100vw - 320px) / (1920 - 320))) calc(10px + (13 - 10) * ((100vw - 320px) / (1920 - 320))) calc(19px + (23 - 19) * ((100vw - 320px) / (1920 - 320)));
+                font-weight: 500;
+                z-index: 0;
+                overflow: hidden;
+                border-radius: 0;
+                display: flex;
+                align-items: center;
+                padding: 14px calc(10px + (13 - 10)*((100vw - 320px) /(1920 - 320))) calc(10px + (13 - 10)*((100vw - 320px) /(1920 - 320)));
+                width: 100%;
+                border-radius: 6px;
+                @include common.flex_common;
+
+                i {
+                    margin-top: -2px;
                 }
             }
         }
@@ -2183,8 +2203,8 @@
 
         .dashboard-title {
             button {
-                padding: 11px 14px 8px;
-                font-size: 16px;
+                padding: calc(9px + (11 - 9) * ((100vw - 320px) / (1920 - 320))) calc(10px + (14 - 10) * ((100vw - 320px) / (1920 - 320))) calc(6px + (8 - 6) * ((100vw - 320px) / (1920 - 320)));
+                font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
                 font-weight: 500;
                 display: flex;
                 align-items: center;
@@ -2368,6 +2388,7 @@
                             tr {
                                 td {
                                     text-align: center;
+                                    vertical-align: middle;
                                     font-size: calc(15px + (16 - 15) * ((100vw - 320px) / (1920 - 320)));
                                     color: rgba(var(--content-color), 1);
                                     box-shadow: unset;
@@ -2440,7 +2461,7 @@
                             background-image: unset;
                             filter: unset;
                             transition: all 0.15s ease-in;
-                            @include common.pseudowh($width: 18px, $height: 18px);
+                            @include common.pseudowh($width: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320))), $height: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320))));
 
                             body.dark & {
                                 background-color: #202c3b;
@@ -2454,7 +2475,7 @@
                                 background-color: rgba(var(--primary-color), 1);
                                 border-radius: 100%;
                                 @include common.pos;
-                                @include common.pseudowh($width: 13px, $height: 13px);
+                                @include common.pseudowh($width: calc(10px + (13 - 10) * ((100vw - 320px) / (1920 - 320))), $height: calc(10px + (13 - 10) * ((100vw - 320px) / (1920 - 320))));
                             }
 
                             &:checked {
@@ -2481,7 +2502,7 @@
                                     td {
                                         padding-top: 0;
                                         font-weight: 600;
-                                        font-size: calc(17px + (18 - 17) * ((100vw - 320px) / (1920 - 320)));
+                                        font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (1920 - 320)));
                                         color: rgba(var(--title-color), 1);
                                     }
                                 }
@@ -2493,12 +2514,12 @@
                                     color: rgba(var(--content-color), 1);
 
                                     &:first-child {
-                                        min-width: 90px;
-                                        padding-left: 8px;
+                                        min-width: calc(72px + (90 - 72) * ((100vw - 320px) / (1920 - 320)));
+                                        padding-left: calc(6px + (8 - 6) * ((100vw - 320px) / (1920 - 320)));
 
                                         [dir="rtl"] & {
                                             padding-left: unset;
-                                            padding-right: 8px;
+                                            padding-right: calc(6px + (8 - 6) * ((100vw - 320px) / (1920 - 320)));
                                         }
                                     }
 
@@ -2796,7 +2817,7 @@
                         gap: 5px;
 
                         @include common.max(767px) {
-                            color: #222;
+                            color: rgba(var(--title-color), 1);
                             font-size: 14px;
                         }
 
@@ -3167,7 +3188,7 @@
                 gap: calc(2px + (8 - 2) * ((100vw - 320px) / (1920 - 320)));
 
                 li {
-                    font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320)));
+                    font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (1920 - 320)));
                     font-weight: 400;
                     color: rgba(var(--content-color), 0.8);
                     flex-wrap: wrap;
@@ -3552,7 +3573,7 @@
                 left: 50%;
                 z-index: 10;
                 transform: translate3d(-50%, -50%, 0);
-                fill: rgba(var(--white), 1);
+                fill: #fff;
                 @include common.pseudowh($width: 48px, $height: calc(28px + (36 - 28) * ((100vw - 320px) / (1920 - 320))));
             }
 
@@ -3808,6 +3829,12 @@
 
 /* Search Scss */
 .search-section {
+    .title {
+        h3 {
+            font-size: calc(20px + (26 - 20) * ((100vw - 320px) / (1920 - 320)));
+        }
+    }
+
     .search-box {
         border: 1px solid rgba(var(--border-color), 1);
         background-color: rgba(var(--white), 1);
@@ -3818,10 +3845,13 @@
             background-color: transparent;
             border: unset;
             border-radius: unset;
-            padding-inline: 16px 0;
+            padding-inline: calc(12px + (16 - 12) * ((100vw - 320px) / (1920 - 320))) 0;
             line-height: 1;
             color: rgba(var(--title-color), 1);
-            font-size: 18px;
+
+            i {
+                font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320)));
+            }
         }
 
         .form-control {
@@ -3833,8 +3863,8 @@
     }
 
     .search-suggestion-list {
-        gap: calc(8px + (10 - 8) * ((100vw - 320px) / (1920 - 320)));
-        margin-block: 13px 60px;
+        gap: calc(6px + (10 - 6) * ((100vw - 320px) / (1920 - 320)));
+        margin-block: calc(8px + (13 - 8) * ((100vw - 320px) / (1920 - 320))) calc(28px + (60 - 28) * ((100vw - 320px) / (1920 - 320)));
         flex-wrap: wrap;
         @include common.flex_common;
 
@@ -3842,10 +3872,12 @@
             color: rgba(var(--content-color), 1);
             font-size: calc(15px + (16 - 15) * ((100vw - 320px) / (1920 - 320)));
             font-weight: 400;
+            line-height: 1;
         }
 
         a {
             font-size: calc(15px + (16 - 15) * ((100vw - 320px) / (1920 - 320)));
+            transition: color 0.15s ease-in-out;
             color: rgba(var(--title-color), 1);
             font-weight: 400;
 

@@ -304,7 +304,7 @@
 }
 
 .product-box-4 {
-    padding: 10px;
+    padding: calc(7px + (10 - 7) * ((100vw - 320px) / (1920 - 320)));
     background-color: rgba(var(--light-gray), 1);
     transition: all 0.5s ease-in-out;
     position: relative;
@@ -438,9 +438,9 @@
                 visibility: visible;
             }
 
-            @include common.max(575.98px) {
-                left: 0;
-            }
+            // @include common.max(575.98px) {
+            //     left: 0;
+            // }
 
             .view-btn {
                 background-color: rgba(255, 255, 255, 0.6);
@@ -455,20 +455,20 @@
                     background-color: rgba(255, 255, 255, 0.6);
                 }
 
-                @include common.max(767px) {
-                    display: none;
-                }
+                // @include common.max(767px) {
+                //     display: none;
+                // }
             }
         }
     }
 
     .product-content {
-        margin-top: 14px;
+        margin-top: calc(8px + (14 - 8) * ((100vw - 320px) / (1920 - 320)));
 
         .sub-name {
             color: rgba(var(--content-color), 0.8);
             font-size: 13px;
-            margin-bottom: 2px;
+            margin-bottom: calc(0px + (2 - 0) * ((100vw - 320px) / (1920 - 320)));
             font-weight: 400;
         }
 
@@ -485,7 +485,7 @@
         .price {
             margin-top: 9px;
             align-items: center;
-            @include common.flex_wrap($dis: flex, $wrap: wrap, $gap: 6px);
+            @include common.flex_wrap($dis: flex, $wrap: wrap, $gap: calc(4px + (6 - 4) * ((100vw - 320px) / (1920 - 320))));
 
             del {
                 color: rgba(var(--content-color), 0.8);
@@ -2266,8 +2266,6 @@
     }
 
     .product-content-box {
-        // display: flex;
-        // align-items: center;
         margin-top: 10px;
         @include common.pseudowh;
 

@@ -153,8 +153,8 @@
         gap: calc(7px + (10 - 7) * ((100vw - 320px) / (1920 - 320)));
 
         svg {
-            fill: rgba(var(--primary-color3), 1);
-            stroke: transparent;
+            color: rgba(var(--primary-color3), 1);
+            fill: transparent;
             @include common.pseudowh($width: calc(28px + (37 - 28) * ((100vw - 320px) / (1920 - 320))), $height: calc(28px + (37 - 28) * ((100vw - 320px) / (1920 - 320))));
 
             body.dark & {

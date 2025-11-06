@@ -348,6 +348,32 @@
             }
         }
 
+        .button-group {
+            margin-top: calc(16px + (20 - 16) * ((100vw - 320px) / (1920 - 320)));
+            display: flex;
+            gap: calc(8px + (16 - 8) * ((100vw - 320px) / (1920 - 320)));
+
+            @include common.max(575.98px) {
+                flex-direction: column;
+            }
+
+            .buy-btn {
+                width: 50%;
+
+                @include common.max(575.98px) {
+                    width: 100%;
+                }
+            }
+
+            .buy-btn-2 {
+                width: calc(50% - 16px);
+
+                @include common.max(575.98px) {
+                    width: 100%;
+                }
+            }
+        }
+
         .size-delivery-info {
             border-top: 1px solid rgba(var(--content-color), 0.1);
             padding-top: calc(10px + (16 - 10) * ((100vw - 320px) / (1920 - 320)));
@@ -407,6 +433,10 @@
         }
 
         .product-count {
+            @include common.max(767.98px) {
+                text-align: center;
+            }
+
             ul {
                 align-items: center;
                 margin-bottom: calc(8px + (16 - 8) * ((100vw - 320px) / (1920 - 320)));
@@ -497,8 +527,149 @@
             margin-bottom: 7px;
             font-size: calc(22px + (36 - 22) * ((100vw - 320px) / (1920 - 320)));
 
+            @include common.max(991.98px) {
+                margin-bottom: 4px;
+            }
+
             @include common.max(767.98px) {
                 text-align: center;
+            }
+        }
+
+        .qty-box {
+            display: none;
+            border-radius: 4px;
+            align-items: center;
+            padding: 6px;
+            background-color: rgba(var(--base-gray), 1);
+
+            @include common.max(991.98px) {
+                display: inline-flex;
+                margin-top: calc(14px + (20 - 14) * ((100vw - 320px) / (992 - 320)));
+            }
+
+            .qty-btn {
+                padding: 0;
+                border-radius: calc(2px + (4 - 2) * ((100vw - 320px) / (992 - 320)));
+                background-color: rgba(var(--white), 1);
+                color: rgba(var(--content-color), 1);
+                @include common.flex_common;
+                @include common.pseudowh($width: calc(30px + (35 - 30) * ((100vw - 320px) / (992 - 320))), $height: calc(30px + (35 - 30) * ((100vw - 320px) / (992 - 320))));
+
+                &:hover {
+                    background-color: rgba(var(--primary-color), 1);
+                    color: #fff;
+                }
+            }
+
+            .qty-input {
+                width: calc(72px + (160 - 72) * ((100vw - 320px) / (992 - 320)));
+                line-height: 1;
+                padding: 0;
+                border: none;
+                text-align: center;
+                outline: unset;
+                padding-top: 3px;
+                color: rgba(var(--title-color), 1);
+                background-color: transparent;
+                font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (992 - 320)));
+
+                &[type="number"] {
+                    appearance: textfield;
+
+                    &::-webkit-inner-spin-button,
+                    &::-webkit-outer-spin-button {
+                        -webkit-appearance: none;
+                    }
+                }
+            }
+        }
+
+        .qty-box-2 {
+            border-radius: 4px;
+            align-items: center;
+            padding: 6px;
+            background-color: rgba(var(--base-gray), 1);
+            display: inline-flex;
+            margin-top: calc(14px + (20 - 14) * ((100vw - 320px) / (1920 - 320)));
+
+            .qty-btn {
+                padding: 0;
+                border-radius: calc(2px + (4 - 2) * ((100vw - 320px) / (1920 - 320)));
+                background-color: rgba(var(--white), 1);
+                color: rgba(var(--content-color), 1);
+                @include common.flex_common;
+                @include common.pseudowh($width: calc(30px + (35 - 30) * ((100vw - 320px) / (1920 - 320))), $height: calc(30px + (35 - 30) * ((100vw - 320px) / (1920 - 320))));
+
+                &:hover {
+                    background-color: rgba(var(--primary-color), 1);
+                    color: #fff;
+                }
+            }
+
+            .qty-input {
+                width: calc(72px + (160 - 72) * ((100vw - 320px) / (1920 - 320)));
+                line-height: 1;
+                padding: 0;
+                border: none;
+                text-align: center;
+                outline: unset;
+                padding-top: 3px;
+                color: rgba(var(--title-color), 1);
+                background-color: transparent;
+                font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320)));
+
+                &[type="number"] {
+                    appearance: textfield;
+
+                    &::-webkit-inner-spin-button,
+                    &::-webkit-outer-spin-button {
+                        -webkit-appearance: none;
+                    }
+                }
+            }
+        }
+
+        .product-price {
+            display: none;
+
+            @include common.max(991.98px) {
+                font-size: calc(21px + (26 - 21) * ((100vw - 320px) / (992 - 320)));
+                margin-bottom: calc(10px + (14 - 10) * ((100vw - 320px) / (992 - 320)));
+                font-weight: 600;
+                color: rgba(var(--primary-color), 1);
+                display: block;
+            }
+
+            @include common.max(767.98px) {
+                text-align: center;
+            }
+
+            del {
+                color: rgba(var(--content-color), 0.8);
+                font-weight: 400;
+                font-size: 22px;
+
+                @include common.max(991.98px) {
+                    font-size: calc(19px + (22 - 19) * ((100vw - 320px) / (992 - 320)));
+                }
+            }
+        }
+
+        .product-price-2 {
+            font-size: calc(21px + (26 - 21) * ((100vw - 320px) / (1920 - 320)));
+            margin-bottom: calc(10px + (14 - 10) * ((100vw - 320px) / (1920 - 320)));
+            font-weight: 600;
+            color: rgba(var(--primary-color), 1);
+
+            @include common.max(767.98px) {
+                text-align: center;
+            }
+
+            del {
+                color: rgba(var(--content-color), 0.8);
+                font-weight: 400;
+                font-size: calc(19px + (22 - 19) * ((100vw - 320px) / (1920 - 320)));
             }
         }
 
@@ -558,6 +729,12 @@
                 line-height: 1.7;
                 margin: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320))) 0 0;
                 font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+
+                @include common.max(991.98px) {
+                    border-top: 1px solid rgba(var(--border-color), 1);
+                    margin-top: calc(14px + (20 - 14) * ((100vw - 320px) / (1920 - 320)));
+                    padding-top: calc(14px + (20 - 14) * ((100vw - 320px) / (1920 - 320)));
+                }
 
                 @include common.max(767.98px) {
                     text-align: center;
@@ -622,6 +799,10 @@
                         float: unset;
                         @include common.pseudowh;
 
+                        body.dark & {
+                            background-color: rgba(var(--base-gray), 1);
+                        }
+
                         &:checked {
                             ~.form-check-label {
                                 border: 1px solid rgba(var(--primary-color), 1);
@@ -644,10 +825,6 @@
                         font-size: 14px;
                         transition: all 0.15s ease-in-out;
                         background-color: rgba(var(--white), 1);
-
-                        body.dark & {
-                            background-color: #131921;
-                        }
                     }
                 }
 
@@ -1720,8 +1897,16 @@
         align-items: center;
         margin: 0 calc(9px + (25 - 9) * ((100vw - 576px) / (1920 - 576))) 0 auto;
 
+        [dir="rtl"] & {
+            margin: 0 auto 0 calc(9px + (25 - 9) * ((100vw - 576px) / (1920 - 576)));
+        }
+
         @include common.max(991.98px) {
             margin-inline: auto;
+
+            [dir="rtl"] & {
+                margin-inline: auto;
+            }
         }
 
         @include common.max(767.98px) {
